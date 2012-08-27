@@ -1,0 +1,10 @@
+Z:\HobbyCartes\HobbyCartes\bin\HobbyCartes.dll
+Z:\HobbyCartes\HobbyCartes\bin\HobbyCartes.pdb
+Z:\HobbyCartes\HobbyCartes\bin\HobbyCartes.xml
+Z:\HobbyCartes\HobbyCartes\obj\Debug\ResolveAssemblyReference.cache
+Z:\HobbyCartes\HobbyCartes\obj\Debug\HobbyCartes.Resources.resources
+Z:\HobbyCartes\HobbyCartes\obj\Debug\GenerateResource.read.1.tlog
+Z:\HobbyCartes\HobbyCartes\obj\Debug\GenerateResource.write.1.tlog
+Z:\HobbyCartes\HobbyCartes\obj\Debug\HobbyCartes.dll
+Z:\HobbyCartes\HobbyCartes\obj\Debug\HobbyCartes.xml
+Z:\HobbyCartes\HobbyCartes\obj\Debug\HobbyCartes.pdb
