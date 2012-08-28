@@ -8,7 +8,11 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="cphMenu" runat="server">
-    menu
+    <ul>
+        <li><a>Connexion</a></li>
+        <li><a>Inscription</a></li>
+        <li><a>Recherche</a></li>
+    </ul>
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="cphCorps" runat="server">

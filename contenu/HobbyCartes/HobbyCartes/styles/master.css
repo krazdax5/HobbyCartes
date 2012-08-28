@@ -32,7 +32,7 @@ h1, h2, h3, h4, h5, h6
 { 
     font: bold 175% arial, sans-serif;
     color: #FF2335;
-    letter-spacing: -1px;
+    /*letter-spacing: -1px;*/
     margin: 0 0 5px 0;
     padding: 15px 0 0 0;
 }
@@ -133,17 +133,6 @@ ol li
     background: transparent;
 }
 
-#piedpage a, #piedpage a:hover
-{
-    color: #1D1D1D;
-    text-decoration: underline;
-}
-
-#piedpage a:hover
-{
-    text-decoration: none;
-}
-
 #entete
 {
     width: 1000px;
@@ -151,13 +140,6 @@ ol li
     padding-top: 20px;
     background: transparent;
     text-align: center;
-}
-
-#corps
-{ 
-    width: 680px;
-    margin: 0 20px 20px 0;
-    float: left;
 }
 
 #corps
@@ -169,31 +151,6 @@ ol li
     float: left;
 }
 
-ul.links
-{ 
-    margin: 0;
-}
-
-ul.links li
-{ 
-    list-style: none;
-    padding: 8px 0;
-}
-
-ul.links li a, ul.links li a:hover
-{ 
-    padding: 0 0 0 28px;
-    background: transparent url(../images/page.png) no-repeat left center;
-    color: #06C4E6;
-    text-decoration: underline;
-} 
-
-ul.links li a:hover
-{ 
-    color: #5D5D5D;
-    text-decoration: none;
-} 
-
 #menu
 {
     width: 960px;
@@ -201,4 +158,41 @@ ul.links li a:hover
     text-align: center; 
     color: #000;
     background: #C0C0C0;/*transparent url(../images/transparent.png) repeat;*/
-} 
+}
+
+#menu ul
+{
+    position: relative;
+    height: 30px;
+    padding: 10px 0px 5px 0;
+    overflow: hidden;
+    float: left;
+    margin: 0 0px 0 0;
+    width: 1000px;
+}
+
+#menu ul li
+{
+    float: left;
+    list-style: none;
+}
+
+#menu ul li a
+{
+    font: normal 120% arial, sans-serif;
+    text-decoration: none;
+    color: #FFF;
+    letter-spacing: 0;
+    z-index: 10;
+    display: block;
+    float: left;
+    height: 60px;
+    padding: 5px 0px 0px 35px;
+    position: relative;
+    overflow: hidden;
+}
+
+#menu li a:hover, #menu li a:active, #menu li a:visited
+{
+    border: none;
+}
