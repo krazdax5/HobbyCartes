@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="vb" Theme="MainTheme" AutoEventWireup="false" MasterPageFile="~/HobbyCartes.Master" CodeBehind="Default.aspx.vb" Inherits="HobbyCartes.pagetest" %>
+﻿<%@ Page Language="vb" Theme="MainTheme" MasterPageFile="~/HobbyCartes.Master" %>
 
-<asp:Content ID="Content4" ContentPlaceHolderID="cphCorps" runat="server">
+<asp:Content ContentPlaceHolderID="cphCorps" runat="server">
 <h1>Welcome to your website</h1>
           <p>This standards compliant, simple, fixed width website template is released as an 'open source' design (under the Creative Commons Attribution 3.0 Licence), which means that you are free to download and use it for anything you want (including modifying and amending it). If you wish to remove the 'ARaynorDesign' link in the footer of the template, please contact me first, but other than that...</p>
           <h3>Place your heading here</h3>

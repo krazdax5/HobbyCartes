@@ -6,7 +6,23 @@ HobbyCartes
 </name>
 </assembly>
 <members>
-<member name="P:HobbyCartes.My.MyWebExtension.Application">
+<member name="F:HobbyCartes.Recherche.form1">
+	<summary>
+contrôle form1.
+</summary>
+	<remarks>
+Champ généré automatiquement.
+Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+</remarks>
+</member><member name="F:HobbyCartes.Inscription.form1">
+	<summary>
+contrôle form1.
+</summary>
+	<remarks>
+Champ généré automatiquement.
+Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+</remarks>
+</member><member name="P:HobbyCartes.My.MyWebExtension.Application">
 	<summary>
  Retourne des informations sur l'application actuelle.
  </summary>
