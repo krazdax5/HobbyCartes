@@ -1,0 +1,198 @@
+﻿html
+{
+     height: 100%;
+}
+
+*
+{ 
+    margin: 0;
+    padding: 0;
+}
+
+body
+{   font: normal .80em arial, sans-serif;
+    background: #777;/*transparent url(../images/background.jpg) repeat;*/
+    color: #FFF;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p
+{ 
+    padding: 0 0 20px 0;
+    line-height: 1.7em;
+}
+  
+img
+{ 
+    border: 0;
+}
+
+h1, h2, h3, h4, h5, h6 
+{ 
+    font: bold 175% arial, sans-serif;
+    color: #FF2335;
+    /*letter-spacing: -1px;*/
+    margin: 0 0 5px 0;
+    padding: 15px 0 0 0;
+}
+
+h2
+{ 
+    font: bold 165% arial, sans-serif;
+}
+
+h3
+{ 
+    font: bold 125% arial, sans-serif;
+    padding: 0 0 5px 0;
+}
+
+h4, h5, h6
+{ 
+    margin: 0;
+    padding: 0 0 5px 0;
+    font: bold 110% arial, sans-serif;
+    line-height: 1.5em;
+}
+
+h5, h6
+{ 
+    font: italic 95% arial, sans-serif;
+    color: #1D1D1D;
+    padding-bottom: 15px;
+}
+
+h6
+{ 
+    color: #362C20;
+}
+
+a, a:hover
+{ 
+    background: transparent;
+    outline: none;
+    text-decoration: underline;
+    color: #5D5D5D;
+}
+
+a:hover
+{ 
+    text-decoration: underline;
+    color: #1D1D1D;
+}
+
+ul
+{ 
+    margin: 2px 0 22px 17px;
+}
+
+ul li
+{ 
+    margin: 2px 0 15px 17px;
+}
+
+ol
+{ 
+    margin: 8px 0 22px 20px;
+}
+
+ol li
+{ 
+    margin: 0 0 11px 0;
+}
+
+#contenu
+{
+    width: 1000px;
+    overflow: hidden;
+    margin-top: 20px;
+    background: #404040;/*transparent url(../images/transparent_dark.png) repeat;*/
+}
+
+#piedpage, #contPiedpage, #contenu, #corps, #entete, #menu
+{ 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+#contPiedpage
+{ 
+    width: 920px;
+    font: bold 100% arial, sans-serif;
+    height: 45px;
+    padding: 30px 0 5px 0;
+    text-align: center; 
+    background: transparent;
+    color: #1D1D1D;
+}
+
+#piedpage
+{
+    padding: 0 20px 0 20px;
+    background: transparent;
+}
+
+#entete
+{
+    width: 1000px;
+    height: 140px;
+    padding-top: 20px;
+    background: transparent;
+    text-align: center;
+}
+
+#corps
+{
+    text-align: left;
+    width: 960px;
+    padding: 0;
+    margin: 0 0 0 20px;
+    float: left;
+}
+
+#menu
+{
+    width: 960px;
+    height: 50px;
+    text-align: center; 
+    color: #000;
+    background: #C0C0C0;/*transparent url(../images/transparent.png) repeat;*/
+}
+
+#menu ul
+{
+    position: relative;
+    height: 30px;
+    padding: 10px 0px 5px 0;
+    overflow: hidden;
+    float: left;
+    margin: 0 0px 0 0;
+    width: 1000px;
+}
+
+#menu ul li
+{
+    float: left;
+    list-style: none;
+}
+
+#menu ul li a
+{
+    font: normal 120% arial, sans-serif;
+    text-decoration: none;
+    color: #FFF;
+    letter-spacing: 0;
+    z-index: 10;
+    display: block;
+    float: left;
+    height: 60px;
+    padding: 5px 0px 0px 35px;
+    position: relative;
+    overflow: hidden;
+}
+
+#menu li a:hover, #menu li a:active, #menu li a:visited
+{
+    border: none;
+}

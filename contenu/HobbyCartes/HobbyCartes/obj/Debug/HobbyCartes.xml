@@ -39,14 +39,6 @@ HobbyCartes
  Module utilisé pour définir les propriétés qui sont disponibles dans l'espace de noms My pour les projets Web.
  </summary>
 	<remarks></remarks>
-</member><member name="F:HobbyCartes.HobbyCartes.head">
-	<summary>
-Contrôle head.
-</summary>
-	<remarks>
-Champ généré automatiquement.
-Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-</remarks>
 </member><member name="F:HobbyCartes.HobbyCartes.form1">
 	<summary>
 Contrôle form1.
@@ -55,33 +47,9 @@ Contrôle form1.
 Champ généré automatiquement.
 Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
 </remarks>
-</member><member name="F:HobbyCartes.HobbyCartes.cphEntete">
-	<summary>
-Contrôle cphEntete.
-</summary>
-	<remarks>
-Champ généré automatiquement.
-Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-</remarks>
-</member><member name="F:HobbyCartes.HobbyCartes.cphMenu">
-	<summary>
-Contrôle cphMenu.
-</summary>
-	<remarks>
-Champ généré automatiquement.
-Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-</remarks>
 </member><member name="F:HobbyCartes.HobbyCartes.cphCorps">
 	<summary>
 Contrôle cphCorps.
-</summary>
-	<remarks>
-Champ généré automatiquement.
-Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-</remarks>
-</member><member name="F:HobbyCartes.HobbyCartes.cphPiedpage">
-	<summary>
-Contrôle cphPiedpage.
 </summary>
 	<remarks>
 Champ généré automatiquement.

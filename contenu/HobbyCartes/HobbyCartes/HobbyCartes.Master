@@ -5,17 +5,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <asp:ContentPlaceHolder ID="head" runat="server" />
-    <link type="text/css" href="styles/master.css" rel="Stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
     <div id="contenu">
         <div id="entete">
-            <asp:ContentPlaceHolder ID="cphEntete" runat="server" />
+            En tête
         </div>
         <div id="menu" >
-            <asp:ContentPlaceHolder ID="cphMenu" runat="server" />
+            <ul>
+                <li><a>Connexion</a></li>
+                <li><a>Inscription</a></li>
+                <li><a>Recherche</a></li>
+            </ul>
         </div>
         <div id="corps">
             <asp:ContentPlaceHolder ID="cphCorps" runat="server" />
@@ -23,7 +25,7 @@
     </div>
     <div id="piedpage">
         <div  id="contPiedpage">
-            <asp:ContentPlaceHolder ID="cphPiedpage" runat="server" />
+            Pied de page
         </div>
     </div>
     </form>
