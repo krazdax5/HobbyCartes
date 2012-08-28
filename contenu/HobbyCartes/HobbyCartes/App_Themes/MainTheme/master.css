@@ -1,12 +1,8 @@
-﻿html
-{
-     height: 100%;
-}
-
-*
+﻿*
 { 
     margin: 0;
     padding: 0;
+    /*border: 1px solid black;*/
 }
 
 body
@@ -33,7 +29,6 @@ h1, h2, h3, h4, h5, h6
 { 
     font: bold 175% arial, sans-serif;
     color: #FF2335;
-    /*letter-spacing: -1px;*/
     margin: 0 0 5px 0;
     padding: 15px 0 0 0;
 }
@@ -74,13 +69,13 @@ a, a:hover
     background: transparent;
     outline: none;
     text-decoration: underline;
-    color: #5D5D5D;
+    color: #5D5DD5;
 }
 
 a:hover
 { 
     text-decoration: underline;
-    color: #1D1D1D;
+    color: #1D1DF5;
 }
 
 ul
@@ -103,18 +98,18 @@ ol li
     margin: 0 0 11px 0;
 }
 
+#piedpage, #contPiedpage, #contenu, #corps, #entete, #menu
+{ 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
 #contenu
 {
     width: 1000px;
     overflow: hidden;
     margin-top: 20px;
     background: #404040;/*transparent url(../images/transparent_dark.png) repeat;*/
-}
-
-#piedpage, #contPiedpage, #contenu, #corps, #entete, #menu
-{ 
-    margin-left: auto; 
-    margin-right: auto;
 }
 
 #contPiedpage
@@ -166,7 +161,7 @@ ol li
 #menu ul
 {
     position: relative;
-    height: 30px;
+    height: 35px;
     padding: 10px 0px 5px 0;
     overflow: hidden;
     float: left;
@@ -185,13 +180,11 @@ ol li
     font: normal 120% arial, sans-serif;
     text-decoration: none;
     color: #FFF;
-    letter-spacing: 0;
-    z-index: 10;
     display: block;
-    float: left;
+    /*float: left;*/
     height: 60px;
     padding: 5px 0px 0px 35px;
-    position: relative;
+    /*position: relative;*/
     overflow: hidden;
 }
 

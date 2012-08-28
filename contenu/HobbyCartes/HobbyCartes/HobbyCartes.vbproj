@@ -113,7 +113,7 @@
     </Compile>
     <Compile Include="Inscription.aspx.vb">
       <DependentUpon>Inscription.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -139,7 +139,7 @@
     </Compile>
     <Compile Include="Recherche.aspx.vb">
       <DependentUpon>Recherche.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
