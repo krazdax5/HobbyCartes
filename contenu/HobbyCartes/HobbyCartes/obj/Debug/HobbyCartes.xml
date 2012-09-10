@@ -14,14 +14,6 @@ contrôle form1.
 Champ généré automatiquement.
 Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
 </remarks>
-</member><member name="F:HobbyCartes.Inscription.form1">
-	<summary>
-contrôle form1.
-</summary>
-	<remarks>
-Champ généré automatiquement.
-Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-</remarks>
 </member><member name="P:HobbyCartes.My.MyWebExtension.Application">
 	<summary>
  Retourne des informations sur l'application actuelle.
@@ -66,6 +58,14 @@ Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans 
 </member><member name="F:HobbyCartes.HobbyCartes.cphCorps">
 	<summary>
 Contrôle cphCorps.
+</summary>
+	<remarks>
+Champ généré automatiquement.
+Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+</remarks>
+</member><member name="F:HobbyCartes.Inscription.form1">
+	<summary>
+contrôle form1.
 </summary>
 	<remarks>
 Champ généré automatiquement.

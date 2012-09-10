@@ -133,7 +133,7 @@ ol li
 {
     display: block;
     width: 1000px;
-    height: 140px;
+    height: 175px;
     padding-top: 20px;
     background: transparent;
     text-align: center;
@@ -191,4 +191,9 @@ ol li
 #menu li a:hover, #menu li a:active, #menu li a:visited
 {
     border: none;
+}
+
+#lblTitre
+{
+    font: 100px "Brush Script MT Italic", sans-serif;
 }

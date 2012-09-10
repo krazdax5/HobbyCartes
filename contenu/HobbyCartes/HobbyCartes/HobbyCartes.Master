@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
     <div id="contenu">
         <a href="/" id="entete">
-            En tête
+            <img alt="Hobby-Cartes" src="img/titre.png" />
         </a>
         <div id="menu" >
             <ul>
@@ -25,7 +25,7 @@
     </div>
     <div id="piedpage">
         <div  id="contPiedpage">
-            Pied de page
+            Tous droits réservés Hobby-Cartes 2012
         </div>
     </div>
     </form>

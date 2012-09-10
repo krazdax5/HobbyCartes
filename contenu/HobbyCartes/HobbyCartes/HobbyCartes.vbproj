@@ -87,9 +87,12 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Themes\MainTheme\fiche.css" />
     <Content Include="Connexion.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="App_Themes\MainTheme\master.css" />
+    <Content Include="App_Themes\MainTheme\default.css" />
+    <Content Include="img\titre.png" />
     <Content Include="Inscription.aspx" />
     <Content Include="Recherche.aspx" />
     <Content Include="Web.config" />
@@ -99,6 +102,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Fiche.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HobbyCartes.Master.designer.vb">
@@ -140,6 +144,13 @@
     <Compile Include="Recherche.aspx.vb">
       <DependentUpon>Recherche.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Fiche.aspx.designer.vb">
+      <DependentUpon>Fiche.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Fiche.aspx.vb">
+      <DependentUpon>Fiche.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>

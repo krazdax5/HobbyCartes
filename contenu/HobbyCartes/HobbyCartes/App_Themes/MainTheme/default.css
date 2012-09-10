@@ -1,0 +1,21 @@
+﻿.membre
+{
+    border : 1px white solid;
+    margin : 20px;
+    padding : 20px;    
+}
+
+.membre img
+{
+    height : 50px;
+    width : 50px;
+    margin-right : 20px;
+}
+
+#nouveautes
+{
+    border : 1px white solid;
+    margin : 20px;
+    padding : 20px;   
+}
+
