@@ -1,0 +1,10 @@
+﻿#ResultatRecherche img
+{
+    width : 100px;
+    height : 100px;
+}
+#ResultatsRecherche td
+{
+    padding : 5px;
+    border : 1px black solid;
+}

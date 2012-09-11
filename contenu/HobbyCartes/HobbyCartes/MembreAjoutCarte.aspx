@@ -2,7 +2,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cphPageMembreContenu" runat="server">
     <h1>Ajouter une nouvelle carte</h1>
-    <table>
+
+    <table id="FormulaireAjoutCarte">
     <tbody>
         <tr>
             <td>
@@ -22,9 +23,17 @@
                 <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
             </td>
         </tr>
+        <tr>
+            <td>
+                Prénom du joueur : 
+            </td>
+            <td>
+                <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+            </td>
+        </tr>
        <tr>
             <td>
-                N° : 
+                N° du joueur : 
             </td>
             <td>
                 <asp:TextBox ID="TextBox2" runat="server" />
@@ -40,10 +49,60 @@
        </tr>
        <tr>
             <td>
-                Série : 
+                Éditeur : 
             </td>
             <td>
                 <asp:TextBox ID="TextBox4" runat="server" />
+            </td>
+       </tr>
+       <tr>
+            <td>
+                Année : 
+            </td>
+            <td>
+                <asp:TextBox ID="TextBox6" runat="server" />
+            </td>
+       </tr>
+       <tr>
+            <td>
+                Recrue : 
+            </td>
+            <td>
+                <asp:CheckBox ID="CheckBox1" runat="server" />
+            </td>
+       </tr>
+       <tr>
+            <td>
+                Position : 
+            </td>
+            <td>
+                <asp:TextBox ID="TextBox7" runat="server" />
+            </td>
+       </tr>
+       <tr>
+            <td>
+                Numérotation de la carte : 
+            </td>
+            <td>
+                <asp:TextBox ID="TextBox8" runat="server" />
+            </td>
+       </tr>
+       <tr>
+            <td>
+                Valeur ($) : 
+            </td>
+            <td>
+                <asp:TextBox ID="TextBox9" runat="server" />
+            </td>
+       </tr>
+       <tr>
+            <td>
+                Etat :
+            </td>
+            <td>
+                <asp:DropDownList ID="DropDownList2" runat="server">
+                    <asp:ListItem Text="Impeccable" />
+                </asp:DropDownList>
             </td>
        </tr>
        <tr>
@@ -64,4 +123,5 @@
        </tr>
     </tbody>
     </table>
+    <asp:Button ID="Button1" runat="server" Text="Valider" />
 </asp:Content>
