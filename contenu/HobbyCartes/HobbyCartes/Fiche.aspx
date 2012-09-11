@@ -9,8 +9,8 @@
                     <th>Arrière</th>
                 </tr>
                 <tr>
-                    <th><img alt="avant" src="img/avant.jpg" /></th>
-                    <th><img alt="arriere" src="img/arriere.jpg" /></th>
+                    <td><img alt="avant" src="img/avant.jpg" /></td>
+                    <td><img alt="arriere" src="img/arriere.jpg" /></td>
                 </tr>
             </tbody>
         </table>
