@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/HobbyCartes.Master" CodeBehind="Fiche.aspx.vb" Inherits="HobbyCartes.WebForm1" Theme="MainTheme" %>
+﻿<%@ Page Language="vb" MasterPageFile="~/HobbyCartes.Master" CodeBehind="Fiche.aspx.vb" Inherits="HobbyCartes.Fiche" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphCorps" runat="server">
     <h1>Nom du joueur : Bleh bleh bleh</h1>
     <div id="info_fiche">

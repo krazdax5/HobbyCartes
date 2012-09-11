@@ -11,5 +11,5 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Fiche
+Partial Public Class MembreAjoutCarte
 End Class

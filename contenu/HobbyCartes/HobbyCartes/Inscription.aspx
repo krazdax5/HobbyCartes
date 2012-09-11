@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" Theme="MainTheme" MasterPageFile="~/HobbyCartes.Master" %>
+﻿<%@ Page Language="vb" MasterPageFile="~/HobbyCartes.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cphCorps" runat="server">
     Username : <asp:TextBox ID="txtUsername" runat="server" /><br />

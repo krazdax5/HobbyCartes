@@ -1,50 +1,4 @@
-﻿#corps
-{
-    margin : auto;
-    /*border : 1px solid white;*/
-    /*font-size : 150%;*/
-    margin-top: 20px;
-}
-
-#page_membre_contenu
-{
-    border : 1px solid white;
-    margin-left : 151px;
-    padding: 20px;
-}
-
-#page_membre_entete img
-{
-    width : 100px;
-    height : 100px;
-    float : left;
-    display : block;
-}
-
-#page_membre_btnMessage
-{
-   float: right;
-}
-
-#page_membre_nom
-{
-    font-size : 250%;
-    text-align : center;
-    margin-right: 200px;
-    margin-left: 200px;
-}
-
-#page_membre_description
-{
-    clear : both;
-}
-
-.clear
-{
-    clear : both;
-}
-
-#page_membre_onglets
+﻿#page_membre_onglets
 {
     float : left;
     width : 150px;
@@ -58,16 +12,48 @@
     padding : 20px;
 }
 
-#menu_sport
+#page_membre_contenu
 {
-   border : 1px solid white;
-   margin : auto;
+    border : 1px solid white;
+    margin-left : 150px;
+    padding : 20px;
 }
 
-#menu_sport .item_sport
+#page_membre_entete img
+{
+    width : 100px;
+    height : 100px;
+    float : left;
+    display : block;
+}
+
+#page_membre_btnMessage
+{
+   float : right;
+}
+
+#page_membre_nom
+{
+    font-size : 250%;
+    text-align : center;
+    margin-right : 200px;
+    margin-left : 200px;
+}
+
+#page_membre_description
+{
+    clear : both;
+}
+
+.clear
+{
+    clear : both;
+}
+
+.item_sport
 {
    border : 1px solid white;
-   float : left;
+   float : right;
    padding : 20px;
    padding-left : 40px;
    padding-right : 40px;
@@ -75,18 +61,20 @@
 
 #liste_cartes
 {
-    clear : left;
+    clear : right;
 }
 
 #liste_cartes .carte
 {
    border : 1px solid white;
    padding : 20px;
+   clear : right;
+   height : 140px;
 }
 
 #liste_cartes .carte img
 {
-    /*float: left;*/
     height : 140px;
     width : 100px;
+    float : right;
 }

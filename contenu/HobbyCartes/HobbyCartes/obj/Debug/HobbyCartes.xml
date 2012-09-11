@@ -6,7 +6,15 @@ HobbyCartes
 </name>
 </assembly>
 <members>
-<member name="F:HobbyCartes.Membre.btnMessage">
+<member name="F:HobbyCartes.Membre.cphPageMembreContenu">
+	<summary>
+Contrôle cphPageMembreContenu.
+</summary>
+	<remarks>
+Champ généré automatiquement.
+Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+</remarks>
+</member><member name="F:HobbyCartes.MembreInfo.btnMessage">
 	<summary>
 Contrôle btnMessage.
 </summary>

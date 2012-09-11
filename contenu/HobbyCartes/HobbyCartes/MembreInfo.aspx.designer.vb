@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Membre
+Partial Public Class MembreInfo
 
     '''<summary>
     '''Contrôle btnMessage.

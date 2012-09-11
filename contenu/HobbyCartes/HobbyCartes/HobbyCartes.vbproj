@@ -94,6 +94,8 @@
     <Content Include="App_Themes\MainTheme\default.css" />
     <Content Include="img\titre.png" />
     <Content Include="Inscription.aspx" />
+    <Content Include="MembreAjoutCarte.aspx" />
+    <Content Include="MembreEnvoiMessage.aspx" />
     <Content Include="MembreInfo.aspx" />
     <Content Include="App_Themes\MainTheme\membre.css" />
     <Content Include="MembreListeCartes.aspx" />
@@ -108,11 +110,11 @@
     <Content Include="Fiche.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HobbyCartes.Master.designer.vb">
-      <DependentUpon>HobbyCartes.Master</DependentUpon>
+    <Compile Include="HobbyCartes.master.designer.vb">
+      <DependentUpon>HobbyCartes.master</DependentUpon>
     </Compile>
-    <Compile Include="HobbyCartes.Master.vb">
-      <DependentUpon>HobbyCartes.Master</DependentUpon>
+    <Compile Include="HobbyCartes.master.vb">
+      <DependentUpon>HobbyCartes.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Inscription.aspx.designer.vb">
@@ -121,6 +123,27 @@
     <Compile Include="Inscription.aspx.vb">
       <DependentUpon>Inscription.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Membre.master.designer.vb">
+      <DependentUpon>Membre.master</DependentUpon>
+    </Compile>
+    <Compile Include="Membre.master.vb">
+      <DependentUpon>Membre.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MembreAjoutCarte.aspx.designer.vb">
+      <DependentUpon>MembreAjoutCarte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MembreAjoutCarte.aspx.vb">
+      <DependentUpon>MembreAjoutCarte.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="MembreEnvoiMessage.aspx.designer.vb">
+      <DependentUpon>MembreEnvoiMessage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MembreEnvoiMessage.aspx.vb">
+      <DependentUpon>MembreEnvoiMessage.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="MembreInfo.aspx.designer.vb">
       <DependentUpon>MembreInfo.aspx</DependentUpon>
@@ -179,8 +202,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="HobbyCartes.Master" />
+    <Content Include="HobbyCartes.master" />
     <Content Include="App_Themes\MainTheme\MainTheme.skin" />
+    <Content Include="Membre.master" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

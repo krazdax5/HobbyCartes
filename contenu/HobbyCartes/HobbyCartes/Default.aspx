@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" Theme="MainTheme" MasterPageFile="~/HobbyCartes.Master" %>
+﻿<%@ Page Language="vb" MasterPageFile="~/HobbyCartes.Master" %>
 
 <asp:Content ContentPlaceHolderID="cphCorps" runat="server">
     <h1>Description du site</h1>
@@ -17,12 +17,12 @@
 
     <h1>Nouveaux membres:</h1>
     <div class="membre">
-        <img alt="photo" /> Pseudo 1
+        <img alt="photo" src="img/profil.jpg" /> Pseudo 1
     </div>
     <div class="membre">
-        <img alt="photo" /> Pseudo 2
+        <img alt="photo" src="img/profil.jpg" /> Pseudo 2
     </div>
     <div class="membre">
-        <img alt="photo" /> Pseudo 3
+        <img alt="photo" src="img/profil.jpg" /> Pseudo 3
     </div>
 </asp:Content>

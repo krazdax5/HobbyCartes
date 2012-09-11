@@ -2,16 +2,13 @@
 { 
     margin: 0;
     padding: 0;
-    /*border: 1px solid black;*/
 }
 
 body
 {
     font: normal .80em arial, sans-serif;
-    background: #777;/*transparent url(../images/background.jpg) repeat;*/
+    background: #777;
     color: #FFF;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 p
@@ -107,27 +104,8 @@ ol li
 #contenu
 {
     width: 1000px;
-    overflow: hidden;
     margin-top: 20px;
-    background: #404040;/*transparent url(../images/transparent_dark.png) repeat;*/
-}
-
-#contPiedpage
-{ 
-    width: 920px;
-    font: bold 100% arial, sans-serif;
-    height: 45px;
-    padding: 30px 0 5px 0;
-    text-align: center; 
-    background: transparent;
-    color: #1D1D1D;
-}
-
-#piedpage
-{
-    clear:left;
-    padding: 0 20px 0 20px;
-    background: transparent;
+    background: #404040;
 }
 
 #entete
@@ -140,23 +118,13 @@ ol li
     text-align: center;
 }
 
-#corps
-{
-    clear:left;
-    text-align: left;
-    width: 960px;
-    padding: 0px;
-    min-height: 600px;
-    margin-top: 20px;
-}
-
 #menu
 {
     width: 960px;
     height: 50px;
     text-align: center; 
     color: #000;
-    background: #C0C0C0;/*transparent url(../images/transparent.png) repeat;*/
+    background: #C0C0C0;
 }
 
 #menu ul
@@ -165,7 +133,6 @@ ol li
     height: 35px;
     padding: 10px 0px 5px 0;
     overflow: hidden;
-    /*float: left;*/
     margin: 0 0px 0 0;
     width: 1000px;
 }
@@ -182,10 +149,8 @@ ol li
     text-decoration: none;
     color: #FFF;
     display: block;
-    /*float: left;*/
     height: 60px;
     padding: 5px 0px 0px 35px;
-    /*position: relative;*/
     overflow: hidden;
 }
 
@@ -194,7 +159,30 @@ ol li
     border: none;
 }
 
-#lblTitre
+#corps
 {
-    font: 100px "Brush Script MT Italic", sans-serif;
+    clear:left;
+    text-align: left;
+    width: 960px;
+    padding: 0px;
+    min-height: 600px;
+    margin-top: 20px;
+    padding-bottom : 20px;
+}
+
+#piedpage
+{
+    padding: 0 20px 0 20px;
+    background: transparent;
+}
+
+#contPiedpage
+{ 
+    width: 920px;
+    font: bold 100% arial, sans-serif;
+    height: 45px;
+    padding: 30px 0 5px 0;
+    text-align: center; 
+    background: transparent;
+    color: #1D1D1D;
 }
