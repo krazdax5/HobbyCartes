@@ -1,1 +1,27 @@
-﻿
+﻿#info_fiche
+{
+    text-align : center;
+}
+
+#info_fiche table
+{
+    margin : auto;
+}
+
+#info_fiche img
+{
+    height : 380px;
+    width : 270px;
+}
+
+#commentaires_fiche
+{
+    
+}
+
+.commentaire_fiche
+{
+    padding:20px;
+    border : white 1px solid;
+    margin:20px;   
+}

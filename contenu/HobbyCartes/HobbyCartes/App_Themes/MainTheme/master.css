@@ -125,6 +125,7 @@ ol li
 
 #piedpage
 {
+    clear:left;
     padding: 0 20px 0 20px;
     background: transparent;
 }
@@ -141,12 +142,12 @@ ol li
 
 #corps
 {
+    clear:left;
     text-align: left;
     width: 960px;
-    padding: 0;
-    margin: 0 0 0 20px;
-    float: left;
+    padding: 0px;
     min-height: 600px;
+    margin-top: 20px;
 }
 
 #menu
@@ -164,7 +165,7 @@ ol li
     height: 35px;
     padding: 10px 0px 5px 0;
     overflow: hidden;
-    float: left;
+    /*float: left;*/
     margin: 0 0px 0 0;
     width: 1000px;
 }

@@ -94,6 +94,9 @@
     <Content Include="App_Themes\MainTheme\default.css" />
     <Content Include="img\titre.png" />
     <Content Include="Inscription.aspx" />
+    <Content Include="MembreInfo.aspx" />
+    <Content Include="App_Themes\MainTheme\membre.css" />
+    <Content Include="MembreListeCartes.aspx" />
     <Content Include="Recherche.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -118,6 +121,20 @@
     <Compile Include="Inscription.aspx.vb">
       <DependentUpon>Inscription.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MembreInfo.aspx.designer.vb">
+      <DependentUpon>MembreInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MembreInfo.aspx.vb">
+      <DependentUpon>MembreInfo.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="MembreListeCartes.aspx.designer.vb">
+      <DependentUpon>MembreListeCartes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MembreListeCartes.aspx.vb">
+      <DependentUpon>MembreListeCartes.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
