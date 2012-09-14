@@ -18,3 +18,13 @@ C:\Users\Usager\Documents\GitHub\HobbyCartes\contenu\HobbyCartes\HobbyCartes\obj
 C:\Users\Usager\Documents\GitHub\HobbyCartes\contenu\HobbyCartes\HobbyCartes\obj\Debug\HobbyCartes.dll
 C:\Users\Usager\Documents\GitHub\HobbyCartes\contenu\HobbyCartes\HobbyCartes\obj\Debug\HobbyCartes.xml
 C:\Users\Usager\Documents\GitHub\HobbyCartes\contenu\HobbyCartes\HobbyCartes\obj\Debug\HobbyCartes.pdb
+C:\Users\Administrateur\Documents\GitHub\HobbyCartes\contenu\HobbyCartes\HobbyCartes\bin\HobbyCartes.dll
+C:\Users\Administrateur\Documents\GitHub\HobbyCartes\contenu\HobbyCartes\HobbyCartes\bin\HobbyCartes.pdb
+C:\Users\Administrateur\Documents\GitHub\HobbyCartes\contenu\HobbyCartes\HobbyCartes\bin\HobbyCartes.xml
+C:\Users\Administrateur\Documents\GitHub\HobbyCartes\contenu\HobbyCartes\HobbyCartes\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrateur\Documents\GitHub\HobbyCartes\contenu\HobbyCartes\HobbyCartes\obj\Debug\HobbyCartes.Resources.resources
+C:\Users\Administrateur\Documents\GitHub\HobbyCartes\contenu\HobbyCartes\HobbyCartes\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\Administrateur\Documents\GitHub\HobbyCartes\contenu\HobbyCartes\HobbyCartes\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\Administrateur\Documents\GitHub\HobbyCartes\contenu\HobbyCartes\HobbyCartes\obj\Debug\HobbyCartes.dll
+C:\Users\Administrateur\Documents\GitHub\HobbyCartes\contenu\HobbyCartes\HobbyCartes\obj\Debug\HobbyCartes.xml
+C:\Users\Administrateur\Documents\GitHub\HobbyCartes\contenu\HobbyCartes\HobbyCartes\obj\Debug\HobbyCartes.pdb

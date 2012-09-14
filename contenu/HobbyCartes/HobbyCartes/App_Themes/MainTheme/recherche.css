@@ -1,0 +1,21 @@
+﻿.recherche
+{
+    margin: auto;
+    margin-top: 20px;
+    border: 1px white solid;
+    min-height: 600px;
+}
+
+.recherche2
+{
+    margin: 20px;
+    padding: 20px;
+    min-height: 560px;
+    border: 1px white solid;
+}
+
+#d1
+{
+    width: 420px; /*1000 #contenu / 2 - margin(40px de chaque côté)*/
+    float: left;
+}

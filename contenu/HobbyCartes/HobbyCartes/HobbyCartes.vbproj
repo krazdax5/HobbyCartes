@@ -88,6 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Themes\MainTheme\fiche.css" />
+    <Content Include="App_Themes\MainTheme\recherche.css" />
     <Content Include="Connexion.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="App_Themes\MainTheme\master.css" />
