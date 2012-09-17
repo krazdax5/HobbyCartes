@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="11.5.1">
+  <zoom_level>8</zoom_level>
+  <element>
+    <type>com.umlet.element.Actor</type>
+    <coordinates>
+      <x>0</x>
+      <y>256</y>
+      <w>80</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Visiteur</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>152</x>
+      <y>224</y>
+      <w>344</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>«dialog»
+inscription
+--
+ NomUtilisateur: String
+ MotDePasse: String
+ VerificationMotDePasse: String
+--
+ ValiderMotDePasse(MotDePasse, VerificationMotDePasse): bool
+ ValiderInscription(NomUtilisateur, MotDePasse):bool
+
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>776</x>
+      <y>272</y>
+      <w>128</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>112;24;24;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>528</x>
+      <y>248</y>
+      <w>272</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>«control»
+inscriptions
+--
+ 
+--
+ValiderInscription(NomUtilisateur, MotDePasse):bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>472</x>
+      <y>264</y>
+      <w>72</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>56;24;24;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>48</x>
+      <y>248</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>24;24;104;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>888</x>
+      <y>208</y>
+      <w>144</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>«entity»
+Membre
+--
+Prenom:String
+Nom:String
+NomUtilisateur:String
+MotPasse:String
+Ville:String
+CodePostal:String
+Courriel:String
+Admin: Bool
+--
+bg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

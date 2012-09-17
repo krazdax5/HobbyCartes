@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="11.5.1">
+  <zoom_level>8</zoom_level>
+  <element>
+    <type>com.umlet.element.Actor</type>
+    <coordinates>
+      <x>16</x>
+      <y>256</y>
+      <w>80</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Visiteur</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>152</x>
+      <y>528</y>
+      <w>192</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>«dialog»
+fil_fiches
+--
+resultat[]: fiche
+--
+afficherFilRecent(): fiche[]
+changerCategorie(categorie): void
+afficherFiche(fiche): void
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>568</x>
+      <y>544</y>
+      <w>184</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>«control»
+fil_fiches
+--
+ 
+--
+rechercheFilRecent(): fiche[]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>320</x>
+      <y>560</y>
+      <w>264</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>248;24;24;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>832</x>
+      <y>184</y>
+      <w>280</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>«entity»
+Fiche
+--
+Annee:Date
+NomJoueur:String
+PrenomJoueur:String
+NumeroJoeur:String
+Recrue:Bool
+Position:String
+Numerotation:String
+Valeur: Float
+Etat:{impeccable, bonne, moyenne, passable, piètre}
+ImageDevant:Image
+ImageArriere:Image
+--
+bg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>760</x>
+      <y>432</y>
+      <w>240</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>«entity»
+Collection
+--
+Type:{Hockey, Football, Basketball, Baseball}
+--
+bg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>144</x>
+      <y>184</y>
+      <w>232</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>«dialog»
+membre
+--
+collectionEnCours: collection
+--
+afficherCollection(collectionEnCours): fiches
+afficherFiche(fiche): void
+changerCollection(nomCollection): collection
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>952</x>
+      <y>0</y>
+      <w>144</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>«entity»
+Membre
+--
+Prenom:String
+Nom:String
+NomUtilisateur:String
+MotPasse:String
+Ville:String
+CodePostal:String
+Courriel:String
+Admin: Bool
+--
+bg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>480</x>
+      <y>200</y>
+      <w>248</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>«control»
+membre
+--
+ 
+--
+retrouverCollection(nomCollection): collection
+retrouverFiche(collection): fiche[]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>864</x>
+      <y>360</y>
+      <w>40</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>24;72;24;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>728</x>
+      <y>360</y>
+      <w>312</w>
+      <h>248</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>24;232;296;232;296;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>680</x>
+      <y>256</y>
+      <w>96</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>24;24;80;176</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>352</x>
+      <y>216</y>
+      <w>144</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>128;24;24;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>552</x>
+      <y>448</y>
+      <w>200</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>«control»
+fiche
+--
+ 
+--
+recupererInfos(): infos
+partager(fiche): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>728</x>
+      <y>360</y>
+      <w>296</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>24;160;280;160;280;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>288</x>
+      <y>440</y>
+      <w>280</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>264;24;24;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>40</x>
+      <y>312</y>
+      <w>128</w>
+      <h>248</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>112;232;24;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>56</x>
+      <y>288</y>
+      <w>120</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>104;144;24;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>56</x>
+      <y>208</y>
+      <w>104</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>88;24;24;72</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>160</x>
+      <y>376</y>
+      <w>152</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>«dialog»
+fiche
+--
+ 
+--
+partager(fiche): void
+recupererInfos(): infos
+afficherInfos(infos): void
+afficherRecherche(): void
+afficherFil_fiche(): void
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>832</x>
+      <y>616</y>
+      <w>240</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>«entity»
+Commentaire
+--
+ Message:String
+--
+bg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1024</x>
+      <y>360</y>
+      <w>40</w>
+      <h>272</h>
+    </coordinates>
+    <panel_attributes>fg=red</panel_attributes>
+    <additional_attributes>24;24;24;256</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>856</x>
+      <y>704</y>
+      <w>240</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>«entity»
+Editeur
+--
+ Nom:String
+--
+bg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1056</x>
+      <y>360</y>
+      <w>40</w>
+      <h>360</h>
+    </coordinates>
+    <panel_attributes>fg=red</panel_attributes>
+    <additional_attributes>24;24;24;344</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>880</x>
+      <y>792</y>
+      <w>240</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>«entity»
+Equipe
+--
+ Nom:String
+--
+bg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1080</x>
+      <y>360</y>
+      <w>40</w>
+      <h>448</h>
+    </coordinates>
+    <panel_attributes>fg=red</panel_attributes>
+    <additional_attributes>24;24;24;432</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>704</x>
+      <y>40</y>
+      <w>264</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>24;208;248;24</additional_attributes>
+  </element>
+</diagram>
