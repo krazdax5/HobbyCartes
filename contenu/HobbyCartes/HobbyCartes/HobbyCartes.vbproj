@@ -87,12 +87,18 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Administration.aspx" />
+    <Content Include="App_Themes\MainTheme\administration.css" />
+    <Content Include="App_Themes\MainTheme\connexion.css" />
     <Content Include="App_Themes\MainTheme\fiche.css" />
+    <Content Include="App_Themes\MainTheme\filFiches.css" />
+    <Content Include="App_Themes\MainTheme\inscription.css" />
     <Content Include="App_Themes\MainTheme\recherche.css" />
     <Content Include="Connexion.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="App_Themes\MainTheme\master.css" />
     <Content Include="App_Themes\MainTheme\default.css" />
+    <Content Include="FilFiches.aspx" />
     <Content Include="img\titre.png" />
     <Content Include="Inscription.aspx" />
     <Content Include="MembreAjoutCarte.aspx" />
@@ -111,6 +117,20 @@
     <Content Include="Fiche.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administration.aspx.designer.vb">
+      <DependentUpon>Administration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration.aspx.vb">
+      <DependentUpon>Administration.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="FilFiches.aspx.designer.vb">
+      <DependentUpon>FilFiches.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FilFiches.aspx.vb">
+      <DependentUpon>FilFiches.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="HobbyCartes.master.designer.vb">
       <DependentUpon>HobbyCartes.master</DependentUpon>
     </Compile>

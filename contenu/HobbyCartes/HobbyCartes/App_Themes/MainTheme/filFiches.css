@@ -1,0 +1,15 @@
+﻿#filFiches .fiche
+{
+   border : 1px solid white;
+   padding : 20px;
+   clear : right;
+   height : 140px;
+}
+
+#filFiches .fiche img
+{
+    height : 140px;
+    width : 100px;
+    float : left;
+    margin-right : 20px;
+}

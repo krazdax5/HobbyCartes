@@ -11,9 +11,8 @@
     border-collapse: collapse; 
 }
 
-#resultat th, #resultat td
+#resultat td, #resultat th
 {
-    text-align:center;
     padding : 20px;
     padding-left : 60px;
     padding-right : 60px;
@@ -21,42 +20,41 @@
     border : 1px solid white;
 }
 
+#resultat th
+{
+    text-align:center;
+}
+
+#resultat td
+{
+    text-align: left;
+}
+
 #resultat tr
 {
     margin : 0px;
-    padding : 0px;   
+    padding : 0px;
+    clear : left;
 }
 
 #resultat .membre img
 {
     height : 100px;
     width : 100px;
+    float : left;
+    margin-right : 20px;
 }
 
 #resultat .fiche img
 {
     height : 140px;
     width : 100px;
+    float : left;
+    margin-right : 20px;
 }
 
-/*#recherche
+#resultat a
 {
-    margin: auto;
-    margin-top: 20px;
-    border: 1px white solid;
-    min-height: 600px;
-}
-
-#recherche2
-{
-    margin: 20px;
-    padding: 20px;
-    min-height: 560px;
-    border: 1px white solid;
-}
-*/
-#d1
-{
-    width: 420px; /*1000 #contenu / 2 - margin(40px de chaque côté)*/
-    float: left;
+    color : inherit;
+    text-decoration : inherit;
 }

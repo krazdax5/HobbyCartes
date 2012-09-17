@@ -1,0 +1,57 @@
+﻿#administration th
+{
+    text-align : left;   
+}
+
+#administration th, #administration td
+{
+    padding : 5px;
+}
+
+#administration tr
+{
+    border : 1px solid white;
+}
+
+#administration #membres .colonne1
+{
+    width : 650px;
+}
+
+#administration #membres .colonne2
+{
+    width : 100px;
+}
+
+#administration #membres
+{
+    border : 1px solid white;
+    border-spacing: 0px;
+    border-collapse: collapse; 
+    /*margin-left : 150px;*/
+}
+
+#administration #membres img
+{
+    height : 30px;
+    width : 30px;
+    float : left;
+    margin-right : 20px;
+}
+
+#administration #boutons
+{
+    border : 1px solid white;
+    float : right;
+
+}
+
+#administration #boutons a
+{
+    display : block;
+    padding : 20px;
+    border : 1px solid white;
+    text-align : center;
+    color : inherit;
+    text-decoration : inherit;
+}

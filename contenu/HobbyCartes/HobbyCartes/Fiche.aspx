@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="vb" MasterPageFile="~/HobbyCartes.Master" CodeBehind="Fiche.aspx.vb" Inherits="HobbyCartes.Fiche" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphCorps" runat="server">
-    <h1>Nom du joueur : Bleh bleh bleh</h1>
+    <h1>Nom du joueur : Nom Joueur</h1>
     <div id="info_fiche">
         <table>
             <tbody>
@@ -15,7 +15,7 @@
             </tbody>
         </table>
         <div id="description_fiche">
-            Equipe : bleh bleh bleh<br />
+            Equipe : bleh Team<br />
             N° : 42<br />
             Description : ceci est un joueur qui joue. Toussa toussa.<br />
             N° carte : 42<br />

@@ -17,6 +17,8 @@
                 <li><a href="Connexion.aspx" runat="server">Connexion</a></li>
                 <li><a href="Inscription.aspx" runat="server">Inscription</a></li>
                 <li><a href="Recherche.aspx" runat="server">Recherche</a></li>
+                <li><a href="FilFiches.aspx" runat="server">Fil des fiches</a></li>
+                <li><a href="Administration.aspx" runat="server">Administration</a></li>
             </ul>
         </div>
         <div id="corps">
