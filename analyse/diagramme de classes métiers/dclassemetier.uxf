@@ -4,7 +4,7 @@
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>333</x>
+      <x>342</x>
       <y>0</y>
       <w>270</w>
       <h>153</h>
@@ -26,7 +26,7 @@
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>0</x>
+      <x>9</x>
       <y>54</y>
       <w>162</w>
       <h>81</h>
@@ -41,7 +41,7 @@
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>315</x>
+      <x>324</x>
       <y>252</y>
       <w>306</w>
       <h>63</h>
@@ -55,7 +55,7 @@
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>297</x>
+      <x>306</x>
       <y>441</y>
       <w>360</w>
       <h>216</h>
@@ -73,6 +73,7 @@
 - Etat:{impeccable, bonne, moyenne, passable, piètre}
 - ImageDevant:Image
 - ImageArriere:Image
+- PublicationSurSite: Date
 --
  </panel_attributes>
     <additional_attributes/>
@@ -80,7 +81,7 @@
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>0</x>
+      <x>9</x>
       <y>549</y>
       <w>144</w>
       <h>63</h>
@@ -95,7 +96,7 @@ Message:String
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>135</x>
+      <x>144</x>
       <y>36</y>
       <w>215</w>
       <h>63</h>
@@ -110,7 +111,7 @@ m2=1
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>414</x>
+      <x>423</x>
       <y>126</y>
       <w>98</w>
       <h>143</h>
@@ -125,9 +126,9 @@ Possède</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>414</x>
+      <x>423</x>
       <y>288</y>
-      <w>102</w>
+      <w>98</w>
       <h>170</h>
     </coordinates>
     <panel_attributes>lt=-&lt;&lt;&lt;&lt;
@@ -139,7 +140,7 @@ Contient</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>117</x>
+      <x>126</x>
       <y>540</y>
       <w>197</w>
       <h>63</h>
@@ -153,7 +154,7 @@ Possède</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>135</x>
+      <x>144</x>
       <y>72</y>
       <w>215</w>
       <h>63</h>
@@ -168,7 +169,7 @@ Reçoie&gt;</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>54</x>
+      <x>63</x>
       <y>126</y>
       <w>296</w>
       <h>440</h>
@@ -182,7 +183,7 @@ Emet</panel_attributes>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>801</x>
+      <x>810</x>
       <y>450</y>
       <w>99</w>
       <h>54</h>
@@ -196,7 +197,7 @@ Nom: String
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>801</x>
+      <x>810</x>
       <y>567</y>
       <w>99</w>
       <h>54</h>
@@ -210,7 +211,7 @@ Nom: String
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>630</x>
+      <x>639</x>
       <y>432</y>
       <w>188</w>
       <h>63</h>
@@ -224,7 +225,7 @@ est éditée par</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>630</x>
+      <x>639</x>
       <y>549</y>
       <w>188</w>
       <h>63</h>
