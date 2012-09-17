@@ -7,7 +7,7 @@
       <x>342</x>
       <y>0</y>
       <w>270</w>
-      <h>153</h>
+      <h>171</h>
     </coordinates>
     <panel_attributes>Membre
 --
@@ -19,6 +19,7 @@
 - CodePostal:String
 - Courriel:String
 - Admin: Bool
+- arrierePlan: Image
 --
 </panel_attributes>
     <additional_attributes/>
@@ -112,16 +113,16 @@ m2=1
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>423</x>
-      <y>126</y>
+      <y>144</y>
       <w>98</w>
-      <h>143</h>
+      <h>125</h>
     </coordinates>
     <panel_attributes>lt=-&gt;&gt;&gt;&gt;
 m1=    0..4
 
 m2= 1 
 Possède</panel_attributes>
-    <additional_attributes>54;126;54;27</additional_attributes>
+    <additional_attributes>54;108;54;27</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
@@ -170,15 +171,15 @@ Reçoie&gt;</panel_attributes>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>63</x>
-      <y>126</y>
+      <y>144</y>
       <w>296</w>
-      <h>440</h>
+      <h>422</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=0..*
 m2=1
 Emet</panel_attributes>
-    <additional_attributes>27;423;279;27</additional_attributes>
+    <additional_attributes>27;405;279;27</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>

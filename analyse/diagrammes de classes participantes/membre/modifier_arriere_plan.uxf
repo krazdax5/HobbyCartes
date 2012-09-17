@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="11.5.1">
+  <zoom_level>9</zoom_level>
+  <element>
+    <type>com.umlet.element.Actor</type>
+    <coordinates>
+      <x>0</x>
+      <y>342</y>
+      <w>90</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>membre</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>171</x>
+      <y>333</y>
+      <w>189</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>«dialog»
+accueil
+--
+image: Image
+--
+modifArrierePlan(Image): void
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>45</x>
+      <y>351</y>
+      <w>143</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>27;27;126;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>441</x>
+      <y>333</y>
+      <w>189</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>«control»
+membre
+--
+ 
+--
+modifArrierePlan(Image): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>333</x>
+      <y>351</y>
+      <w>125</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>27;27;108;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>711</x>
+      <y>333</y>
+      <w>162</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>«entity»
+Membre
+--
+arrierePlan: Image
+--
+bg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>603</x>
+      <y>351</y>
+      <w>125</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>27;27;108;27</additional_attributes>
+  </element>
+</diagram>

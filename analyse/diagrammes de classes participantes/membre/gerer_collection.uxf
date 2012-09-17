@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="11.5.1">
+  <zoom_level>9</zoom_level>
+  <element>
+    <type>com.umlet.element.Actor</type>
+    <coordinates>
+      <x>0</x>
+      <y>324</y>
+      <w>90</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>membre</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>189</x>
+      <y>315</y>
+      <w>225</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>«dialog»
+membre
+--
+fiche[]: Fiche
+--
+recupererFiche(collection): fiche[]
+supprimerFiche(fiche, collection): bool
+modifierFiche(infos, collection): bool
+ajouterFiche(infos, collection): bool
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>45</x>
+      <y>333</y>
+      <w>161</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>27;27;144;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>513</x>
+      <y>315</y>
+      <w>216</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>«control»
+membre
+--
+ 
+--
+recupererFiche(collection): fiche[]
+supprimerFiche(fiche, collection): bool
+modifierFiche(infos, collection): bool
+ajouterFiche(infos, collection): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>387</x>
+      <y>333</y>
+      <w>143</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>27;27;126;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>810</x>
+      <y>315</y>
+      <w>270</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>«entity»
+Collection
+--
+Type: {Hockey, Football, Basketball, Baseball}
+--
+bg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>702</x>
+      <y>333</y>
+      <w>125</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>27;27;108;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>810</x>
+      <y>459</y>
+      <w>297</w>
+      <h>225</h>
+    </coordinates>
+    <panel_attributes>«entity»
+Fiche
+--
+Annee:Date
+NomJoueur:String
+PrenomJoueur:String
+NumeroJoeur:String
+Recrue:Bool
+Position:String
+Numerotation:String
+Valeur: Float
+Etat:{impeccable, bonne, moyenne, passable, piètre}
+ImageDevant:Image
+ImageArriere:Image
+--
+bg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>909</x>
+      <y>360</y>
+      <w>44</w>
+      <h>116</h>
+    </coordinates>
+    <panel_attributes>lt=-&lt;&lt;&lt;&lt;</panel_attributes>
+    <additional_attributes>27;27;27;99</additional_attributes>
+  </element>
+</diagram>
