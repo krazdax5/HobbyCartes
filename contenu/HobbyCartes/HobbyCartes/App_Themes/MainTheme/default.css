@@ -1,18 +1,18 @@
-﻿.membre
+﻿#default .membre
 {
     border : 1px white solid;
     margin : 20px;
     padding : 20px;    
 }
 
-.membre img
+#default .membre img
 {
     height : 100px;
     width : 100px;
     margin-right : 20px;
 }
 
-#nouveautes
+#default #nouveautes
 {
     border : 1px white solid;
     margin : 20px;

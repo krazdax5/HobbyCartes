@@ -1,4 +1,45 @@
-﻿.recherche
+﻿#recherche
+{
+    text-align:center;
+}
+
+#resultat
+{
+    margin : auto;
+    margin-top : 20px;
+    border-spacing: 0px;
+    border-collapse: collapse; 
+}
+
+#resultat th, #resultat td
+{
+    text-align:center;
+    padding : 20px;
+    padding-left : 60px;
+    padding-right : 60px;
+    margin : 0px;
+    border : 1px solid white;
+}
+
+#resultat tr
+{
+    margin : 0px;
+    padding : 0px;   
+}
+
+#resultat .membre img
+{
+    height : 100px;
+    width : 100px;
+}
+
+#resultat .fiche img
+{
+    height : 140px;
+    width : 100px;
+}
+
+/*#recherche
 {
     margin: auto;
     margin-top: 20px;
@@ -6,14 +47,14 @@
     min-height: 600px;
 }
 
-.recherche2
+#recherche2
 {
     margin: 20px;
     padding: 20px;
     min-height: 560px;
     border: 1px white solid;
 }
-
+*/
 #d1
 {
     width: 420px; /*1000 #contenu / 2 - margin(40px de chaque côté)*/
