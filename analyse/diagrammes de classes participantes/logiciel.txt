@@ -1,0 +1,2 @@
+Les fichiers .uxf peuvent s'ouvrir avec le logiciel UMLet sur le site www.umlet.com.
+Ce logiciel est aussi disponible en plugin eclipse marketplace.eclipse.org.
