@@ -10,7 +10,7 @@
         </p>
 
         <h1>Nouveautés / Mises à jour :</h1>
-        <ul id="nouveautes">
+        <ul>
             <li>Mise-à-jour 1</li>
             <li>Mise-à-jour 12</li>
             <li>Mise-à-jour 365798657</li>

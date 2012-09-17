@@ -14,6 +14,22 @@ Contrôle btnMessage.
 Champ généré automatiquement.
 Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
 </remarks>
+</member><member name="F:HobbyCartes.MembreEnvoiMessage.TextBox1">
+	<summary>
+Contrôle TextBox1.
+</summary>
+	<remarks>
+Champ généré automatiquement.
+Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+</remarks>
+</member><member name="F:HobbyCartes.MembreEnvoiMessage.TextBox2">
+	<summary>
+Contrôle TextBox2.
+</summary>
+	<remarks>
+Champ généré automatiquement.
+Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+</remarks>
 </member><member name="F:HobbyCartes.Recherche.form1">
 	<summary>
 contrôle form1.

@@ -75,34 +75,11 @@ a:hover
     color: #1D1DF5;
 }
 
-ul
-{ 
-    margin: 2px 0 22px 17px;
-}
-
-ul li
-{ 
-    margin: 2px 0 15px 17px;
-}
-
-ol
-{ 
-    margin: 8px 0 22px 20px;
-}
-
-ol li
-{ 
-    margin: 0 0 11px 0;
-}
-
-#piedpage, #contPiedpage, #contenu, #corps, #entete, #menu
-{ 
-    margin-left: auto; 
-    margin-right: auto;
-}
 
 #contenu
 {
+    margin-left: auto; 
+    margin-right: auto;
     width: 1000px;
     margin-top: 20px;
     background: #404040;
@@ -177,17 +154,11 @@ ol li
 }
 
 #piedpage
-{
-    padding: 0 20px 0 20px;
-    background: transparent;
-}
-
-#contPiedpage
 { 
-    width: 920px;
     font: bold 100% arial, sans-serif;
     height: 45px;
-    padding: 30px 0 5px 0;
+    padding-top : 30px;
+    padding-bottom : 5px;
     text-align: center; 
     background: transparent;
     color: #1D1D1D;
