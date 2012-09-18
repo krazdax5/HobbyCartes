@@ -9,8 +9,8 @@
     <table id="resultat">
         <thead>
             <tr>
-                <th>Résultats par membres</th>
-                <th>Résultats par fiches</th>
+                <th class="membre">Résultats par membres</th>
+                <th class="fiche">Résultats par fiches</th>
             </tr>
         </thead>
         <tbody>
@@ -43,9 +43,7 @@
                     <img src="img/profil.jpg" />Pseudo
                 </td>
                 <td class="fiche">
-                    <img src="img/avant.jpg" />Nom joueur<br />
-                    Série<br />
-                    Année
+                    
                 </td>
             </tr>
         </tbody>

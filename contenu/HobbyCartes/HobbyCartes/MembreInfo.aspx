@@ -13,7 +13,9 @@
         </div>
     </div>
     <div id="page_membre_description">
-        Pseudo : bleh bleh <br />
-        Adresse mail : bleh@bleh.com <br />
+        Pseudo : homer<br />
+        Adresse mail : doh@simpson.com <br />
+        Ville : Lévis<br />
+        Code postal : X9X 9X9
     </div>
 </asp:Content>

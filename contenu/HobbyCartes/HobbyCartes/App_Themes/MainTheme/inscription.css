@@ -1,6 +1,12 @@
-﻿#inscription table
+﻿ #inscription table
 {
-    margin-left : 25px;
+    margin-left : auto;
+    margin-right : auto;   
+}
+
+#inscription h1
+{
+    text-align : center;   
 }
 
 #inscription td
