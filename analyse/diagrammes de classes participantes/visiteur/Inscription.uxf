@@ -5,7 +5,7 @@
     <type>com.umlet.element.Actor</type>
     <coordinates>
       <x>0</x>
-      <y>256</y>
+      <y>240</y>
       <w>80</w>
       <h>96</h>
     </coordinates>
@@ -18,17 +18,16 @@
       <x>152</x>
       <y>224</y>
       <w>344</w>
-      <h>120</h>
+      <h>88</h>
     </coordinates>
     <panel_attributes>«dialog»
 inscription
 --
- NomUtilisateur: String
- MotDePasse: String
- VerificationMotDePasse: String
+ InfoM:SInfoM
+ VMotPasse:String
 --
- ValiderMotDePasse(MotDePasse, VerificationMotDePasse): bool
- ValiderInscription(NomUtilisateur, MotDePasse):bool
+ ValiderMotDePasse(SInfoM.MotPasse, VMotPasse): bool
+ ValiderInscription(SInfoM):bool
 
 bg=light_gray</panel_attributes>
     <additional_attributes/>
@@ -37,7 +36,7 @@ bg=light_gray</panel_attributes>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>776</x>
-      <y>272</y>
+      <y>256</y>
       <w>128</w>
       <h>40</h>
     </coordinates>
@@ -48,7 +47,7 @@ bg=light_gray</panel_attributes>
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>528</x>
-      <y>248</y>
+      <y>232</y>
       <w>272</w>
       <h>80</h>
     </coordinates>
@@ -57,14 +56,14 @@ inscriptions
 --
  
 --
-ValiderInscription(NomUtilisateur, MotDePasse):bool</panel_attributes>
+ValiderInscription(SInfoM):bool</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>472</x>
-      <y>264</y>
+      <y>248</y>
       <w>72</w>
       <h>40</h>
     </coordinates>
@@ -86,21 +85,14 @@ ValiderInscription(NomUtilisateur, MotDePasse):bool</panel_attributes>
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>888</x>
-      <y>208</y>
+      <y>240</y>
       <w>144</w>
-      <h>160</h>
+      <h>72</h>
     </coordinates>
     <panel_attributes>«entity»
 Membre
 --
-Prenom:String
-Nom:String
-NomUtilisateur:String
-MotPasse:String
-Ville:String
-CodePostal:String
-Courriel:String
-Admin: Bool
+InfoM:SInfoM
 --
 bg=gray</panel_attributes>
     <additional_attributes/>
