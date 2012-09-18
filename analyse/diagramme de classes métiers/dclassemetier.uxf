@@ -216,7 +216,6 @@ est membre</panel_attributes>
     </coordinates>
     <panel_attributes>SInfoM
 --
-- Type: {fiche, membre}
 - Prenom:String
 - Nom:String
 - NomUtilisateur:String
