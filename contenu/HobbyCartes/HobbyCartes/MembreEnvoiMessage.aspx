@@ -4,11 +4,14 @@
     <div id="membreEnvoimessage">
         <h1>Envoyer un message à Homer Simpson</h1>
         <p>
-            Titre : <asp:TextBox ID="TextBox1" runat="server" Columns="80" /><br />
+            Objet : <asp:TextBox ID="txtObjet" runat="server" Columns="100" /><br />
         </p>
         <p>
             Contenu : <br />
-            <asp:TextBox ID="TextBox2" TextMode="MultiLine" Rows="20" Columns="80" runat="server" />
+            <asp:TextBox ID="txtContenu" TextMode="MultiLine" Rows="20" Columns="80" runat="server" />
+        </p>
+        <p id="btnEnvoyer">
+            <asp:Button runat="server" Text="Envoyer" />
         </p>
     </div>
 </asp:Content>

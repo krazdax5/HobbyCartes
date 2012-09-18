@@ -1,4 +1,7 @@
-﻿#page_membre_onglets
+﻿/**
+ * Onglets sur le cote gauche
+ */
+#page_membre_onglets
 {
     float : left;
     width : 150px;
@@ -12,12 +15,18 @@
     padding : 20px;
 }
 
+/**
+ * Contenu = partie centrale de la page membre 
+ */
 #page_membre_contenu
 {
     margin-left : 170px;
 }
 
-#page_membre_entete img
+/**
+ * Onglet "Informations"
+ */
+#page_membre_contenu #page_membre_entete img
 {
     width : 100px;
     height : 100px;
@@ -25,12 +34,12 @@
     display : block;
 }
 
-#page_membre_btnMessage
+#page_membre_contenu #page_membre_entete #page_membre_btnMessage
 {
    float : right;
 }
 
-#page_membre_nom
+#page_membre_contenu #page_membre_entete #page_membre_nom
 {
     font-size : 250%;
     text-align : center;
@@ -38,17 +47,15 @@
     margin-left : 200px;
 }
 
-#page_membre_description
+#page_membre_contenu #page_membre_description
 {
-    clear : both;
+    margin-top : 100px;
 }
 
-.clear
-{
-    clear : both;
-}
-
-.item_sport
+/**
+ * Onglet "liste des cartes"
+ */
+#page_membre_contenu .item_sport
 {
    border : 1px solid white;
    float : right;
@@ -57,12 +64,12 @@
    padding-right : 40px;
 }
 
-#liste_cartes
+#page_membre_contenu #liste_cartes
 {
     clear : right;
 }
 
-#liste_cartes .carte
+#page_membre_contenu #liste_cartes .carte
 {
    border : 1px solid white;
    padding : 20px;
@@ -70,9 +77,30 @@
    height : 140px;
 }
 
-#liste_cartes .carte img
+#page_membre_contenu #liste_cartes .carte img
 {
     height : 140px;
     width : 100px;
     float : right;
+}
+
+/**
+ * Onglet "visualiser ses messages"
+ */
+
+#page_membre_contenu #visualiser_messages .message
+{
+    border : 1px solid white;
+    padding : 12px;
+    margin : 5px;
+}
+
+#page_membre_contenu #visualiser_messages .message .boxSuppr
+{
+    float : right;
+}
+#page_membre_contenu #visualiser_messages #btnSuppr
+{
+    float : right;
+    margin : 10px;
 }
