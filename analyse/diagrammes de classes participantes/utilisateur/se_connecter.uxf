@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="11.5.1">
+<diagram program="umlet" version="11.3">
   <zoom_level>9</zoom_level>
   <element>
     <type>com.umlet.element.Actor</type>
@@ -9,7 +9,7 @@
       <w>90</w>
       <h>108</h>
     </coordinates>
-    <panel_attributes>membre</panel_attributes>
+    <panel_attributes>Utilisateur</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -17,15 +17,16 @@
     <coordinates>
       <x>189</x>
       <y>315</y>
-      <w>225</w>
-      <h>81</h>
+      <w>216</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>«dialog»
-membre
+connexion
 --
-infos: SInfoM
+username : String
+pasword : String
 --
-modifierInfos(infos): bool
+
 bg=light_gray</panel_attributes>
     <additional_attributes/>
   </element>
@@ -43,55 +44,28 @@ bg=light_gray</panel_attributes>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>513</x>
+      <x>495</x>
       <y>315</y>
-      <w>216</w>
-      <h>81</h>
+      <w>243</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>«control»
 membre
 --
- 
+
 --
-modifierInfos(infos): bool</panel_attributes>
+connexion(username, password) : boolean</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>387</x>
+      <x>378</x>
       <y>333</y>
-      <w>143</w>
+      <w>134</w>
       <h>44</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>27;27;126;27</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.Class</type>
-    <coordinates>
-      <x>810</x>
-      <y>315</y>
-      <w>162</w>
-      <h>81</h>
-    </coordinates>
-    <panel_attributes>«entity»
-Membre
---
-infos: SInfoM
---
-bg=gray</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>702</x>
-      <y>333</y>
-      <w>125</w>
-      <h>44</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>27;27;108;27</additional_attributes>
+    <additional_attributes>27;27;117;27</additional_attributes>
   </element>
 </diagram>
