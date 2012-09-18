@@ -26,7 +26,6 @@
     </coordinates>
     <panel_attributes>Message
 --
-- Destinateur: String
 - Objet:String
 - Message:String
 --</panel_attributes>
