@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="11.3">
-  <zoom_level>10</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <type>com.umlet.element.Actor</type>
     <coordinates>
-      <x>10</x>
-      <y>100</y>
-      <w>100</w>
-      <h>120</h>
+      <x>136</x>
+      <y>168</y>
+      <w>80</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>Administrateur</panel_attributes>
     <additional_attributes/>
@@ -15,15 +15,15 @@
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>170</x>
-      <y>90</y>
-      <w>280</w>
-      <h>130</h>
+      <x>272</x>
+      <y>160</y>
+      <w>224</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>«dialog»
 administration
 --
-List&lt;String&gt; membres
+membres : Membre[]
 --
 supprimerMembre(membre)
 bg=light_gray</panel_attributes>
@@ -32,49 +32,43 @@ bg=light_gray</panel_attributes>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>580</x>
-      <y>100</y>
-      <w>310</w>
-      <h>100</h>
+      <x>600</x>
+      <y>168</y>
+      <w>248</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>«control»
 administration
 --
  
 --
-supprimerMembre(idMembre)</panel_attributes>
+recupererMembres() : Membre[]
+supprimerMembre(idMembre) : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>420</x>
-      <y>110</y>
-      <w>180</w>
-      <h>50</h>
+      <x>472</x>
+      <y>176</y>
+      <w>144</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>160;30;30;30</additional_attributes>
+    <additional_attributes>128;24;24;24</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>1010</x>
-      <y>50</y>
-      <w>210</w>
-      <h>200</h>
+      <x>944</x>
+      <y>152</y>
+      <w>168</w>
+      <h>96</h>
     </coordinates>
-    <panel_attributes>«entity»
+    <panel_attributes>«partial entity»
 Membre
 --
-Prenom:String
-Nom:String
-NomUtilisateur:String
-MotPasse:String
-Ville:String
-CodePostal:String
-Courriel:String
-Admin: Bool
+ 
 --
 
 bg=gray</panel_attributes>
@@ -83,23 +77,23 @@ bg=gray</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>860</x>
-      <y>130</y>
-      <w>170</w>
-      <h>50</h>
+      <x>824</x>
+      <y>192</y>
+      <w>136</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>30;30;150;30</additional_attributes>
+    <additional_attributes>24;24;120;24</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>60</x>
-      <y>120</y>
-      <w>130</w>
-      <h>50</h>
+      <x>176</x>
+      <y>184</y>
+      <w>112</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>110;30;30;30</additional_attributes>
+    <additional_attributes>96;24;24;24</additional_attributes>
   </element>
 </diagram>
