@@ -304,26 +304,16 @@ bg=light_gray</panel_attributes>
       <x>832</x>
       <y>616</y>
       <w>240</w>
-      <h>64</h>
+      <h>80</h>
     </coordinates>
     <panel_attributes>«entity»
 Commentaire
 --
  Message:String
+ Destinateur: String
 --
 bg=gray</panel_attributes>
     <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>1024</x>
-      <y>360</y>
-      <w>40</w>
-      <h>272</h>
-    </coordinates>
-    <panel_attributes>fg=red</panel_attributes>
-    <additional_attributes>24;24;24;256</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
@@ -389,5 +379,17 @@ bg=gray</panel_attributes>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>24;208;248;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1032</x>
+      <y>360</y>
+      <w>40</w>
+      <h>272</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+fg=red</panel_attributes>
+    <additional_attributes>24;24;24;256</additional_attributes>
   </element>
 </diagram>
