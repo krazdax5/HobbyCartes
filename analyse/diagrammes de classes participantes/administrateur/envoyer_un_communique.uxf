@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="11.5.1">
+  <zoom_level>9</zoom_level>
+  <element>
+    <type>com.umlet.element.Actor</type>
+    <coordinates>
+      <x>36</x>
+      <y>261</y>
+      <w>90</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>Administrateur</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>216</x>
+      <y>234</y>
+      <w>279</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>«partial dialog»
+Administration
+--
+tabID[]: int
+message: String
+--
+envoyerCommunique(tabID[ID], message) : void
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>918</x>
+      <y>234</y>
+      <w>306</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>«partial entity»
+Membre
+--
+ 
+--
+
+bg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>558</x>
+      <y>243</y>
+      <w>270</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>«partial control»
+Administrateur
+--
+ 
+--
+envoyerCommunique(tabID[ID], message) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>801</x>
+      <y>270</y>
+      <w>134</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>27;27;117;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>468</x>
+      <y>270</y>
+      <w>107</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>90;27;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>81</x>
+      <y>270</y>
+      <w>152</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>135;27;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>999</x>
+      <y>459</y>
+      <w>135</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;partial entity&gt;&gt;
+Message
+--
+ message: String
+--
+ 
+bg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1044</x>
+      <y>333</y>
+      <w>44</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;
+m1=1
+m2=0..*</panel_attributes>
+    <additional_attributes>27;27;27;126</additional_attributes>
+  </element>
+</diagram>
