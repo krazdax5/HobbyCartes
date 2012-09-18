@@ -17,15 +17,16 @@
     <coordinates>
       <x>189</x>
       <y>324</y>
-      <w>171</w>
-      <h>81</h>
+      <w>225</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>«dialog»
 fiche
 --
+destinateur: String
 message: String
 --
-commenter(message): Bool
+commenter(message, destinateur): void
 bg=light_gray</panel_attributes>
     <additional_attributes/>
   </element>
@@ -43,9 +44,9 @@ bg=light_gray</panel_attributes>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>450</x>
+      <x>486</x>
       <y>324</y>
-      <w>180</w>
+      <w>225</w>
       <h>81</h>
     </coordinates>
     <panel_attributes>«control»
@@ -53,24 +54,24 @@ fiche
 --
  
 --
-commenter(message): Bool</panel_attributes>
+commenter(message, destinateur): void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>333</x>
+      <x>387</x>
       <y>342</y>
-      <w>134</w>
+      <w>116</w>
       <h>44</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>27;27;117;27</additional_attributes>
+    <additional_attributes>27;27;99;27</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>720</x>
+      <x>765</x>
       <y>324</y>
       <w>144</w>
       <h>72</h>
@@ -86,25 +87,26 @@ bg=gray</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>603</x>
+      <x>684</x>
       <y>342</y>
-      <w>134</w>
+      <w>98</w>
       <h>44</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>27;27;117;27</additional_attributes>
+    <additional_attributes>27;27;81;27</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>954</x>
+      <x>990</x>
       <y>324</y>
-      <w>144</w>
-      <h>72</h>
+      <w>279</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>«entity»
 Commentaire
 --
+destinateur: String
 message: String
 --
 bg=gray</panel_attributes>
@@ -113,12 +115,12 @@ bg=gray</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>837</x>
+      <x>882</x>
       <y>342</y>
-      <w>134</w>
+      <w>125</w>
       <h>44</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>27;27;117;27</additional_attributes>
+    <additional_attributes>27;27;108;27</additional_attributes>
   </element>
 </diagram>

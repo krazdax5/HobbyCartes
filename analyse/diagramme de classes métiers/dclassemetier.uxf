@@ -5,21 +5,13 @@
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>342</x>
-      <y>0</y>
+      <y>54</y>
       <w>270</w>
-      <h>171</h>
+      <h>72</h>
     </coordinates>
     <panel_attributes>Membre
 --
-- Prenom:String
-- Nom:String
-- NomUtilisateur:String
-- MotPasse:String
-- Ville:String
-- CodePostal:String
-- Courriel:String
-- Admin: Bool
-- arrierePlan: Image
+- Infos: SInfo(membre)
 --
 </panel_attributes>
     <additional_attributes/>
@@ -34,6 +26,7 @@
     </coordinates>
     <panel_attributes>Message
 --
+- Destinateur: String
 - Objet:String
 - Message:String
 --</panel_attributes>
@@ -57,24 +50,13 @@
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>306</x>
-      <y>441</y>
+      <y>423</y>
       <w>360</w>
-      <h>216</h>
+      <h>135</h>
     </coordinates>
     <panel_attributes>Fiche
 --
-- Annee:Date
-- NomJoueur:String
-- PrenomJoueur:String
-- NumeroJoeur:String
-- Recrue:Bool
-- Position:String
-- Numerotation:String
-- Valeur: Float
-- Etat:{impeccable, bonne, moyenne, passable, piètre}
-- ImageDevant:Image
-- ImageArriere:Image
-- PublicationSurSite: Date
+Infos: SInfo(fiche)
 --
  </panel_attributes>
     <additional_attributes/>
@@ -82,13 +64,14 @@
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>9</x>
-      <y>549</y>
+      <x>18</x>
+      <y>432</y>
       <w>144</w>
-      <h>63</h>
+      <h>72</h>
     </coordinates>
     <panel_attributes>Commentaire
 --
+Destinateur: String
 Message:String
 --
  </panel_attributes>
@@ -113,16 +96,16 @@ m2=1
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>423</x>
-      <y>144</y>
+      <y>99</y>
       <w>98</w>
-      <h>125</h>
+      <h>170</h>
     </coordinates>
     <panel_attributes>lt=-&gt;&gt;&gt;&gt;
 m1=    0..4
 
 m2= 1 
 Possède</panel_attributes>
-    <additional_attributes>54;108;54;27</additional_attributes>
+    <additional_attributes>54;153;54;27</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
@@ -130,27 +113,27 @@ Possède</panel_attributes>
       <x>423</x>
       <y>288</y>
       <w>98</w>
-      <h>170</h>
+      <h>152</h>
     </coordinates>
     <panel_attributes>lt=-&lt;&lt;&lt;&lt;
 m1=  1
 m2=    0..*
 Contient</panel_attributes>
-    <additional_attributes>54;27;54;153</additional_attributes>
+    <additional_attributes>54;27;54;135</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>126</x>
-      <y>540</y>
-      <w>197</w>
+      <x>135</x>
+      <y>423</y>
+      <w>188</w>
       <h>63</h>
     </coordinates>
     <panel_attributes>lt=-&gt;&gt;&gt;&gt;
 m1=0..*
 m2=1
 Possède</panel_attributes>
-    <additional_attributes>27;45;180;45</additional_attributes>
+    <additional_attributes>27;45;171;45</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
@@ -170,16 +153,16 @@ Reçoie&gt;</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>63</x>
-      <y>144</y>
-      <w>296</w>
-      <h>422</h>
+      <x>72</x>
+      <y>99</y>
+      <w>287</w>
+      <h>350</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=0..*
 m2=1
 Emet</panel_attributes>
-    <additional_attributes>27;405;279;27</additional_attributes>
+    <additional_attributes>27;333;270;27</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
@@ -199,7 +182,7 @@ Nom: String
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>810</x>
-      <y>567</y>
+      <y>522</y>
       <w>99</w>
       <h>54</h>
     </coordinates>
@@ -227,7 +210,7 @@ est éditée par</panel_attributes>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>639</x>
-      <y>549</y>
+      <y>495</y>
       <w>188</w>
       <h>63</h>
     </coordinates>
@@ -236,5 +219,83 @@ m1=0..*
 m2=1
 est membre</panel_attributes>
     <additional_attributes>27;45;171;45</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>765</x>
+      <y>27</y>
+      <w>333</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>SInfoM
+--
+- Type: {fiche, membre}
+- Prenom:String
+- Nom:String
+- NomUtilisateur:String
+- MotPasse:String
+- Ville:String
+- CodePostal:String
+- Courriel:String
+- Admin: Bool
+- arrierePlan: Image
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>585</x>
+      <y>63</y>
+      <w>197</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=-&lt;&lt;&lt;&lt;
+m1=1
+m2=1
+</panel_attributes>
+    <additional_attributes>27;27;180;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>765</x>
+      <y>225</y>
+      <w>333</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>SInfoF
+--
+- Annee:Date
+- NomJoueur:String
+- PrenomJoueur:String
+- NumeroJoeur:String
+- Recrue:Bool
+- Position:String
+- Numerotation:String
+- Valeur: Float
+- Etat:{impeccable, bonne, moyenne, passable, piètre}
+- ImageDevant:Image
+- ImageArriere:Image
+- PublicationSurSite: Date
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>639</x>
+      <y>405</y>
+      <w>143</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=-&lt;&lt;&lt;&lt;
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>27;27;126;27</additional_attributes>
   </element>
 </diagram>

@@ -23,7 +23,7 @@
     <panel_attributes>«dialog»
 membre
 --
- 
+infos: SInfoM
 --
 modifierInfos(infos): bool
 bg=light_gray</panel_attributes>
@@ -73,19 +73,12 @@ modifierInfos(infos): bool</panel_attributes>
       <x>810</x>
       <y>315</y>
       <w>162</w>
-      <h>180</h>
+      <h>81</h>
     </coordinates>
     <panel_attributes>«entity»
 Membre
 --
-Prenom:String
-Nom:String
-NomUtilisateur:String
-MotPasse:String
-Ville:String
-CodePostal:String
-Courriel:String
-Admin: Bool
+infos: SInfoM
 --
 bg=gray</panel_attributes>
     <additional_attributes/>

@@ -4,7 +4,7 @@
   <element>
     <type>com.umlet.element.Actor</type>
     <coordinates>
-      <x>0</x>
+      <x>144</x>
       <y>324</y>
       <w>90</w>
       <h>108</h>
@@ -15,7 +15,7 @@
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>189</x>
+      <x>333</x>
       <y>315</y>
       <w>225</w>
       <h>135</h>
@@ -24,6 +24,7 @@
 membre
 --
 fiche[]: Fiche
+infos: SInfoF
 --
 recupererFiche(collection): fiche[]
 supprimerFiche(fiche, collection): bool
@@ -35,7 +36,7 @@ bg=light_gray</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>45</x>
+      <x>189</x>
       <y>333</y>
       <w>161</w>
       <h>44</h>
@@ -46,7 +47,7 @@ bg=light_gray</panel_attributes>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>513</x>
+      <x>657</x>
       <y>315</y>
       <w>216</w>
       <h>126</h>
@@ -65,7 +66,7 @@ ajouterFiche(infos, collection): bool</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>387</x>
+      <x>531</x>
       <y>333</y>
       <w>143</w>
       <h>44</h>
@@ -76,8 +77,8 @@ ajouterFiche(infos, collection): bool</panel_attributes>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>810</x>
-      <y>315</y>
+      <x>954</x>
+      <y>468</y>
       <w>270</w>
       <h>72</h>
     </coordinates>
@@ -90,38 +91,17 @@ bg=gray</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>702</x>
-      <y>333</y>
-      <w>125</w>
-      <h>44</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>27;27;108;27</additional_attributes>
-  </element>
-  <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>810</x>
-      <y>459</y>
+      <x>954</x>
+      <y>657</y>
       <w>297</w>
-      <h>225</h>
+      <h>72</h>
     </coordinates>
     <panel_attributes>«entity»
 Fiche
 --
-Annee:Date
-NomJoueur:String
-PrenomJoueur:String
-NumeroJoeur:String
-Recrue:Bool
-Position:String
-Numerotation:String
-Valeur: Float
-Etat:{impeccable, bonne, moyenne, passable, piètre}
-ImageDevant:Image
-ImageArriere:Image
+infos: SInfoF
 --
 bg=gray</panel_attributes>
     <additional_attributes/>
@@ -129,12 +109,50 @@ bg=gray</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>909</x>
-      <y>360</y>
+      <x>1053</x>
+      <y>513</y>
       <w>44</w>
-      <h>116</h>
+      <h>161</h>
     </coordinates>
     <panel_attributes>lt=-&lt;&lt;&lt;&lt;</panel_attributes>
-    <additional_attributes>27;27;27;99</additional_attributes>
+    <additional_attributes>27;27;27;144</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>954</x>
+      <y>342</y>
+      <w>270</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>«entity»
+Membre
+--
+ 
+--
+bg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1053</x>
+      <y>387</y>
+      <w>44</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=-&lt;&lt;&lt;&lt;</panel_attributes>
+    <additional_attributes>27;27;27;81</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>846</x>
+      <y>342</y>
+      <w>125</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>27;27;108;27</additional_attributes>
   </element>
 </diagram>
