@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="11.5.1">
+<diagram program="umlet" version="11.3">
   <zoom_level>8</zoom_level>
   <element>
     <type>com.umlet.element.Actor</type>
@@ -21,13 +21,13 @@
       <h>88</h>
     </coordinates>
     <panel_attributes>«dialog»
-inscription
+Inscription
 --
- InfoM:SInfoM
- VMotPasse:String
+infoM:SInfoM
+vMotPasse:String
 --
- ValiderMotDePasse(SInfoM.MotPasse, VMotPasse): bool
- ValiderInscription(SInfoM):bool
+validerMotDePasse(SInfoM.MotPasse, VMotPasse): bool
+validerInscription(SInfoM):bool
 
 bg=light_gray</panel_attributes>
     <additional_attributes/>
@@ -52,11 +52,11 @@ bg=light_gray</panel_attributes>
       <h>80</h>
     </coordinates>
     <panel_attributes>«control»
-inscriptions
+Inscription
 --
  
 --
-ValiderInscription(SInfoM):bool</panel_attributes>
+validerInscription(SInfoM):bool</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -89,7 +89,7 @@ ValiderInscription(SInfoM):bool</panel_attributes>
       <w>144</w>
       <h>72</h>
     </coordinates>
-    <panel_attributes>«entity»
+    <panel_attributes>«partial entity»
 Membre
 --
 InfoM:SInfoM

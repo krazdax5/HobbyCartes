@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="11.5.1">
+<diagram program="umlet" version="11.3">
   <zoom_level>9</zoom_level>
   <element>
     <type>com.umlet.element.Actor</type>
@@ -9,7 +9,7 @@
       <w>90</w>
       <h>108</h>
     </coordinates>
-    <panel_attributes>membre</panel_attributes>
+    <panel_attributes>Membre</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -20,8 +20,8 @@
       <w>288</w>
       <h>117</h>
     </coordinates>
-    <panel_attributes>«dialog»
-membre
+    <panel_attributes>«partial dialog»
+Membre
 --
 destinateur: String
 objet: String
@@ -50,8 +50,8 @@ bg=light_gray</panel_attributes>
       <w>297</w>
       <h>81</h>
     </coordinates>
-    <panel_attributes>«control»
-membre
+    <panel_attributes>«partial control»
+Membre
 --
  
 --
@@ -77,7 +77,7 @@ envoyerMessage(message, objet, destinateur): void</panel_attributes>
       <w>162</w>
       <h>72</h>
     </coordinates>
-    <panel_attributes>«entity»
+    <panel_attributes>«partial entity»
 Membre
 --
  
@@ -104,10 +104,10 @@ bg=gray</panel_attributes>
       <w>279</w>
       <h>108</h>
     </coordinates>
-    <panel_attributes>«entity»
+    <panel_attributes>«partial entity»
 Message
 --
-Destinateur: String
+destinateur: String
 objet: String
 message: String
 --

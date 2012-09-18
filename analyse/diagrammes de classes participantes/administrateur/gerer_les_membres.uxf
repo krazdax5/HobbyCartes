@@ -21,7 +21,7 @@
       <h>104</h>
     </coordinates>
     <panel_attributes>«dialog»
-administration
+Administration
 --
 membres : Membre[]
 --
@@ -38,7 +38,7 @@ bg=light_gray</panel_attributes>
       <h>80</h>
     </coordinates>
     <panel_attributes>«control»
-administration
+Administration
 --
  
 --

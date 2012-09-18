@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="11.5.1">
+<diagram program="umlet" version="11.3">
   <zoom_level>8</zoom_level>
   <element>
     <type>com.umlet.element.Actor</type>
     <coordinates>
-      <x>8</x>
+      <x>32</x>
       <y>328</y>
       <w>80</w>
       <h>96</h>
@@ -15,19 +15,19 @@
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>144</x>
+      <x>168</x>
       <y>256</y>
       <w>224</w>
       <h>168</h>
     </coordinates>
     <panel_attributes>«dialog»
-recherche
+Recherche
 --
-motCle: String
-resultatM[]: membre
-resultatF[]: fiche
+motCle : String
+resultatM : Membre[]
+resultatF : Fiche[]
 --
-recherche(motCle): fiche[], membre[]
+recherche(motCle): Fiche[], Membre[]
 afficherResultat(fiches, membres): void
 pageSuivante(): void
 pagePrecedente(): void
@@ -39,29 +39,29 @@ bg=light_gray</panel_attributes>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>480</x>
+      <x>504</x>
       <y>296</y>
       <w>200</w>
       <h>80</h>
     </coordinates>
     <panel_attributes>«control»
-recherche
+Recherche
 --
  
 --
-recherche(motCle): membre[], fiche[]
+recherche(motCle): Membre[], fFche[]
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>896</x>
-      <y>344</y>
+      <x>920</x>
+      <y>368</y>
       <w>280</w>
       <h>64</h>
     </coordinates>
-    <panel_attributes>«entity»
+    <panel_attributes>«partial entity»
 Fiche
 --
 InfoF:SInfoF
@@ -72,12 +72,12 @@ bg=gray</panel_attributes>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>952</x>
+      <x>976</x>
       <y>216</y>
       <w>144</w>
       <h>104</h>
     </coordinates>
-    <panel_attributes>«entity»
+    <panel_attributes>«partial entity»
 Membre
 --
 InfoM:SInfoM
@@ -88,7 +88,7 @@ bg=gray</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>344</x>
+      <x>368</x>
       <y>328</y>
       <w>152</w>
       <h>40</h>
@@ -99,7 +99,7 @@ bg=gray</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>656</x>
+      <x>680</x>
       <y>256</y>
       <w>312</w>
       <h>104</h>
@@ -110,18 +110,18 @@ bg=gray</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>656</x>
+      <x>680</x>
       <y>328</y>
       <w>256</w>
-      <h>72</h>
+      <h>96</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>24;24;240;56</additional_attributes>
+    <additional_attributes>24;24;240;80</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>40</x>
+      <x>64</x>
       <y>336</y>
       <w>120</w>
       <h>40</h>

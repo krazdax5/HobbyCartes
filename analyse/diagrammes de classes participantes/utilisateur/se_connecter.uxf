@@ -76,7 +76,7 @@ connexion(nomUtilisateur, motDePasse) : bool</panel_attributes>
       <w>144</w>
       <h>81</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;entity&gt;&gt;
+    <panel_attributes>&lt;&lt;partial entity&gt;&gt;
 Membre
 --
 info : sInfoM

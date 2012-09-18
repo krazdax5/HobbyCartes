@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="11.5.1">
+<diagram program="umlet" version="11.3">
   <zoom_level>8</zoom_level>
   <element>
     <type>com.umlet.element.Actor</type>
@@ -21,7 +21,7 @@
       <h>104</h>
     </coordinates>
     <panel_attributes>«dialog»
-fil_fiches
+Fil_fiches
 --
 resultat[]: fiche
 --
@@ -40,7 +40,7 @@ bg=light_gray</panel_attributes>
       <h>80</h>
     </coordinates>
     <panel_attributes>«control»
-fil_fiches
+Fil_fiches
 --
  
 --
@@ -67,7 +67,7 @@ AfficherFiche(Fiche):void</panel_attributes>
       <w>280</w>
       <h>64</h>
     </coordinates>
-    <panel_attributes>«entity»
+    <panel_attributes>«partial entity»
 Fiche
 --
 InfoF:SInfoF
@@ -83,7 +83,7 @@ bg=gray</panel_attributes>
       <w>240</w>
       <h>64</h>
     </coordinates>
-    <panel_attributes>«entity»
+    <panel_attributes>«partial entity»
 Collection
 --
 Type:{Hockey, Football, Basketball, Baseball}
@@ -99,14 +99,14 @@ bg=gray</panel_attributes>
       <w>232</w>
       <h>96</h>
     </coordinates>
-    <panel_attributes>«dialog»
-membre
+    <panel_attributes>«partial dialog»
+Membre
 --
-collectionEnCours: collection
+collectionEnCours: Collection
 --
-afficherCollection(collectionEnCours): fiches
+afficherCollection(collectionEnCours): Fiche[]
 afficherFiche(fiche): void
-changerCollection(nomCollection): collection
+changerCollection(nomCollection): Collection
 bg=light_gray</panel_attributes>
     <additional_attributes/>
   </element>
@@ -118,7 +118,7 @@ bg=light_gray</panel_attributes>
       <w>144</w>
       <h>64</h>
     </coordinates>
-    <panel_attributes>«entity»
+    <panel_attributes>«partial entity»
 Membre
 --
  
@@ -134,13 +134,13 @@ bg=gray</panel_attributes>
       <w>248</w>
       <h>96</h>
     </coordinates>
-    <panel_attributes>«control»
-membre
+    <panel_attributes>«partial control»
+Membre
 --
  
 --
-retrouverCollection(nomCollection): collection
-retrouverFiches(collection): fiche[]
+retrouverCollection(nomCollection): Collection
+retrouverFiches(collection): Fiche[]
 AfficherFiche(Fiche):void
 </panel_attributes>
     <additional_attributes/>
@@ -197,12 +197,12 @@ AfficherFiche(Fiche):void
       <w>200</w>
       <h>80</h>
     </coordinates>
-    <panel_attributes>«control»
-fiche
+    <panel_attributes>«partial control»
+Fiche
 --
  
 --
-recupererInfos(): infos
+recupererInfos(): SInfoF
 partager(fiche): void</panel_attributes>
     <additional_attributes/>
   </element>
@@ -247,13 +247,13 @@ partager(fiche): void</panel_attributes>
       <w>152</w>
       <h>120</h>
     </coordinates>
-    <panel_attributes>«dialog»
-fiche
+    <panel_attributes>«partial dialog»
+Fiche
 --
  
 --
 partager(fiche): void
-recupererInfos(): infos
+recupererInfos(): SInfoF
 afficherInfos(infos): void
 
 bg=light_gray</panel_attributes>
@@ -267,11 +267,11 @@ bg=light_gray</panel_attributes>
       <w>240</w>
       <h>80</h>
     </coordinates>
-    <panel_attributes>«entity»
+    <panel_attributes>«partial entity»
 Commentaire
 --
- Message:String
- Destinateur: String
+Message:String
+Destinateur: String
 --
 bg=gray</panel_attributes>
     <additional_attributes/>
@@ -284,10 +284,10 @@ bg=gray</panel_attributes>
       <w>240</w>
       <h>64</h>
     </coordinates>
-    <panel_attributes>«entity»
+    <panel_attributes>«partial entity»
 Editeur
 --
- Nom:String
+Nom:String
 --
 bg=gray</panel_attributes>
     <additional_attributes/>
@@ -311,10 +311,10 @@ bg=gray</panel_attributes>
       <w>240</w>
       <h>64</h>
     </coordinates>
-    <panel_attributes>«entity»
+    <panel_attributes>«partial entity»
 Equipe
 --
- Nom:String
+Nom:String
 --
 bg=gray</panel_attributes>
     <additional_attributes/>

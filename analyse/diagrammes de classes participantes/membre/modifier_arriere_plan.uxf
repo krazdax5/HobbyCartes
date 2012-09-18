@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="11.5.1">
+<diagram program="umlet" version="11.3">
   <zoom_level>9</zoom_level>
   <element>
     <type>com.umlet.element.Actor</type>
     <coordinates>
-      <x>0</x>
-      <y>342</y>
+      <x>126</x>
+      <y>306</y>
       <w>90</w>
       <h>108</h>
     </coordinates>
-    <panel_attributes>membre</panel_attributes>
+    <panel_attributes>Membre</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>171</x>
-      <y>333</y>
+      <x>297</x>
+      <y>297</y>
       <w>189</w>
       <h>108</h>
     </coordinates>
-    <panel_attributes>«dialog»
-accueil
+    <panel_attributes>«partial dialog»
+Membre
 --
 image: Image
 --
-modifArrierePlan(Image): void
+modifArrierePlan(image): void
 bg=light_gray</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>45</x>
-      <y>351</y>
+      <x>171</x>
+      <y>315</y>
       <w>143</w>
       <h>44</h>
     </coordinates>
@@ -43,24 +43,24 @@ bg=light_gray</panel_attributes>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>441</x>
-      <y>333</y>
+      <x>567</x>
+      <y>297</y>
       <w>189</w>
       <h>81</h>
     </coordinates>
-    <panel_attributes>«control»
-membre
+    <panel_attributes>«partial control»
+Membre
 --
  
 --
-modifArrierePlan(Image): void</panel_attributes>
+modifArrierePlan(image): void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>333</x>
-      <y>351</y>
+      <x>459</x>
+      <y>315</y>
       <w>125</w>
       <h>44</h>
     </coordinates>
@@ -70,12 +70,12 @@ modifArrierePlan(Image): void</panel_attributes>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>711</x>
-      <y>333</y>
+      <x>837</x>
+      <y>297</y>
       <w>162</w>
       <h>72</h>
     </coordinates>
-    <panel_attributes>«entity»
+    <panel_attributes>«partial entity»
 Membre
 --
 infos: SInfoM
@@ -86,8 +86,8 @@ bg=gray</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>603</x>
-      <y>351</y>
+      <x>729</x>
+      <y>315</y>
       <w>125</w>
       <h>44</h>
     </coordinates>
