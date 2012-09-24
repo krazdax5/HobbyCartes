@@ -7,20 +7,18 @@
     <title>Hobby Cartes</title>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form" runat="server">
     <div id="contenu">
         <a href="/" id="entete">
             <img alt="Hobby-Cartes" src="img/titre.png" />
         </a>
-        <div id="menu" >
-            <ul>
-                <li><a href="Connexion.aspx" runat="server">Connexion</a></li>
-                <li><a href="Inscription.aspx" runat="server">Inscription</a></li>
-                <li><a href="Recherche.aspx" runat="server">Recherche</a></li>
-                <li><a href="FilFiches.aspx" runat="server">Fil des fiches</a></li>
-                <li><a href="Administration.aspx" runat="server">Administration</a></li>
-            </ul>
-        </div>
+        <ul id="menu">
+            <li><a href="Connexion.aspx" runat="server">Connexion</a></li>
+            <li><a href="Inscription.aspx" runat="server">Inscription</a></li>
+            <li><a href="Recherche.aspx" runat="server">Recherche</a></li>
+            <li><a href="FilFiches.aspx" runat="server">Fil des fiches</a></li>
+            <li><a href="Administration.aspx" runat="server">Administration</a></li>
+        </ul>
         <div id="corps">
             <asp:ContentPlaceHolder ID="cphCorps" runat="server" />
         </div>

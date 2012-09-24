@@ -1,82 +1,4 @@
-﻿*
-{ 
-    margin: 0;
-    padding: 0;
-}
-
-body
-{
-    font: normal .80em arial, sans-serif;
-    background: #777;
-    color: #FFF;
-}
-
-p
-{ 
-    padding: 0 0 20px 0;
-    line-height: 1.7em;
-}
-  
-img
-{ 
-    border: 0;
-}
-
-h1, h2, h3, h4, h5, h6 
-{ 
-    font: bold 175% arial, sans-serif;
-    color: #FF2335;
-    margin: 5px;
-    padding: 15px;
-}
-
-h2
-{ 
-    font: bold 165% arial, sans-serif;
-}
-
-h3
-{ 
-    font: bold 125% arial, sans-serif;
-    padding: 0 0 5px 0;
-}
-
-h4, h5, h6
-{ 
-    margin: 0;
-    padding: 0 0 5px 0;
-    font: bold 110% arial, sans-serif;
-    line-height: 1.5em;
-}
-
-h5, h6
-{ 
-    font: italic 95% arial, sans-serif;
-    color: #1D1D1D;
-    padding-bottom: 15px;
-}
-
-h6
-{ 
-    color: #362C20;
-}
-
-a, a:hover
-{ 
-    background: transparent;
-    outline: none;
-    text-decoration: underline;
-    color: #5D5DD5;
-}
-
-a:hover
-{ 
-    text-decoration: underline;
-    color: #1D1DF5;
-}
-
-
-#contenu
+﻿#contenu
 {
     margin-left: auto; 
     margin-right: auto;
@@ -85,7 +7,7 @@ a:hover
     background: #404040;
 }
 
-#entete
+#contenu #entete
 {
     display: block;
     width: 1000px;
@@ -95,8 +17,10 @@ a:hover
     text-align: center;
 }
 
-#menu
+#contenu #menu
 {
+    padding:0px;
+    margin: 0px;
     margin-left : 20px;
     margin-right : 20px;
     height: 50px;
@@ -105,14 +29,7 @@ a:hover
     background: #C0C0C0;
 }
 
-#menu ul
-{
-    height: 50px;
-    padding:0px;
-    margin: 0px;
-}
-
-#menu ul li
+#contenu #menu li
 {
     display : block;
     height: 50px;
@@ -122,7 +39,7 @@ a:hover
     list-style: none;
 }
 
-#menu ul li a
+#contenu #menu li a
 {
     font: normal 120% arial, sans-serif;
     text-decoration: none;
@@ -136,12 +53,12 @@ a:hover
     padding-right : 20px;
 }
 
-#menu li a:hover, #menu li a:active, #menu li a:visited
+#contenu #menu li a:hover, #contenu #menu li a:active, #contenu #menu li a:visited
 {
     border: none;
 }
 
-#corps
+#contenu #corps
 {
     clear:left;
     text-align: left;
@@ -153,7 +70,7 @@ a:hover
     padding-bottom : 20px;
 }
 
-#piedpage
+#contenu #piedpage
 { 
     font: bold 100% arial, sans-serif;
     height: 45px;

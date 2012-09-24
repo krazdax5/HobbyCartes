@@ -92,6 +92,7 @@
     <Content Include="App_Themes\MainTheme\connexion.css" />
     <Content Include="App_Themes\MainTheme\fiche.css" />
     <Content Include="App_Themes\MainTheme\filFiches.css" />
+    <Content Include="App_Themes\MainTheme\global.css" />
     <Content Include="App_Themes\MainTheme\inscription.css" />
     <Content Include="App_Themes\MainTheme\recherche.css" />
     <Content Include="Connexion.aspx" />
