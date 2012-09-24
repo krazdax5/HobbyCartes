@@ -13,12 +13,12 @@
     border : 1px solid white;
 }
 
-#administration #membres .colonne1
+#administration #membres .membre
 {
     width : 650px;
 }
 
-#administration #membres .colonne2
+#administration #membres .checkbox
 {
     width : 100px;
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" MasterPageFile="~/HobbyCartes.Master" %>
+﻿<%@ Page Language="vb" MasterPageFile="~/HobbyCartes.master" %>
 
 <asp:Content ContentPlaceHolderID="cphCorps" runat="server">
     <div id="default">
