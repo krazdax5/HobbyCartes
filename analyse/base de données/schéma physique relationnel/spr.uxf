@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="11.5.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>70</x>
+      <y>50</y>
+      <w>150</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Message
+--
+IDMess (CP)
+IDDestinataire(CE)
+IDDestinateur(CE)
+Objet
+Mess</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>260</x>
+      <y>50</y>
+      <w>150</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>Membre
+--
+IDMembre(CP)
+Prenom
+Nom
+NomUtilisateur
+MotPasse
+Ville
+CodePostal
+Courriel
+Admin
+ArrierePlan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>260</x>
+      <y>270</y>
+      <w>150</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Collection
+--
+IDCollection(CP)
+IDMembre(CE)
+Type</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>260</x>
+      <y>380</y>
+      <w>150</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>Fiche
+--
+IDFiche(CP)
+IDCollection(CE)
+IDEditeur(CE)
+IDEquipe(CE)
+Annee
+NomJoueur
+PrenomJoueur
+NoJoueur
+Recrue
+Position
+Numerotation
+Valeur
+Etat
+ImageDevant
+ImageDerriere
+PublicationSurSite</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>450</x>
+      <y>380</y>
+      <w>150</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Editeur
+--
+IDEditeur(CP)
+Nom</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>450</x>
+      <y>480</y>
+      <w>150</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Equipe
+--
+IDEquipe(CP)
+Nom</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>70</x>
+      <y>380</y>
+      <w>150</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Commentaire
+--
+IDCommentaire(CP)
+IDFiche(CE)
+Destinateur
+Message</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
