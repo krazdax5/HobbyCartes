@@ -1,10 +1,10 @@
-DROP TABLE message;
-DROP TABLE commentaire;
-DROP TABLE fiche;
-DROP TABLE editeur;
-DROP TABLE equipe;
-DROP TABLE collection;
-DROP TABLE membre;
+DROP TABLE IF EXISTS message;
+DROP TABLE IF EXISTS commentaire;
+DROP TABLE IF EXISTS fiche;
+DROP TABLE IF EXISTS editeur;
+DROP TABLE IF EXISTS equipe;
+DROP TABLE IF EXISTS collection;
+DROP TABLE IF EXISTS membre;
 
 CREATE TABLE membre(
 	idmembre INTEGER PRIMARY KEY AUTO_INCREMENT,
@@ -77,13 +77,15 @@ CREATE TABLE commentaire(
 );
 
 INSERT INTO membre (prenom, nom, nomutilisateur, motpasse, ville, codepostal, courriel) 
+VALUES ('Homer', 'Simpson', 'hsimpson', 'hsimpson123', 'Springfield', 'X0X0X0', 'hsimpson@test.com');
+INSERT INTO membre (prenom, nom, nomutilisateur, motpasse, ville, codepostal, courriel) 
 VALUES ('Jean-François', 'Collin', 'jfcollin', 'jfcollin123','Lévis','G1Q1Q9', 'jfcollin@test.com');
 INSERT INTO membre (prenom, nom, nomutilisateur, motpasse, ville, codepostal, courriel) 
 VALUES ('Loïc', 'Vial', 'lvial', 'lvial123','Lévis','G1Q1Q9', 'lvial@test.com');
 INSERT INTO membre (prenom, nom, nomutilisateur, motpasse, ville, codepostal, courriel) 
 VALUES ('Charles', 'Lesveque', 'clevesquen', 'clevesque123','Lévis','G1Q1Q9', 'clesveque@test.com');
 INSERT INTO membre (prenom, nom, nomutilisateur, motpasse, ville, codepostal, courriel, admin) 
-VALUES ('Admin', 'Nistrateur', 'admin', 'admin123','Lévis','G1Q1Q9', 'admin@test.com', '1');
+VALUES ('Admin', 'Nistrateur', 'admin', 'admin123','Lévis','G1Q1Q9', 'admin@test.com', TRUE);
 
 INSERT INTO collection (idmembre, type) VALUES (1, 'hockey');
 INSERT INTO collection (idmembre, type) VALUES (2, 'baseball');
@@ -96,11 +98,9 @@ INSERT INTO equipe (nom) VALUES ('Flyers');
 INSERT INTO equipe (nom) VALUES ('Canadiens');
 INSERT INTO equipe (nom) VALUES ('Hurricane');
 
-
 INSERT INTO editeur (nom) VALUES ('Upper Deck');
 INSERT INTO editeur (nom) VALUES ('Score');
 INSERT INTO editeur (nom) VALUES ('Pinnacle');
-
 
 INSERT INTO fiche (idcollection, idediteur, idequipe, annee, nomjoueur, prenomjoueur, nojoueur, recrue, position, 
 valeur, etat, imagedevant, imagederriere, publicationsursite) 
@@ -150,15 +150,14 @@ VALUES ('2','3', '3','1997-01-01','Dany','Lamarre','18','0','Centre', '125.00','
 INSERT INTO commentaire (idfiche,destinateur, message) VALUES ('1','jfcollin','Ceci est un test');
 INSERT INTO commentaire (idfiche,destinateur, message) VALUES ('3','clevesque','Ceci est un autre test');
 INSERT INTO commentaire (idfiche,destinateur, message) VALUES ('2','jfcollin','Ceci est un autre autre test');
-INSERT INTO commentaire (idfiche,destinateur, message) VALUES ('1','lvial','assez les test');
+INSERT INTO commentaire (idfiche,destinateur, message) VALUES ('1','lvial','Assez les tests !');
 
-
-INSERT INTO message (iddestinataire, iddestinateur, objet, mess) VALUES ('1','2','Belles cartes',
-'Mon dieu que tu as de belle cartes!');
-INSERT INTO message (iddestinataire, iddestinateur, objet, mess) VALUES ('2','3','Wow',
-'Que de belles cartes je suis sans mot!');
-INSERT INTO message (iddestinataire, iddestinateur, objet, mess) VALUES ('3','1','Ouf',
-'Tes cartes sont vraiment de la merde!');
+INSERT INTO message (iddestinataire, iddestinateur, objet, mess) 
+VALUES ('1','2','Belles cartes', 'Mon dieu que tu as de belles cartes!');
+INSERT INTO message (iddestinataire, iddestinateur, objet, mess)
+VALUES ('2','3','Wow', 'Que de belles cartes je suis sans mot!');
+INSERT INTO message (iddestinataire, iddestinateur, objet, mess)
+VALUES ('3','1','Ouf', 'Tes cartes sont vraiment de la merde!');
 
 
 
