@@ -111,6 +111,7 @@
     <Content Include="MembreInfo.aspx" />
     <Content Include="App_Themes\MainTheme\membre.css" />
     <Content Include="MembreListeCartes.aspx" />
+    <Content Include="MembreVisualiserMessages.aspx" />
     <Content Include="Recherche.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -183,6 +184,13 @@
     </Compile>
     <Compile Include="MembreListeCartes.aspx.vb">
       <DependentUpon>MembreListeCartes.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="MembreVisualiserMessages.aspx.designer.vb">
+      <DependentUpon>MembreVisualiserMessages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MembreVisualiserMessages.aspx.vb">
+      <DependentUpon>MembreVisualiserMessages.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
