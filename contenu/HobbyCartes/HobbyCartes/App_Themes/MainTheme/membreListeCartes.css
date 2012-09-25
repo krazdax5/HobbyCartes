@@ -1,0 +1,28 @@
+﻿#membre #membre_contenu .item_sport
+{
+   border : 1px solid white;
+   float : right;
+   padding : 20px;
+   padding-left : 40px;
+   padding-right : 40px;
+}
+
+#membre #membre_contenu #liste_cartes
+{
+    clear : right;
+}
+
+#membre #membre_contenu #liste_cartes .carte
+{
+   border : 1px solid white;
+   padding : 20px;
+   clear : right;
+   height : 140px;
+}
+
+#membre #membre_contenu #liste_cartes .carte img
+{
+    height : 140px;
+    width : 100px;
+    float : right;
+}

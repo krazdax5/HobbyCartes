@@ -1,6 +1,6 @@
-﻿<%@ Page Language="vb" MasterPageFile="~/Membre.master" CodeBehind="MembreListeCartes.aspx.vb" Inherits="HobbyCartes.MembreListeCartes" %>
+﻿<%@ Page MasterPageFile="~/Membre.master" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="cphPageMembreContenu" runat="server">
+<asp:Content ContentPlaceHolderID="cphPageMembreContenu" runat="server">
     <div class="item_sport">
         Hockey
     </div>

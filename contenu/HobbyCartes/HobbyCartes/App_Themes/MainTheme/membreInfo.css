@@ -1,0 +1,25 @@
+﻿#membre #membre_contenu #info #entete img
+{
+    width : 100px;
+    height : 100px;
+    float : left;
+    display : block;
+}
+
+#membre #membre_contenu #info #entete #btnMessage
+{
+   float : right;
+}
+
+#membre #membre_contenu #info #entete #nom
+{
+    font-size : 250%;
+    text-align : center;
+    margin-right : 200px;
+    margin-left : 200px;
+}
+
+#membre #membre_contenu #info #description
+{
+    margin-top : 100px;
+}

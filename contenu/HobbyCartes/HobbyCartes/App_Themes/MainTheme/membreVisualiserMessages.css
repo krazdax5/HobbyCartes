@@ -1,0 +1,17 @@
+﻿#membre #membre_contenu #visualiser_messages .message
+{
+    border : 1px solid white;
+    padding : 12px;
+    margin : 5px;
+}
+
+#membre #membre_contenu #visualiser_messages .message .boxSuppr
+{
+    float : right;
+}
+
+#membre #membre_contenu #visualiser_messages #btnSuppr
+{
+    float : right;
+    margin : 10px;
+}

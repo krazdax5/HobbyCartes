@@ -94,6 +94,10 @@
     <Content Include="App_Themes\MainTheme\filFiches.css" />
     <Content Include="App_Themes\MainTheme\global.css" />
     <Content Include="App_Themes\MainTheme\inscription.css" />
+    <Content Include="App_Themes\MainTheme\membreEnvoiMessage.css" />
+    <Content Include="App_Themes\MainTheme\membreInfo.css" />
+    <Content Include="App_Themes\MainTheme\membreListeCartes.css" />
+    <Content Include="App_Themes\MainTheme\membreVisualiserMessages.css" />
     <Content Include="App_Themes\MainTheme\recherche.css" />
     <Content Include="Connexion.aspx" />
     <Content Include="Default.aspx" />
