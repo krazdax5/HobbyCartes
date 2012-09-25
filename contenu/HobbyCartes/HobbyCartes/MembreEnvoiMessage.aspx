@@ -1,4 +1,4 @@
-﻿<%@ Page MasterPageFile="~/Membre.master" %>
+﻿<%@ Page MasterPageFile="~/Membre.master" Inherits="HobbyCartes.MembreEnvoiMessage" CodeBehind="~/MembreEnvoiMessage.aspx.vb" %>
 
 <asp:Content ContentPlaceHolderID="cphPageMembreContenu" runat="server">
     <div id="membreEnvoiMessage">
@@ -10,8 +10,8 @@
             Contenu : <br />
             <asp:TextBox ID="txtContenu" TextMode="MultiLine" Rows="20" Columns="80" runat="server" />
         </p>
-        <p id="btnEnvoyer">
-            <asp:Button runat="server" text="Envoyer" />
+        <p>
+            <asp:Button runat="server" id="btnEnvoyer" text="Envoyer" />
         </p>
     </div>
 </asp:Content>

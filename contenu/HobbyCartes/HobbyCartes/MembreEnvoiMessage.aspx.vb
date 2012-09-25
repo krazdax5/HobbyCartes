@@ -5,4 +5,7 @@
 
     End Sub
 
+    Protected Sub btnEnvoyer_Click() Handles btnEnvoyer.Click
+
+    End Sub
 End Class
