@@ -23,9 +23,18 @@
         Private collections As Dictionary(Of Collection.Type, Collection)
 
         ''' <summary>
-        ''' Construit un membre avec son nom d'utilisateur
+        ''' Constructeur par defaut.
         ''' </summary>
-        Public Sub New(nomUtilisateur As String)
+        Public Sub New()
+            prenom = "Homer"
+            nom = "Simpson"
+            nomUtilisateur = "hsimpson"
+        End Sub
+
+        ''' <summary>
+        ''' Construit un membre avec son id dans la base de donnees
+        ''' </summary>
+        Public Sub New(id As Integer)
             ' TODO
         End Sub
 
