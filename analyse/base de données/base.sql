@@ -95,12 +95,12 @@ INSERT INTO equipe (nom) VALUES ('Bruins');
 INSERT INTO equipe (nom) VALUES ('Flyers');
 INSERT INTO equipe (nom) VALUES ('Canadiens');
 INSERT INTO equipe (nom) VALUES ('Hurricane');
-SELECT * FROM equipe;
+
 
 INSERT INTO editeur (nom) VALUES ('Upper Deck');
 INSERT INTO editeur (nom) VALUES ('Score');
 INSERT INTO editeur (nom) VALUES ('Pinnacle');
-SELECT * FROM editeur;
+
 
 INSERT INTO fiche (idcollection, idediteur, idequipe, annee, nomjoueur, prenomjoueur, nojoueur, recrue, position, 
 valeur, etat, imagedevant, imagederriere, publicationsursite) 
@@ -122,7 +122,30 @@ INSERT INTO fiche (idcollection, idediteur, idequipe, annee, nomjoueur, prenomjo
 valeur, etat, imagedevant, imagederriere, publicationsursite) 
 VALUES ('4','1', '3','2001-01-01','Jo','Lacrasse','69','1','Centre', '69.69','bonne','img/avant.jpg',
 'img/arriere.jpg','2012-09-12 12:45');
-
+INSERT INTO fiche (idcollection, idediteur, idequipe, annee, nomjoueur, prenomjoueur, nojoueur, recrue, position, 
+valeur, etat, imagedevant, imagederriere, publicationsursite) 
+VALUES ('1','2', '1','2001-01-01','Joe','Lamerveille','6','0','Defenseur', '2.00','passable','img/avant.jpg',
+'img/arriere.jpg','2011-09-12 12:45');
+INSERT INTO fiche (idcollection, idediteur, idequipe, annee, nomjoueur, prenomjoueur, nojoueur, recrue, position, 
+valeur, etat, imagedevant, imagederriere, publicationsursite) 
+VALUES ('3','2', '1','2001-01-01','Pat','Lacraque','67','0','Ailier droit', '12.00','passable','img/avant.jpg',
+'img/arriere.jpg','2010-09-12 12:45');
+INSERT INTO fiche (idcollection, idediteur, idequipe, annee, nomjoueur, prenomjoueur, nojoueur, recrue, position, 
+valeur, etat, imagedevant, imagederriere, publicationsursite) 
+VALUES ('4','2', '1','2007-01-01','Max','Lefou','98','0','Centre', '112.00','impeccable','img/avant.jpg',
+'img/arriere.jpg','2009-09-19 12:45');
+INSERT INTO fiche (idcollection, idediteur, idequipe, annee, nomjoueur, prenomjoueur, nojoueur, recrue, position, 
+valeur, etat, imagedevant, imagederriere, publicationsursite)
+VALUES ('5','2', '1','2007-01-01','Sam','Letrou','98','0','Centre', '1112.00','bonne','img/avant.jpg',
+'img/arriere.jpg','2009-09-19 12:45');
+INSERT INTO fiche (idcollection, idediteur, idequipe, annee, nomjoueur, prenomjoueur, nojoueur, recrue, position, 
+valeur, etat, imagedevant, imagederriere, publicationsursite)
+VALUES ('5','2', '1','2007-01-01','Gino','Camaro','18','0','Gardien', '12.00','impeccable','img/avant.jpg',
+'img/arriere.jpg','2009-08-19 13:48');
+INSERT INTO fiche (idcollection, idediteur, idequipe, annee, nomjoueur, prenomjoueur, nojoueur, recrue, position, 
+valeur, etat, imagedevant, imagederriere, publicationsursite)
+VALUES ('2','3', '3','1997-01-01','Dany','Lamarre','18','0','Centre', '125.00','impeccable','img/avant.jpg',
+'img/arriere.jpg','2010-08-18 13:48');
 
 INSERT INTO commentaire (idfiche,destinateur, message) VALUES ('1','jfcollin','Ceci est un test');
 INSERT INTO commentaire (idfiche,destinateur, message) VALUES ('3','clevesque','Ceci est un autre test');
