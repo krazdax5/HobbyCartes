@@ -47,7 +47,14 @@
             Return False
         End Function
 
-
+        ''' <summary>
+        ''' Accesseur du nom complet (Prenom Nom) du membre
+        ''' </summary>
+        Public ReadOnly Property nomComplet() As String
+            Get
+                Return prenom + " " + nom
+            End Get
+        End Property
 
     End Class
 

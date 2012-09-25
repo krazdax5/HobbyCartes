@@ -2,7 +2,7 @@
 
 <asp:Content ContentPlaceHolderID="cphPageMembreContenu" runat="server">
     <div id="membreEnvoiMessage">
-        <h1>Envoyer un message à Homer Simpson</h1>
+        <h1>Envoyer un message à <asp:label ID="lbNom" runat="server" /></h1>
         <p>
             Objet : <asp:TextBox ID="txtObjet" runat="server" Columns="100" /><br />
         </p>

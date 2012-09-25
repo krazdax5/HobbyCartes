@@ -1,0 +1,89 @@
+<!CAS D'UTLILISATION s'inscrire modèle="dialogue-contrôle-entitée" diagramme="s_inscrire.uxf|s_inscrire.png">
+
+<@DIALOGUE>
+	<PAGE inscription.aspx modèle="dialog-control-entity">
+		<txtPrenom type="textbox" />
+		<txtNom type="textbox" />
+		<txtNomUtilisateur type="textbox" />
+		<txtMotPass type="textbox" />
+	
+		<txtRepMotPass type="textbox" >
+			<validation comparaison="txtMotPass" échec="//redemander un mot de passe//" />
+		</txtRepMotPass>
+	
+		<txtVille type="textbox"/>
+	
+		<txtCodePostal type="textbox">
+			<validation comparaison="txtCodePostal" format="A9A9A9" échec="//redemander un code postal//" />
+		</txtCodePostal>
+	
+		<txtCourriel type="textbox">
+			<validation comparaison="txtCourriel" format="?@?.?" échec="//redemdander une adresse courriel//" />
+		</txtCourriel>
+	</PAGE inscription.aspx>
+<@/DIALOGUE>
+
+<@CONTRÔLE>
+	STRUCTURE infoM:
+		STRING	prenom;
+		STRING	nom;
+		STRING	nomUtilisateur;
+		STRING	motPasse;
+		STRING	ville;
+		STRING	codePostal;
+		STRING	courriel;
+		BOOL	admin 		<-- FALSE;
+		STRING	arrierePlan <-- NULL;
+	FIN STRUCTURE
+	
+	CODE inscription.aspx.vb:
+		ÉVÉNEMENT CLIQUE BOUTON btnValider:
+			infoM.prenom 			<-- txtPrenom;
+			infoM.nom 				<-- txtNom;
+			infoM.nomUtilisateur 	<-- txtNomUtilisateur;
+			infoM.motPass 			<-- txtMotPass;
+			infoM.ville 			<-- txtVille;
+			infoM.codePostal 		<-- txtCodePostal;
+			infoM.courriel 			<-- txtCourriel;
+			
+			BOOL ok;
+			STRING erreur <-- "";
+			
+			ok 				<-- ENTITY.membre.verifierPseudo(infoM.nomUtilisateur);
+			SI(NON ok):
+				AFFICHER "Ce nom d'utilisateur est déjà utilisé!";
+			AUTREMENT:
+				ok 			<-- ENTITY.membre.ajouterMembre(infoM, RETOUR erreur);
+				SI(NON ok):
+					AFFICHER erreur;
+				AUTREMENT:
+					STATUS 	<-- ÉTATS.CONNECTÉ;
+					REDIRIGER accueil.aspx;
+				FIN SI
+			FIN SI
+		FIN ÉVÉNEMENT
+	FIN CODE
+<@/CONTRÔLE>
+
+<@ENTITÉE>
+	CONTROL.STRUCTURE.infoM infoM;
+	
+	CODE membre.vb:
+		MÉTHODE BOOL verifierPseudo(STRING nomUtilisateur):
+			ENTIER retour <-- REQUÊTE_BD("SELECT COUNT(*) FROM hobbyCartes.membre WHERE nomUtilistateur = " + nomUtlistateur + ";");
+			
+			RETOURNER (retour = 0);
+		FIN MÉTHODE
+	
+		MÉTHODE BOOL ajouterMembre(STRUCTURE.infoM infos, RETOUR STRING messageErreur):
+			ESSAIE:
+				REQUÊTE_BD("INSERT INTO hobbyCartes.membre(prenom, nom, nomutilisateur, motpass, ville, codepostal, courriel, admin, arriereplan) 
+							VALUES (infos.prenom, infos.nom, infos.nomUtilisateur, infos.motPass, infos.ville, infos.codePostal, infos.courriel, infos.admin, infos.arrierePlan");
+				RETOURNER VRAI;
+			ÉCHEC(EXCEPTION ex):
+				messageErreur <-- "La requête n'a pas aboutie!" + ex.message;
+				RETOURNER FAUX;
+			FIN ESSAIE
+		FIN MÉTHODE
+	FIN CODE
+<@/ENTITÉE>
