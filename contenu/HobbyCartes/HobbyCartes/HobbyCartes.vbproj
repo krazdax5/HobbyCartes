@@ -130,6 +130,11 @@
       <DependentUpon>Administration.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Carte.vb" />
+    <Compile Include="Collection.vb" />
+    <Compile Include="Commentaire.vb" />
+    <Compile Include="Editeur.vb" />
+    <Compile Include="Equipe.vb" />
     <Compile Include="FilFiches.aspx.designer.vb">
       <DependentUpon>FilFiches.aspx</DependentUpon>
     </Compile>
@@ -158,6 +163,7 @@
       <DependentUpon>Membre.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Membre.vb" />
     <Compile Include="MembreAjoutCarte.aspx.designer.vb">
       <DependentUpon>MembreAjoutCarte.aspx</DependentUpon>
     </Compile>
@@ -193,6 +199,7 @@
       <DependentUpon>MembreVisualiserMessages.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Message.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
