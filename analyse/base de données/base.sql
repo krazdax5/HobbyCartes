@@ -1,13 +1,13 @@
 DROP TABLE message;
-DROP TABLE membre;
-DROP TABLE collection;
-DROP TABLE fiche;
 DROP TABLE commentaire;
+DROP TABLE fiche;
 DROP TABLE editeur;
 DROP TABLE equipe;
+DROP TABLE collection;
+DROP TABLE membre;
 
 CREATE TABLE membre(
-	idmembre INTEGER PRIMARY KEY,
+	idmembre INTEGER PRIMARY KEY AUTO_INCREMENT,
 	prenom VARCHAR(30) NOT NULL,
 	nom VARCHAR(30) NOT NULL,
 	nomutilisateur VARCHAR(30) NOT NULL,
@@ -20,7 +20,7 @@ CREATE TABLE membre(
 );
 
 CREATE TABLE message(
-	idmess INTEGER PRIMARY KEY,
+	idmess INTEGER PRIMARY KEY AUTO_INCREMENT,
 	iddestinataire INTEGER NOT NULL,
 	iddestinateur INTEGER NOT NULL,
 	objet VARCHAR(30),
@@ -30,24 +30,24 @@ CREATE TABLE message(
 );
 
 CREATE TABLE collection(
-	idcollection INTEGER PRIMARY KEY,
+	idcollection INTEGER PRIMARY KEY AUTO_INCREMENT,
 	idmembre INTEGER NOT NULL,
 	type ENUM('hockey', 'baseball', 'football', 'basketball') NOT NULL,
 	FOREIGN KEY(idmembre) REFERENCES membre(idmembre)
 );
 
 CREATE TABLE editeur(
-	idediteur INTEGER PRIMARY KEY,
+	idediteur INTEGER PRIMARY KEY AUTO_INCREMENT,
 	nom VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE equipe(
-	idequipe INTEGER PRIMARY KEY,
+	idequipe INTEGER PRIMARY KEY AUTO_INCREMENT,
 	nom VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE fiche(
-	idfiche INTEGER PRIMARY KEY,
+	idfiche INTEGER PRIMARY KEY AUTO_INCREMENT,
 	idcollection INTEGER NOT NULL,
 	idediteur INTEGER NOT NULL,
 	idequipe INTEGER NOT NULL,
@@ -69,9 +69,11 @@ CREATE TABLE fiche(
 );
 
 CREATE TABLE commentaire(
-	idcommentaire INTEGER PRIMARY KEY,
+	idcommentaire INTEGER PRIMARY KEY AUTO_INCREMENT,
 	idfiche INTEGER NOT NULL,
 	destinateur VARCHAR(30) NOT NULL,
 	message LONGTEXT NOT NULL,
 	FOREIGN KEY(idfiche) REFERENCES fiche(idfiche)
 );
+
+
