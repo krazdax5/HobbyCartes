@@ -1,0 +1,62 @@
+<!CAS D'UTILISATION consulter_fiches modèle="dialogue-contrôle-entitée" diagramme="consulter_fiches.uxf|consulter_fiches.png" />
+
+<@DIALOGUE>
+	<PAGE_PARTIELLE membre.aspx(onglet: Liste des cartes)>
+		<OBJET fiches_partielles/>
+		
+		<OBJET onglets>
+			//onglets standards pour la page membre//
+		</OBJET>
+		
+		<OBJET ongletCollection>
+			//1 onglet par collection enregistrée//
+		</OBJET>
+	</PAGE_PARTIELLE>
+	
+	<PAGE fil_fiches.aspx(hockey, football, basketball ou baseball)>
+		<OBJET fiche_partielle>
+			//afficher les fiches en ordre chronologique en groupant 10 fiches par pages//
+		</OBJET>
+	</PAGE>
+	
+	<PAGE_PARTIELLE fiche.aspx>
+		<OBJET fiche>
+			//affiche toutes les informations de la carte//
+		</OBJET>
+		<OBJET commentaires>
+			//affiche la fil de commentaire en ordre chronologique//
+		</OBJET>
+	</PAGE_PARTIELLE>
+<@/DIALOGUE>
+
+<@CONTRÔLE>
+	CODE membre.aspx.vb:
+		ÉVÉNEMENT CHARGEMENT PAGE(Collection DÉFAUT="PREMIÈRE_COLLECTION_ENREGISTRÉE"):
+			fiche[] fiches <-- ENTITÉE.membre.retrouverFiches(idCollection);
+			
+			ENTIER pos 		<-- 0;
+			ENTIER longueur <-- fiches.longueur;
+			
+			BOUCLE TANTQUE pos PLUSPETITQUE longueur FAIRE:
+				//Afficher 10 fiches par pages//
+				INCRÉMENTER pos;
+			FIN BOUCLE
+		FIN ÉVÉNEMENT
+		
+		ÉVÉNEMENT CLIQUE BOUTON btnOnglet(Collection):
+			REDIRIGER PAGE membre.aspx AVEC Collection;
+		FIN ÉVÉNEMENT
+		
+		ÉVÉNEMENT CLIQUE fiche:
+			REDIRIGER PAGE fiche.aspx AVEC idFiche;
+		FIN ÉVÉNEMENT
+		
+		ÉVÉNEMENT CLIQUE pageSuivante(idPage):
+			REDIRIGER PAGE membre.aspx AVEC idPage;
+		FIN ÉVÉNEMENT
+	FIN CODE
+	
+	CODE fil_fiches.aspx.vb:
+		
+	FIN CODE
+<@/CONTRÔLE>
