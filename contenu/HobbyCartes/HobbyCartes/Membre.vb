@@ -99,7 +99,7 @@ Namespace Entitees
             End Get
         End Property
 
-        Public Function nouvMembre(ByVal prenom As String, ByVal nom As String, ByVal ville As String, ByVal codePostal As String, ByVal courriel As String, ByVal nomUtilisateur As String, ByVal motPass As String) As Boolean
+        Public Function nouvMembre(ByVal prenom As String, ByVal nom As String, ByVal ville As String, ByVal codePostal As String, ByVal courriel As String, ByVal nomUtilisateur As String, ByVal motPass As String, ByRef msgErreur As String) As Boolean
             m_arrierePlan = ""
             m_codePostal = codePostal
             m_courriel = courriel
@@ -108,6 +108,7 @@ Namespace Entitees
             m_nom = nom
             m_prenom = prenom
             m_nomUtilisateur = nomUtilisateur
+            msgErreur = ""
 
             Dim requete As MySqlCommand = New MySqlCommand("INSERT INTO membre(prenom, nom, nomutilisateur, motpasse, ville, codepostal, courriel, admin, arriereplan) VALUES('" +
                                                            prenom + "','" +
@@ -116,14 +117,15 @@ Namespace Entitees
                                                            motPass + "','" +
                                                            ville + "','" +
                                                            codePostal + "','" +
-                                                           courriel + "','" +
-                                                           m_isAdmin.ToString + "','" +
+                                                           courriel + "','0','" +
                                                            m_arrierePlan + "')", m_dbConnection)
 
             Try
                 requete.ExecuteNonQuery()
+                Return True
             Catch ex As Exception
-
+                msgErreur = ex.Message
+                Return False
             End Try
         End Function
 
@@ -135,6 +137,8 @@ Namespace Entitees
             While lignes.Read()
                 noms.Add(lignes.GetString("nomutilisateur"))
             End While
+
+            lignes.Close()
 
             Return noms
         End Function
