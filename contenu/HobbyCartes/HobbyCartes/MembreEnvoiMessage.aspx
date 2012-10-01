@@ -1,5 +1,6 @@
 ﻿<%@ Page MasterPageFile="~/Membre.master" Inherits="HobbyCartes.MembreEnvoiMessage" CodeBehind="~/MembreEnvoiMessage.aspx.vb" %>
 
+<%-- Page d'envoi de message d'un membre a un autre --%>
 <asp:Content ContentPlaceHolderID="cphPageMembreContenu" runat="server">
     <div id="membreEnvoiMessage">
         <h1>Envoyer un message à <asp:label ID="lbNom" runat="server" /></h1>

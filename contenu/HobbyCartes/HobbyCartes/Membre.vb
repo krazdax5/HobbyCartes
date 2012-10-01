@@ -51,6 +51,7 @@ Namespace Entitees
             ' Chargement des attributs
             m_prenom = dbRead.GetString("prenom")
             m_nom = dbRead.GetString("nom")
+            dbRead.Close()
         End Sub
 
         ''' <summary>
@@ -138,6 +139,29 @@ Namespace Entitees
 
             Return noms
         End Function
+
+        ''' <summary>
+        ''' Accesseur de l'id du membre
+        ''' </summary>
+        Public ReadOnly Property id() As Integer
+            Get
+                Return 1 ' TODO
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' Envoie un message a un autre membre.
+        ''' </summary>
+        ''' <param name="destinataire">Le destinataire du message</param>
+        ''' <param name="objet">L'objet du message</param>
+        ''' <param name="contenu">Le contenu du message</param>
+        Sub envoyerMessage(destinataire As Membre, objet As String, contenu As String, dbCon As MySqlConnection)
+            Dim dbCom As MySqlCommand = New MySqlCommand("INSERT INTO message (iddestinataire, iddestinateur, objet, mess) " &
+                                                        "VALUES(" & destinataire.id & ", " & Me.id & ", '" & objet & "', '" & contenu & "');",
+                                                        dbCon)
+            dbCom.ExecuteNonQuery()
+        End Sub
+
 
     End Class
 

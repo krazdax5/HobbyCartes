@@ -102,6 +102,7 @@
     <Content Include="Administration.aspx" />
     <Content Include="App_Themes\MainTheme\administration.css" />
     <Content Include="App_Themes\MainTheme\connexion.css" />
+    <Content Include="App_Themes\MainTheme\erreur.css" />
     <Content Include="App_Themes\MainTheme\fiche.css" />
     <Content Include="App_Themes\MainTheme\filFiches.css" />
     <Content Include="App_Themes\MainTheme\global.css" />
@@ -115,6 +116,7 @@
     <Content Include="Default.aspx" />
     <Content Include="App_Themes\MainTheme\master.css" />
     <Content Include="App_Themes\MainTheme\default.css" />
+    <Content Include="Erreur.aspx" />
     <Content Include="FilFiches.aspx" />
     <Content Include="img\titre.png" />
     <Content Include="Inscription.aspx" />
@@ -150,6 +152,13 @@
     <Compile Include="Commentaire.vb" />
     <Compile Include="Editeur.vb" />
     <Compile Include="Equipe.vb" />
+    <Compile Include="Erreur.aspx.designer.vb">
+      <DependentUpon>Erreur.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Erreur.aspx.vb">
+      <DependentUpon>Erreur.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="FilFiches.aspx.designer.vb">
       <DependentUpon>FilFiches.aspx</DependentUpon>
     </Compile>
