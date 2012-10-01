@@ -13,3 +13,18 @@
 {
     padding : 10px;   
 }
+
+.wizInscriptionSideBtn
+{
+    padding: 5px;
+    color: White;
+    background-color: Red;
+    border: 2px solid White;
+}
+.wizInscription
+{
+    background-color: #404040;
+    color: White;
+    border: 2px solid White;
+    width: 100%;
+}

@@ -25,13 +25,13 @@ Namespace Entitees
 
         Private m_collections As Dictionary(Of Collection.Type, Collection)
 
+        Private m_dbConnection As MySqlConnection
+
         ''' <summary>
         ''' Constructeur par defaut.
         ''' </summary>
-        Public Sub New()
-            m_prenom = "Homer"
-            m_nom = "Simpson"
-            m_nomUtilisateur = "hsimpson"
+        Public Sub New(dbCon As MySqlConnection)
+            m_dbConnection = dbCon
         End Sub
 
         ''' <summary>
@@ -98,6 +98,46 @@ Namespace Entitees
                 Return prenom + " " + nom
             End Get
         End Property
+
+        Public Function nouvMembre(ByVal prenom As String, ByVal nom As String, ByVal ville As String, ByVal codePostal As String, ByVal courriel As String, ByVal nomUtilisateur As String, ByVal motPass As String) As Boolean
+            m_arrierePlan = ""
+            m_codePostal = codePostal
+            m_courriel = courriel
+            m_isAdmin = False
+            m_motDePasse = motPass
+            m_nom = nom
+            m_prenom = prenom
+            m_nomUtilisateur = nomUtilisateur
+
+            Dim requete As MySqlCommand = New MySqlCommand("INSERT INTO membre(prenom, nom, nomutilisateur, motpasse, ville, codepostal, courriel, admin, arriereplan) VALUES('" +
+                                                           prenom + "','" +
+                                                           nom + "','" +
+                                                           nomUtilisateur + "','" +
+                                                           motPass + "','" +
+                                                           ville + "','" +
+                                                           codePostal + "','" +
+                                                           courriel + "','" +
+                                                           m_isAdmin.ToString + "','" +
+                                                           m_arrierePlan + "')", m_dbConnection)
+
+            Try
+                requete.ExecuteNonQuery()
+            Catch ex As Exception
+
+            End Try
+        End Function
+
+        Public Function getNomsPseudo() As ArrayList
+            Dim requete As MySqlCommand = New MySqlCommand("SELECT nomutilisateur FROM membre", m_dbConnection)
+            Dim lignes As MySqlDataReader = requete.ExecuteReader()
+            Dim noms As ArrayList = New ArrayList()
+
+            While lignes.Read()
+                noms.Add(lignes.GetString("nomutilisateur"))
+            End While
+
+            Return noms
+        End Function
 
     End Class
 
