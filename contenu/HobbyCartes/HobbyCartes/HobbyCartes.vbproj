@@ -191,7 +191,7 @@
     </Compile>
     <Compile Include="MembreEnvoiMessage.aspx.vb">
       <DependentUpon>MembreEnvoiMessage.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MembreInfo.aspx.designer.vb">
       <DependentUpon>MembreInfo.aspx</DependentUpon>
