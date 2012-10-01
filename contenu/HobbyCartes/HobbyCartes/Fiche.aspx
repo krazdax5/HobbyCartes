@@ -1,5 +1,4 @@
-﻿<%@ Page Language="vb" MasterPageFile="~/HobbyCartes.master" %>
-
+﻿<%@ Page Language="vb" MasterPageFile="~/HobbyCartes.master" CodeBehind="~/Fiche.aspx.vb" Inherits="HobbyCartes.Fiche" %>
 <asp:Content ContentPlaceHolderID="cphCorps" runat="server">
     <div id="fiche">
         <h1>Nom du joueur : Nom Joueur</h1>
@@ -26,26 +25,36 @@
         </div>
         <div id="commentaires">
             <h1>Commentaires</h1>
-            <div class="commentaire">
-                Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire 
-                Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire 
-                Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire 
-                Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire 
-                Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire 
+            <div class="ÉcrireCommentaire">
+                <p>
+            Commenter : <br />
+            <asp:TextBox ID="txtCom" TextMode="MultiLine" Rows="10" Columns="100" runat="server" />
+        </p>
+        <p>
+            <asp:Button runat="server" id="btnCom" text="Envoyer" />
+        </p>
             </div>
-            <div class="commentaire">
-                Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire 
-                Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire 
-                Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire 
-                Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire 
-                Commentaire commentaire 
-            </div>
-            <div class="commentaire">
-                Commentaire commentaire 
-                Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire 
-                Commentaire commentaire 
-                Commentaire commentaire 
-                Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire 
+            <div id="AfficheCommentaire">
+                <asp:PlaceHolder runat="server" ID="TestCom"/> 
+                <div class="commentaire">
+                   
+                   
+                </div>
+                <div class="commentaire">
+                    Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire 
+                    Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire 
+                    Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire 
+                    Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire 
+                    Commentaire commentaire 
+                </div>
+                <div class="commentaire">
+                    Commentaire commentaire 
+                    Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire 
+                    Commentaire commentaire 
+                    Commentaire commentaire 
+                    Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire Commentaire commentaire 
+                </div>
+                
             </div>
         </div>
     </div>
