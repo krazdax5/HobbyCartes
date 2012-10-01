@@ -1,4 +1,7 @@
-﻿Namespace Entitees
+﻿Imports MySql.Data
+Imports MySql.Data.MySqlClient
+
+Namespace Entitees
 
     Public Class Membre
 
@@ -35,7 +38,15 @@
         ''' Construit un membre avec son id dans la base de donnees
         ''' </summary>
         Public Sub New(id As Integer)
-            ' TODO
+            Dim dbCon As MySqlConnection = New MySqlConnection("Server=G264-11;Database=test;Uid=root;Pwd=toor;")
+            Dim dbCom As MySqlCommand = New MySqlCommand("SELECT * FROM membre WHERE idmembre=" & id, dbCon)
+            Dim dbRead As MySqlDataReader
+            dbCon.Open()
+            dbRead = dbCom.ExecuteReader()
+            dbRead.Read()
+            prenom = dbRead.GetString("prenom")
+            nom = dbRead.GetString("nom")
+            dbCon.Close()
         End Sub
 
         ''' <summary>

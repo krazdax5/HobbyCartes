@@ -5,7 +5,7 @@
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Dim idMembre As Integer = Request.QueryString("id")
-        membre = New Entitees.Membre()
+        membre = New Entitees.Membre(idMembre)
         lbNom.Text = membre.nomComplet
     End Sub
 
