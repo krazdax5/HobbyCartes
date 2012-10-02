@@ -36,10 +36,7 @@
             </div>
             <div id="AfficheCommentaire">
                 <asp:PlaceHolder runat="server" ID="TestCom"/> 
-                <div class="commentaire">
-                   Ici ce trouveras un commentaires
-                   
-                </div>
+                
                 
                 
             </div>
