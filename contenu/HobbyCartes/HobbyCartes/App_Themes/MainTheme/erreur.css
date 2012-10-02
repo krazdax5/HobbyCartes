@@ -26,6 +26,7 @@
 
 #erreur .erreurBoutonRetour:hover
 {
+    border : solid 1px black;
     color : black;
     background-color : white;
 }

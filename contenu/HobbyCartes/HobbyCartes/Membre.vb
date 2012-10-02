@@ -171,6 +171,13 @@ Namespace Entitees
             Return noms
         End Function
 
+        ''' <summary>
+        ''' Donne le nom d'utilisateur (= pseudo) d'un membre en fonction de son ID
+        ''' </summary>
+        Public Shared Function getNomUtilisateurParId(id As Integer, dbCon As MySqlConnection) As String
+            Return New MySqlCommand("SELECT nomutilisateur FROM membre WHERE idmembre=" & id, dbCon).ExecuteScalar()
+        End Function
+
     End Class
 
 End Namespace

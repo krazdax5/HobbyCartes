@@ -125,6 +125,7 @@
     <Content Include="MembreInfo.aspx" />
     <Content Include="App_Themes\MainTheme\membre.css" />
     <Content Include="MembreListeCartes.aspx" />
+    <Content Include="MembreVisualiserMessage.aspx" />
     <Content Include="MembreVisualiserMessages.aspx" />
     <Content Include="MySQL\MySql.Data.dll" />
     <Content Include="MySQL\MySql.Data.Entity.dll" />
@@ -214,6 +215,13 @@
     </Compile>
     <Compile Include="MembreListeCartes.aspx.vb">
       <DependentUpon>MembreListeCartes.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="MembreVisualiserMessage.aspx.designer.vb">
+      <DependentUpon>MembreVisualiserMessage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MembreVisualiserMessage.aspx.vb">
+      <DependentUpon>MembreVisualiserMessage.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="MembreVisualiserMessages.aspx.designer.vb">

@@ -1,5 +1,6 @@
 ﻿#membre #membre_contenu #visualiser_messages .message
 {
+    display : block;
     border : 1px solid white;
     padding : 12px;
     margin : 5px;

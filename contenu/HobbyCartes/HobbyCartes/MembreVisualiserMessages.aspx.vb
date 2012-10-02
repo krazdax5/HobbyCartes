@@ -27,11 +27,7 @@ Public Class MembreVisualiserMessages
         ' Chargement de la liste de messages
         messages = Entitees.Message.getListe(1, dbCon)
         For Each message As Entitees.Message In messages
-            liste_messages.InnerHtml += "<div class=""message"">" &
-                                        "<div class=""boxSuppr"">Supprimer <asp:CheckBox runat=""server"" /></div>" &
-                                            "Destinateur : " & message.idDestinateur & "<br />" &
-                                            "Objet : " & message.objet &
-                                        "</div>"
+            ajoute_message(message, dbCon)
         Next
     End Sub
 
@@ -40,6 +36,25 @@ Public Class MembreVisualiserMessages
     ''' </summary>
     Protected Sub Page_Unload() Handles Me.Unload
         dbCon.Close()
+    End Sub
+
+    ''' <summary>
+    ''' Ajoute un message a la vue
+    ''' </summary>
+    Private Sub ajoute_message(message As Entitees.Message, dbCon As MySqlConnection)
+        Dim destinateurText As Label = New Label()
+        destinateurText.Text = "Destinateur : " & Entitees.Membre.getNomUtilisateurParId(message.idDestinateur, dbCon) & "<br />"
+
+        Dim objetText As Label = New Label()
+        objetText.Text = "Objet : " & message.objet
+
+        Dim messageLabel As HyperLink = New HyperLink()
+        messageLabel.NavigateUrl = "MembreVisualiserMessage.aspx?id=" & message.id
+        messageLabel.CssClass = "message"
+        messageLabel.Controls.Add(destinateurText)
+        messageLabel.Controls.Add(objetText)
+
+        liste_messages.Controls.Add(messageLabel)
     End Sub
 
 End Class

@@ -26,7 +26,23 @@ Namespace Entitees
         End Sub
 
         ''' <summary>
-        ''' Accesseur du l'id du destinateur
+        ''' Construit un message depuis la base de donnees.
+        ''' Leve une exception si le message n'existe pas.
+        ''' </summary>
+        Public Sub New(id As Integer, dbCon As MySqlConnection)
+            Dim dbCom As MySqlCommand = New MySqlCommand("SELECT * FROM message WHERE idmess=" & id & ";", dbCon)
+            Dim dbRead As MySqlDataReader = dbCom.ExecuteReader()
+            dbRead.Read()
+            m_id = id
+            m_idDestinataire = dbRead.GetString("iddestinataire")
+            m_idDestinateur = dbRead.GetString("iddestinateur")
+            m_objet = dbRead.GetString("objet")
+            m_contenu = dbRead.GetString("mess")
+            dbRead.Close()
+        End Sub
+
+        ''' <summary>
+        ''' Accesseur de l'id du destinateur
         ''' </summary>
         Public ReadOnly Property idDestinateur() As Integer
             Get
@@ -35,7 +51,7 @@ Namespace Entitees
         End Property
 
         ''' <summary>
-        ''' Accesseur du l'id du destinataire
+        ''' Accesseur de l'id du destinataire
         ''' </summary>
         Public ReadOnly Property idDestinataire() As Integer
             Get
@@ -44,7 +60,7 @@ Namespace Entitees
         End Property
 
         ''' <summary>
-        ''' Accesseur du l'id du message
+        ''' Accesseur de l'id du message
         ''' </summary>
         Public ReadOnly Property id() As Integer
             Get

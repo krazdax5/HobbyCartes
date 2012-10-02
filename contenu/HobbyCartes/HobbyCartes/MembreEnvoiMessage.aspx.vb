@@ -44,12 +44,12 @@ Public Class MembreEnvoiMessage
             destinataire = New Entitees.Membre(idDestinataire, dbCon)
         Catch ex As Exception
             ' Affiche la page d'erreur en cas d'exception
-            Erreur.afficherException(ex, Request.UrlReferrer, Response)
+            Erreur.afficherException(ex, Request.UrlReferrer, Me)
         End Try
         ' Application du nom du membre sur le label "Nom"
         lbNom.Text = destinataire.nomComplet
         ' Chargement du destinateur avec la session de l'utilisateur
-        ' destinateur = Session("membre")
+        destinateur = New Entitees.Membre(1, dbCon)
         ' TODO
     End Sub
 
@@ -68,7 +68,7 @@ Public Class MembreEnvoiMessage
             ' TODO
         Catch ex As Exception
             ' Affiche la page d'erreur en cas d'exception
-            Erreur.afficherException(ex, Page, Response)
+            Erreur.afficherException(ex, Page, Me)
         End Try
     End Sub
 
