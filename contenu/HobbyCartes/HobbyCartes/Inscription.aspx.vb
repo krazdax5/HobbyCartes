@@ -18,6 +18,7 @@ Public Class Inscription
     Protected Sub btnTerminer_clique(ByVal sender As Object, ByVal e As WizardNavigationEventArgs)
         lblMessage.Visible = False
 
+        Dim msgErreur As String = ""
         Dim nomsUtilisés As ArrayList = m_membre.getNomsPseudo()
 
         If (nomsUtilisés.Contains(txtUtilisateur.Text)) Then
@@ -26,6 +27,11 @@ Public Class Inscription
             Return
         End If
 
-
+        If (Not m_membre.nouvMembre(txtPrenom.Text, txtNom.Text, txtVille.Text, txtCodePostal.Text, txtCourriel.Text, txtUtilisateur.Text, txtMotPasse.Text, msgErreur)) Then
+            lblMessage.Text = msgErreur
+            lblMessage.Visible = True
+        Else
+            Response.Redirect("Default.aspx")
+        End If
     End Sub
 End Class

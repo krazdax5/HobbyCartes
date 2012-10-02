@@ -6,7 +6,7 @@
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        m_Membre = New Entitees.Membre()
+
 
 
     End Sub
