@@ -1,3 +1,3 @@
-Charles: MembreInfo.aspx, FilFiches.aspx, MembreListeCartes.aspx 
-Loïc: MembreEnvoiMessage.aspx, MembreVisualiserMessage.aspx, Message.vb, Membre.vb
-Jean-François: Fiche.vb, fiche.aspx, Commentaire.vb
+Charles: 
+Loïc: 
+Jean-François:
