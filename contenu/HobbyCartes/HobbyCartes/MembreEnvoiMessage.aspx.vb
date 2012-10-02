@@ -40,7 +40,7 @@ Public Class MembreEnvoiMessage
         lbNom.Text = destinataire.nomComplet
         ' Chargement du destinateur avec la session de l'utilisateur
         ' destinateur = Session("membre")
-        destinateur = New Entitees.Membre()
+        'destinateur = New Entitees.Membre()
     End Sub
 
     ''' <summary>
@@ -53,7 +53,7 @@ Public Class MembreEnvoiMessage
         Dim contenu As String = txtContenu.Text
         ' Envoi du message au destinataire
         Try
-            destinateur.envoyerMessage(destinataire, objet, contenu, dbCon)
+            'destinateur.envoyerMessage(destinataire, objet, contenu, dbCon)
             ' Affiche la page de succes si tout s'est bien passe
             ' TODO
         Catch ex As Exception

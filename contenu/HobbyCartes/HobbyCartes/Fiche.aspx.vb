@@ -1,11 +1,18 @@
-﻿Public Class Fiche
+﻿Imports MySql.Data
+Imports MySql.Data.MySqlClient
+
+Public Class Fiche
 
     Inherits System.Web.UI.Page
 
+    Dim m_connection As MySqlConnection
     Dim m_Membre As Entitees.Membre
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        m_connection = New MySqlConnection("Server=G264-11;Database=test;Uid=root;Pwd=toor;")
+        m_connection.Open()
 
+        m_Membre = New Entitees.Membre(1, m_connection)
 
 
 
@@ -33,13 +40,13 @@
         Dim lblCom As New Label
         Dim Commentaires As String = m_Membre.nomComplet() + " dit : <br/>" + Com.accesMessage()
         lblCom.Text = Commentaires
-        'lblCom.ForeColor = Drawing.Color.AliceBlue
+
 
 
         Dim placeHolderCom As Control = placeHolder.FindControl("ComNouv")
         placeHolderCom.Controls.Add(lblCom)
 
-        
+
 
     End Sub
 
