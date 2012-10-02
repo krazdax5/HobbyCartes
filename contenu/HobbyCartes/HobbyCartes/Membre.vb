@@ -5,6 +5,8 @@ Namespace Entitees
 
     Public Class Membre
 
+        Private m_id As Integer
+
         Private m_prenom As String
 
         Private m_nom As String
@@ -13,7 +15,7 @@ Namespace Entitees
 
         Private m_motDePasse As String
 
-        Private _mville As String
+        Private m_ville As String
 
         Private m_codePostal As String
 
@@ -26,13 +28,6 @@ Namespace Entitees
         Private m_collections As Dictionary(Of Collection.Type, Collection)
 
         Private m_dbConnection As MySqlConnection
-
-        ''' <summary>
-        ''' Constructeur par defaut.
-        ''' </summary>
-        Public Sub New(dbCon As MySqlConnection)
-            m_dbConnection = dbCon
-        End Sub
 
         ''' <summary>
         ''' Construit un membre avec son id dans la base de donnees.
@@ -49,8 +44,12 @@ Namespace Entitees
             Dim dbRead As MySqlDataReader = dbCom.ExecuteReader()
             dbRead.Read()
             ' Chargement des attributs
+            m_id = id
             m_prenom = dbRead.GetString("prenom")
             m_nom = dbRead.GetString("nom")
+            m_dbConnection = dbCon
+            ' TODO chargement des autres attributs
+            dbRead.Close()
         End Sub
 
         ''' <summary>
@@ -98,6 +97,31 @@ Namespace Entitees
                 Return prenom + " " + nom
             End Get
         End Property
+
+
+        ''' <summary>
+        ''' Accesseur de l'id du membre
+        ''' </summary>
+        Public ReadOnly Property id() As Integer
+            Get
+                Return m_id
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' Envoie un message a un autre membre.
+        ''' </summary>
+        ''' <param name="destinataire">Le destinataire du message</param>
+        ''' <param name="objet">L'objet du message</param>
+        ''' <param name="contenu">Le contenu du message</param>
+        Sub envoyerMessage(destinataire As Membre, objet As String, contenu As String)
+            Dim dbCom As MySqlCommand = New MySqlCommand("INSERT INTO message (iddestinataire, iddestinateur, objet, mess) " &
+                                                        "VALUES(" & destinataire.id & ", " & Me.id & ", '" & objet & "', '" & contenu & "');",
+                                                        m_dbConnection)
+            dbCom.ExecuteNonQuery()
+        End Sub
+
+
 
         Public Function nouvMembre(ByVal prenom As String, ByVal nom As String, ByVal ville As String, ByVal codePostal As String, ByVal courriel As String, ByVal nomUtilisateur As String, ByVal motPass As String, ByRef msgErreur As String) As Boolean
             m_arrierePlan = ""

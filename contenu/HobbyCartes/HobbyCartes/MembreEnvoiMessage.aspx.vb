@@ -22,6 +22,16 @@ Public Class MembreEnvoiMessage
     Private destinateur As Entitees.Membre
 
     ''' <summary>
+    ''' L'objet du message
+    ''' </summary>
+    Private objet As String
+
+    ''' <summary>
+    ''' Le contenu du message
+    ''' </summary>
+    Private contenu As String
+
+    ''' <summary>
     ''' Chargement de la page
     ''' </summary>
     Protected Sub Page_Load() Handles Me.Load
@@ -40,7 +50,7 @@ Public Class MembreEnvoiMessage
         lbNom.Text = destinataire.nomComplet
         ' Chargement du destinateur avec la session de l'utilisateur
         ' destinateur = Session("membre")
-        'destinateur = New Entitees.Membre()
+        ' TODO
     End Sub
 
     ''' <summary>
@@ -53,7 +63,7 @@ Public Class MembreEnvoiMessage
         Dim contenu As String = txtContenu.Text
         ' Envoi du message au destinataire
         Try
-            'destinateur.envoyerMessage(destinataire, objet, contenu, dbCon)
+            destinateur.envoyerMessage(destinataire, objet, contenu)
             ' Affiche la page de succes si tout s'est bien passe
             ' TODO
         Catch ex As Exception
