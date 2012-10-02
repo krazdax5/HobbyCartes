@@ -147,10 +147,10 @@ valeur, etat, imagedevant, imagederriere, publicationsursite)
 VALUES ('2','3', '3','1997-01-01','Dany','Lamarre','18','0','Centre', '125.00','impeccable','img/avant.jpg',
 'img/arriere.jpg','2010-08-18 13:48');
 
-INSERT INTO commentaire (idfiche,destinateur, message) VALUES ('1','jfcollin','Ceci est un test');
-INSERT INTO commentaire (idfiche,destinateur, message) VALUES ('3','clevesque','Ceci est un autre test');
-INSERT INTO commentaire (idfiche,destinateur, message) VALUES ('2','jfcollin','Ceci est un autre autre test');
-INSERT INTO commentaire (idfiche,destinateur, message) VALUES ('1','lvial','Assez les tests !');
+INSERT INTO commentaire (idfiche,destinateur, message) VALUES ('1','1','Ceci est un test');
+INSERT INTO commentaire (idfiche,destinateur, message) VALUES ('3','2','Ceci est un autre test');
+INSERT INTO commentaire (idfiche,destinateur, message) VALUES ('2','1','Ceci est un autre autre test');
+INSERT INTO commentaire (idfiche,destinateur, message) VALUES ('1','3','Assez les tests !');
 
 INSERT INTO message (iddestinataire, iddestinateur, objet, mess) 
 VALUES ('1','2','Belles cartes', 'Mon dieu que tu as de belles cartes!');
