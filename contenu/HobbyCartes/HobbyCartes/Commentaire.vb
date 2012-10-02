@@ -2,7 +2,7 @@
 
     Public Class Commentaire
 
-        Private destinateur As Integer
+        Private destinateur As String
 
         Private message As String
 
@@ -22,7 +22,7 @@
         ''' Construit un commentaire avec une destinataire et un Idfiche de la propriétaire
         ''' </summary>
         ''' 
-        Public Sub New(ByVal Dest As Integer, ByVal FicheID As Integer)
+        Public Sub New(ByVal Dest As String, ByVal FicheID As Integer)
             destinateur = Dest
             IDFiche = FicheID
         End Sub
@@ -31,7 +31,7 @@
         ''' Construit un commentaire avec tout
         ''' </summary>
         ''' 
-        Public Sub New(ByVal Dest As Integer, ByVal FicheID As Integer, ByVal CommentaireID As Integer, ByVal messages As String)
+        Public Sub New(ByVal Dest As String, ByVal FicheID As Integer, ByVal CommentaireID As Integer, ByVal messages As String)
             destinateur = Dest
             IDFiche = FicheID
             IDCommentaire = CommentaireID
@@ -53,11 +53,11 @@
         ''' <summary>
         ''' Accesseur et mutateur du message du commentaire
         ''' </summary>
-        Public Property pDestinateur() As Integer
+        Public Property pDestinateur() As String
             Get
                 Return destinateur
             End Get
-            Set(ByVal value As Integer)
+            Set(ByVal value As String)
                 destinateur = value
             End Set
         End Property

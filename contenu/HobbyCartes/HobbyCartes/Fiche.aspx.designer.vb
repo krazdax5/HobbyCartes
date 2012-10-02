@@ -14,6 +14,24 @@ Option Explicit On
 Partial Public Class Fiche
 
     '''<summary>
+    '''Contrôle smFiche.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents smFiche As Global.System.Web.UI.ScriptManager
+
+    '''<summary>
+    '''Contrôle uppantxtCommentaire.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents uppantxtCommentaire As Global.System.Web.UI.UpdatePanel
+
+    '''<summary>
     '''Contrôle txtCom.
     '''</summary>
     '''<remarks>
@@ -32,11 +50,11 @@ Partial Public Class Fiche
     Protected WithEvents btnCom As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Contrôle TestCom.
+    '''Contrôle uppanCommentaire.
     '''</summary>
     '''<remarks>
     '''Champ généré automatiquement.
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
-    Protected WithEvents TestCom As Global.System.Web.UI.WebControls.PlaceHolder
+    Protected WithEvents uppanCommentaire As Global.System.Web.UI.UpdatePanel
 End Class

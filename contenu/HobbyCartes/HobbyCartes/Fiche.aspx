@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="vb" MasterPageFile="~/HobbyCartes.master" CodeBehind="~/Fiche.aspx.vb" Inherits="HobbyCartes.Fiche" %>
 <asp:Content ContentPlaceHolderID="cphCorps" runat="server">
+    <asp:ScriptManager ID="smFiche" runat="server"/>
+    
     <div id="fiche">
         <h1>Nom du joueur : Nom Joueur</h1>
         <div id="info">
@@ -28,16 +30,31 @@
             <div class="ÉcrireCommentaire">
                 <p>
             Commenter : <br />
-            <asp:TextBox ID="txtCom" TextMode="MultiLine" Rows="10" Columns="100" runat="server" />
+            <asp:UpdatePanel ID="uppantxtCommentaire" runat="server">
+                 <ContentTemplate>
+                    <asp:TextBox ID="txtCom" TextMode="MultiLine" Rows="10" Columns="100" runat="server" />
+                    
+                 </ContentTemplate>
+                 <Triggers>
+                    <asp:AsyncPostBackTrigger ControlID="btnCom" EventName="Click" />
+                 </Triggers>
+            </asp:UpdatePanel>
         </p>
         <p>
             <asp:Button runat="server" id="btnCom" text="Envoyer" />
         </p>
             </div>
             <div id="AfficheCommentaire">
-                <asp:PlaceHolder runat="server" ID="TestCom"/> 
                 
                 
+                <asp:UpdatePanel ID="uppanCommentaire" runat="server">
+                    <ContentTemplate>
+                    
+                    </ContentTemplate>
+                        <Triggers>
+                            <asp:AsyncPostBackTrigger ControlID="btnCom" EventName="Click" />
+                        </Triggers>
+                </asp:UpdatePanel>
                 
             </div>
         </div>
