@@ -1,25 +1,24 @@
-﻿#membre #membre_contenu #info #entete img
+﻿#info #entete
 {
-    width : 100px;
-    height : 100px;
-    float : left;
-    display : block;
+    width: 100%;
 }
 
-#membre #membre_contenu #info #entete #btnMessage
+#info #description
 {
-   float : right;
+    width: 100%;
 }
 
-#membre #membre_contenu #info #entete #nom
+#info #description .gauche
 {
-    font-size : 250%;
-    text-align : center;
-    margin-right : 200px;
-    margin-left : 200px;
+    width: 250px;
 }
 
-#membre #membre_contenu #info #description
+#info #description .trDescription
 {
-    margin-top : 100px;
+    height: 60px;
+}
+
+#info #description .lblDescription
+{
+    font-size: large;
 }
