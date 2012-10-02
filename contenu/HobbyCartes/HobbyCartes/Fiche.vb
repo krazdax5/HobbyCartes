@@ -1,13 +1,13 @@
 ﻿Namespace Entitees
 
-    Public Class Carte
+    Public Class Fiche
 
         Public Enum Etat
-            Impeccable
-            Bonne
-            Moyenne
-            Passable
-            Pietre
+            impeccable
+            bonne
+            moyenne
+            passable
+            pietre
         End Enum
 
         Private annee As String

@@ -147,7 +147,7 @@
       <DependentUpon>Administration.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="Carte.vb" />
+    <Compile Include="Fiche.vb" />
     <Compile Include="Collection.vb" />
     <Compile Include="Commentaire.vb" />
     <Compile Include="Editeur.vb" />

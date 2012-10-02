@@ -11,7 +11,7 @@ Public Class Inscription
         m_connection = New MySqlConnection("Server=G264-11;Database=test;Uid=root;Pwd=toor;")
         m_connection.Open()
 
-        m_membre = New Entitees.Membre(m_connection)
+        m_membre = New Entitees.Membre(1, m_connection)
 
     End Sub
 

@@ -11,7 +11,7 @@
 
         Private myType As Type
 
-        Private cartes As List(Of Carte)
+        Private cartes As List(Of Fiche)
 
 
     End Class
