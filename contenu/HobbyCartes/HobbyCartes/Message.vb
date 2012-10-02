@@ -26,6 +26,51 @@ Namespace Entitees
         End Sub
 
         ''' <summary>
+        ''' Accesseur du l'id du destinateur
+        ''' </summary>
+        Public ReadOnly Property idDestinateur() As Integer
+            Get
+                Return m_idDestinateur
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' Accesseur du l'id du destinataire
+        ''' </summary>
+        Public ReadOnly Property idDestinataire() As Integer
+            Get
+                Return m_idDestinataire
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' Accesseur du l'id du message
+        ''' </summary>
+        Public ReadOnly Property id() As Integer
+            Get
+                Return m_id
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' Accesseur de l'objet du message
+        ''' </summary>
+        Public ReadOnly Property objet() As String
+            Get
+                Return m_objet
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' Accesseur du contenu du message
+        ''' </summary>
+        Public ReadOnly Property contenu() As String
+            Get
+                Return m_contenu
+            End Get
+        End Property
+
+        ''' <summary>
         ''' Recupere et retourne la liste des messages dont le destinataire est le membre dont l'id est passee en parametre
         ''' </summary>
         Public Shared Function getListe(idMembre As Integer, dbCon As MySqlConnection) As List(Of Message)
@@ -33,11 +78,12 @@ Namespace Entitees
             Dim dbCom As MySqlCommand = New MySqlCommand("SELECT * FROM message WHERE iddestinataire=" & idMembre, dbCon)
             Dim dbRead As MySqlDataReader = dbCom.ExecuteReader()
             While dbRead.Read()
-                Dim message As Message = New Message(dbRead.GetInt16("idmess"),
-                                                     dbRead.GetInt16("iddestinataire"),
-                                                     dbRead.GetInt16("iddestinateur"),
+                Dim message As Message = New Message(dbRead.GetInt32("idmess"),
+                                                     dbRead.GetInt32("iddestinataire"),
+                                                     dbRead.GetInt32("iddestinateur"),
                                                      dbRead.GetString("objet"),
                                                      dbRead.GetString("mess"))
+                listeMessages.Add(message)
             End While
             dbRead.Close()
             Return listeMessages

@@ -121,8 +121,9 @@ Namespace Entitees
             dbCom.ExecuteNonQuery()
         End Sub
 
-
-
+        ''' <summary>
+        ''' 
+        ''' </summary>
         Public Function nouvMembre(ByVal prenom As String, ByVal nom As String, ByVal ville As String, ByVal codePostal As String, ByVal courriel As String, ByVal nomUtilisateur As String, ByVal motPass As String, ByRef msgErreur As String) As Boolean
             m_arrierePlan = ""
             m_codePostal = codePostal
@@ -153,6 +154,9 @@ Namespace Entitees
             End Try
         End Function
 
+        ''' <summary>
+        ''' 
+        ''' </summary>
         Public Function getNomsPseudo() As ArrayList
             Dim requete As MySqlCommand = New MySqlCommand("SELECT nomutilisateur FROM membre", m_dbConnection)
             Dim lignes As MySqlDataReader = requete.ExecuteReader()

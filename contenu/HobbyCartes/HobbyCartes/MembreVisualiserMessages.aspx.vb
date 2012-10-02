@@ -26,8 +26,12 @@ Public Class MembreVisualiserMessages
         dbCon.Open()
         ' Chargement de la liste de messages
         messages = Entitees.Message.getListe(1, dbCon)
-        For i As Integer = 1 To 5
-
+        For Each message As Entitees.Message In messages
+            liste_messages.InnerHtml += "<div class=""message"">" &
+                                        "<div class=""boxSuppr"">Supprimer <asp:CheckBox runat=""server"" /></div>" &
+                                            "Destinateur : " & message.idDestinateur & "<br />" &
+                                            "Objet : " & message.objet &
+                                        "</div>"
         Next
     End Sub
 
