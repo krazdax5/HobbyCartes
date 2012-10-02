@@ -1,4 +1,4 @@
-﻿<%@ Page MasterPageFile="~/Membre.master" %>
+﻿<%@ Page MasterPageFile="~/Membre.master" CodeBehind="~/MembreInfo.aspx.vb" Inherits="HobbyCartes.MembreInfo" %>
 
 <asp:Content ContentPlaceHolderID="cphPageMembreContenu" runat="server">
     <div id="info">
@@ -122,7 +122,7 @@
 
                     </asp:Table>
 
-            <asp:Button ID="btnEnregistrer" runat="server" Text="Enregistrer les modifications" />
+            <asp:Button ID="btnEnregistrer" runat="server" Text="Enregistrer les modifications" OnClick="btnEnregistrer_clique" />
         </div>
     </div>
 </asp:Content>

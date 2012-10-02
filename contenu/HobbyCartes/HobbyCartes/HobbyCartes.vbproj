@@ -207,7 +207,7 @@
     </Compile>
     <Compile Include="MembreInfo.aspx.vb">
       <DependentUpon>MembreInfo.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MembreListeCartes.aspx.designer.vb">
       <DependentUpon>MembreListeCartes.aspx</DependentUpon>

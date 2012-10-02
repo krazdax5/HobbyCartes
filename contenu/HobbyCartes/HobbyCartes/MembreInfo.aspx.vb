@@ -5,4 +5,7 @@
 
     End Sub
 
+    Protected Sub btnEnregistrer_Click(sender As Object, e As EventArgs) Handles btnEnregistrer.Click
+
+    End Sub
 End Class
