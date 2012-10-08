@@ -8,10 +8,10 @@ Public Class Inscription
     Dim m_membre As Entitees.Membre
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        m_connection = New MySqlConnection("Server=G264-11;Database=test;Uid=root;Pwd=toor;")
+        m_connection = New MySqlConnection("Server=127.0.0.1:3306;Database=test;Uid=root;Pwd=toor;")
         m_connection.Open()
 
-        m_membre = New Entitees.Membre(1, m_connection)
+        m_membre = New Entitees.Membre(m_connection)
 
     End Sub
 
@@ -27,7 +27,14 @@ Public Class Inscription
             Return
         End If
 
-        If (Not m_membre.nouvMembre(txtPrenom.Text, txtNom.Text, txtVille.Text, txtCodePostal.Text, txtCourriel.Text, txtUtilisateur.Text, txtMotPasse.Text, msgErreur)) Then
+        m_membre.prenom = txtPrenom.Text
+        m_membre.nom = txtNom.Text
+        m_membre.nomUtilisateur = txtUtilisateur.Text
+        m_membre.Ville = txtVille.Text
+        m_membre.CodePostal = txtCodePostal.Text
+        m_membre.Courriel = txtCourriel.Text
+
+        If (Not m_membre.nouvMembre(m_membre, txtMotPasse.Text, msgErreur)) Then
             lblMessage.Text = msgErreur
             lblMessage.Visible = True
         Else

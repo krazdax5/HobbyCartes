@@ -1,4 +1,4 @@
-﻿<%@ Page MasterPageFile="~/Membre.master" CodeBehind="~/MembreInfo.aspx.vb" Inherits="HobbyCartes.MembreInfo" %>
+﻿<%@ Page Language="VB" MasterPageFile="~/Membre.master" CodeBehind="~/MembreInfo.aspx.vb" Inherits="HobbyCartes.MembreInfo" %>
 
 <asp:Content ContentPlaceHolderID="cphPageMembreContenu" runat="server">
     <div id="info">
@@ -24,7 +24,8 @@
             
             <!-- Tableau pour afficher les informations du membre -->
              <asp:Table ID="tblDescription" runat="server" Width="100%">
-
+                        
+                        <!-- Prénom -->
                         <asp:TableRow runat="server" CssClass="trDescription">
                             <asp:TableCell runat="server" CssClass="gauche"><asp:Label ID="lblPrenom" runat="server" Text="Prénom:" AssociatedControlID="txtPrenom" CssClass="lblDescription"></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server">
@@ -38,6 +39,7 @@
                             </asp:TableCell>
                         </asp:TableRow>
 
+                        <!-- Nom -->
                         <asp:TableRow runat="server" CssClass="trDescription">
                             <asp:TableCell runat="server" CssClass="gauche"><asp:Label ID="lblNom" runat="server" Text="Nom:" AssociatedControlID="txtNom" CssClass="lblDescription"></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server">
@@ -51,6 +53,7 @@
                             </asp:TableCell>
                         </asp:TableRow>
 
+                        <!-- Nom d'utilisateur -->
                         <asp:TableRow runat="server" CssClass="trDescription">
                             <asp:TableCell runat="server" CssClass="gauche"><asp:Label ID="lblUtilisateur" runat="server" Text="Nom d'utilisateur:" AssociatedControlID="txtUtilisateur" CssClass="lblDescription"></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server">
@@ -63,6 +66,7 @@
                             </asp:TableCell>
                         </asp:TableRow>
 
+                        <!-- Ville -->
                         <asp:TableRow runat="server" CssClass="trDescription">
                             <asp:TableCell runat="server" CssClass="gauche"><asp:Label ID="lblVille" runat="server" Text="Ville:" AssociatedControlID="txtVille" CssClass="lblDescription"></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server">
@@ -75,6 +79,7 @@
                             </asp:TableCell>
                         </asp:TableRow>
 
+                        <!-- Code Postal -->
                         <asp:TableRow runat="server" CssClass="trDescription">
                             <asp:TableCell runat="server" CssClass="gauche"><asp:Label ID="lblCodePostal" runat="server" Text="Code Postal:" AssociatedControlID="txtCodePostal" CssClass="lblDescription"></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server">
@@ -95,6 +100,7 @@
                             </asp:TableCell>
                         </asp:TableRow>
 
+                        <!-- Courriel -->
                         <asp:TableRow runat="server" CssClass="trDescription">
                             <asp:TableCell runat="server" CssClass="gauche"><asp:Label ID="lblCourriel" runat="server" Text="Courriel:" AssociatedControlID="txtCourriel" CssClass="lblDescription"></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server">
@@ -124,5 +130,8 @@
 
             <asp:Button ID="btnEnregistrer" runat="server" Text="Enregistrer les modifications" OnClick="btnEnregistrer_clique" />
         </div>
+
+        <!-- Contrôle pour afficher un message destiné à l'utilisateur -->
+        <asp:Label ID="lblMessage" runat="server" Text="Message" Visible="false"></asp:Label>
     </div>
 </asp:Content>

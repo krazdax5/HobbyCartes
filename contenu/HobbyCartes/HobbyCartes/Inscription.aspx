@@ -15,6 +15,7 @@
                 <asp:WizardStep ID="wizEtapePerso" runat="server" Title="Informations personnelles" StepType="Start">
                     <asp:Table ID="tblFormulairePerso" runat="server">
 
+                        <!-- Prénom -->
                         <asp:TableRow runat="server">
                             <asp:TableCell runat="server"><asp:Label ID="lblPrenom" runat="server" Text="Prénom:" AssociatedControlID="txtPrenom"></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server">
@@ -28,6 +29,7 @@
                             </asp:TableCell>
                         </asp:TableRow>
 
+                        <!-- Nom -->
                         <asp:TableRow runat="server">
                             <asp:TableCell runat="server"><asp:Label ID="lblNom" runat="server" Text="Nom:" AssociatedControlID="txtNom"></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server">
@@ -41,6 +43,7 @@
                             </asp:TableCell>
                         </asp:TableRow>
 
+                        <!-- Ville -->
                         <asp:TableRow runat="server">
                             <asp:TableCell runat="server"><asp:Label ID="lblVille" runat="server" Text="Ville:" AssociatedControlID="txtVille"></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server">
@@ -53,6 +56,7 @@
                             </asp:TableCell>
                         </asp:TableRow>
 
+                        <!-- Code postal -->
                         <asp:TableRow runat="server">
                             <asp:TableCell runat="server"><asp:Label ID="lblCodePostal" runat="server" Text="Code Postal:" AssociatedControlID="txtCodePostal"></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server">
@@ -73,6 +77,7 @@
                             </asp:TableCell>
                         </asp:TableRow>
 
+                        <!-- Courriel -->
                         <asp:TableRow runat="server">
                             <asp:TableCell runat="server"><asp:Label ID="lblCourriel" runat="server" Text="Courriel:" AssociatedControlID="txtCourriel"></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server">
@@ -96,6 +101,7 @@
                 <asp:WizardStep ID="wizEtapeCompte" runat="server" Title="Informations du compte" StepType="Finish">
                     <asp:Table ID="tblFormulaireCompte" runat="server">
 
+                        <!-- Nom d'utilisateur -->
                         <asp:TableRow runat="server">
                             <asp:TableCell runat="server"><asp:Label ID="lblUtilisateur" runat="server" Text="Nom d'utilisateur:" AssociatedControlID="txtUtilisateur"></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server">
@@ -109,6 +115,7 @@
                             </asp:TableCell>
                         </asp:TableRow>
 
+                        <!-- Mot de passe -->
                         <asp:TableRow runat="server">
                             <asp:TableCell runat="server"><asp:Label ID="lblMotPasse" runat="server" Text="Mot de passe:" AssociatedControlID="txtMotPasse"></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server">
@@ -121,7 +128,6 @@
                                     EnableClientScript="false"></asp:RequiredFieldValidator>
                             </asp:TableCell>
                         </asp:TableRow>
-
                         <asp:TableRow runat="server">
                             <asp:TableCell runat="server"><asp:Label ID="lblRepMotPasse" runat="server" Text="Répéter mot de passe:" AssociatedControlID="txtRepMotPasse"></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server">

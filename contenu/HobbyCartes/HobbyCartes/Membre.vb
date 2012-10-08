@@ -29,6 +29,16 @@ Namespace Entitees
 
         Private m_dbConnection As MySqlConnection
 
+
+        ''' <summary>
+        ''' Construit un membre vide avec une connection à une base de données.
+        ''' </summary>
+        ''' <param name="dbCon">Connection à une base de données MySQL.</param>
+        ''' <remarks>Peut être utilisé pour créer un nouveau membre.</remarks>
+        Public Sub New(dbCon As MySqlConnection)
+            m_dbConnection = dbCon
+        End Sub
+
         ''' <summary>
         ''' Construit un membre avec son id dans la base de donnees.
         ''' Le membre va se construire en chargeant ses attributs depuis la base de donnees passee en parametre.
@@ -65,28 +75,79 @@ Namespace Entitees
         ''' <summary>
         ''' Accesseur du nom du membre
         ''' </summary>
-        Public ReadOnly Property nom() As String
+        Public Property nom() As String
             Get
                 Return m_nom
             End Get
+            Set(value As String)
+                m_nom = value
+            End Set
         End Property
 
         ''' <summary>
         ''' Accesseur du prenom du membre
         ''' </summary>
-        Public ReadOnly Property prenom() As String
+        Public Property prenom() As String
             Get
                 Return m_prenom
             End Get
+            Set(value As String)
+                m_prenom = value
+            End Set
         End Property
 
         ''' <summary>
         ''' Accesseur du nom d'utilisateur (pseudonyme) du membre
         ''' </summary>
-        Public ReadOnly Property nomUtilisateur() As String
+        Public Property nomUtilisateur() As String
             Get
                 Return m_nomUtilisateur
             End Get
+            Set(value As String)
+                m_nomUtilisateur = value
+            End Set
+        End Property
+
+        ''' <summary>
+        ''' Accesseur du nom de la ville du membre.
+        ''' </summary>
+        ''' <value>Le nom de la ville.</value>
+        ''' <returns>Retourne le nom de la ville.</returns>
+        Public Property Ville As String
+            Get
+                Return m_ville
+            End Get
+            Set(value As String)
+                m_ville = value
+            End Set
+        End Property
+
+        ''' <summary>
+        ''' Accesseur du code postal de la ville.
+        ''' </summary>
+        ''' <value>Le code postal de la ville</value>
+        ''' <returns>Retourne le code postal de la ville</returns>
+        Public Property CodePostal As String
+            Get
+                Return m_codePostal
+            End Get
+            Set(value As String)
+                m_codePostal = value
+            End Set
+        End Property
+
+        ''' <summary>
+        ''' Accesseur de l'adresse courriel du membre. 
+        ''' </summary>
+        ''' <value>L'adresse courriel du membre</value>
+        ''' <returns>Retourne le courriel du membre</returns>
+        Public Property Courriel As String
+            Get
+                Return m_courriel
+            End Get
+            Set(value As String)
+                m_courriel = value
+            End Set
         End Property
 
         ''' <summary>
@@ -122,27 +183,28 @@ Namespace Entitees
         End Sub
 
         ''' <summary>
-        ''' 
+        ''' Crée un nouveau membre dans la base de données.
         ''' </summary>
-        Public Function nouvMembre(ByVal prenom As String, ByVal nom As String, ByVal ville As String, ByVal codePostal As String, ByVal courriel As String, ByVal nomUtilisateur As String, ByVal motPass As String, ByRef msgErreur As String) As Boolean
+        Public Function nouvMembre(ByVal membre As Entitees.Membre, ByVal motPass As String, ByRef msgErreur As String) As Boolean
             m_arrierePlan = ""
-            m_codePostal = codePostal
-            m_courriel = courriel
+            m_codePostal = membre.CodePostal
+            m_courriel = membre.Courriel
+            m_ville = membre.Ville
             m_isAdmin = False
             m_motDePasse = motPass
-            m_nom = nom
-            m_prenom = prenom
-            m_nomUtilisateur = nomUtilisateur
+            m_nom = membre.nom
+            m_prenom = membre.prenom
+            m_nomUtilisateur = membre.nomUtilisateur
             msgErreur = ""
 
             Dim requete As MySqlCommand = New MySqlCommand("INSERT INTO membre(prenom, nom, nomutilisateur, motpasse, ville, codepostal, courriel, admin, arriereplan) VALUES('" +
-                                                           prenom + "','" +
-                                                           nom + "','" +
-                                                           nomUtilisateur + "','" +
+                                                           membre.prenom + "','" +
+                                                           membre.nom + "','" +
+                                                           membre.nomUtilisateur + "','" +
                                                            motPass + "','" +
-                                                           ville + "','" +
-                                                           codePostal + "','" +
-                                                           courriel + "','0','" +
+                                                           membre.Ville + "','" +
+                                                           membre.CodePostal + "','" +
+                                                           membre.Courriel + "','0','" +
                                                            m_arrierePlan + "')", m_dbConnection)
 
             Try
@@ -155,7 +217,7 @@ Namespace Entitees
         End Function
 
         ''' <summary>
-        ''' 
+        ''' Retrouve la liste de tous les noms d'utilisateur dans la base de données.
         ''' </summary>
         Public Function getNomsPseudo() As ArrayList
             Dim requete As MySqlCommand = New MySqlCommand("SELECT nomutilisateur FROM membre", m_dbConnection)
@@ -169,6 +231,29 @@ Namespace Entitees
             lignes.Close()
 
             Return noms
+        End Function
+
+        ''' <summary>
+        ''' Modifie les informations du membre dans la base de données.
+        ''' </summary>
+        ''' <param name="msgErreur">Message d'erreur si un problème survient</param>
+        ''' <returns>Retourne True si tout s'est bien passé sinon retourne False</returns>
+        Public Function setAttMembre(ByRef msgErreur As String) As Boolean
+            Dim requete As MySqlCommand = New MySqlCommand("UPDATE membre SET " +
+                                                           "prenom='" + m_prenom + "', " +
+                                                           "nom='" + m_nom + "', " +
+                                                           "nomutilisteur='" + m_nomUtilisateur + "', " +
+                                                           "ville='" + m_ville + "', " +
+                                                           "codepostal='" + m_codePostal + "', " +
+                                                           "courriel='" + m_courriel + "' WHERE id=" + m_id, m_dbConnection)
+
+            Try
+                requete.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                msgErreur = ex.Message
+                Return False
+            End Try
         End Function
 
         ''' <summary>
