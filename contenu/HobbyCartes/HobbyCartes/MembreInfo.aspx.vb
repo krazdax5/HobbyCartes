@@ -8,14 +8,23 @@ Public Class MembreInfo
     Dim m_membre As Entitees.Membre
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        m_connection = New MySqlConnection("Server=127.0.0.1:3306;Database=test;Uid=root;Pwd=toor;")
+        m_connection = New MySqlConnection("Server=localhost;Database=test;Uid=root;Pwd=toor;")
         m_connection.Open()
 
         m_membre = New Entitees.Membre(1, m_connection)
+
+        txtPrenom.Text = m_membre.prenom
+        txtNom.Text = m_membre.nom
+        txtUtilisateur.Text = lblPeusdo.Text = m_membre.nomUtilisateur
+        txtVille.Text = m_membre.Ville
+        txtCodePostal.Text = m_membre.CodePostal
+        txtCourriel.Text = m_membre.Courriel
+
     End Sub
 
-    Protected Sub btnEnregistrer_Click(sender As Object, e As EventArgs) Handles btnEnregistrer.Click
+    Protected Sub frmModifier_submit(sender As Object, e As EventArgs)
         lblMessage.Visible = False
+        Dim test As String = txtPrenom.Text
         Dim liste As ArrayList = m_membre.getNomsPseudo
         Dim msgErreur As String = ""
 
@@ -41,5 +50,9 @@ Public Class MembreInfo
             lblMessage.Text = msgErreur
         End If
         lblMessage.Visible = True
+    End Sub
+
+    Protected Sub Page_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
+        m_connection.Close()
     End Sub
 End Class

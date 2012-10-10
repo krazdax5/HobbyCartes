@@ -9,10 +9,10 @@ Public Class Inscription
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         m_connection = New MySqlConnection("Server=localhost;Database=test;Uid=root;Pwd=toor;")
+
         m_connection.Open()
 
         m_membre = New Entitees.Membre(m_connection)
-
     End Sub
 
     Protected Sub btnTerminer_clique(ByVal sender As Object, ByVal e As WizardNavigationEventArgs)
@@ -40,5 +40,9 @@ Public Class Inscription
         Else
             Response.Redirect("Default.aspx")
         End If
+    End Sub
+
+    Protected Sub Page_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
+        m_connection.Close()
     End Sub
 End Class

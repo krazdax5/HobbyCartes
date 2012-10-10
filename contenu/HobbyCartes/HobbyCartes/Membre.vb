@@ -57,8 +57,14 @@ Namespace Entitees
             m_id = id
             m_prenom = dbRead.GetString("prenom")
             m_nom = dbRead.GetString("nom")
+            m_nomUtilisateur = dbRead.GetString("nomutilisateur")
+            m_motDePasse = dbRead.GetString("motpasse")
+            m_ville = dbRead.GetString("ville")
+            m_codePostal = dbRead.GetString("codepostal")
+            m_courriel = dbRead.GetString("courriel")
+            m_isAdmin = dbRead.GetBoolean("admin")
+
             m_dbConnection = dbCon
-            ' TODO chargement des autres attributs
             dbRead.Close()
         End Sub
 
@@ -242,10 +248,10 @@ Namespace Entitees
             Dim requete As MySqlCommand = New MySqlCommand("UPDATE membre SET " +
                                                            "prenom='" + m_prenom + "', " +
                                                            "nom='" + m_nom + "', " +
-                                                           "nomutilisteur='" + m_nomUtilisateur + "', " +
+                                                           "nomutilisateur='" + m_nomUtilisateur + "', " +
                                                            "ville='" + m_ville + "', " +
                                                            "codepostal='" + m_codePostal + "', " +
-                                                           "courriel='" + m_courriel + "' WHERE id=" + m_id, m_dbConnection)
+                                                           "courriel='" + m_courriel + "' WHERE idmembre='" + m_id.ToString + "'", m_dbConnection)
 
             Try
                 requete.ExecuteNonQuery()

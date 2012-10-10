@@ -14,18 +14,16 @@
                                                             Width="150px" 
                                                             Height="150px" 
                                                             ImageAlign="Left" /></asp:TableHeaderCell>
-                    <asp:TableHeaderCell runat="server"><asp:Label ID="lblPeusdo" runat="server" Text="lol32" Font-Size="XX-Large" ForeColor="Red"></asp:Label></asp:TableHeaderCell>
+                    <asp:TableHeaderCell runat="server"><asp:Label ID="lblPeusdo" runat="server" Font-Size="XX-Large" ForeColor="Red"></asp:Label></asp:TableHeaderCell>
                     <asp:TableHeaderCell runat="server"><asp:Button ID="btnEnvoyerMessage" runat="server" Text="Envoyer un message" Height="50px" Width="180px" /></asp:TableHeaderCell>
                 </asp:TableHeaderRow>
             </asp:Table>
         </div>
 
         <div id="description">
-            
-            <!-- Tableau pour afficher les informations du membre -->
+             <!-- Tableau pour afficher les informations du membre -->
              <asp:Table ID="tblDescription" runat="server" Width="100%">
                         
-                        <!-- Prénom -->
                         <asp:TableRow runat="server" CssClass="trDescription">
                             <asp:TableCell runat="server" CssClass="gauche"><asp:Label ID="lblPrenom" runat="server" Text="Prénom:" AssociatedControlID="txtPrenom" CssClass="lblDescription"></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server">
@@ -39,7 +37,6 @@
                             </asp:TableCell>
                         </asp:TableRow>
 
-                        <!-- Nom -->
                         <asp:TableRow runat="server" CssClass="trDescription">
                             <asp:TableCell runat="server" CssClass="gauche"><asp:Label ID="lblNom" runat="server" Text="Nom:" AssociatedControlID="txtNom" CssClass="lblDescription"></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server">
@@ -53,7 +50,6 @@
                             </asp:TableCell>
                         </asp:TableRow>
 
-                        <!-- Nom d'utilisateur -->
                         <asp:TableRow runat="server" CssClass="trDescription">
                             <asp:TableCell runat="server" CssClass="gauche"><asp:Label ID="lblUtilisateur" runat="server" Text="Nom d'utilisateur:" AssociatedControlID="txtUtilisateur" CssClass="lblDescription"></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server">
@@ -66,7 +62,6 @@
                             </asp:TableCell>
                         </asp:TableRow>
 
-                        <!-- Ville -->
                         <asp:TableRow runat="server" CssClass="trDescription">
                             <asp:TableCell runat="server" CssClass="gauche"><asp:Label ID="lblVille" runat="server" Text="Ville:" AssociatedControlID="txtVille" CssClass="lblDescription"></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server">
@@ -79,7 +74,6 @@
                             </asp:TableCell>
                         </asp:TableRow>
 
-                        <!-- Code Postal -->
                         <asp:TableRow runat="server" CssClass="trDescription">
                             <asp:TableCell runat="server" CssClass="gauche"><asp:Label ID="lblCodePostal" runat="server" Text="Code Postal:" AssociatedControlID="txtCodePostal" CssClass="lblDescription"></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server">
@@ -100,7 +94,6 @@
                             </asp:TableCell>
                         </asp:TableRow>
 
-                        <!-- Courriel -->
                         <asp:TableRow runat="server" CssClass="trDescription">
                             <asp:TableCell runat="server" CssClass="gauche"><asp:Label ID="lblCourriel" runat="server" Text="Courriel:" AssociatedControlID="txtCourriel" CssClass="lblDescription"></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server">
@@ -128,7 +121,7 @@
 
                     </asp:Table>
 
-            <asp:Button ID="btnEnregistrer" runat="server" Text="Enregistrer les modifications" OnClick="btnEnregistrer_clique" />
+            <asp:Button ID="btnEnregistrer" runat="server" Text="Enregistrer les modifications" />
         </div>
 
         <!-- Contrôle pour afficher un message destiné à l'utilisateur -->

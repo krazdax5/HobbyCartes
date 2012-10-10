@@ -50,6 +50,15 @@ Partial Public Class MembreInfo
     Protected WithEvents btnEnvoyerMessage As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''Contrôle frmModifier.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents frmModifier As Global.System.Web.UI.HtmlControls.HtmlForm
+
+    '''<summary>
     '''Contrôle tblDescription.
     '''</summary>
     '''<remarks>
