@@ -83,7 +83,7 @@ VALUES ('Jean-François', 'Collin', 'jfcollin', 'jfcollin123','Lévis','G1Q1Q9',
 INSERT INTO membre (prenom, nom, nomutilisateur, motpasse, ville, codepostal, courriel) 
 VALUES ('Loïc', 'Vial', 'lvial', 'lvial123','Lévis','G1Q1Q9', 'lvial@test.com');
 INSERT INTO membre (prenom, nom, nomutilisateur, motpasse, ville, codepostal, courriel) 
-VALUES ('Charles', 'Lesveque', 'clevesquen', 'clevesque123','Lévis','G1Q1Q9', 'clesveque@test.com');
+VALUES ('Charles', 'Lesveque', 'clevesque', 'clevesque123','Lévis','G1Q1Q9', 'clesveque@test.com');
 INSERT INTO membre (prenom, nom, nomutilisateur, motpasse, ville, codepostal, courriel, admin) 
 VALUES ('Admin', 'Nistrateur', 'admin', 'admin123','Lévis','G1Q1Q9', 'admin@test.com', TRUE);
 
@@ -147,10 +147,12 @@ valeur, etat, imagedevant, imagederriere, publicationsursite)
 VALUES ('2','3', '3','1997-01-01','Dany','Lamarre','18','0','Centre', '125.00','impeccable','img/avant.jpg',
 'img/arriere.jpg','2010-08-18 13:48');
 
-INSERT INTO commentaire (idfiche,destinateur, message) VALUES ('1','1','Ceci est un test');
-INSERT INTO commentaire (idfiche,destinateur, message) VALUES ('3','2','Ceci est un autre test');
-INSERT INTO commentaire (idfiche,destinateur, message) VALUES ('2','1','Ceci est un autre autre test');
-INSERT INTO commentaire (idfiche,destinateur, message) VALUES ('1','3','Assez les tests !');
+INSERT INTO commentaire (idfiche,destinateur, message) VALUES ('1','hsimpson','Ceci est un test');
+INSERT INTO commentaire (idfiche,destinateur, message) VALUES ('3','lvial','Ceci est un autre test');
+INSERT INTO commentaire (idfiche,destinateur, message) VALUES ('2','clevesque','Ceci est un autre autre test');
+INSERT INTO commentaire (idfiche,destinateur, message) VALUES ('1','jfcollin','Assez les tests !');
+INSERT INTO commentaire (idfiche,destinateur, message) VALUES ('1','jfcollin','pk !');
+INSERT INTO commentaire (idfiche,destinateur, message) VALUES ('1','jfcollin','pas !');
 
 INSERT INTO message (iddestinataire, iddestinateur, objet, mess) 
 VALUES ('1','2','Belles cartes', 'Mon dieu que tu as de belles cartes!');

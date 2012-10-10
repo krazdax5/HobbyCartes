@@ -57,4 +57,13 @@ Partial Public Class Fiche
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
     Protected WithEvents uppanCommentaire As Global.System.Web.UI.UpdatePanel
+
+    '''<summary>
+    '''Contrôle btnSup.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents btnSup As Global.System.Web.UI.WebControls.Button
 End Class

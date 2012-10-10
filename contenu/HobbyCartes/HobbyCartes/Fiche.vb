@@ -74,7 +74,6 @@ Namespace Entitees
 
 
         Public Function NouvCommentaire(Comm As Commentaire) As Integer
-            Dim msgErreur As String = ""
             Dim Com As Commentaire = New Commentaire()
             Com = Comm
             commentaires.Add(Com)
@@ -87,9 +86,20 @@ Namespace Entitees
                 requete.ExecuteNonQuery()
                 Return Integer.Parse(requete.LastInsertedId.ToString())
             Catch ex As Exception
-                msgErreur = ex.Message
-                Return -1
+               Return -1
             End Try
+        End Function
+
+        Public Function SupCommentaire(IDCom As String) As Boolean
+            Dim requete As MySqlCommand = New MySqlCommand("DELETE FROM commentaire WHERE idcommentaire='" + IDCom + "'", m_dbConnectionFiche)
+
+            Try
+                requete.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Return False
+            End Try
+
         End Function
 
 

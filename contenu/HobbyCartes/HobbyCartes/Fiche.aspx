@@ -49,12 +49,14 @@
                 
                 <asp:UpdatePanel ID="uppanCommentaire" runat="server">
                     <ContentTemplate>
-                    
+                        
                     </ContentTemplate>
                         <Triggers>
-                            <asp:AsyncPostBackTrigger ControlID="btnCom" EventName="Click" />
+                            <asp:ASyncPostBackTrigger ControlID="btnCom" EventName="Click" />
+                            <asp:ASyncPostBackTrigger ControlID="btnSup" EventName="Click" />                            
                         </Triggers>
                 </asp:UpdatePanel>
+                <asp:Button ID="btnSup" runat="server" Text="Supprimer" />
                 
             </div>
         </div>
