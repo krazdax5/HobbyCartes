@@ -15,6 +15,7 @@ Public Class Fiche
         m_Admin = True
         m_CheckBox = New ArrayList()
 
+
         m_connection = New MySqlConnection("Server=localhost;Database=test;Uid=root;Pwd=toor;")
         m_connection.Open()
 
@@ -24,7 +25,7 @@ Public Class Fiche
         For value As Integer = 0 To NbCom - 1
             'Création et remplissage de l'objet commentaire temporaire
             Dim Com As Entitees.Commentaire = New Entitees.Commentaire
-            Com = m_Fiche.iCom(value)
+            Com = m_Fiche.ChercheCom(value)
             AfficheCom(Com)
         Next
 
@@ -41,12 +42,11 @@ Public Class Fiche
         End If
         Dim Com As Entitees.Commentaire = New Entitees.Commentaire
         Com.pMessage() = txtCom.Text
-        txtCom.Text = ""
         Com.pIDFiche() = 1
         Com.pDestinateur() = "Jean Coutue"
         Dim IDCom As Integer = m_Fiche.NouvCommentaire(Com)
         AfficheNouvCom(IDCom)
-
+        txtCom.Text = ""
     End Sub
 
     'Supprimer un commentaire
@@ -76,25 +76,18 @@ Public Class Fiche
     End Sub
 
     Private Sub AfficheCom(Com As Entitees.Commentaire)
-
         'Crée dymaniquement une nouvelle division pour afficher un commentaire
         Dim NouvDiv As New HtmlGenericControl("div")
         NouvDiv.Attributes.Add("class", "commentaire")
         NouvDiv.ID = Com.pIDCommentaire.ToString()
-
-        'Ajout de la nouvelle division
-        uppanCommentaire.ContentTemplateContainer.Controls.Add(NouvDiv)
-
-        'Récupération de la nouvelle division pour ajouter le commentaire
-        Dim placeHolderCom As Control = uppanCommentaire.ContentTemplateContainer.FindControl(Com.pIDCommentaire.ToString())
 
         'Si le membre est administrateur, ajouter un CheckBox pour la suppression de commentaire
         If (m_Admin) Then
             Dim ckSup As New CheckBox
             ckSup.ID = "ck" + Com.pIDCommentaire.ToString()
             ckSup.CssClass = "CheckB"
-            placeHolderCom.Controls.Add(ckSup)
             m_CheckBox.Add(ckSup)
+            NouvDiv.Controls.Add(ckSup)
         End If
 
         'Création d'un lbl pour le commentaire
@@ -103,14 +96,16 @@ Public Class Fiche
         lblCom.Text = Commentaires
 
         'ajout du commentaires
-        placeHolderCom.Controls.Add(lblCom)
+        NouvDiv.Controls.Add(lblCom)
 
+        'Ajout de la nouvelle division
+        uppanCommentaire.ContentTemplateContainer.Controls.Add(NouvDiv)
     End Sub
 
     Private Sub AfficheNouvCom(IDCom As Integer)
         'Création et remplissage de l'objet commentaire temporaire
         Dim Com As Entitees.Commentaire = New Entitees.Commentaire
-        Com = m_Fiche.iCom(m_Fiche.nbCom - 1)
+        Com = m_Fiche.ChercheCom(m_Fiche.nbCom - 1)
         AfficheCom(Com)
     End Sub
 

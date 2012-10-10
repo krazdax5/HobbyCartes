@@ -68,7 +68,7 @@ Namespace Entitees
 
 
         'Retourne le commentaire à l'indice désirée
-        Public Function iCom(Indice As Integer) As Commentaire
+        Public Function ChercheCom(Indice As Integer) As Commentaire
             Return commentaires(Indice)
         End Function
 
