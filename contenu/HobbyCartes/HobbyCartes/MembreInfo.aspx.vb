@@ -15,14 +15,15 @@ Public Class MembreInfo
 
         txtPrenom.Text = m_membre.prenom
         txtNom.Text = m_membre.nom
-        txtUtilisateur.Text = lblPeusdo.Text = m_membre.nomUtilisateur
+        txtUtilisateur.Text = m_membre.nomUtilisateur
+        lblPeusdo.Text = m_membre.nomUtilisateur
         txtVille.Text = m_membre.Ville
         txtCodePostal.Text = m_membre.CodePostal
         txtCourriel.Text = m_membre.Courriel
 
     End Sub
 
-    Protected Sub frmModifier_submit(sender As Object, e As EventArgs)
+    Protected Sub btnEnregistrer_click(sender As Object, e As EventArgs) Handles btnEnregistrer.Click
         lblMessage.Visible = False
         Dim test As String = txtPrenom.Text
         Dim liste As ArrayList = m_membre.getNomsPseudo

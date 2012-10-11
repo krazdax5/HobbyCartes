@@ -121,7 +121,7 @@
 
                     </asp:Table>
 
-            <asp:Button ID="btnEnregistrer" runat="server" Text="Enregistrer les modifications" />
+            <asp:Button ID="btnEnregistrer" runat="server" Text="Enregistrer les modifications" OnClick="btnEnregistrer_click" />
         </div>
 
         <!-- Contrôle pour afficher un message destiné à l'utilisateur -->
