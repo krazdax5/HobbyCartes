@@ -1,6 +1,15 @@
 ﻿<%@ Page MasterPageFile="~/Membre.master" Language="VB" CodeBehind="~/MembreListeCartes.aspx.vb" Inherits="HobbyCartes.MembreListeCartes" %>
-
-<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ContentPlaceHolderID="cphPageMembreContenu" runat="server">
+    <asp:PlaceHolder ID="phHockey" runat="server" Visible="false">
     
+    </asp:PlaceHolder>
+    <asp:PlaceHolder ID="phBaseball" runat="server" Visible="false">
+    
+    </asp:PlaceHolder>
+    <asp:PlaceHolder ID="phBasketball" runat="server" Visible="false">
+    
+    </asp:PlaceHolder>
+    <asp:PlaceHolder ID="phFootball" runat="server" Visible="false">
+    
+    </asp:PlaceHolder>
 </asp:Content>
