@@ -21,7 +21,4 @@ Public Class MembreListeCartes
         m_membre = New Entitees.Membre(1, m_connection)
     End Sub
 
-    Protected Sub lnkbtnHockey_Click(sender As Object, e As System.EventArgs)
-        m_sportEnCours = Sports.hockey
-    End Sub
 End Class

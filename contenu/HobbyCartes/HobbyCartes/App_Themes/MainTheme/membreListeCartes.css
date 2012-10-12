@@ -1,28 +1,13 @@
-﻿#membre #membre_contenu .item_sport
+﻿#onglets ul li
 {
-   border : 1px solid white;
-   float : right;
-   padding : 20px;
-   padding-left : 40px;
-   padding-right : 40px;
+    display: inline-block;
+    padding: 15px;
+    border: 1px solid White;
+    background-color: Red;
+    width: 155px;
+    text-align: center; 
 }
-
-#membre #membre_contenu #liste_cartes
+#onglets ul li:hover
 {
-    clear : right;
-}
-
-#membre #membre_contenu #liste_cartes .carte
-{
-   border : 1px solid white;
-   padding : 20px;
-   clear : right;
-   height : 140px;
-}
-
-#membre #membre_contenu #liste_cartes .carte img
-{
-    height : 140px;
-    width : 100px;
-    float : right;
+    background-color: Black;
 }
