@@ -56,7 +56,6 @@ Namespace Entitees
                 commentaires.Add(ComTemp)
             End While
             dbReadfiche.Close()
-
         End Sub
         'Propriété qui retourne le nombre d'entré valide dans le tableau de commentaire
         Public ReadOnly Property nbCom() As Integer
@@ -65,13 +64,10 @@ Namespace Entitees
             End Get
         End Property
 
-
-
         'Retourne le commentaire à l'indice désirée
         Public Function ChercheCom(Indice As Integer) As Commentaire
             Return commentaires(Indice)
         End Function
-
 
         Public Function NouvCommentaire(Comm As Commentaire) As Integer
             Dim Com As Commentaire = New Commentaire()
@@ -102,6 +98,28 @@ Namespace Entitees
 
         End Function
 
+        ''' <summary>
+        ''' Retrouver la liste de toutes les fiches reliées à une collection.
+        ''' </summary>
+        ''' <param name="idCollection">Identificateur de la collection.</param>
+        ''' <returns>Retourne une liste de fiches représentant les fiches de la collection.</returns>
+        Public Shared Function retrouverListeMembre(ByVal idCollection As Integer, ByVal connection As MySqlConnection) As List(Of Entitees.Fiche)
+            Dim liste As List(Of Entitees.Fiche) = New List(Of Entitees.Fiche)()
+            Dim requete As MySqlCommand = New MySqlCommand("SELECT * FROM fiche WHERE idcollection='" + idCollection + "'")
+            Dim dbRead As MySqlDataReader
+
+            Try
+                dbRead = requete.ExecuteReader()
+                While dbRead.NextResult
+                    Dim nouvFiche As Entitees.Fiche = New Entitees.Fiche(dbRead.GetInt32("idfiche"), connection)
+                    liste.Add(nouvFiche)
+                End While
+
+                Return liste
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
 
     End Class
 
