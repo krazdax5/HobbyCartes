@@ -14,7 +14,7 @@ Public Class MembreListeCartes
         m_connection.Open()
 
         m_membre = New Entitees.Membre(1, m_connection)
-        m_collection = New Entitees.Collection(m_membre.id, m_sportEnCours)
+        m_collection = New Entitees.Collection(m_membre.id, m_sportEnCours, m_connection)
     End Sub
 
     Private Sub chargementListe()
