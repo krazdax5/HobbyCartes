@@ -1,3 +1,3 @@
-Charles:
+Charles:membre.vb, collection.vb, fiche.vb, membrelistecartes.aspx(et aspx.vb)
 Loïc: 
 Jean-François:
