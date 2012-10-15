@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class MembreInfo
 
     '''<summary>
+    '''Contrôle smMembreInfo.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents smMembreInfo As Global.System.Web.UI.ScriptManager
+
+    '''<summary>
     '''Contrôle tblEntete.
     '''</summary>
     '''<remarks>
@@ -68,6 +77,15 @@ Partial Public Class MembreInfo
     Protected WithEvents lblPrenom As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''Contrôle lblPrenom_membre.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents lblPrenom_membre As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Contrôle txtPrenom.
     '''</summary>
     '''<remarks>
@@ -75,15 +93,6 @@ Partial Public Class MembreInfo
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
     Protected WithEvents txtPrenom As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''Contrôle rfvPrenom.
-    '''</summary>
-    '''<remarks>
-    '''Champ généré automatiquement.
-    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-    '''</remarks>
-    Protected WithEvents rfvPrenom As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Contrôle lblNom.
@@ -95,6 +104,15 @@ Partial Public Class MembreInfo
     Protected WithEvents lblNom As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''Contrôle lblNom_membre.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents lblNom_membre As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Contrôle txtNom.
     '''</summary>
     '''<remarks>
@@ -102,15 +120,6 @@ Partial Public Class MembreInfo
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
     Protected WithEvents txtNom As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''Contrôle rfvNom.
-    '''</summary>
-    '''<remarks>
-    '''Champ généré automatiquement.
-    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-    '''</remarks>
-    Protected WithEvents rfvNom As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Contrôle lblUtilisateur.
@@ -122,6 +131,15 @@ Partial Public Class MembreInfo
     Protected WithEvents lblUtilisateur As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''Contrôle lblUtilisateur_membre.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents lblUtilisateur_membre As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Contrôle txtUtilisateur.
     '''</summary>
     '''<remarks>
@@ -129,15 +147,6 @@ Partial Public Class MembreInfo
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
     Protected WithEvents txtUtilisateur As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''Contrôle rfvUtilisateur.
-    '''</summary>
-    '''<remarks>
-    '''Champ généré automatiquement.
-    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-    '''</remarks>
-    Protected WithEvents rfvUtilisateur As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Contrôle lblVille.
@@ -149,6 +158,15 @@ Partial Public Class MembreInfo
     Protected WithEvents lblVille As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''Contrôle lblVille_membre.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents lblVille_membre As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Contrôle txtVille.
     '''</summary>
     '''<remarks>
@@ -156,15 +174,6 @@ Partial Public Class MembreInfo
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
     Protected WithEvents txtVille As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''Contrôle rfvVille.
-    '''</summary>
-    '''<remarks>
-    '''Champ généré automatiquement.
-    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-    '''</remarks>
-    Protected WithEvents rfvVille As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Contrôle lblCodePostal.
@@ -176,6 +185,15 @@ Partial Public Class MembreInfo
     Protected WithEvents lblCodePostal As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''Contrôle lblCodePostal_membre.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents lblCodePostal_membre As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Contrôle txtCodePostal.
     '''</summary>
     '''<remarks>
@@ -183,15 +201,6 @@ Partial Public Class MembreInfo
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
     Protected WithEvents txtCodePostal As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''Contrôle rfvCodePostal.
-    '''</summary>
-    '''<remarks>
-    '''Champ généré automatiquement.
-    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-    '''</remarks>
-    Protected WithEvents rfvCodePostal As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Contrôle regexCodePostal.
@@ -212,6 +221,15 @@ Partial Public Class MembreInfo
     Protected WithEvents lblCourriel As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''Contrôle lblCourriel_membre.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents lblCourriel_membre As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Contrôle txtCourriel.
     '''</summary>
     '''<remarks>
@@ -219,15 +237,6 @@ Partial Public Class MembreInfo
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
     Protected WithEvents txtCourriel As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''Contrôle rfvCourriel.
-    '''</summary>
-    '''<remarks>
-    '''Champ généré automatiquement.
-    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-    '''</remarks>
-    Protected WithEvents rfvCourriel As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Contrôle regexCourriel.
