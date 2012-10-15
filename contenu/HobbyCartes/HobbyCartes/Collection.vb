@@ -64,17 +64,13 @@ Namespace Entitees
         ''' et du sport désiré.
         ''' </summary>
         ''' <param name="idMembre">Identificateur du membre à qui appartient la collection.</param>
-        ''' <param name="type">Type de sport des cartes. Exemple: Cartes de hockey</param>
-        Public Sub New(ByVal idMembre As Integer, ByVal type As Type, dbCon As MySqlConnection)
+        Public Sub New(ByVal idMembre As Integer, ByVal dbCon As MySqlConnection)
             m_connection = dbCon
-        End Sub
-
-        Private Function constructionCollection(ByVal idMembre As Integer, ByRef type As Type, ByRef idCollection As Integer) As Boolean
             Dim sport As List(Of String) = New List(Of String)()
             Dim reader As MySqlDataReader
 
             Dim requete As MySqlCommand = New MySqlCommand("SELECT * FROM collection WHERE" +
-                                                           " idmembre='" + idMembre.ToString + "'")
+                                                           " idmembre='" + idMembre.ToString + "'", m_connection)
 
             Try
                 reader = requete.ExecuteReader()
@@ -84,37 +80,74 @@ Namespace Entitees
                     sport.Add(reader.GetString("type"))
                 End While
 
-                'Détermination du premier type de la liste pour affichage
-                Select Case sport(0)
-                    Case "hockey"
-                        type = Collection.Type.Hockey
-                    Case "baseball"
-                        type = Collection.Type.Baseball
-                    Case "basketball"
-                        type = Collection.Type.Basketball
-                    Case "football"
-                        type = Collection.Type.Football
-                    Case Else
-                        type = Nothing
-                End Select
+                chargementNouvCollection(sport(0), idMembre)
 
-                'Nouvelle commande pour récupérer l'identificateur de la collection
-                requete = New MySqlCommand("SELECT * FROM collection WHERE" +
-                                           " idmembre='" + idMembre.ToString + "'" +
-                                           " AND type='" + sport(0) + "'")
+            Catch ex As Exception
+                m_type = Nothing
+            End Try
+        End Sub
+
+        ''' <summary>
+        ''' Chargement de la liste des fiches selon l'identificateur de la collection.
+        ''' Si il n'y en a pas, la liste devient vide.
+        ''' </summary>
+        Private Sub chargementListeFiches()
+            Dim requete As MySqlCommand = New MySqlCommand("SELECT idfiche FROM fiche WHERE idcollection='" + m_id.ToString + "'", m_connection)
+            Dim reader As MySqlDataReader
+
+            Try
+                reader = requete.ExecuteReader()
+                'Récuprération des fiches de la collection
+                While reader.NextResult
+                    m_fiches.Add(New Entitees.Fiche(reader.GetInt32("idfiche"), m_connection))
+                End While
+            Catch ex As Exception
+                m_fiches = Nothing
+            End Try
+        End Sub
+
+        ''' <summary>
+        ''' Chargement d'une nouvelle collection à partir d'un membre et d'un sport.
+        ''' </summary>
+        ''' <param name="sport">Représente un type de collection.</param>
+        ''' <param name="idMembre">Identificateur du membre à qui appartient la collection.</param>
+        Public Sub chargementNouvCollection(ByVal sport As Entitees.Collection.Type, ByVal idMembre As Integer)
+            'Détermination du sport
+            Select Case sport
+                Case "hockey"
+                    m_type = Collection.Type.Hockey
+                Case "baseball"
+                    m_type = Collection.Type.Baseball
+                Case "basketball"
+                    m_type = Collection.Type.Basketball
+                Case "football"
+                    m_type = Collection.Type.Football
+                Case Else
+                    m_type = Nothing
+            End Select
+
+            'Nouvelle commande pour récupérer l'identificateur de la collection
+            Dim requete As MySqlCommand = New MySqlCommand("SELECT * FROM collection WHERE" +
+                                       " idmembre='" + idMembre.ToString + "'" +
+                                       " AND type='" + m_type + "'", m_connection)
+            Dim reader As MySqlDataReader
+
+            Try
                 reader = requete.ExecuteReader()
 
                 'Récupération de l'identificateur de la collection
                 While reader.NextResult
-                    idCollection = reader.GetInt32("idcollection")
+                    m_id = reader.GetInt32("idcollection")
                 End While
 
-                Return True
+                chargementListeFiches()
             Catch ex As Exception
-                type = Nothing
-                Return False
+                m_type = Nothing
+                m_id = -1
             End Try
-        End Function
+
+        End Sub
+
     End Class
 
 End Namespace

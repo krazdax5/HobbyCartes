@@ -59,6 +59,15 @@ Partial Public Class MembreListeCartes
     Protected WithEvents phHockey As Global.System.Web.UI.WebControls.PlaceHolder
 
     '''<summary>
+    '''Contrôle btnAjouterHockey.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents btnAjouterHockey As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''Contrôle phBaseball.
     '''</summary>
     '''<remarks>
@@ -66,6 +75,15 @@ Partial Public Class MembreListeCartes
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
     Protected WithEvents phBaseball As Global.System.Web.UI.WebControls.PlaceHolder
+
+    '''<summary>
+    '''Contrôle btnAjouterBaseball.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents btnAjouterBaseball As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Contrôle phBasketball.
@@ -77,6 +95,15 @@ Partial Public Class MembreListeCartes
     Protected WithEvents phBasketball As Global.System.Web.UI.WebControls.PlaceHolder
 
     '''<summary>
+    '''Contrôle btnAjouterBasketball.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents btnAjouterBasketball As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''Contrôle phFootball.
     '''</summary>
     '''<remarks>
@@ -86,11 +113,20 @@ Partial Public Class MembreListeCartes
     Protected WithEvents phFootball As Global.System.Web.UI.WebControls.PlaceHolder
 
     '''<summary>
-    '''Contrôle ajouterCollection.
+    '''Contrôle btnAjouterFootball.
     '''</summary>
     '''<remarks>
     '''Champ généré automatiquement.
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
-    Protected WithEvents ajouterCollection As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents btnAjouterFootball As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Contrôle lblPasDeFiche.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents lblPasDeFiche As Global.System.Web.UI.WebControls.Label
 End Class
