@@ -53,7 +53,7 @@ Namespace Entitees
         ''' <summary>
         ''' Type de sport de la collection (hockey, baseball, basketball ou football)
         ''' </summary>
-        Public ReadOnly Property Type As Entitees.Collection.Type
+        Public ReadOnly Property TypeCollection As Entitees.Collection.Type
             Get
                 Return m_type
             End Get
