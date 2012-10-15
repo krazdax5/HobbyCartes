@@ -9,11 +9,11 @@ Public Class Fiche
     'Dim m_Membre As Entitees.Membre
     Dim m_Fiche As Entitees.Fiche
     Dim m_Admin As Boolean
-    Dim m_CheckBox As ArrayList
+
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         m_Admin = True
-        m_CheckBox = New ArrayList()
+
 
 
         m_connection = New MySqlConnection("Server=localhost;Database=test;Uid=root;Pwd=toor;")
@@ -55,26 +55,27 @@ Public Class Fiche
         Dim DivSup As New HtmlGenericControl("div")
         Dim tDivSup As New ArrayList
 
-        For value As Integer = 0 To m_CheckBox.Count - 1
-            Dim ckSup As New CheckBox
-            ckSup = m_CheckBox(value)
+        For value As Integer = 0 To m_Fiche.nbCom - 1
+            Dim Com As Entitees.Commentaire = New Entitees.Commentaire
+            'Récupération de la division à vérifier
+            Com = m_Fiche.ChercheCom(value)
+            NomDiv = Com.pIDCommentaire.ToString()
+            DivSup = uppanCommentaire.ContentTemplateContainer.FindControl(NomDiv)
 
+            Dim ckSup As New CheckBox
+            ckSup = DivSup.FindControl("ck" + NomDiv)
+
+            'Supprime les commentaires dont les Checkbox sont cochés
             If (ckSup.Checked) Then
-                NomDiv = ckSup.ID.Remove(0, 2)
                 m_Fiche.SupCommentaire(NomDiv)
-                DivSup = uppanCommentaire.ContentTemplateContainer.FindControl(NomDiv)
                 uppanCommentaire.ContentTemplateContainer.Controls.Remove(DivSup)
-                m_CheckBox.Add(value)
                 tDivSup.Add(value)
             End If
         Next
 
-        For value As Integer = tDivSup.Count - 1 To 0 Step -1
-            m_CheckBox.RemoveAt(tDivSup(value))
-        Next
-
     End Sub
 
+    'Afficher un commentaire
     Private Sub AfficheCom(Com As Entitees.Commentaire)
         'Crée dymaniquement une nouvelle division pour afficher un commentaire
         Dim NouvDiv As New HtmlGenericControl("div")
@@ -86,7 +87,6 @@ Public Class Fiche
             Dim ckSup As New CheckBox
             ckSup.ID = "ck" + Com.pIDCommentaire.ToString()
             ckSup.CssClass = "CheckB"
-            m_CheckBox.Add(ckSup)
             NouvDiv.Controls.Add(ckSup)
         End If
 
@@ -100,8 +100,10 @@ Public Class Fiche
 
         'Ajout de la nouvelle division
         uppanCommentaire.ContentTemplateContainer.Controls.Add(NouvDiv)
+
     End Sub
 
+    'Afficher un nouveau commentaire
     Private Sub AfficheNouvCom(IDCom As Integer)
         'Création et remplissage de l'objet commentaire temporaire
         Dim Com As Entitees.Commentaire = New Entitees.Commentaire
