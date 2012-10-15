@@ -84,4 +84,13 @@ Partial Public Class MembreListeCartes
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
     Protected WithEvents phFootball As Global.System.Web.UI.WebControls.PlaceHolder
+
+    '''<summary>
+    '''Contrôle ajouterCollection.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents ajouterCollection As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 End Class

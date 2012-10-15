@@ -9,9 +9,13 @@
         </ul>
     </div>
     <div id="liste_contenu">
-        <asp:PlaceHolder ID="phHockey" runat="server" Visible="true"></asp:PlaceHolder>
+        <asp:PlaceHolder ID="phHockey" runat="server" Visible="false"></asp:PlaceHolder>
         <asp:PlaceHolder ID="phBaseball" runat="server" Visible="false"></asp:PlaceHolder>
         <asp:PlaceHolder ID="phBasketball" runat="server" Visible="false"></asp:PlaceHolder>
         <asp:PlaceHolder ID="phFootball" runat="server" Visible="false"></asp:PlaceHolder>
+
+        <div runat="server" id="ajouterCollection" visible="false">
+            
+        </div>
     </div>
 </asp:Content>

@@ -69,38 +69,49 @@ Namespace Entitees
             m_connection = dbCon
         End Sub
 
-        Private Function constructionCollection(ByVal idMembre As Integer, ByVal type As Type, ByRef idCollection As Integer) As Boolean
-            Dim sport As String = ""
+        Private Function constructionCollection(ByVal idMembre As Integer, ByRef type As Type, ByRef idCollection As Integer) As Boolean
+            Dim sport As List(Of String) = New List(Of String)()
             Dim reader As MySqlDataReader
-            Dim id As Integer
-
-            'Détermination du sport
-            Select Case type
-                Case Collection.Type.Baseball
-                    sport = "baseball"
-                Case Collection.Type.Basketball
-                    sport = "basketball"
-                Case Collection.Type.Football
-                    sport = "football"
-                Case Collection.Type.Hockey
-                    sport = "hockey"
-            End Select
 
             Dim requete As MySqlCommand = New MySqlCommand("SELECT * FROM collection WHERE" +
-                                                           " idmembre='" + idMembre.ToString +
-                                                           "' AND type='" + sport + "'")
+                                                           " idmembre='" + idMembre.ToString + "'")
 
             Try
                 reader = requete.ExecuteReader()
 
-                'Récupération de l'identificateur
+                'Récupération des collections du membre
                 While reader.NextResult
-                    id = reader.GetInt32("idcollection")
+                    sport.Add(reader.GetString("type"))
                 End While
 
-                idCollection = id
+                'Détermination du premier type de la liste pour affichage
+                Select Case sport(0)
+                    Case "hockey"
+                        type = Collection.Type.Hockey
+                    Case "baseball"
+                        type = Collection.Type.Baseball
+                    Case "basketball"
+                        type = Collection.Type.Basketball
+                    Case "football"
+                        type = Collection.Type.Football
+                    Case Else
+                        type = Nothing
+                End Select
+
+                'Nouvelle commande pour récupérer l'identificateur de la collection
+                requete = New MySqlCommand("SELECT * FROM collection WHERE" +
+                                           " idmembre='" + idMembre.ToString + "'" +
+                                           " AND type='" + sport(0) + "'")
+                reader = requete.ExecuteReader()
+
+                'Récupération de l'identificateur de la collection
+                While reader.NextResult
+                    idCollection = reader.GetInt32("idcollection")
+                End While
+
                 Return True
             Catch ex As Exception
+                type = Nothing
                 Return False
             End Try
         End Function
