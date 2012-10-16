@@ -54,7 +54,7 @@ Public Class MembreListeCartes
                 If Not chargementListe(phHockey) Then
                     lblPasDeFiche.Visible = True
                 End If
-            Case Nothing
+            Case Entitees.Collection.Type.aucun
                 Return False
         End Select
         Return True
@@ -62,7 +62,7 @@ Public Class MembreListeCartes
 
     Private Function chargementListe(placeHolder As PlaceHolder) As Boolean
         'Détermination de l'existance d'une liste de fiche dans la collection
-        If Not m_collection.ListeFiches.Equals(Nothing) Then
+        If Not m_collection.ListeFiches Is Nothing Then
             placeHolder.Controls.Clear()
 
             'Affichage de chaque fiche en version abrégée

@@ -57,6 +57,7 @@ Namespace Entitees
             End While
             dbReadfiche.Close()
         End Sub
+
         'Propriété qui retourne le nombre d'entré valide dans le tableau de commentaire
         Public ReadOnly Property nbCom() As Integer
             Get

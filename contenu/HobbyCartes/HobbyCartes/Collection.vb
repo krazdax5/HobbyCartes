@@ -6,10 +6,11 @@ Namespace Entitees
     Public Class Collection
 
         Public Enum Type
-            Hockey
+            Hockey = 1
+            Baseball
             Football
             Basketball
-            Baseball
+            aucun
         End Enum
 
         ''' <summary>
@@ -25,7 +26,7 @@ Namespace Entitees
         ''' <summary>
         ''' Représente la liste de cartes de la collection.
         ''' </summary>
-        Private m_fiches As List(Of Fiche)
+        Private m_fiches As List(Of Entitees.Fiche) = New List(Of Entitees.Fiche)
 
         ''' <summary>
         ''' Connection à la base de données MySQL
@@ -67,23 +68,23 @@ Namespace Entitees
         Public Sub New(ByVal idMembre As Integer, ByVal dbCon As MySqlConnection)
             m_connection = dbCon
             Dim sport As List(Of String) = New List(Of String)()
-            Dim reader As MySqlDataReader
 
-            Dim requete As MySqlCommand = New MySqlCommand("SELECT * FROM collection WHERE" +
+            Dim requete As MySqlCommand = New MySqlCommand("SELECT type FROM collection WHERE" +
                                                            " idmembre='" + idMembre.ToString + "'", m_connection)
 
             Try
-                reader = requete.ExecuteReader()
+                Dim reader As MySqlDataReader = requete.ExecuteReader()
 
                 'Récupération des collections du membre
-                While reader.NextResult
+                While reader.Read()
                     sport.Add(reader.GetString("type"))
                 End While
 
+                reader.Close()
                 chargementNouvCollection(sport(0), idMembre)
 
             Catch ex As Exception
-                m_type = Nothing
+                m_type = Type.aucun
             End Try
         End Sub
 
@@ -94,13 +95,21 @@ Namespace Entitees
         Private Sub chargementListeFiches()
             Dim requete As MySqlCommand = New MySqlCommand("SELECT idfiche FROM fiche WHERE idcollection='" + m_id.ToString + "'", m_connection)
             Dim reader As MySqlDataReader
+            Dim listeID As List(Of Integer) = New List(Of Integer)()
 
             Try
                 reader = requete.ExecuteReader()
                 'Récuprération des fiches de la collection
-                While reader.NextResult
-                    m_fiches.Add(New Entitees.Fiche(reader.GetInt32("idfiche"), m_connection))
+                While reader.Read()
+                    listeID.Add(reader.GetInt32("idfiche"))
                 End While
+
+                reader.Close()
+
+                'Remplissage de la liste de fiches
+                For Each identificateur In listeID
+                    m_fiches.Add(New Entitees.Fiche(identificateur, m_connection))
+                Next
             Catch ex As Exception
                 m_fiches = Nothing
             End Try
@@ -111,7 +120,7 @@ Namespace Entitees
         ''' </summary>
         ''' <param name="sport">Représente un type de collection.</param>
         ''' <param name="idMembre">Identificateur du membre à qui appartient la collection.</param>
-        Public Sub chargementNouvCollection(ByVal sport As Entitees.Collection.Type, ByVal idMembre As Integer)
+        Public Sub chargementNouvCollection(ByVal sport As String, ByVal idMembre As Integer)
             'Détermination du sport
             Select Case sport
                 Case "hockey"
@@ -123,26 +132,27 @@ Namespace Entitees
                 Case "football"
                     m_type = Collection.Type.Football
                 Case Else
-                    m_type = Nothing
+                    m_type = Type.aucun
             End Select
 
             'Nouvelle commande pour récupérer l'identificateur de la collection
             Dim requete As MySqlCommand = New MySqlCommand("SELECT * FROM collection WHERE" +
                                        " idmembre='" + idMembre.ToString + "'" +
-                                       " AND type='" + m_type + "'", m_connection)
+                                       " AND type='" + m_type.ToString.ToLower + "'", m_connection)
             Dim reader As MySqlDataReader
 
             Try
                 reader = requete.ExecuteReader()
 
                 'Récupération de l'identificateur de la collection
-                While reader.NextResult
+                While reader.Read()
                     m_id = reader.GetInt32("idcollection")
                 End While
 
+                reader.Close()
                 chargementListeFiches()
             Catch ex As Exception
-                m_type = Nothing
+                m_type = Type.aucun
                 m_id = -1
             End Try
 
