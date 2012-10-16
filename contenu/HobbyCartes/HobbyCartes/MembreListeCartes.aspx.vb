@@ -67,7 +67,18 @@ Public Class MembreListeCartes
 
             'Affichage de chaque fiche en version abrégée
             For Each fiche In m_collection.ListeFiches
-                'TODO: Afficher la liste
+                'Nouvelle division
+                Dim nouvDiv As New HtmlGenericControl("div")
+                nouvDiv.Attributes.Add("class", "listeFiches")
+                nouvDiv.ID = fiche.ID.ToString
+
+                'Image de la fiche
+                Dim nouvImgAvant As New Image()
+                nouvImgAvant.ImageUrl = fiche.ImageAvant
+                nouvImgAvant.Attributes.Add("alt", "image" + fiche.ID.ToString)
+                nouvDiv.Controls.Add(nouvImgAvant) 'Ajout de l'image
+
+
             Next
             Return True
         Else
@@ -126,46 +137,6 @@ Public Class MembreListeCartes
                     btnAjouterHockey.Visible = True
                 End If
         End Select
-    End Sub
-
-    Protected Sub ongletHockey_click(sender As Object, e As EventArgs)
-        m_collection.chargementNouvCollection(Entitees.Collection.Type.Hockey, m_membre.id)
-        m_sportEnCours = m_collection.TypeCollection
-
-        If Not changementSport() Then
-            changerVisibilite(Entitees.Collection.Type.Hockey, True)
-        End If
-    End Sub
-
-    Protected Sub ongletBaseball_click(sender As Object, e As EventArgs)
-        m_collection.chargementNouvCollection(Entitees.Collection.Type.Baseball, m_membre.id)
-        m_sportEnCours = m_collection.TypeCollection
-
-        If Not changementSport() Then
-            changerVisibilite(Entitees.Collection.Type.Baseball, True)
-        End If
-    End Sub
-
-    Protected Sub ongletBasketball_click(sender As Object, e As EventArgs)
-        m_collection.chargementNouvCollection(Entitees.Collection.Type.Basketball, m_membre.id)
-        m_sportEnCours = m_collection.TypeCollection
-
-        If Not changementSport() Then
-            changerVisibilite(Entitees.Collection.Type.Basketball, True)
-        End If
-    End Sub
-
-    Protected Sub ongletFootball_click(sender As Object, e As EventArgs)
-        m_collection.chargementNouvCollection(Entitees.Collection.Type.Football, m_membre.id)
-        m_sportEnCours = m_collection.TypeCollection
-
-        If Not changementSport() Then
-            changerVisibilite(Entitees.Collection.Type.Football, True)
-        End If
-    End Sub
-
-    Protected Sub Page_Unload(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Unload
-        m_connection.Close()
     End Sub
 
 End Class

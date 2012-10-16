@@ -12,6 +12,8 @@ Namespace Entitees
             pietre
         End Enum
 
+        Private m_id As Integer
+
         Private m_annee As Date
 
         Private m_nomJoueur As String
@@ -41,13 +43,33 @@ Namespace Entitees
         Private m_dbConnectionFiche As MySqlConnection
 
         ''' <summary>
+        ''' Identificateur de la fiche
+        ''' </summary>
+        Public ReadOnly Property ID As Integer
+            Get
+                Return m_id
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' Chemin vers l'image du devant de la carte
+        ''' </summary>
+        Public ReadOnly Property ImageAvant As String
+            Get
+                Return m_imageDevant
+            End Get
+        End Property
+
+        ''' <summary>
         ''' Constructeur par defaut.
         ''' </summary>
         Public Sub New(id As Integer, dbCon As MySqlConnection)
             m_dbConnectionFiche = dbCon
+            m_id = id
             Dim Indice As Integer = 0
             Dim dbComFiche As MySqlCommand = New MySqlCommand("SELECT * FROM commentaire WHERE idfiche=" & id, m_dbConnectionFiche)
             Dim dbReadfiche As MySqlDataReader = dbComFiche.ExecuteReader()
+            Dim etat As String
 
             m_commentaires = New ArrayList()
             While dbReadfiche.Read
@@ -73,11 +95,28 @@ Namespace Entitees
                         m_numerotation = dbReadfiche.GetString("numerotationfi")
                     End If
                     m_valeur = dbReadfiche.GetFloat("valeurfi")
-                    m_Etat = dbReadfiche.GetInt32("etatfi")
+                    etat = dbReadfiche.GetString("etatfi")
+
+                    'Détermination de m_Etat
+                    Select Case etat
+                        Case "impeccable"
+                            m_Etat = Fiche.Etat.impeccable
+                        Case "bonne"
+                            m_Etat = Fiche.Etat.bonne
+                        Case "moyenne"
+                            m_Etat = Fiche.Etat.moyenne
+                        Case "passable"
+                            m_Etat = Fiche.Etat.passable
+                        Case "pietre"
+                            m_Etat = Fiche.Etat.pietre
+                    End Select
+
                     m_imageDevant = dbReadfiche.GetString("imagedevantfi")
                     m_imageDerriere = dbReadfiche.GetString("imagederrierefi")
                     m_publicationSurSite = dbReadfiche.GetDateTime("publicationsursitefi")
                 End While
+
+                dbReadfiche.Close()
             Catch ex As Exception
                 Throw New ApplicationException("Problème de remplissage des données dans la classe fiche.")
             End Try
