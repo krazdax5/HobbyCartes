@@ -14,7 +14,7 @@ Public Class Erreur
         If IsNothing(exception) Then
             erreurDescription.InnerText = "Une erreur interne est survenue"
         Else
-            erreurDescription.InnerText = exception
+            erreurDescription.InnerHtml = exception.Replace(vbCrLf, "<br />")
         End If
 
         If IsNothing(previousURL) Then

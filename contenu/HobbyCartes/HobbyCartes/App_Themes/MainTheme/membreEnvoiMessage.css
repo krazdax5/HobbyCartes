@@ -1,4 +1,20 @@
-﻿#membre #membre_contenu #membreEnvoiMessage
+﻿#membre #membre_contenu #membreEnvoiMessage table
 {
-    
+    border-collapse: collapse;
+    width : 100%;
+}
+
+#membre #membre_contenu #membreEnvoiMessage table tbody
+{
+    width : 100%;
+}
+
+#membre #membre_contenu #membreEnvoiMessage table tbody td
+{
+    padding : 5px;
+}
+
+#membre #membre_contenu #membreEnvoiMessage table tbody td.col2
+{
+    width : 88%;
 }
