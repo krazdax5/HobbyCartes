@@ -8,23 +8,23 @@ DROP TABLE IF EXISTS membre;
 
 CREATE TABLE membre(
 	idmembre INTEGER PRIMARY KEY AUTO_INCREMENT,
-	prenom VARCHAR(30) NOT NULL,
-	nom VARCHAR(30) NOT NULL,
-	nomutilisateur VARCHAR(30) NOT NULL UNIQUE,
-	motpasse VARCHAR(30) NOT NULL,
-	ville VARCHAR(30) NOT NULL,
-	codepostal VARCHAR(6) NOT NULL,
-	courriel VARCHAR(30) NOT NULL,
-	admin BOOLEAN NOT NULL DEFAULT FALSE,
-	arriereplan VARCHAR(30)
+	prenommem VARCHAR(30) NOT NULL,
+	nommem VARCHAR(30) NOT NULL,
+	nomutilisateurmem VARCHAR(30) NOT NULL UNIQUE,
+	motpassemem VARCHAR(30) NOT NULL,
+	villemem VARCHAR(30) NOT NULL,
+	codepostalmem VARCHAR(6) NOT NULL,
+	courrielmem VARCHAR(30) NOT NULL,
+	adminmem BOOLEAN NOT NULL DEFAULT FALSE,
+	arriereplanmem VARCHAR(30)
 );
 
 CREATE TABLE message(
 	idmess INTEGER PRIMARY KEY AUTO_INCREMENT,
 	iddestinataire INTEGER NOT NULL,
 	iddestinateur INTEGER NOT NULL,
-	objet VARCHAR(30),
-	mess LONGTEXT NOT NULL,
+	objetmes VARCHAR(30),
+	mesmes LONGTEXT NOT NULL,
 	FOREIGN KEY(iddestinataire) REFERENCES membre(idmembre),
 	FOREIGN KEY(iddestinateur) REFERENCES membre(idmembre)
 );
@@ -32,18 +32,18 @@ CREATE TABLE message(
 CREATE TABLE collection(
 	idcollection INTEGER PRIMARY KEY AUTO_INCREMENT,
 	idmembre INTEGER NOT NULL,
-	type ENUM('hockey', 'baseball', 'football', 'basketball') NOT NULL,
+	typecol ENUM('hockey', 'baseball', 'football', 'basketball') NOT NULL,
 	FOREIGN KEY(idmembre) REFERENCES membre(idmembre)
 );
 
 CREATE TABLE editeur(
 	idediteur INTEGER PRIMARY KEY AUTO_INCREMENT,
-	nom VARCHAR(30) NOT NULL
+	nomed VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE equipe(
 	idequipe INTEGER PRIMARY KEY AUTO_INCREMENT,
-	nom VARCHAR(30) NOT NULL
+	nomeq VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE fiche(
@@ -51,18 +51,18 @@ CREATE TABLE fiche(
 	idcollection INTEGER NOT NULL,
 	idediteur INTEGER NOT NULL,
 	idequipe INTEGER NOT NULL,
-	annee DATE NOT NULL,
-	nomjoueur VARCHAR(30) NOT NULL,
-	prenomjoueur VARCHAR(30) NOT NULL,
-	nojoueur INTEGER NOT NULL,
-	recrue BOOLEAN NOT NULL DEFAULT FALSE,
-	position VARCHAR(30) NOT NULL,
-	numerotation VARCHAR(15),
-	valeur FLOAT(15,2) NOT NULL,
-	etat ENUM('impeccable', 'bonne', 'moyenne', 'passable', 'pietre') NOT NULL,
-	imagedevant VARCHAR(30) NOT NULL,
-	imagederriere VARCHAR(30) NOT NULL,
-	publicationsursite DATETIME NOT NULL,
+	anneefi DATE NOT NULL,
+	nomjoueurfi VARCHAR(30) NOT NULL,
+	prenomjoueurfi VARCHAR(30) NOT NULL,
+	nojoueurfi INTEGER NOT NULL,
+	recruefi BOOLEAN NOT NULL DEFAULT FALSE,
+	positionfi VARCHAR(30) NOT NULL,
+	numerotationfi VARCHAR(15),
+	valeurfi FLOAT(15,2) NOT NULL,
+	etatfi ENUM('impeccable', 'bonne', 'moyenne', 'passable', 'pietre') NOT NULL,
+	imagedevantfi VARCHAR(30) NOT NULL,
+	imagederrierefi VARCHAR(30) NOT NULL,
+	publicationsursitefi DATETIME NOT NULL,
 	FOREIGN KEY(idcollection) REFERENCES collection(idcollection),
 	FOREIGN KEY(idediteur) REFERENCES editeur(idediteur),
 	FOREIGN KEY(idequipe) REFERENCES equipe(idequipe)
@@ -71,8 +71,8 @@ CREATE TABLE fiche(
 CREATE TABLE commentaire(
 	idcommentaire INTEGER PRIMARY KEY AUTO_INCREMENT,
 	idfiche INTEGER NOT NULL,
-	destinateur VARCHAR(30) NOT NULL,
-	message LONGTEXT NOT NULL,
+	destinateurcom VARCHAR(30) NOT NULL,
+	messagecom LONGTEXT NOT NULL,
 	FOREIGN KEY(idfiche) REFERENCES fiche(idfiche)
 );
 
