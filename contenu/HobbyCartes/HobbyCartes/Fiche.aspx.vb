@@ -53,7 +53,6 @@ Public Class Fiche
     Protected Sub btnSup_Click() Handles btnSup.Click
         Dim NomDiv As String
         Dim DivSup As New HtmlGenericControl("div")
-        Dim tDivSup As New ArrayList
 
         For value As Integer = 0 To m_Fiche.nbCom - 1
             Dim Com As Entitees.Commentaire = New Entitees.Commentaire
@@ -68,8 +67,7 @@ Public Class Fiche
             'Supprime les commentaires dont les Checkbox sont cochés
             If (ckSup.Checked) Then
                 m_Fiche.SupCommentaire(NomDiv)
-                uppanCommentaire.ContentTemplateContainer.Controls.Remove(DivSup)
-                tDivSup.Add(value)
+                phCommentaire.Controls.Remove(DivSup)
             End If
         Next
 
@@ -99,7 +97,7 @@ Public Class Fiche
         NouvDiv.Controls.Add(lblCom)
 
         'Ajout de la nouvelle division
-        uppanCommentaire.ContentTemplateContainer.Controls.Add(NouvDiv)
+        phCommentaire.Controls.Add(NouvDiv)
 
     End Sub
 
