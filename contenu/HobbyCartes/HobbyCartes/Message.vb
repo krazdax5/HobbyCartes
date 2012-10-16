@@ -20,7 +20,7 @@ Namespace Entitees
         Public Sub New(id As Integer, idDestinateur As Integer, idDestinataire As Integer, objet As String, contenu As String)
             m_id = id
             m_idDestinataire = idDestinataire
-            m_idDestinateur = m_idDestinateur
+            m_idDestinateur = idDestinateur
             m_objet = objet
             m_contenu = contenu
         End Sub
@@ -30,12 +30,12 @@ Namespace Entitees
         ''' Leve une exception si le message n'existe pas.
         ''' </summary>
         Public Sub New(id As Integer, dbCon As MySqlConnection)
-            Dim dbCom As MySqlCommand = New MySqlCommand("SELECT * FROM message WHERE idmess=" & id & ";", dbCon)
+            Dim dbCom As MySqlCommand = New MySqlCommand("SELECT * FROM message WHERE idmess=" & id, dbCon)
             Dim dbRead As MySqlDataReader = dbCom.ExecuteReader()
             dbRead.Read()
             m_id = id
-            m_idDestinataire = dbRead.GetString("iddestinataire")
-            m_idDestinateur = dbRead.GetString("iddestinateur")
+            m_idDestinataire = dbRead.GetInt32("iddestinataire")
+            m_idDestinateur = dbRead.GetInt32("iddestinateur")
             m_objet = dbRead.GetString("objet")
             m_contenu = dbRead.GetString("mess")
             dbRead.Close()
@@ -95,8 +95,8 @@ Namespace Entitees
             Dim dbRead As MySqlDataReader = dbCom.ExecuteReader()
             While dbRead.Read()
                 Dim message As Message = New Message(dbRead.GetInt32("idmess"),
-                                                     dbRead.GetInt32("iddestinataire"),
                                                      dbRead.GetInt32("iddestinateur"),
+                                                     dbRead.GetInt32("iddestinataire"),
                                                      dbRead.GetString("objet"),
                                                      dbRead.GetString("mess"))
                 listeMessages.Add(message)

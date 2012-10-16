@@ -22,12 +22,12 @@ Public Class MembreVisualiserMessages
     ''' </summary>
     Protected Sub Page_Load() Handles Me.Load
         ' Ouvre la connexion a la base de donnees
-        dbCon = New MySqlConnection("Server=G264-11;Database=test;Uid=root;Pwd=toor;")
+        dbCon = New MySqlConnection("Server=localhost;Database=test;Uid=root;Pwd=toor;")
         dbCon.Open()
         ' Chargement de la liste de messages
-        messages = Entitees.Message.getListe(1, dbCon)
+        messages = Entitees.Message.getListe(Request.QueryString("id"), dbCon)
         For Each message As Entitees.Message In messages
-            ajoute_message(message, dbCon)
+            ajoute_message(message)
         Next
     End Sub
 
@@ -41,7 +41,7 @@ Public Class MembreVisualiserMessages
     ''' <summary>
     ''' Ajoute un message a la vue
     ''' </summary>
-    Private Sub ajoute_message(message As Entitees.Message, dbCon As MySqlConnection)
+    Private Sub ajoute_message(message As Entitees.Message)
         Dim destinateurText As Label = New Label()
         destinateurText.Text = "Destinateur : " & Entitees.Membre.getNomUtilisateurParId(message.idDestinateur, dbCon) & "<br />"
 
