@@ -10,6 +10,7 @@ Public Class MembreListeCartes
     Private m_connection As MySqlConnection
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        lblPasDeFiche.Visible = False
         m_connection = New MySqlConnection("Server=localhost;Database=test;Uid=root;Pwd=toor;")
         m_connection.Open()
 
@@ -24,6 +25,9 @@ Public Class MembreListeCartes
     End Sub
 
     Private Function changementSport() As Boolean
+        m_collection.chargementNouvCollection(m_sportEnCours, m_membre.id)
+        m_sportEnCours = m_collection.TypeCollection
+
         'Détermintation de la liste à afficher
         Select Case m_sportEnCours
             Case Entitees.Collection.Type.Baseball
@@ -162,6 +166,38 @@ Public Class MembreListeCartes
                     btnAjouterHockey.Visible = True
                 End If
         End Select
+    End Sub
+
+    Protected Sub lnkbtnHockey_click(sender As Object, e As EventArgs) Handles lnkbtnHockey.Click
+        m_sportEnCours = Entitees.Collection.Type.Hockey
+        If Not changementSport() Then
+            changerVisibilite(Entitees.Collection.Type.Hockey, True)
+        End If
+    End Sub
+
+    Protected Sub lnkbtnBaseball_click(sender As Object, e As EventArgs) Handles lnkbtnBaseball.Click
+        m_sportEnCours = Entitees.Collection.Type.Baseball
+        If Not changementSport() Then
+            changerVisibilite(Entitees.Collection.Type.Baseball, True)
+        End If
+    End Sub
+
+    Protected Sub lnkbtnBasketball_click(sender As Object, e As EventArgs) Handles lnkbtnBasketball.Click
+        m_sportEnCours = Entitees.Collection.Type.Basketball
+        If Not changementSport() Then
+            changerVisibilite(Entitees.Collection.Type.Basketball, True)
+        End If
+    End Sub
+
+    Protected Sub lnkbtnFootball_click(sender As Object, e As EventArgs) Handles lnkbtnFootball.Click
+        m_sportEnCours = Entitees.Collection.Type.Football
+        If Not changementSport() Then
+            changerVisibilite(Entitees.Collection.Type.Football, True)
+        End If
+    End Sub
+
+    Protected Sub page_unload(sender As Object, e As EventArgs) Handles Me.Unload
+        m_connection.Close()
     End Sub
 
 End Class

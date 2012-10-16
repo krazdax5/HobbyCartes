@@ -23,6 +23,15 @@ Partial Public Class MembreListeCartes
     Protected WithEvents ongletHockey As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
+    '''Contrôle lnkbtnHockey.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents lnkbtnHockey As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
     '''Contrôle ongletBaseball.
     '''</summary>
     '''<remarks>
@@ -30,6 +39,15 @@ Partial Public Class MembreListeCartes
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
     Protected WithEvents ongletBaseball As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''Contrôle lnkbtnBaseball.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents lnkbtnBaseball As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
     '''Contrôle ongletBasketBall.
@@ -41,6 +59,15 @@ Partial Public Class MembreListeCartes
     Protected WithEvents ongletBasketBall As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
+    '''Contrôle lnkbtnBasketball.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents lnkbtnBasketball As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
     '''Contrôle ongletFootball.
     '''</summary>
     '''<remarks>
@@ -48,6 +75,15 @@ Partial Public Class MembreListeCartes
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
     Protected WithEvents ongletFootball As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''Contrôle lnkbtnFootball.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents lnkbtnFootball As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
     '''Contrôle phHockey.

@@ -81,7 +81,19 @@ Namespace Entitees
                 End While
 
                 reader.Close()
-                chargementNouvCollection(sport(0), idMembre)
+
+                Select Case sport(0)
+                    Case "hockey"
+                        m_type = Type.Hockey
+                    Case "football"
+                        m_type = Type.Football
+                    Case "baseball"
+                        m_type = Type.Baseball
+                    Case "basketball"
+                        m_type = Type.Basketball
+                    Case Else
+                        m_type = Type.aucun
+                End Select
 
             Catch ex As Exception
                 m_type = Type.aucun
@@ -105,7 +117,7 @@ Namespace Entitees
                 End While
 
                 reader.Close()
-
+                m_fiches = New List(Of Entitees.Fiche)()
                 'Remplissage de la liste de fiches
                 For Each identificateur In listeID
                     m_fiches.Add(New Entitees.Fiche(identificateur, m_connection))
@@ -120,20 +132,9 @@ Namespace Entitees
         ''' </summary>
         ''' <param name="sport">Représente un type de collection.</param>
         ''' <param name="idMembre">Identificateur du membre à qui appartient la collection.</param>
-        Public Sub chargementNouvCollection(ByVal sport As String, ByVal idMembre As Integer)
-            'Détermination du sport
-            Select Case sport
-                Case "hockey"
-                    m_type = Collection.Type.Hockey
-                Case "baseball"
-                    m_type = Collection.Type.Baseball
-                Case "basketball"
-                    m_type = Collection.Type.Basketball
-                Case "football"
-                    m_type = Collection.Type.Football
-                Case Else
-                    m_type = Type.aucun
-            End Select
+        Public Sub chargementNouvCollection(ByVal sport As Entitees.Collection.Type, ByVal idMembre As Integer)
+            m_type = sport
+            m_fiches = Nothing
 
             'Nouvelle commande pour récupérer l'identificateur de la collection
             Dim requete As MySqlCommand = New MySqlCommand("SELECT * FROM collection WHERE" +
@@ -145,12 +146,16 @@ Namespace Entitees
                 reader = requete.ExecuteReader()
 
                 'Récupération de l'identificateur de la collection
-                While reader.Read()
+                If reader.Read() Then
                     m_id = reader.GetInt32("idcollection")
-                End While
+                    reader.Close()
+                    chargementListeFiches()
+                Else
+                    m_type = Type.aucun
+                    m_id = -1
+                    reader.Close()
+                End If
 
-                reader.Close()
-                chargementListeFiches()
             Catch ex As Exception
                 m_type = Type.aucun
                 m_id = -1
