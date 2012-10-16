@@ -1,5 +1,12 @@
-﻿#membre #membre_contenu #membreEnvoiMessage table
+﻿#membre #membre_contenu #membreEnvoiMessage
 {
+    border : 1px solid white;
+    width : 100%;
+}
+
+#membre #membre_contenu #membreEnvoiMessage table
+{
+    border-top : 1px solid white;
     border-collapse: collapse;
     width : 100%;
 }
@@ -9,12 +16,25 @@
     width : 100%;
 }
 
-#membre #membre_contenu #membreEnvoiMessage table tbody td
+#membre #membre_contenu #membreEnvoiMessage table tbody>:first-child td
 {
-    padding : 5px;
+    padding-top : 20px;
 }
 
-#membre #membre_contenu #membreEnvoiMessage table tbody td.col2
+#membre #membre_contenu #membreEnvoiMessage table tbody>:last-child td
 {
-    width : 88%;
+    padding-bottom : 20px;
+}
+
+#membre #membre_contenu #membreEnvoiMessage table tbody td
+{
+    padding-top : 5px;
+    padding-right : 20px;
+    padding-bottom : 5px;
+    padding-left : 20px;
+}
+
+#membre #membre_contenu #membreEnvoiMessage table tbody td.minCol
+{
+    width : 10%;
 }
