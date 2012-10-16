@@ -108,6 +108,7 @@
     <Content Include="App_Themes\MainTheme\global.css" />
     <Content Include="App_Themes\MainTheme\inscription.css" />
     <Content Include="App_Themes\MainTheme\membreEnvoiMessage.css" />
+    <Content Include="App_Themes\MainTheme\membreGererCollections.css" />
     <Content Include="App_Themes\MainTheme\membreInfo.css" />
     <Content Include="App_Themes\MainTheme\membreListeCartes.css" />
     <Content Include="App_Themes\MainTheme\membreVisualiserMessage.css" />
@@ -121,7 +122,7 @@
     <Content Include="FilFiches.aspx" />
     <Content Include="img\titre.png" />
     <Content Include="Inscription.aspx" />
-    <Content Include="MembreAjoutCarte.aspx" />
+    <Content Include="MembreGererCollections.aspx" />
     <Content Include="MembreEnvoiMessage.aspx" />
     <Content Include="MembreInfo.aspx" />
     <Content Include="App_Themes\MainTheme\membre.css" />
@@ -190,11 +191,11 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Membre.vb" />
-    <Compile Include="MembreAjoutCarte.aspx.designer.vb">
-      <DependentUpon>MembreAjoutCarte.aspx</DependentUpon>
+    <Compile Include="MembreGererCollections.aspx.designer.vb">
+      <DependentUpon>MembreGererCollections.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MembreAjoutCarte.aspx.vb">
-      <DependentUpon>MembreAjoutCarte.aspx</DependentUpon>
+    <Compile Include="MembreGererCollections.aspx.vb">
+      <DependentUpon>MembreGererCollections.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="MembreEnvoiMessage.aspx.designer.vb">

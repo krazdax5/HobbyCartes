@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class MembreAjoutCarte
+Partial Public Class MembreGererCollections
 
     '''<summary>
     '''Contrôle DropDownList1.

@@ -4,6 +4,6 @@
     <div id="visualiserMessages">
         <h1>Messagerie</h1>
         <asp:Table id="listeMessages" runat="server" />
-        <asp:Button class="btnSuppr" id="btnSuppr" runat="server" Text="Supprimer" />
+        <asp:Button cssclass="btnSuppr" id="btnSuppr" runat="server" Text="Supprimer" />
     </div>
 </asp:Content>

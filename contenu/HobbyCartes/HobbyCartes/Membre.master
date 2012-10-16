@@ -5,7 +5,7 @@
         <div id="membre_onglets">
             <a href="/MembreInfo.aspx" class="onglet">Informations</a>
             <a class="onglet" href="/MembreListeCartes.aspx">Liste des cartes</a>
-            <a class="onglet" href="/MembreAjoutCarte.aspx">Ajouter une carte</a>
+            <a class="onglet" href="/MembreGererCollections.aspx">Gérer ses collections</a>
             <a class="onglet" href="/MembreVisualiserMessages.aspx?idMembre=1">Visualiser ses messages</a>
             <a class="onglet" href="/MembreEnvoiMessage.aspx?idDestinataire=1&idDestinateur=1">Envoyer un message</a>
         </div>
