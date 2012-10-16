@@ -80,28 +80,34 @@ Public Class MembreListeCartes
                 Dim nouvImgAvant As New Image()
                 nouvImgAvant.ImageUrl = fiche.ImageAvant
                 nouvImgAvant.Attributes.Add("alt", "imgAvant" + fiche.ID.ToString)
+                nouvImgAvant.Width = 100
+                nouvImgAvant.Height = 125
                 nouvDiv.Controls.Add(nouvImgAvant)
 
                 'Prénom et nom
                 Dim nouvNom As New Label()
+                nouvNom.Attributes.Add("class", "lblNomFiches")
                 nouvNom.ID = "lblNom" + fiche.ID.ToString
-                nouvNom.Text = fiche.NomJoueur + ", " + fiche.PrenomJoueur
+                nouvNom.Text = fiche.NomJoueur + ", " + fiche.PrenomJoueur + " "
                 nouvDiv.Controls.Add(nouvNom)
 
                 'Année de la carte
                 Dim nouvAnnee As New Label()
+                nouvAnnee.Attributes.Add("class", "lblAnneeFiches")
                 nouvAnnee.ID = "lblAnneeCarte" + fiche.ID.ToString
-                nouvAnnee.Text = fiche.DateCarte.Year
+                nouvAnnee.Text = "Année: " + fiche.DateCarte.Year.ToString + " "
                 nouvDiv.Controls.Add(nouvAnnee)
 
                 'Éditeur de la carte
                 Dim nouvEditeur As New Label()
+                nouvEditeur.Attributes.Add("class", "lblEditeurFiches")
                 nouvEditeur.ID = "lblEditeur" + fiche.ID.ToString
-                nouvEditeur.Text = fiche.Editeur.NomEditeur
+                nouvEditeur.Text = "Éditeur: " + fiche.Editeur.NomEditeur + " "
                 nouvDiv.Controls.Add(nouvEditeur)
 
                 'Valeur de la carte
                 Dim nouvValeur As New Label()
+                nouvValeur.Attributes.Add("class", "lblValeurFiches")
                 nouvValeur.ID = "lblValeur" + fiche.ID.ToString
                 nouvValeur.Text = fiche.Valeur.ToString
                 nouvDiv.Controls.Add(nouvValeur)

@@ -11,3 +11,42 @@
 {
     background-color: Black;
 }
+.listeFiches
+{
+    position:relative;
+    bottom:250px;
+    padding: 20px;
+    margin-bottom: 10px;
+    border: 1px solid white;
+    clear: both;
+    min-height: 150px;  
+}
+.listeFiches img
+{
+    float: left;
+}
+.lblNomFiches
+{
+    float:left;
+    left:10px;
+    position:relative;
+    font-size:x-large;
+    color:Red;    
+}
+.lblEditeurFiches
+{
+    float:left;
+    position:relative;
+    left: 110px;
+    bottom:90px;
+    font-size:large;
+    clear:left;
+}
+/*.lblAnneeFiches
+{
+    float:left;
+    position:absolute;
+    left:300px;
+    bottom:100px;
+    font-size:large;
+}*/
