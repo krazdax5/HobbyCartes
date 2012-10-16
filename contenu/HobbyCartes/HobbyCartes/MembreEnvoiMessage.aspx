@@ -7,25 +7,22 @@
         <table>
             <tbody>
                 <tr>
-                    <td class="minCol">Destinateur</td>
-                    <td><asp:label ID="lblDestinateur" runat="server" /></td>
+                    <td>Destinateur</td>
+                    <td class="maxCol"><asp:label ID="lblDestinateur" runat="server" /></td>
                 </tr>
                 <tr>
-                    <td class="minCol">Destinataire</td>
-                    <td><asp:label ID="lblDestinataire" runat="server" /></td>
+                    <td>Destinataire</td>
+                    <td class="maxCol"><asp:label ID="lblDestinataire" runat="server" /></td>
                 </tr>
                  <tr>
-                    <td class="minCol">Objet</td>
-                    <td><asp:TextBox ID="txtObjet" runat="server" MaxLength="30" Width="100%" /></td>
-                </tr>
-                <!-- <tr>
-                    <td colspan="2"> Contenu</td>
-                </tr> -->
-                <tr>
-                    <td colspan="2"><asp:TextBox ID="txtContenu" TextMode="MultiLine" Rows="20" runat="server" Width="100%" /></td>
+                    <td>Objet</td>
+                    <td class="maxCol"><asp:TextBox ID="txtObjet" runat="server" MaxLength="30" Width="100%" /></td>
                 </tr>
                 <tr>
-                    <td colspan="2"><asp:Button runat="server" id="btnEnvoyer" text="Envoyer" /></td>
+                    <td class="maxCol" colspan="2"><asp:TextBox ID="txtContenu" TextMode="MultiLine" Rows="20" runat="server" Width="100%" /></td>
+                </tr>
+                <tr>
+                    <td class="maxCol" colspan="2"><asp:Button runat="server" id="btnEnvoyer" text="Envoyer" /></td>
                 </tr>
             </tbody>
         </table>

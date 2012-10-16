@@ -18,14 +18,22 @@ Public Class MembreVisualiserMessages
     Private dbCon As MySqlConnection
 
     ''' <summary>
+    ''' La liste des boites a cocher pour la suppression de messages
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private checkBoxes As List(Of CheckBox)
+
+    ''' <summary>
     ''' Chargement de la page
     ''' </summary>
     Protected Sub Page_Load() Handles Me.Load
+        ' Initialise la liste des checkboxes
+        checkBoxes = New List(Of CheckBox)
         ' Ouvre la connexion a la base de donnees
         dbCon = New MySqlConnection("Server=localhost;Database=test;Uid=root;Pwd=toor;")
         dbCon.Open()
         ' Chargement de la liste de messages
-        messages = Entitees.Message.getListe(Request.QueryString("id"), dbCon)
+        messages = Entitees.Message.getListe(Request.QueryString("idMembre"), dbCon)
         For Each message As Entitees.Message In messages
             ajoute_message(message)
         Next
@@ -39,22 +47,47 @@ Public Class MembreVisualiserMessages
     End Sub
 
     ''' <summary>
-    ''' Ajoute un message a la vue
+    ''' Ajoute un message a la liste des messages sur la vue
     ''' </summary>
     Private Sub ajoute_message(message As Entitees.Message)
         Dim destinateurText As Label = New Label()
-        destinateurText.Text = "Destinateur : " & Entitees.Membre.getNomUtilisateurParId(message.idDestinateur, dbCon) & "<br />"
+        destinateurText.Text = Entitees.Membre.getNomUtilisateurParId(message.idDestinateur, dbCon)
 
-        Dim objetText As Label = New Label()
-        objetText.Text = "Objet : " & message.objet
+        Dim destinateurCell As TableCell = New TableCell()
+        destinateurCell.Controls.Add(destinateurText)
 
-        Dim messageLabel As HyperLink = New HyperLink()
-        messageLabel.NavigateUrl = "MembreVisualiserMessage.aspx?id=" & message.id
-        messageLabel.CssClass = "message"
-        messageLabel.Controls.Add(destinateurText)
-        messageLabel.Controls.Add(objetText)
+        Dim objetLnk As HyperLink = New HyperLink()
+        objetLnk.Text = message.objet
+        objetLnk.NavigateUrl = "MembreVisualiserMessage.aspx?id=" & message.id
+        Dim objetCell As TableCell = New TableCell()
+        objetCell.Controls.Add(objetLnk)
+        objetCell.CssClass = "colObjet"
 
-        liste_messages.Controls.Add(messageLabel)
+        Dim selectChk As CheckBox = New CheckBox()
+        Dim selectCell As TableCell = New TableCell()
+        selectCell.Controls.Add(selectChk)
+        checkBoxes.Add(selectChk)
+
+        Dim ligne As TableRow = New TableRow()
+        ligne.Cells.Add(destinateurCell)
+        ligne.Cells.Add(objetCell)
+        ligne.Cells.Add(selectCell)
+
+        listeMessages.Rows.Add(ligne)
+    End Sub
+
+    ''' <summary>
+    ''' Clic sur le bouton "Supprimer"
+    ''' </summary>
+    Private Sub btnSuppr_Click() Handles btnSuppr.Click
+        ' Supprime tous les messages selectionnes de la base de donnees
+        For i As Integer = 1 To checkBoxes.Count
+            If checkBoxes(i - 1).Checked Then
+                messages(i - 1).supprimer(dbCon)
+            End If
+        Next
+        ' Refresh la page
+        Response.Redirect(Request.RawUrl)
     End Sub
 
 End Class

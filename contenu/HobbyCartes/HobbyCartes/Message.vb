@@ -36,8 +36,8 @@ Namespace Entitees
             m_id = id
             m_idDestinataire = dbRead.GetInt32("iddestinataire")
             m_idDestinateur = dbRead.GetInt32("iddestinateur")
-            m_objet = dbRead.GetString("objet")
-            m_contenu = dbRead.GetString("mess")
+            m_objet = dbRead.GetString("objetmes")
+            m_contenu = dbRead.GetString("mesmes")
             dbRead.Close()
         End Sub
 
@@ -97,13 +97,21 @@ Namespace Entitees
                 Dim message As Message = New Message(dbRead.GetInt32("idmess"),
                                                      dbRead.GetInt32("iddestinateur"),
                                                      dbRead.GetInt32("iddestinataire"),
-                                                     dbRead.GetString("objet"),
-                                                     dbRead.GetString("mess"))
+                                                     dbRead.GetString("objetmes"),
+                                                     dbRead.GetString("mesmes"))
                 listeMessages.Add(message)
             End While
             dbRead.Close()
             Return listeMessages
         End Function
+
+        ''' <summary>
+        ''' Supprime le message de la base de donnees
+        ''' </summary>
+        Public Sub supprimer(dbCon As MySqlConnection)
+            Dim dbCom As MySqlCommand = New MySqlCommand("DELETE FROM message WHERE idmess=" & m_id, dbCon)
+            dbCom.ExecuteNonQuery()
+        End Sub
 
     End Class
 

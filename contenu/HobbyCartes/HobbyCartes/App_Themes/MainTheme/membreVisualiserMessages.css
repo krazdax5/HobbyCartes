@@ -1,23 +1,31 @@
-﻿#membre #membre_contenu #visualiser_messages .message
+﻿#membre #membre_contenu #visualiserMessages
 {
-    display : block;
     border : 1px solid white;
-    padding : 12px;
-    margin : 5px;
 }
 
-#membre #membre_contenu #visualiser_messages .message .boxSuppr
+#membre #membre_contenu #visualiserMessages table
 {
-    float : right;
+    width : 100%;
+    border-collapse : collapse;
 }
 
-#membre #membre_contenu #visualiser_messages #btnSuppr
+#membre #membre_contenu #visualiserMessages table tr
+{
+    border-top : 1px solid white;
+}
+
+#membre #membre_contenu #visualiserMessages table tr td
+{
+    padding : 15px;
+}
+
+#membre #membre_contenu #visualiserMessages table tr td.colObjet
+{
+    width : 100%;
+}
+
+#membre #membre_contenu #visualiserMessages .btnSuppr
 {
     float : right;
     margin : 10px;
-}
-
-#membre #membre_contenu #visualiser_message .contenu
-{
-    overflow : hidden;
 }
