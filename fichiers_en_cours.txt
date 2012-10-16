@@ -1,3 +1,3 @@
 Charles:collection.vb, fiche.vb, membrelistecartes.aspx(et aspx.vb)
-Loïc: 
-Jean-François:
+Loïc: membrevisualisermessage(s).aspx(.vb), membre.vb
+Jean-François:fiche.aspx.vb, fiche.apsx

@@ -160,7 +160,13 @@ INSERT INTO message (iddestinataire, iddestinateur, objet, mess)
 VALUES ('2','3','Wow', 'Que de belles cartes je suis sans mot!');
 INSERT INTO message (iddestinataire, iddestinateur, objet, mess)
 VALUES ('3','1','Ouf', 'Tes cartes sont vraiment de la merde!');
-
+INSERT INTO message (iddestinataire, iddestinateur, objet, mess) 
+VALUES ('1','1','Salut', 'Je suis inutile!');
+INSERT INTO message (iddestinataire, iddestinateur, objet, mess)
+VALUES ('1','3','Long message', 'Bien le bonjour, je cherche à évaluer la capacité de la base de données à enregistrer de longs textes contenant une multitude d\'âççêñt$,
+des sauts de lignes, et des caractères <\'spéciaux\'>.');
+INSERT INTO message (iddestinataire, iddestinateur, objet, mess)
+VALUES ('3','1','Ouf', 'Tes cartes sont vraiment de la merde!');
 
 
 

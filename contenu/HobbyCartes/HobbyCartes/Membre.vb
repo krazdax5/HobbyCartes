@@ -266,7 +266,8 @@ Namespace Entitees
         ''' Donne le nom d'utilisateur (= pseudo) d'un membre en fonction de son ID
         ''' </summary>
         Public Shared Function getNomUtilisateurParId(id As Integer, dbCon As MySqlConnection) As String
-            Return New MySqlCommand("SELECT nomutilisateur FROM membre WHERE idmembre=" & id, dbCon).ExecuteScalar()
+            Dim com As MySqlCommand = New MySqlCommand("SELECT nomutilisateur FROM membre WHERE idmembre=" & id, dbCon)
+            Return com.ExecuteScalar()
         End Function
 
     End Class

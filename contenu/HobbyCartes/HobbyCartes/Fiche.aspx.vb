@@ -13,13 +13,13 @@ Public Class Fiche
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         m_Admin = True
-
+        Dim idFiche As Integer = Request.QueryString("idFiche")
 
 
         m_connection = New MySqlConnection("Server=localhost;Database=test;Uid=root;Pwd=toor;")
         m_connection.Open()
 
-        m_Fiche = New Entitees.Fiche(1, m_connection)
+        m_Fiche = New Entitees.Fiche(idFiche, m_connection)
         Dim NbCom As Integer = m_Fiche.nbCom()
 
         For value As Integer = 0 To NbCom - 1
