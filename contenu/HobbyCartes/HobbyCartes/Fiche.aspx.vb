@@ -15,7 +15,6 @@ Public Class Fiche
         m_Admin = True
         Dim idFiche As Integer = Request.QueryString("idFiche")
 
-
         m_connection = New MySqlConnection("Server=localhost;Database=test;Uid=root;Pwd=toor;")
         m_connection.Open()
 
@@ -40,10 +39,11 @@ Public Class Fiche
         If (txtCom.Text = "") Then
             Return
         End If
-        Dim Com As Entitees.Commentaire = New Entitees.Commentaire
+        Dim idFiche As Integer = Request.QueryString("idFiche")
+        Dim Com As Entitees.Commentaire = New Entitees.Commentaire("Jean Coutue", idFiche)
         Com.pMessage() = txtCom.Text
-        Com.pIDFiche() = 1
-        Com.pDestinateur() = "Jean Coutue"
+        'Com.pIDFiche() = idFiche
+        'Com.pDestinateur() = "Jean Coutue"
         Dim IDCom As Integer = m_Fiche.NouvCommentaire(Com)
         AfficheNouvCom(IDCom)
         txtCom.Text = ""
@@ -108,9 +108,5 @@ Public Class Fiche
         Com = m_Fiche.ChercheCom(m_Fiche.nbCom - 1)
         AfficheCom(Com)
     End Sub
-
-    
-
-
 
 End Class
