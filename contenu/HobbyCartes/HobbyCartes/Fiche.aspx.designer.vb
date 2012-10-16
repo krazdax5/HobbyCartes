@@ -59,6 +59,15 @@ Partial Public Class Fiche
     Protected WithEvents uppanCommentaire As Global.System.Web.UI.UpdatePanel
 
     '''<summary>
+    '''Contrôle phCommentaire.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents phCommentaire As Global.System.Web.UI.WebControls.PlaceHolder
+
+    '''<summary>
     '''Contrôle btnSup.
     '''</summary>
     '''<remarks>

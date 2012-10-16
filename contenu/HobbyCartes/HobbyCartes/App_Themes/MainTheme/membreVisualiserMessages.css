@@ -16,3 +16,8 @@
     float : right;
     margin : 10px;
 }
+
+#membre #membre_contenu #visualiser_message .contenu
+{
+    overflow : hidden;
+}

@@ -7,7 +7,7 @@
             <a class="onglet" href="/MembreListeCartes.aspx">Liste des cartes</a>
             <a class="onglet" href="/MembreAjoutCarte.aspx">Ajouter une carte</a>
             <a class="onglet" href="/MembreVisualiserMessages.aspx">Visualiser ses messages</a>
-            <a class="onglet" href="/MembreEnvoiMessage.aspx?id=1">Envoyer un message</a>
+            <a class="onglet" href="/MembreEnvoiMessage.aspx?idDestinataire=1&idDestinateur=1">Envoyer un message</a>
         </div>
         <div id="membre_contenu">
             <asp:ContentPlaceHolder ID="cphPageMembreContenu" runat="server" />

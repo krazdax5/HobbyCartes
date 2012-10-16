@@ -49,7 +49,8 @@
                 
                 <asp:UpdatePanel ID="uppanCommentaire" runat="server">
                     <ContentTemplate>
-                        
+                        <asp:PlaceHolder ID="phCommentaire" runat="server">
+                        </asp:PlaceHolder>
                     </ContentTemplate>
                         <Triggers>
                             <asp:ASyncPostBackTrigger ControlID="btnCom" EventName="Click" />

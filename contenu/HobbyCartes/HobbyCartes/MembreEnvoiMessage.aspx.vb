@@ -36,21 +36,19 @@ Public Class MembreEnvoiMessage
     ''' </summary>
     Protected Sub Page_Load() Handles Me.Load
         ' Ouvre la connexion a la base de donnees
-        dbCon = New MySqlConnection("Server=G264-11;Database=test;Uid=root;Pwd=toor;")
+        dbCon = New MySqlConnection("Server=localhost;Database=test;Uid=root;Pwd=toor;")
         dbCon.Open()
-        ' Chargement du destinataire avec le parametre "id" de l'url
         Try
-            Dim idDestinataire As Integer = Request.QueryString("id")
-            destinataire = New Entitees.Membre(idDestinataire, dbCon)
+            ' Chargement du destinateur et du destinataire
+            destinataire = New Entitees.Membre(Request.QueryString("idDestinataire"), dbCon)
+            destinateur = New Entitees.Membre(Request.QueryString("idDestinateur"), dbCon)
         Catch ex As Exception
             ' Affiche la page d'erreur en cas d'exception
             Erreur.afficherException(ex, Request.UrlReferrer, Me)
         End Try
-        ' Application du nom du membre sur le label "Nom"
-        lbNom.Text = destinataire.nomComplet
-        ' Chargement du destinateur avec la session de l'utilisateur
-        destinateur = New Entitees.Membre(1, dbCon)
-        ' TODO
+        ' Application du nom complet du membre sur les labels "Destinataire" et "Destinateur"
+        lblDestinataire.Text = destinataire.nomComplet & " (" & destinataire.nomUtilisateur & ")"
+        lblDestinateur.Text = destinateur.nomComplet & " (" & destinateur.nomUtilisateur & ")"
     End Sub
 
     ''' <summary>
@@ -61,15 +59,15 @@ Public Class MembreEnvoiMessage
         ' Recupere l'objet et le contenu du message
         Dim objet As String = txtObjet.Text
         Dim contenu As String = txtContenu.Text
-        ' Envoi du message au destinataire
         Try
+            ' Envoi du message au destinataire
             destinateur.envoyerMessage(destinataire, objet, contenu)
-            ' Affiche la page de succes si tout s'est bien passe
-            ' TODO
         Catch ex As Exception
             ' Affiche la page d'erreur en cas d'exception
             Erreur.afficherException(ex, Page, Me)
         End Try
+        ' Affiche la page de succes si tout s'est bien passe
+        Response.Redirect(Request.RawUrl)
     End Sub
 
     ''' <summary>

@@ -15,7 +15,6 @@ Public Class Fiche
         m_Admin = True
         Dim idFiche As Integer = Request.QueryString("idFiche")
 
-
         m_connection = New MySqlConnection("Server=localhost;Database=test;Uid=root;Pwd=toor;")
         m_connection.Open()
 
@@ -40,10 +39,11 @@ Public Class Fiche
         If (txtCom.Text = "") Then
             Return
         End If
-        Dim Com As Entitees.Commentaire = New Entitees.Commentaire
+        Dim idFiche As Integer = Request.QueryString("idFiche")
+        Dim Com As Entitees.Commentaire = New Entitees.Commentaire("Jean Coutue", idFiche)
         Com.pMessage() = txtCom.Text
-        Com.pIDFiche() = 1
-        Com.pDestinateur() = "Jean Coutue"
+        'Com.pIDFiche() = idFiche
+        'Com.pDestinateur() = "Jean Coutue"
         Dim IDCom As Integer = m_Fiche.NouvCommentaire(Com)
         AfficheNouvCom(IDCom)
         txtCom.Text = ""
@@ -53,7 +53,6 @@ Public Class Fiche
     Protected Sub btnSup_Click() Handles btnSup.Click
         Dim NomDiv As String
         Dim DivSup As New HtmlGenericControl("div")
-        Dim tDivSup As New ArrayList
 
         For value As Integer = 0 To m_Fiche.nbCom - 1
             Dim Com As Entitees.Commentaire = New Entitees.Commentaire
@@ -68,8 +67,7 @@ Public Class Fiche
             'Supprime les commentaires dont les Checkbox sont cochés
             If (ckSup.Checked) Then
                 m_Fiche.SupCommentaire(NomDiv)
-                uppanCommentaire.ContentTemplateContainer.Controls.Remove(DivSup)
-                tDivSup.Add(value)
+                phCommentaire.Controls.Remove(DivSup)
             End If
         Next
 
@@ -99,7 +97,7 @@ Public Class Fiche
         NouvDiv.Controls.Add(lblCom)
 
         'Ajout de la nouvelle division
-        uppanCommentaire.ContentTemplateContainer.Controls.Add(NouvDiv)
+        phCommentaire.Controls.Add(NouvDiv)
 
     End Sub
 
@@ -110,9 +108,5 @@ Public Class Fiche
         Com = m_Fiche.ChercheCom(m_Fiche.nbCom - 1)
         AfficheCom(Com)
     End Sub
-
-    
-
-
 
 End Class
