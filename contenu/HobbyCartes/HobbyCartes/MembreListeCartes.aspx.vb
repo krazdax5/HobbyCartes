@@ -85,9 +85,9 @@ Public Class MembreListeCartes
                 nouvDiv.Controls.Add(nouvImgAvant)
 
                 'Prénom et nom
-                Dim nouvNom As New Label()
-                nouvNom.Attributes.Add("class", "lblNomFiches")
-                nouvNom.ID = "lblNom" + fiche.ID.ToString
+                Dim nouvNom As New LinkButton()
+                nouvNom.Attributes.Add("class", "lnkbtnNomFiches")
+                nouvNom.ID = "lnkbtnNom*" + fiche.ID.ToString
                 nouvNom.Text = fiche.NomJoueur + ", " + fiche.PrenomJoueur + " "
                 nouvDiv.Controls.Add(nouvNom)
 
@@ -109,7 +109,7 @@ Public Class MembreListeCartes
                 Dim nouvValeur As New Label()
                 nouvValeur.Attributes.Add("class", "lblValeurFiches")
                 nouvValeur.ID = "lblValeur" + fiche.ID.ToString
-                nouvValeur.Text = fiche.Valeur.ToString
+                nouvValeur.Text = "Valeur: " + FormatCurrency(fiche.Valeur, 2) + "CAD"
                 nouvDiv.Controls.Add(nouvValeur)
 
                 'Affichage de la fiche abrégée
