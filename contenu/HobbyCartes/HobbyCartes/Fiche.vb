@@ -12,31 +12,31 @@ Namespace Entitees
             pietre
         End Enum
 
-        Private annee As String
+        Private m_annee As Date
 
-        Private nomJoueur As String
+        Private m_nomJoueur As String
 
-        Private prenomJoueur As String
+        Private m_prenomJoueur As String
 
-        Private numeroJoueur As Integer
+        Private m_numeroJoueur As Integer
 
-        Private isRecrue As Boolean
+        Private m_isRecrue As Boolean
 
-        Private position As String
+        Private m_position As String
 
-        Private numerotation As Integer
+        Private m_numerotation As Integer
 
-        Private valeur As Double
+        Private m_valeur As Double
 
-        Private myEtat As Etat
+        Private m_myEtat As Etat
 
-        Private imageDevant As String
+        Private m_imageDevant As String
 
-        Private imageDerriere As String
+        Private m_imageDerriere As String
 
-        Private publicationSurSite As Date
+        Private m_publicationSurSite As Date
 
-        Private commentaires As ArrayList
+        Private m_commentaires As ArrayList
 
         Private m_dbConnectionFiche As MySqlConnection
 
@@ -50,31 +50,48 @@ Namespace Entitees
             Dim Indice As Integer = 0
             Dim dbComFiche As MySqlCommand = New MySqlCommand("SELECT * FROM commentaire WHERE idfiche=" & id, m_dbConnectionFiche)
             Dim dbReadfiche As MySqlDataReader = dbComFiche.ExecuteReader()
-           commentaires = New ArrayList()
+
+            m_commentaires = New ArrayList()
             While dbReadfiche.Read
-                Dim ComTemp As Commentaire = New Commentaire(dbReadfiche.GetString("destinateur"), dbReadfiche.GetInt32("idfiche"), dbReadfiche.GetInt32("idcommentaire"), dbReadfiche.GetString("message"))
-                commentaires.Add(ComTemp)
+                Dim ComTemp As Commentaire = New Commentaire(dbReadfiche.GetString("destinateurcom"), dbReadfiche.GetInt32("idfiche"), dbReadfiche.GetInt32("idcommentaire"), dbReadfiche.GetString("messagecom"))
+                m_commentaires.Add(ComTemp)
             End While
             dbReadfiche.Close()
+
+            'Remplissage des autres attribues de la classe
+            dbComFiche = New MySqlCommand("SELECT * FROM fiche WHERE idfiche=" + id, m_dbConnectionFiche)
+
+            Try
+                dbReadfiche = dbComFiche.ExecuteReader()
+
+                While dbReadfiche.Read()
+                    m_annee = dbReadfiche.GetDateTime("anneefi")
+                    m_nomJoueur = dbReadfiche.GetString("nomjoueurfi")
+                    m_prenomJoueur = dbReadfiche.GetString("prenomjoueurfi")
+                    m_numeroJoueur = dbReadfiche.GetInt32("nojoueurfi")
+                End While
+            Catch ex As Exception
+
+            End Try
         End Sub
 
         'Propriété qui retourne le nombre d'entré valide dans le tableau de commentaire
         Public ReadOnly Property nbCom() As Integer
             Get
-                Return commentaires.Count
+                Return m_commentaires.Count
             End Get
         End Property
 
         'Retourne le commentaire à l'indice désirée
         Public Function ChercheCom(Indice As Integer) As Commentaire
-            Return commentaires(Indice)
+            Return m_commentaires(Indice)
         End Function
 
         Public Function NouvCommentaire(Comm As Commentaire) As Integer
             Dim Com As Commentaire = New Commentaire()
             Com = Comm
-            commentaires.Add(Com)
-            Dim requete As MySqlCommand = New MySqlCommand("INSERT INTO commentaire(idfiche, destinateur, message) VALUES('" +
+            m_commentaires.Add(Com)
+            Dim requete As MySqlCommand = New MySqlCommand("INSERT INTO commentaire(idfiche, destinateurcom, messagecom) VALUES('" +
                                                            Com.pIDFiche.ToString() + "','" +
                                                            Com.pDestinateur + "','" +
                                                            Com.pMessage + "')", m_dbConnectionFiche)
