@@ -5,7 +5,7 @@ Namespace Entitees
     Public Class Fiche
 
         Public Enum Etat
-            impeccable
+            impeccable = 1
             bonne
             moyenne
             passable
@@ -24,11 +24,11 @@ Namespace Entitees
 
         Private m_position As String
 
-        Private m_numerotation As Integer
+        Private m_numerotation As String
 
         Private m_valeur As Double
 
-        Private m_myEtat As Etat
+        Private m_Etat As Etat
 
         Private m_imageDevant As String
 
@@ -39,8 +39,6 @@ Namespace Entitees
         Private m_commentaires As ArrayList
 
         Private m_dbConnectionFiche As MySqlConnection
-
-        Private m_NbCom As Integer
 
         ''' <summary>
         ''' Constructeur par defaut.
@@ -59,7 +57,7 @@ Namespace Entitees
             dbReadfiche.Close()
 
             'Remplissage des autres attribues de la classe
-            dbComFiche = New MySqlCommand("SELECT * FROM fiche WHERE idfiche=" + id, m_dbConnectionFiche)
+            dbComFiche = New MySqlCommand("SELECT * FROM fiche WHERE idfiche=" + id.ToString, m_dbConnectionFiche)
 
             Try
                 dbReadfiche = dbComFiche.ExecuteReader()
@@ -69,9 +67,19 @@ Namespace Entitees
                     m_nomJoueur = dbReadfiche.GetString("nomjoueurfi")
                     m_prenomJoueur = dbReadfiche.GetString("prenomjoueurfi")
                     m_numeroJoueur = dbReadfiche.GetInt32("nojoueurfi")
+                    m_isRecrue = dbReadfiche.GetBoolean("recruefi")
+                    m_position = dbReadfiche.GetString("positionfi")
+                    If dbReadfiche("numerotationfi") IsNot DBNull.Value Then
+                        m_numerotation = dbReadfiche.GetString("numerotationfi")
+                    End If
+                    m_valeur = dbReadfiche.GetFloat("valeurfi")
+                    m_Etat = dbReadfiche.GetInt32("etatfi")
+                    m_imageDevant = dbReadfiche.GetString("imagedevantfi")
+                    m_imageDerriere = dbReadfiche.GetString("imagederrierefi")
+                    m_publicationSurSite = dbReadfiche.GetDateTime("publicationsursitefi")
                 End While
             Catch ex As Exception
-
+                Throw New ApplicationException("Problème de remplissage des données dans la classe fiche.")
             End Try
         End Sub
 

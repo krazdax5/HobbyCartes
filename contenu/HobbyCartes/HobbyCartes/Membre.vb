@@ -55,14 +55,17 @@ Namespace Entitees
             dbRead.Read()
             ' Chargement des attributs
             m_id = id
-            m_prenom = dbRead.GetString("prenom")
-            m_nom = dbRead.GetString("nom")
-            m_nomUtilisateur = dbRead.GetString("nomutilisateur")
-            m_motDePasse = dbRead.GetString("motpasse")
-            m_ville = dbRead.GetString("ville")
-            m_codePostal = dbRead.GetString("codepostal")
-            m_courriel = dbRead.GetString("courriel")
-            m_isAdmin = dbRead.GetBoolean("admin")
+            m_prenom = dbRead.GetString("prenommem")
+            m_nom = dbRead.GetString("nommem")
+            m_nomUtilisateur = dbRead.GetString("nomutilisateurmem")
+            m_motDePasse = dbRead.GetString("motpassemem")
+            m_ville = dbRead.GetString("villemem")
+            m_codePostal = dbRead.GetString("codepostalmem")
+            m_courriel = dbRead.GetString("courrielmem")
+            m_isAdmin = dbRead.GetBoolean("adminmem")
+            If dbRead("arriereplanmem") IsNot DBNull.Value Then
+                m_arrierePlan = dbRead.GetString("arriereplanmem")
+            End If
 
             m_dbConnection = dbCon
             dbRead.Close()
@@ -182,7 +185,7 @@ Namespace Entitees
         ''' <param name="objet">L'objet du message</param>
         ''' <param name="contenu">Le contenu du message</param>
         Sub envoyerMessage(destinataire As Membre, objet As String, contenu As String)
-            Dim dbCom As MySqlCommand = New MySqlCommand("INSERT INTO message (iddestinataire, iddestinateur, objet, mess) " &
+            Dim dbCom As MySqlCommand = New MySqlCommand("INSERT INTO message (iddestinataire, iddestinateur, objetmes, mesmes) " &
                                                         "VALUES(" & destinataire.id & ", " & Me.id & ", '" & objet & "', '" & contenu & "');",
                                                         m_dbConnection)
             dbCom.ExecuteNonQuery()
@@ -203,7 +206,7 @@ Namespace Entitees
             m_nomUtilisateur = membre.nomUtilisateur
             msgErreur = ""
 
-            Dim requete As MySqlCommand = New MySqlCommand("INSERT INTO membre(prenom, nom, nomutilisateur, motpasse, ville, codepostal, courriel, admin, arriereplan) VALUES('" +
+            Dim requete As MySqlCommand = New MySqlCommand("INSERT INTO membre(prenommem, nommem, nomutilisateurmem, motpassemem, villemem, codepostalmem, courrielmem, adminmem, arriereplanmem) VALUES('" +
                                                            membre.prenom + "','" +
                                                            membre.nom + "','" +
                                                            membre.nomUtilisateur + "','" +
@@ -226,12 +229,12 @@ Namespace Entitees
         ''' Retrouve la liste de tous les noms d'utilisateur dans la base de données.
         ''' </summary>
         Public Function getNomsPseudo() As ArrayList
-            Dim requete As MySqlCommand = New MySqlCommand("SELECT nomutilisateur FROM membre", m_dbConnection)
+            Dim requete As MySqlCommand = New MySqlCommand("SELECT nomutilisateurmem FROM membre", m_dbConnection)
             Dim lignes As MySqlDataReader = requete.ExecuteReader()
             Dim noms As ArrayList = New ArrayList()
 
             While lignes.Read()
-                noms.Add(lignes.GetString("nomutilisateur"))
+                noms.Add(lignes.GetString("nomutilisateurmem"))
             End While
 
             lignes.Close()
@@ -246,12 +249,12 @@ Namespace Entitees
         ''' <returns>Retourne True si tout s'est bien passé sinon retourne False</returns>
         Public Function setAttMembre(ByRef msgErreur As String) As Boolean
             Dim requete As MySqlCommand = New MySqlCommand("UPDATE membre SET " +
-                                                           "prenom='" + m_prenom + "', " +
-                                                           "nom='" + m_nom + "', " +
-                                                           "nomutilisateur='" + m_nomUtilisateur + "', " +
-                                                           "ville='" + m_ville + "', " +
-                                                           "codepostal='" + m_codePostal + "', " +
-                                                           "courriel='" + m_courriel + "' WHERE idmembre='" + m_id.ToString + "'", m_dbConnection)
+                                                           "prenommem='" + m_prenom + "', " +
+                                                           "nommem='" + m_nom + "', " +
+                                                           "nomutilisateurmem='" + m_nomUtilisateur + "', " +
+                                                           "villemem='" + m_ville + "', " +
+                                                           "codepostalmem='" + m_codePostal + "', " +
+                                                           "courrielmem='" + m_courriel + "' WHERE idmembre='" + m_id.ToString + "'", m_dbConnection)
 
             Try
                 requete.ExecuteNonQuery()
@@ -266,7 +269,7 @@ Namespace Entitees
         ''' Donne le nom d'utilisateur (= pseudo) d'un membre en fonction de son ID
         ''' </summary>
         Public Shared Function getNomUtilisateurParId(id As Integer, dbCon As MySqlConnection) As String
-            Dim com As MySqlCommand = New MySqlCommand("SELECT nomutilisateur FROM membre WHERE idmembre=" & id, dbCon)
+            Dim com As MySqlCommand = New MySqlCommand("SELECT nomutilisateurmem FROM membre WHERE idmembre=" & id, dbCon)
             Return com.ExecuteScalar()
         End Function
 

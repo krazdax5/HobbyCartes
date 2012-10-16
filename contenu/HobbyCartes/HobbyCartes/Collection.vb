@@ -69,7 +69,7 @@ Namespace Entitees
             m_connection = dbCon
             Dim sport As List(Of String) = New List(Of String)()
 
-            Dim requete As MySqlCommand = New MySqlCommand("SELECT type FROM collection WHERE" +
+            Dim requete As MySqlCommand = New MySqlCommand("SELECT typecol FROM collection WHERE" +
                                                            " idmembre='" + idMembre.ToString + "'", m_connection)
 
             Try
@@ -77,7 +77,7 @@ Namespace Entitees
 
                 'Récupération des collections du membre
                 While reader.Read()
-                    sport.Add(reader.GetString("type"))
+                    sport.Add(reader.GetString("typecol"))
                 End While
 
                 reader.Close()
@@ -138,7 +138,7 @@ Namespace Entitees
             'Nouvelle commande pour récupérer l'identificateur de la collection
             Dim requete As MySqlCommand = New MySqlCommand("SELECT * FROM collection WHERE" +
                                        " idmembre='" + idMembre.ToString + "'" +
-                                       " AND type='" + m_type.ToString.ToLower + "'", m_connection)
+                                       " AND typecol='" + m_type.ToString.ToLower + "'", m_connection)
             Dim reader As MySqlDataReader
 
             Try
