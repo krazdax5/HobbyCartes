@@ -75,10 +75,35 @@ Public Class MembreListeCartes
                 'Image de la fiche
                 Dim nouvImgAvant As New Image()
                 nouvImgAvant.ImageUrl = fiche.ImageAvant
-                nouvImgAvant.Attributes.Add("alt", "image" + fiche.ID.ToString)
-                nouvDiv.Controls.Add(nouvImgAvant) 'Ajout de l'image
+                nouvImgAvant.Attributes.Add("alt", "imgAvant" + fiche.ID.ToString)
+                nouvDiv.Controls.Add(nouvImgAvant)
 
+                'Prénom et nom
+                Dim nouvNom As New Label()
+                nouvNom.ID = "lblNom" + fiche.ID.ToString
+                nouvNom.Text = fiche.NomJoueur + ", " + fiche.PrenomJoueur
+                nouvDiv.Controls.Add(nouvNom)
 
+                'Année de la carte
+                Dim nouvAnnee As New Label()
+                nouvAnnee.ID = "lblAnneeCarte" + fiche.ID.ToString
+                nouvAnnee.Text = fiche.DateCarte.Year
+                nouvDiv.Controls.Add(nouvAnnee)
+
+                'Éditeur de la carte
+                Dim nouvEditeur As New Label()
+                nouvEditeur.ID = "lblEditeur" + fiche.ID.ToString
+                nouvEditeur.Text = fiche.Editeur.NomEditeur
+                nouvDiv.Controls.Add(nouvEditeur)
+
+                'Valeur de la carte
+                Dim nouvValeur As New Label()
+                nouvValeur.ID = "lblValeur" + fiche.ID.ToString
+                nouvValeur.Text = fiche.Valeur.ToString
+                nouvDiv.Controls.Add(nouvValeur)
+
+                'Affichage de la fiche abrégée
+                placeHolder.Controls.Add(nouvDiv)
             Next
             Return True
         Else

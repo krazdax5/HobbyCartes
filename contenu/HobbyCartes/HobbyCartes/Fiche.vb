@@ -12,6 +12,10 @@ Namespace Entitees
             pietre
         End Enum
 
+        Private m_idEditeur As Integer
+
+        Private m_idEquipe As Integer
+
         Private m_id As Integer
 
         Private m_annee As Date
@@ -61,7 +65,50 @@ Namespace Entitees
         End Property
 
         ''' <summary>
-        ''' Constructeur par defaut.
+        ''' Nom de famille du joueur
+        ''' </summary>
+        Public ReadOnly Property NomJoueur As String
+            Get
+                Return m_nomJoueur
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' Prénom du joueur
+        ''' </summary>
+        Public ReadOnly Property PrenomJoueur As String
+            Get
+                Return m_prenomJoueur
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' Année de la série de la carte
+        ''' </summary>
+        Public ReadOnly Property DateCarte As Date
+            Get
+                Return m_annee
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' Éditeur de la carte.
+        ''' </summary>
+        ''' <returns>Retourne une instance de la classe Entitees.Editeur</returns>
+        Public ReadOnly Property Editeur As Entitees.Editeur
+            Get
+                Return New Entitees.Editeur(m_idEditeur, m_dbConnectionFiche)
+            End Get
+        End Property
+
+        Public ReadOnly Property Valeur As Double
+            Get
+                Return m_valeur
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' Constructeur par defaut. Lorsque la construction a échoué, l'identificateur est -1. 
         ''' </summary>
         Public Sub New(id As Integer, dbCon As MySqlConnection)
             m_dbConnectionFiche = dbCon
@@ -85,6 +132,8 @@ Namespace Entitees
                 dbReadfiche = dbComFiche.ExecuteReader()
 
                 While dbReadfiche.Read()
+                    m_idEditeur = dbReadfiche.GetInt32("idediteur")
+                    m_idEquipe = dbReadfiche.GetInt32("idequipe")
                     m_annee = dbReadfiche.GetDateTime("anneefi")
                     m_nomJoueur = dbReadfiche.GetString("nomjoueurfi")
                     m_prenomJoueur = dbReadfiche.GetString("prenomjoueurfi")
@@ -118,7 +167,7 @@ Namespace Entitees
 
                 dbReadfiche.Close()
             Catch ex As Exception
-                Throw New ApplicationException("Problème de remplissage des données dans la classe fiche.")
+                m_id = -1
             End Try
         End Sub
 
