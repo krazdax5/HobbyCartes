@@ -85,10 +85,11 @@ Public Class MembreListeCartes
                 nouvDiv.Controls.Add(nouvImgAvant)
 
                 'Prénom et nom
-                Dim nouvNom As New LinkButton()
+                Dim nouvNom As New HyperLink()
                 nouvNom.Attributes.Add("class", "lnkbtnNomFiches")
                 nouvNom.ID = "lnkbtnNom*" + fiche.ID.ToString
                 nouvNom.Text = fiche.NomJoueur + ", " + fiche.PrenomJoueur + " "
+                nouvNom.NavigateUrl = "Fiche.aspx?idFiche=" + fiche.ID.ToString
                 nouvDiv.Controls.Add(nouvNom)
 
                 'Année de la carte

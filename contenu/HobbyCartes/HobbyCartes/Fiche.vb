@@ -101,9 +101,18 @@ Namespace Entitees
             End Get
         End Property
 
+        ''' <summary>
+        ''' Valeur de la carte en dollar canadien
+        ''' </summary>
         Public ReadOnly Property Valeur As Double
             Get
                 Return m_valeur
+            End Get
+        End Property
+
+        Public ReadOnly Property DatePublication As Date
+            Get
+                Return m_publicationSurSite
             End Get
         End Property
 
@@ -213,6 +222,28 @@ Namespace Entitees
         End Function
 
         ''' <summary>
+        ''' Fonction qui retourne le nom d'utilisateur du membre à qui appartient la fiche.
+        ''' </summary>
+        ''' <returns>Retourne une chaîne de caractère correspondant au nom d'utilistateur du membre. Retourne nulle si erreur.</returns>
+        Public Function PseudoDetenteur() As String
+            Dim requete As MySqlCommand = New MySqlCommand("SELECT membre.nomutilisateurmem FROM membre " +
+                                                           "JOIN collection ON collection.idmembre = membre.idmembre " +
+                                                           "JOIN fiche ON fiche.idcollection = collection.idcollection " +
+                                                           "WHERE fiche.idfiche=" + m_id.ToString, m_dbConnectionFiche)
+            Dim reader As MySqlDataReader
+            Dim pseudo As String
+
+            Try
+                reader = requete.ExecuteReader()
+                reader.Read()
+                pseudo = reader.GetString("nomutilisateurmem")
+                Return pseudo
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
+        ''' <summary>
         ''' Retrouver la liste de toutes les fiches reliées à une collection.
         ''' </summary>
         ''' <param name="idCollection">Identificateur de la collection.</param>
@@ -230,6 +261,41 @@ Namespace Entitees
                 End While
 
                 Return liste
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
+        ''' <summary>
+        ''' Fonction permettant de recevoir une liste de fiche du plus récent au plus vieux par sport.
+        ''' </summary>
+        ''' <param name="connection">Connection à une base de donnée MySQL.</param>
+        ''' <param name="sport">Type de sport.</param>
+        ''' <returns>Retourne une liste de fiches. Si un problème, retourne une valeur nulle.</returns>
+        Public Shared Function ListeFichesOrdonnee(sport As Entitees.Collection.Type, connection As MySqlConnection) As List(Of Entitees.Fiche)
+            Dim ids As List(Of Integer) = New List(Of Integer)()
+            Dim fiches As List(Of Entitees.Fiche) = New List(Of Entitees.Fiche)()
+            Dim requete As MySqlCommand = New MySqlCommand("SELECT fiche.idfiche FROM fiche " +
+                                                           "JOIN collection ON collection.idcollection = fiche.idcollection " +
+                                                           "WHERE collection.typecol='" + sport.ToString.ToLower + "' " +
+                                                           "ORDER BY fiche.publicationsursitefi", connection)
+            Dim reader As MySqlDataReader
+
+            Try
+                reader = requete.ExecuteReader()
+
+                'Récuprération des identificateurs en ordre
+                While reader.Read()
+                    ids.Add(reader.GetInt32("idfiche"))
+                End While
+                reader.Close()
+
+                'Construction de la liste de fiches
+                For Each identificateur In ids
+                    fiches.Add(New Entitees.Fiche(identificateur, connection))
+                Next
+
+                Return fiches
             Catch ex As Exception
                 Return Nothing
             End Try
