@@ -237,6 +237,7 @@ Namespace Entitees
                 reader = requete.ExecuteReader()
                 reader.Read()
                 pseudo = reader.GetString("nomutilisateurmem")
+                reader.Close()
                 Return pseudo
             Catch ex As Exception
                 Return Nothing
@@ -259,7 +260,7 @@ Namespace Entitees
                     Dim nouvFiche As Entitees.Fiche = New Entitees.Fiche(dbRead.GetInt32("idfiche"), connection)
                     liste.Add(nouvFiche)
                 End While
-
+                dbRead.Close()
                 Return liste
             Catch ex As Exception
                 Return Nothing
