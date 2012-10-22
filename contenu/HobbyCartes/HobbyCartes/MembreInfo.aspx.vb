@@ -11,7 +11,14 @@ Public Class MembreInfo
         m_connection = New MySqlConnection("Server=localhost;Database=test;Uid=root;Pwd=toor;")
         m_connection.Open()
 
-        m_membre = New Entitees.Membre(1, m_connection)
+        Dim id As Integer = Entitees.Membre.getIDbyPseudo(Request.QueryString("pseudo"), m_connection)
+
+        If Not id = -1 Then
+            m_membre = New Entitees.Membre(id, m_connection)
+        Else
+            m_membre = New Entitees.Membre(1, m_connection)
+        End If
+
 
         lblPrenom_membre.Text = m_membre.prenom
         lblNom_membre.Text = m_membre.nom

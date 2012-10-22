@@ -34,10 +34,29 @@ Namespace Entitees
         ''' Construit un membre vide avec une connection à une base de données.
         ''' </summary>
         ''' <param name="dbCon">Connection à une base de données MySQL.</param>
-        ''' <remarks>Peut être utilisé pour créer un nouveau membre.</remarks>
+        ''' <remarks>
+        ''' Peut être utilisé pour créer un nouveau membre.
+        ''' </remarks>
         Public Sub New(dbCon As MySqlConnection)
             m_dbConnection = dbCon
         End Sub
+
+        Public Shared Function getIDbyPseudo(pseudo As String, connection As MySqlConnection) As Integer
+            Dim requete As MySqlCommand = New MySqlCommand("SELECT idmembre FROM membre WHERE nomutilisateurmem='" + pseudo + "'", connection)
+            Dim reader As MySqlDataReader
+            Dim id As Integer
+
+            Try
+                reader = requete.ExecuteReader()
+                reader.Read()
+                id = reader.GetInt32("idmembre")
+                reader.Close()
+
+                Return id
+            Catch ex As Exception
+                Return -1
+            End Try
+        End Function
 
         ''' <summary>
         ''' Construit un membre avec son id dans la base de donnees.

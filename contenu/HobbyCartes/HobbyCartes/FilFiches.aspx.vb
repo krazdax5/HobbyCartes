@@ -19,12 +19,19 @@ Public Class FilFiches
         If fiches IsNot Nothing Then
             For Each Fiche In fiches
                 Dim nouvDiv As New HtmlGenericControl("div")
+                nouvDiv.Attributes.Add("class", "listeFilFiches")
 
                 'Image avant
+                Dim nouvA As New HtmlGenericControl("a")
+                nouvA.Attributes.Add("href", "Fiche.aspx?idFiche=" + Fiche.ID.ToString)
                 Dim nouvImage As New Image()
                 nouvImage.ID = "img" + Fiche.ID.ToString
                 nouvImage.ImageUrl = Fiche.ImageAvant
-                nouvDiv.Controls.Add(nouvImage)
+                nouvImage.Attributes.Add("alt", "imgAvant" + Fiche.ID.ToString)
+                nouvImage.Width = 100
+                nouvImage.Height = 125
+                nouvA.Controls.Add(nouvImage)
+                nouvDiv.Controls.Add(nouvA)
 
                 'Prénom et nom
                 Dim nouvNom As New HyperLink()
