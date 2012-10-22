@@ -25,3 +25,51 @@
 {
 	float:right
 }
+.lblNomJoueur
+{
+    font-size:xx-large;
+    text-align:center;
+    
+}
+.lblInfo
+{
+    font-size:large; 
+    color:Teal; 
+    text-align:center; 
+}
+#TFiche tbody tr td
+{
+    
+    padding:10px;
+    background-color:  Silver;
+    border: 1px solid black;
+    font-size:large; 
+}
+#TFiche
+{
+    width:95%;
+}
+#TImage
+{
+    border: 2px solid Red;
+    width: 75%;
+}
+#TImage tbody tr td
+{
+    border: 2px solid Red;
+    padding: 20px;
+}
+.gauche
+{
+    text-align:left;
+    color:Maroon;
+}
+.lblInfoImg
+{
+    font-size:large;
+}
+.TextCom
+{
+    
+    margin:auto;
+}

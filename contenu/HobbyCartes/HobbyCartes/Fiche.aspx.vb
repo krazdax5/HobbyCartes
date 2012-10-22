@@ -21,6 +21,8 @@ Public Class Fiche
         m_Fiche = New Entitees.Fiche(idFiche, m_connection)
         Dim NbCom As Integer = m_Fiche.nbCom()
 
+        AfficheFiche()
+
         For value As Integer = 0 To NbCom - 1
             'Création et remplissage de l'objet commentaire temporaire
             Dim Com As Entitees.Commentaire = New Entitees.Commentaire
@@ -107,6 +109,32 @@ Public Class Fiche
         Dim Com As Entitees.Commentaire = New Entitees.Commentaire
         Com = m_Fiche.ChercheCom(m_Fiche.nbCom - 1)
         AfficheCom(Com)
+    End Sub
+
+    Private Sub AfficheFiche()
+        lblNomJoueur.Text = m_Fiche.PrenomJoueur + " " + m_Fiche.NomJoueur
+        imgAvant.ImageUrl = m_Fiche.ImageAvant
+        imgArriere.ImageUrl = m_Fiche.ImageArriere
+        lblEditeur.Text = m_Fiche.Editeur.NomEditeur
+        lblAnne.Text = m_Fiche.DateCarte.Year.ToString()
+        lblValeur.Text = FormatCurrency(m_Fiche.Valeur, 2) + "CAD"
+        hpDetenteur.Text = m_Fiche.PseudoDetenteur()
+        hpDetenteur.NavigateUrl = "membreinfo.aspx?pseudo=" + m_Fiche.PseudoDetenteur()
+        lblEquipe.Text = m_Fiche.Equipe
+        lblNumero.Text = m_Fiche.Numero.ToString()
+        lblPosition.Text = m_Fiche.Position
+        Dim isRecrue As Boolean = m_Fiche.Recrue
+
+        If (isRecrue) Then
+            lblRecrue.Text = "Oui"
+        Else
+            lblRecrue.Text = "Non"
+        End If
+
+        lblNumerotation.Text = m_Fiche.Numerotation
+        lblEtat.Text = m_Fiche.Etatfiche.ToString()
+        lblDatePub.Text = m_Fiche.DatePublication.ToString()
+
     End Sub
 
 End Class

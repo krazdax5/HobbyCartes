@@ -3,45 +3,85 @@
     <asp:ScriptManager ID="smFiche" runat="server"/>
     
     <div id="fiche">
-        <h1>Nom du joueur : Nom Joueur</h1>
+        <asp:PlaceHolder ID="phFiche" runat="server">
+        
         <div id="info">
-            <table>
+            <table id="TImage">
                 <tbody>
                     <tr>
-                        <th>Avant</th>
-                        <th>Arrière</th>
+                        <td colspan="2"><asp:Label runat="server" ID="lblNomJoueur" CssClass="lblNomJoueur"></asp:Label></td>
                     </tr>
                     <tr>
-                        <td><img id="imgavant" alt="avant" src="" /></td>
-                        <td><img id="imgArriere" alt="arriere" src="" /></td>
+                        <td class="lblInfoImg">Avant</td>
+                        <td class="lblInfoImg">Arrière</td>
+                    </tr>
+                    <tr>
+                        <td><asp:Image ID="imgAvant" AlternateText ="avant" runat="server"/> </td>
+                        <td><asp:Image ID="imgArriere" AlternateText ="arriere" runat="server"/></td>
                     </tr>
                 </tbody>
             </table>
+            <br />
+            <br />
             <div id="description">
-                Equipe : bleh Team<br />
-                N° : 42<br />
-                Description : ceci est un joueur qui joue. Toussa toussa.<br />
-                N° carte : 42<br />
-                Série : bleh<br />
+                <table id="TFiche">
+                    <tbody>
+                        <tr>
+                            <td class="gauche">Éditeur: </td>
+                            <td> <asp:Label runat="server" ID="lblEditeur" CssClass="lblInfo" /> </td>
+                            <td class="gauche"> Année: </td>
+                            <td> <asp:Label runat="server" ID="lblAnne" CssClass="lblInfo" /> </td>
+                        </tr>
+                        <tr>
+                            <td class="gauche">Valeur: </td>
+                            <td> <asp:Label runat="server" ID="lblValeur" CssClass="lblInfo" /> </td>
+                            <td class="gauche"> Détenteur: </td>
+                            <td> <asp:HyperLink runat="server" ID="hpDetenteur" CssClass="lblInfo" /> </td>
+                        </tr>
+                        <tr>
+                            <td class="gauche">Équipe: </td>
+                            <td> <asp:Label runat="server" ID="lblEquipe" CssClass="lblInfo" /> </td>
+                            <td class="gauche">Numéro: </td>
+                            <td> <asp:Label runat="server" ID="lblNumero" CssClass="lblInfo" /> </td>
+                        </tr>
+                        <tr>
+                            <td class="gauche">Position: </td>
+                            <td> <asp:Label runat="server" ID="lblPosition" CssClass="lblInfo" /> </td>
+                            <td class="gauche">Recrue: </td>
+                            <td> <asp:Label runat="server" ID="lblRecrue" CssClass="lblInfo" /> </td>
+                        </tr>
+                        <tr>
+                            <td class="gauche">Numérotation: </td>
+                            <td> <asp:Label runat="server" ID="lblNumerotation" CssClass="lblInfo" /> </td>
+                            <td class="gauche">État: </td>
+                            <td> <asp:Label runat="server" ID="lblEtat" CssClass="lblInfo" /> </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="gauche">Date publication: </td>
+                            <td colspan="2"> <asp:Label runat="server" ID="lblDatePub" CssClass="lblInfo" /> </td>                            
+                        </tr>
+                        
+                    </tbody>
+                </table>
             </div>
         </div>
+        </asp:PlaceHolder>
         <div id="commentaires">
             <h1>Commentaires</h1>
-            <div class="ÉcrireCommentaire">
-                <p>
-            Commenter : <br />
+            <div class="ÉcrireCommentaire">                
+            <h2>Commenter :</h2> <br />
             <asp:UpdatePanel ID="uppantxtCommentaire" runat="server">
                  <ContentTemplate>
-                    <asp:TextBox ID="txtCom" TextMode="MultiLine" Rows="10" Columns="100" runat="server" />
+                    <asp:TextBox ID="txtCom" TextMode="MultiLine" Rows="5" Columns="80" runat="server" CssClass="TextCom" />
                     
                  </ContentTemplate>
                  <Triggers>
                     <asp:AsyncPostBackTrigger ControlID="btnCom" EventName="Click" />
                  </Triggers>
             </asp:UpdatePanel>
-        </p>
         <p>
-            <asp:Button runat="server" id="btnCom" text="Envoyer" />
+            <br />
+            <asp:Button runat="server" id="btnCom" text="Envoyer" Width="150" Height="50" BorderStyle="Solid" BorderColor="Red" Font-Size="Large" ForeColor="Red"/>
         </p>
             </div>
             <div id="AfficheCommentaire">

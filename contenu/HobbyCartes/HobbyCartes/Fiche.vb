@@ -65,6 +65,15 @@ Namespace Entitees
         End Property
 
         ''' <summary>
+        ''' Chemin vers l'image du arriere de la carte
+        ''' </summary>
+        Public ReadOnly Property ImageArriere As String
+            Get
+                Return m_imageDerriere
+            End Get
+        End Property
+
+        ''' <summary>
         ''' Nom de famille du joueur
         ''' </summary>
         Public ReadOnly Property NomJoueur As String
@@ -110,12 +119,57 @@ Namespace Entitees
             End Get
         End Property
 
+        ''' <summary>
+        ''' Date de publication sur le site
+        ''' </summary>
         Public ReadOnly Property DatePublication As Date
             Get
                 Return m_publicationSurSite
             End Get
         End Property
 
+        ''' <summary>
+        ''' Équipe de la fiche
+        ''' </summary>
+        Public ReadOnly Property Equipe As String
+            Get
+                Dim EquipeFiche As New Equipe(m_idEquipe, m_dbConnectionFiche)
+                Return EquipeFiche.Nom
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' Numéro du joueur
+        ''' </summary>
+        Public ReadOnly Property Numero As Integer
+            Get
+                Return m_numeroJoueur
+            End Get
+        End Property
+
+        Public ReadOnly Property Position As String
+            Get
+                Return m_position
+            End Get
+        End Property
+
+        Public ReadOnly Property Recrue As Boolean
+            Get
+                Return m_isRecrue
+            End Get
+        End Property
+
+        Public ReadOnly Property Numerotation As String
+            Get
+                Return m_numerotation
+            End Get
+        End Property
+
+        Public ReadOnly Property Etatfiche As Entitees.Fiche.Etat
+            Get
+                Return m_Etat
+            End Get
+        End Property
         ''' <summary>
         ''' Constructeur par defaut. Lorsque la construction a échoué, l'identificateur est -1. 
         ''' </summary>
@@ -205,7 +259,7 @@ Namespace Entitees
                 requete.ExecuteNonQuery()
                 Return Integer.Parse(requete.LastInsertedId.ToString())
             Catch ex As Exception
-               Return -1
+                Return -1
             End Try
         End Function
 
