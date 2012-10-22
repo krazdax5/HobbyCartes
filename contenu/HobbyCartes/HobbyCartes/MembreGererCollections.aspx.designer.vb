@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class MembreGererCollections
 
     '''<summary>
+    '''Contrôle comboCollections.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents comboCollections As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
     '''Contrôle DropDownList1.
     '''</summary>
     '''<remarks>

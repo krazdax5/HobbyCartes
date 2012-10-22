@@ -6,7 +6,7 @@ Namespace Entitees
     Public Class Collection
 
         Public Enum Type
-            Hockey = 1
+            Hockey
             Baseball
             Football
             Basketball
@@ -29,7 +29,7 @@ Namespace Entitees
         Private m_fiches As List(Of Entitees.Fiche) = New List(Of Entitees.Fiche)
 
         ''' <summary>
-        ''' Connection à la base de données MySQL
+        ''' Connexion à la base de données MySQL
         ''' </summary>
         Private m_connection As MySqlConnection
 
@@ -101,6 +101,27 @@ Namespace Entitees
         End Sub
 
         ''' <summary>
+        ''' Construit une collection à partir de l'identificateur du membre qui le détient
+        ''' et du type de collection (sport) désiré.
+        ''' </summary>
+        Public Sub New(idMembre As Integer, typeCol As Type, dbCon As MySqlConnection)
+            m_connection = dbCon
+
+            m_id = New MySqlCommand("SELECT idcollection FROM collection WHERE idmembre=" & idMembre & " AND typecol='" & typeCol.ToString & "'", m_connection).ExecuteScalar
+
+            Dim req As MySqlCommand = New MySqlCommand("SELECT idfiche FROM fiche WHERE idcollection=" & m_id, m_connection)
+            Dim read As MySqlDataReader = req.ExecuteReader
+            Dim idFiches As List(Of Integer) = New List(Of Integer)
+            While read.Read()
+                idFiches.Add(read.GetInt32("idfiche"))
+            End While
+            read.Close()
+            For Each idFiche As Integer In idFiches
+                m_fiches.Add(New Fiche(idFiche, dbCon))
+            Next
+        End Sub
+
+        ''' <summary>
         ''' Chargement de la liste des fiches selon l'identificateur de la collection.
         ''' Si il n'y en a pas, la liste devient vide.
         ''' </summary>
@@ -162,6 +183,13 @@ Namespace Entitees
             End Try
 
         End Sub
+
+        ''' <summary>
+        ''' Retourne true ssi le membre dont l'identificateur est passé en parametre possede une collection du type passé en parametre.
+        ''' </summary>
+        Public Shared Function existe(idMembre As Integer, typeCol As Type, dbCon As MySqlConnection) As Boolean
+            Return Not New MySqlCommand("SELECT COUNT(*) FROM collection WHERE idmembre=" & idMembre & " AND typecol='" & typeCol.ToString & "'", dbCon).ExecuteScalar = 0
+        End Function
 
     End Class
 

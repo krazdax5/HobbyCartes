@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb"  MasterPageFile="~/Membre.master" CodeBehind="MembreGererCollections.aspx.vb" Inherits="HobbyCartes.MembreGererCollections" %>
+﻿<%@ Page MasterPageFile="~/Membre.master" CodeBehind="MembreGererCollections.aspx.vb" Inherits="HobbyCartes.MembreGererCollections" AutoEventWireup="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cphPageMembreContenu" runat="server">
     <div id="membreGererCollections" >
