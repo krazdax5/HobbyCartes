@@ -279,7 +279,7 @@ Namespace Entitees
             Dim requete As MySqlCommand = New MySqlCommand("SELECT fiche.idfiche FROM fiche " +
                                                            "JOIN collection ON collection.idcollection = fiche.idcollection " +
                                                            "WHERE collection.typecol='" + sport.ToString.ToLower + "' " +
-                                                           "ORDER BY fiche.publicationsursitefi", connection)
+                                                           "ORDER BY fiche.publicationsursitefi DESC", connection)
             Dim reader As MySqlDataReader
 
             Try
