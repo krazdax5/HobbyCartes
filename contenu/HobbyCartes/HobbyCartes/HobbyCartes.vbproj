@@ -114,10 +114,8 @@
     <Content Include="App_Themes\MainTheme\membreVisualiserMessage.css" />
     <Content Include="App_Themes\MainTheme\membreVisualiserMessages.css" />
     <Content Include="App_Themes\MainTheme\recherche.css" />
-    <Content Include="Connexion.aspx" />
-    <Content Include="Default.aspx" />
     <Content Include="App_Themes\MainTheme\master.css" />
-    <Content Include="App_Themes\MainTheme\default.css" />
+    <Content Include="App_Themes\MainTheme\accueil.css" />
     <Content Include="Erreur.aspx" />
     <Content Include="FilFiches.aspx" />
     <Content Include="img\titre.png" />
@@ -141,6 +139,8 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Fiche.aspx" />
+    <Content Include="Connexion.aspx" />
+    <Content Include="Accueil.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administration.aspx.designer.vb">
@@ -266,6 +266,21 @@
     <Compile Include="Fiche.aspx.vb">
       <DependentUpon>Fiche.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Settings.vb" />
+    <Compile Include="Connexion.aspx.designer.vb">
+      <DependentUpon>Connexion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Connexion.aspx.vb">
+      <DependentUpon>Connexion.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Accueil.aspx.designer.vb">
+      <DependentUpon>Accueil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Accueil.aspx.vb">
+      <DependentUpon>Accueil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>

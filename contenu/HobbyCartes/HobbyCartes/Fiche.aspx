@@ -27,37 +27,37 @@
                 <table id="TFiche">
                     <tbody>
                         <tr>
-                            <td class="gauche">Éditeur: </td>
+                            <td class="ficheGauche">Éditeur: </td>
                             <td> <asp:Label runat="server" ID="lblEditeur" CssClass="lblInfo" /> </td>
-                            <td class="gauche"> Année: </td>
+                            <td class="ficheGauche"> Année: </td>
                             <td> <asp:Label runat="server" ID="lblAnne" CssClass="lblInfo" /> </td>
                         </tr>
                         <tr>
-                            <td class="gauche">Valeur: </td>
+                            <td class="ficheGauche">Valeur: </td>
                             <td> <asp:Label runat="server" ID="lblValeur" CssClass="lblInfo" /> </td>
-                            <td class="gauche"> Détenteur: </td>
+                            <td class="ficheGauche"> Détenteur: </td>
                             <td> <asp:HyperLink runat="server" ID="hpDetenteur" CssClass="lblInfo" /> </td>
                         </tr>
                         <tr>
-                            <td class="gauche">Équipe: </td>
+                            <td class="ficheGauche">Équipe: </td>
                             <td> <asp:Label runat="server" ID="lblEquipe" CssClass="lblInfo" /> </td>
-                            <td class="gauche">Numéro: </td>
+                            <td class="ficheGauche">Numéro: </td>
                             <td> <asp:Label runat="server" ID="lblNumero" CssClass="lblInfo" /> </td>
                         </tr>
                         <tr>
-                            <td class="gauche">Position: </td>
+                            <td class="ficheGauche">Position: </td>
                             <td> <asp:Label runat="server" ID="lblPosition" CssClass="lblInfo" /> </td>
-                            <td class="gauche">Recrue: </td>
+                            <td class="ficheGauche">Recrue: </td>
                             <td> <asp:Label runat="server" ID="lblRecrue" CssClass="lblInfo" /> </td>
                         </tr>
                         <tr>
-                            <td class="gauche">Numérotation: </td>
+                            <td class="ficheGauche">Numérotation: </td>
                             <td> <asp:Label runat="server" ID="lblNumerotation" CssClass="lblInfo" /> </td>
-                            <td class="gauche">État: </td>
+                            <td class="ficheGauche">État: </td>
                             <td> <asp:Label runat="server" ID="lblEtat" CssClass="lblInfo" /> </td>
                         </tr>
                         <tr>
-                            <td colspan="2" class="gauche">Date publication: </td>
+                            <td colspan="2" class="ficheGauche">Date publication: </td>
                             <td colspan="2"> <asp:Label runat="server" ID="lblDatePub" CssClass="lblInfo" /> </td>                            
                         </tr>
                         

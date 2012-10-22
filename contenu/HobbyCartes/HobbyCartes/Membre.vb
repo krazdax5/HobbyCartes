@@ -292,6 +292,27 @@ Namespace Entitees
             Return com.ExecuteScalar()
         End Function
 
+        Public Shared Function ConnexionMembre(pseudo As String, motPasse As String, connexion As MySqlConnection) As Boolean
+            Dim requete As MySqlCommand = New MySqlCommand("SELECT idMembre FROM membre WHERE nomutilisateurmem='" + pseudo + "' AND motpassemem='" + motPasse + "'", connexion)
+            Dim reader As MySqlDataReader
+            Dim id As Integer = -1
+
+            Try
+                reader = requete.ExecuteReader
+                reader.Read()
+                id = reader.GetInt32("idmembre")
+                reader.Close()
+
+                If Not id.Equals(-1) Then
+                    Return True
+                Else
+                    Return False
+                End If
+            Catch ex As Exception
+                Return False
+            End Try
+        End Function
+
     End Class
 
 End Namespace
