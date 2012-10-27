@@ -16,7 +16,9 @@ CREATE TABLE membre(
 	codepostalmem VARCHAR(6) NOT NULL,
 	courrielmem VARCHAR(30) NOT NULL,
 	adminmem BOOLEAN NOT NULL DEFAULT FALSE,
-	arriereplanmem VARCHAR(30)
+	arriereplanmem VARCHAR(30),
+	dateinscriptionmem DATETIME NOT NULL,
+	imagemem VARCHAR(30)
 );
 
 CREATE TABLE message(
@@ -76,16 +78,18 @@ CREATE TABLE commentaire(
 	FOREIGN KEY(idfiche) REFERENCES fiche(idfiche)
 );
 
-INSERT INTO membre (prenommem, nommem, nomutilisateurmem, motpassemem, villemem, codepostalmem, courrielmem) 
-VALUES ('Homer', 'Simpson', 'hsimpson', 'hsimpson123', 'Springfield', 'X0X0X0', 'hsimpson@test.com');
-INSERT INTO membre (prenommem, nommem, nomutilisateurmem, motpassemem, villemem, codepostalmem, courrielmem) 
-VALUES ('Jean-François', 'Collin', 'jfcollin', 'jfcollin123','Lévis','G1Q1Q9', 'jfcollin@test.com');
-INSERT INTO membre (prenommem, nommem, nomutilisateurmem, motpassemem, villemem, codepostalmem, courrielmem) 
-VALUES ('Loïc', 'Vial', 'lvial', 'lvial123','Lévis','G1Q1Q9', 'lvial@test.com');
-INSERT INTO membre (prenommem, nommem, nomutilisateurmem, motpassemem, villemem, codepostalmem, courrielmem) 
-VALUES ('Charles', 'Lesveque', 'clevesque', 'clevesque123','Lévis','G1Q1Q9', 'clesveque@test.com');
-INSERT INTO membre (prenommem, nommem, nomutilisateurmem, motpassemem, villemem, codepostalmem, courrielmem, adminmem) 
-VALUES ('Admin', 'Nistrateur', 'admin', 'admin123','Lévis','G1Q1Q9', 'admin@test.com', TRUE);
+INSERT INTO membre (prenommem, nommem, nomutilisateurmem, motpassemem, villemem, codepostalmem, courrielmem, dateinscriptionmem, imagemem) 
+VALUES ('Homer', 'Simpson', 'hsimpson', 'hsimpson123', 'Springfield', 'X0X0X0', 'hsimpson@test.com', CURDATE(), "img/profil.jpg");
+INSERT INTO membre (prenommem, nommem, nomutilisateurmem, motpassemem, villemem, codepostalmem, courrielmem, dateinscriptionmem, imagemem) 
+VALUES ('Jean-François', 'Collin', 'jfcollin', 'jfcollin123','Lévis','G1Q1Q9', 'jfcollin@test.com', CURDATE(), "img/profil.jpg");
+INSERT INTO membre (prenommem, nommem, nomutilisateurmem, motpassemem, villemem, codepostalmem, courrielmem, dateinscriptionmem, imagemem) 
+VALUES ('Loïc', 'Vial', 'lvial', 'lvial123','Lévis','G1Q1Q9', 'lvial@test.com', CURDATE(), "img/profil.jpg");
+INSERT INTO membre (prenommem, nommem, nomutilisateurmem, motpassemem, villemem, codepostalmem, courrielmem, dateinscriptionmem, imagemem) 
+VALUES ('Charles', 'Lesveque', 'clevesque', 'clevesque123','Lévis','G1Q1Q9', 'clesveque@test.com', CURDATE(), "img/profil.jpg");
+INSERT INTO membre (prenommem, nommem, nomutilisateurmem, motpassemem, villemem, codepostalmem, courrielmem, adminmem, dateinscriptionmem, imagemem) 
+VALUES ('Admin', 'Nistrateur', 'admin', 'admin123','Lévis','G1Q1Q9', 'admin@test.com', TRUE, '2011-09-20 15:28', "img/profil.jpg");
+INSERT INTO membre (prenommem, nommem, nomutilisateurmem, motpassemem, villemem, codepostalmem, courrielmem, dateinscriptionmem, imagemem) 
+VALUES ('Rory', 'B. Bellows', 'rbellows', 'rbellows123', 'Springfield', 'X0X0X0', 'rb@test.com', '2012-09-20 15:28', "img/profil.jpg");
 
 INSERT INTO collection (idmembre, typecol) VALUES (1, 'hockey');
 INSERT INTO collection (idmembre, typecol) VALUES (2, 'baseball');
@@ -109,7 +113,7 @@ VALUES ('1','1', '1','2005-01-01','Crosby','Sidney','87','0','Centre', '50.00','
 INSERT INTO fiche (idcollection, idediteur, idequipe, anneefi, nomjoueurfi, prenomjoueurfi, nojoueurfi, recruefi, 
 positionfi, valeurfi, etatfi, imagedevantfi, imagederrierefi, publicationsursitefi) 
 VALUES ('2','2', '2','2008-01-01','Jo','Blo','22','0','Gardien', '10.00','pietre','img/avant.jpg',
-'img/arriere.jpg','2011-09-20 14:28');
+'img/arriere.jpg',CURDATE());
 INSERT INTO fiche (idcollection, idediteur, idequipe, anneefi, nomjoueurfi, prenomjoueurfi, nojoueurfi, recruefi, 
 positionfi, valeurfi, etatfi, imagedevantfi, imagederrierefi, publicationsursitefi) 
 VALUES ('1','1', '3','1982-01-01','Wayne','Gretzky','99','0','Gardien', '10.00','passable','img/avant.jpg',

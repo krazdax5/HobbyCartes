@@ -38,7 +38,7 @@ Public Class Inscription
             lblMessage.Text = msgErreur
             lblMessage.Visible = True
         Else
-            Response.Redirect("Default.aspx")
+            Response.Redirect("Acceuil.aspx")
         End If
     End Sub
 

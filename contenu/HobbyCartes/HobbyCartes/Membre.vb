@@ -25,6 +25,10 @@ Namespace Entitees
 
         Private m_arrierePlan As String
 
+        Private m_imageMEmbre As String
+
+        Private m_DateInscription As Date
+
         Private m_collections As Dictionary(Of Collection.Type, Collection)
 
         Private m_dbConnection As MySqlConnection
@@ -85,6 +89,8 @@ Namespace Entitees
             If dbRead("arriereplanmem") IsNot DBNull.Value Then
                 m_arrierePlan = dbRead.GetString("arriereplanmem")
             End If
+            m_imageMEmbre = dbRead.GetString("imagemem")
+            m_DateInscription = dbRead.GetDateTime("dateinscriptionmem")
 
             m_dbConnection = dbCon
             dbRead.Close()
@@ -110,6 +116,26 @@ Namespace Entitees
             Set(value As String)
                 m_nom = value
             End Set
+        End Property
+
+        ''' <summary>
+        ''' Accesseur de l'image du membre
+        ''' </summary>
+        Public ReadOnly Property Image() As String
+            Get
+                Return m_imageMEmbre
+            End Get
+
+        End Property
+
+        ''' <summary>
+        ''' Accesseur de la date d'inscription du membre
+        ''' </summary>
+        Public ReadOnly Property DateInscription() As Date
+            Get
+                Return m_DateInscription
+            End Get
+
         End Property
 
         ''' <summary>
@@ -224,8 +250,9 @@ Namespace Entitees
             m_prenom = membre.prenom
             m_nomUtilisateur = membre.nomUtilisateur
             msgErreur = ""
+            m_DateInscription = Date.Now
 
-            Dim requete As MySqlCommand = New MySqlCommand("INSERT INTO membre(prenommem, nommem, nomutilisateurmem, motpassemem, villemem, codepostalmem, courrielmem, adminmem, arriereplanmem) VALUES('" +
+            Dim requete As MySqlCommand = New MySqlCommand("INSERT INTO membre(prenommem, nommem, nomutilisateurmem, motpassemem, villemem, codepostalmem, courrielmem, adminmem, arriereplanmem, dateinscriptionmem) VALUES('" +
                                                            membre.prenom + "','" +
                                                            membre.nom + "','" +
                                                            membre.nomUtilisateur + "','" +
@@ -233,7 +260,8 @@ Namespace Entitees
                                                            membre.Ville + "','" +
                                                            membre.CodePostal + "','" +
                                                            membre.Courriel + "','0','" +
-                                                           m_arrierePlan + "')", m_dbConnection)
+                                                           m_arrierePlan + "','" +
+                                                           m_DateInscription + "')", m_dbConnection)
 
             Try
                 requete.ExecuteNonQuery()
@@ -310,6 +338,32 @@ Namespace Entitees
                 End If
             Catch ex As Exception
                 Return False
+            End Try
+        End Function
+
+        Public Shared Function ListeMembresOrdonnee(connection As MySqlConnection) As List(Of Entitees.Membre)
+            Dim ids As List(Of Integer) = New List(Of Integer)()
+            Dim Membres As List(Of Entitees.Membre) = New List(Of Entitees.Membre)()
+            Dim requete As MySqlCommand = New MySqlCommand("SELECT idmembre FROM membre ORDER BY dateinscriptionmem DESC", connection)
+            Dim reader As MySqlDataReader
+
+            Try
+                reader = requete.ExecuteReader()
+
+                'Récuprération des identificateurs en ordre
+                While reader.Read()
+                    ids.Add(reader.GetInt32("idmembre"))
+                End While
+                reader.Close()
+
+                'Construction de la liste de membres
+                For Each identificateur In ids
+                    Membres.Add(New Entitees.Membre(identificateur, connection))
+                Next
+
+                Return Membres
+            Catch ex As Exception
+                Return Nothing
             End Try
         End Function
 
