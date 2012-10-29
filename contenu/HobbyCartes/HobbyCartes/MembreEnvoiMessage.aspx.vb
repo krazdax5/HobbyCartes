@@ -36,7 +36,7 @@ Public Class MembreEnvoiMessage
     ''' </summary>
     Protected Sub Page_Load() Handles Me.Load
         ' Ouvre la connexion a la base de donnees
-        dbCon = New MySqlConnection("Server=localhost;Database=test;Uid=root;Pwd=toor;")
+        dbCon = New MySqlConnection(My.Resources.StringConnexionBdd)
         dbCon.Open()
         Try
             ' Chargement du destinateur et du destinataire

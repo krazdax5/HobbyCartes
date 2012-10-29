@@ -8,7 +8,7 @@ Public Class Inscription
     Dim m_membre As Entitees.Membre
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        m_connection = New MySqlConnection("Server=localhost;Database=test;Uid=root;Pwd=toor;")
+        m_connection = New MySqlConnection(My.Resources.StringConnexionBdd)
 
         m_connection.Open()
 

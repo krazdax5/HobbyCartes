@@ -30,7 +30,7 @@ Public Class MembreVisualiserMessages
         ' Initialise la liste des checkboxes
         checkBoxes = New List(Of CheckBox)
         ' Ouvre la connexion a la base de donnees
-        dbCon = New MySqlConnection("Server=localhost;Database=test;Uid=root;Pwd=toor;")
+        dbCon = New MySqlConnection(My.Resources.StringConnexionBdd)
         dbCon.Open()
         ' Chargement de la liste de messages
         messages = Entitees.Message.getListe(Request.QueryString("idMembre"), dbCon)

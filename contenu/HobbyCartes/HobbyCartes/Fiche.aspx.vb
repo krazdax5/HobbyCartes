@@ -15,7 +15,7 @@ Public Class Fiche
         m_Admin = True
         Dim idFiche As Integer = Request.QueryString("idFiche")
 
-        m_connection = New MySqlConnection("Server=localhost;Database=test;Uid=root;Pwd=toor;")
+        m_connection = New MySqlConnection(My.Resources.StringConnexionBdd)
         m_connection.Open()
 
         m_Fiche = New Entitees.Fiche(idFiche, m_connection)

@@ -10,7 +10,7 @@ Public Class Accueil
             Session.Add("connected", False)
             Session.Timeout = 30
         End If
-        m_connection = New MySqlConnection("Server=localhost;Database=test;Uid=root;Pwd=toor;")
+        m_connection = New MySqlConnection(My.Resources.StringConnexionBdd)
         m_connection.Open()
         NouveauxMembre()
     End Sub

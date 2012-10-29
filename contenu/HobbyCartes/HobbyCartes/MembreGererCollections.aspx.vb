@@ -18,7 +18,7 @@ Public Class MembreGererCollections
         ' Recupere l'id du membre et charge toutes ses collections
         Dim idMembre As Integer = Request.QueryString("idMembre")
         collections = New Dictionary(Of Entitees.Collection.Type, Entitees.Collection)
-        Dim dbCon As MySqlConnection = New MySqlConnection("Server=localhost;Database=test;Uid=root;Pwd=toor;")
+        Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
         dbCon.Open()
         For Each typeCol As Entitees.Collection.Type In System.Enum.GetValues(GetType(Entitees.Collection.Type))
             If Not Entitees.Collection.existe(idMembre, typeCol, dbCon) Then Continue For
