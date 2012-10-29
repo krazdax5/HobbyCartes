@@ -24,7 +24,7 @@ Mess</panel_attributes>
       <x>350</x>
       <y>180</y>
       <w>120</w>
-      <h>200</h>
+      <h>240</h>
     </coordinates>
     <panel_attributes>Membre
 --
@@ -37,7 +37,9 @@ Ville
 CodePostal
 Courriel
 Admin
-ArrierePlan</panel_attributes>
+ArrierePlan
+DateInscription
+ImageMembre</panel_attributes>
     <additional_attributes/>
   </element>
   <element>

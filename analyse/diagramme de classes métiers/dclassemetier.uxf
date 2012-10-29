@@ -5,7 +5,7 @@
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>342</x>
-      <y>54</y>
+      <y>72</y>
       <w>270</w>
       <h>72</h>
     </coordinates>
@@ -20,7 +20,7 @@
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>9</x>
-      <y>54</y>
+      <y>72</y>
       <w>162</w>
       <h>81</h>
     </coordinates>
@@ -35,7 +35,7 @@
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>324</x>
-      <y>252</y>
+      <y>270</y>
       <w>306</w>
       <h>63</h>
     </coordinates>
@@ -49,7 +49,7 @@
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>306</x>
-      <y>423</y>
+      <y>441</y>
       <w>360</w>
       <h>135</h>
     </coordinates>
@@ -64,7 +64,7 @@ Infos: SInfo(fiche)
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>18</x>
-      <y>432</y>
+      <y>450</y>
       <w>144</w>
       <h>72</h>
     </coordinates>
@@ -80,7 +80,7 @@ Message:String
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>144</x>
-      <y>36</y>
+      <y>54</y>
       <w>215</w>
       <h>63</h>
     </coordinates>
@@ -95,7 +95,7 @@ m2=1
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>423</x>
-      <y>99</y>
+      <y>117</y>
       <w>98</w>
       <h>170</h>
     </coordinates>
@@ -110,7 +110,7 @@ Possède</panel_attributes>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>423</x>
-      <y>288</y>
+      <y>306</y>
       <w>98</w>
       <h>152</h>
     </coordinates>
@@ -124,7 +124,7 @@ Contient</panel_attributes>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>135</x>
-      <y>423</y>
+      <y>441</y>
       <w>188</w>
       <h>63</h>
     </coordinates>
@@ -138,7 +138,7 @@ Possède</panel_attributes>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>144</x>
-      <y>72</y>
+      <y>90</y>
       <w>215</w>
       <h>63</h>
     </coordinates>
@@ -153,7 +153,7 @@ Reçoie&gt;</panel_attributes>
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>810</x>
-      <y>450</y>
+      <y>468</y>
       <w>99</w>
       <h>54</h>
     </coordinates>
@@ -167,7 +167,7 @@ Nom: String
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>810</x>
-      <y>522</y>
+      <y>540</y>
       <w>99</w>
       <h>54</h>
     </coordinates>
@@ -181,7 +181,7 @@ Nom: String
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>639</x>
-      <y>432</y>
+      <y>450</y>
       <w>188</w>
       <h>63</h>
     </coordinates>
@@ -195,7 +195,7 @@ est éditée par</panel_attributes>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>639</x>
-      <y>495</y>
+      <y>513</y>
       <w>188</w>
       <h>63</h>
     </coordinates>
@@ -208,10 +208,10 @@ est membre</panel_attributes>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>765</x>
-      <y>27</y>
+      <x>756</x>
+      <y>0</y>
       <w>333</w>
-      <h>189</h>
+      <h>207</h>
     </coordinates>
     <panel_attributes>SInfoM
 --
@@ -224,7 +224,8 @@ est membre</panel_attributes>
 - Courriel:String
 - Admin: Bool
 - arrierePlan: Image
-
+- DateInscription:Date
+-ImageMembre:String
 --
 </panel_attributes>
     <additional_attributes/>
@@ -233,21 +234,21 @@ est membre</panel_attributes>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>585</x>
-      <y>63</y>
-      <w>197</w>
+      <y>81</y>
+      <w>188</w>
       <h>44</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
 m2=1
 </panel_attributes>
-    <additional_attributes>27;27;180;27</additional_attributes>
+    <additional_attributes>27;27;171;27</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>765</x>
-      <y>225</y>
+      <y>243</y>
       <w>333</w>
       <h>216</h>
     </coordinates>
@@ -273,7 +274,7 @@ m2=1
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>639</x>
-      <y>405</y>
+      <y>423</y>
       <w>143</w>
       <h>44</h>
     </coordinates>
