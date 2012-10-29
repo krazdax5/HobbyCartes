@@ -158,6 +158,15 @@ Partial Public Class Fiche
     Protected WithEvents lblDatePub As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''Contrôle lblCom.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents lblCom As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Contrôle uppantxtCommentaire.
     '''</summary>
     '''<remarks>

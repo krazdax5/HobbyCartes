@@ -73,3 +73,10 @@
     
     margin:auto;
 }
+#fiche #commentaires .lblcommentaire
+{
+   padding:20px;
+    margin:20px;   
+    font-size:large;
+    color:#B8C3B8;
+}

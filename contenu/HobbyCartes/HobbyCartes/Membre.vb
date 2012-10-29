@@ -43,6 +43,7 @@ Namespace Entitees
         ''' </remarks>
         Public Sub New(dbCon As MySqlConnection)
             m_dbConnection = dbCon
+            m_id = -1
         End Sub
 
         Public Shared Function getIDbyPseudo(pseudo As String, connection As MySqlConnection) As Integer
@@ -224,6 +225,18 @@ Namespace Entitees
         End Property
 
         ''' <summary>
+        ''' Accesseur de admin
+        ''' </summary>
+        ''' <value></value>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public ReadOnly Property isAdmin() As Boolean
+            Get
+                Return m_isAdmin
+            End Get
+        End Property
+
+        ''' <summary>
         ''' Envoie un message a un autre membre.
         ''' </summary>
         ''' <param name="destinataire">Le destinataire du message</param>
@@ -320,7 +333,7 @@ Namespace Entitees
             Return com.ExecuteScalar()
         End Function
 
-        Public Shared Function ConnexionMembre(pseudo As String, motPasse As String, connexion As MySqlConnection) As Boolean
+        Public Shared Function ConnexionMembre(pseudo As String, motPasse As String, connexion As MySqlConnection) As Integer
             Dim requete As MySqlCommand = New MySqlCommand("SELECT idMembre FROM membre WHERE nomutilisateurmem='" + pseudo + "' AND motpassemem='" + motPasse + "'", connexion)
             Dim reader As MySqlDataReader
             Dim id As Integer = -1
@@ -332,12 +345,12 @@ Namespace Entitees
                 reader.Close()
 
                 If Not id.Equals(-1) Then
-                    Return True
+                    Return id
                 Else
-                    Return False
+                    Return -1
                 End If
             Catch ex As Exception
-                Return False
+                Return -1
             End Try
         End Function
 

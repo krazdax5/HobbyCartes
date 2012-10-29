@@ -6,7 +6,7 @@ Public Class Fiche
     Inherits System.Web.UI.Page
 
     Dim m_connection As MySqlConnection
-    'Dim m_Membre As Entitees.Membre
+    Dim m_Membre As Entitees.Membre
     Dim m_Fiche As Entitees.Fiche
     Dim m_Admin As Boolean
 
@@ -14,12 +14,24 @@ Public Class Fiche
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         m_Admin = True
         Dim idFiche As Integer = Request.QueryString("idFiche")
+        Dim idMembre As Integer
 
         m_connection = New MySqlConnection(My.Resources.StringConnexionBdd)
         m_connection.Open()
 
         m_Fiche = New Entitees.Fiche(idFiche, m_connection)
         Dim NbCom As Integer = m_Fiche.nbCom()
+
+        'Affiche le bouton supprimer commentaires si le membre est administrateur
+        idMembre = Integer.Parse(Session("idMembre"))
+        If Not idMembre.Equals(-1) Then
+            m_Membre = New Entitees.Membre(idMembre, m_connection)
+            If (m_Membre.isAdmin) Then
+                btnSup.Visible = True
+            End If
+        Else
+            m_Membre = New Entitees.Membre(m_connection)
+        End If
 
         AfficheFiche()
 
@@ -30,9 +42,15 @@ Public Class Fiche
             AfficheCom(Com)
         Next
 
-        If (Not m_Admin) Then
-            btnSup.Visible = False
+        If Not Boolean.Parse(Session("connected")) Then
+            btnCom.Visible = False
+            txtCom.Visible = False
+            lblCom.Visible = True
         End If
+
+       
+
+        
 
     End Sub
 
@@ -83,11 +101,13 @@ Public Class Fiche
         NouvDiv.ID = Com.pIDCommentaire.ToString()
 
         'Si le membre est administrateur, ajouter un CheckBox pour la suppression de commentaire
-        If (m_Admin) Then
-            Dim ckSup As New CheckBox
-            ckSup.ID = "ck" + Com.pIDCommentaire.ToString()
-            ckSup.CssClass = "CheckB"
-            NouvDiv.Controls.Add(ckSup)
+        If Not m_Membre.id.Equals(-1) Then
+            If (m_Membre.isAdmin) Then
+                Dim ckSup As New CheckBox
+                ckSup.ID = "ck" + Com.pIDCommentaire.ToString()
+                ckSup.CssClass = "CheckB"
+                NouvDiv.Controls.Add(ckSup)
+            End If
         End If
 
         'Création d'un lbl pour le commentaire

@@ -20,9 +20,13 @@ Public Class Connexion
     Protected Sub btnConnexion_OnClick(sender As Object, e As EventArgs) Handles btnConnexion.Click
         Dim pseudo As String = txtUtilisateur.Text
         Dim motPasse As String = txtMotPasse.Text
+        Dim id As Integer
 
-        If Entitees.Membre.ConnexionMembre(pseudo, motPasse, m_connection) Then
+        id = Entitees.Membre.ConnexionMembre(pseudo, motPasse, m_connection)
+
+        If Not id.Equals(-1) Then
             Session("connected") = True
+            Session("idMembre") = id
             Response.Redirect("Accueil.aspx")
         Else
             lblMessage.Visible = True

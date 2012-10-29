@@ -10,6 +10,9 @@ Public Class Accueil
             Session.Add("connected", False)
             Session.Timeout = 30
         End If
+        If Session("idMembre") Is Nothing Then
+            Session.Add("idMembre", -1)
+        End If
         m_connection = New MySqlConnection(My.Resources.StringConnexionBdd)
         m_connection.Open()
         NouveauxMembre()

@@ -68,9 +68,11 @@
         </asp:PlaceHolder>
         <div id="commentaires">
             <h1>Commentaires</h1>
-            <div class="ÉcrireCommentaire">                
+           
+            <div id="EcrireCom" class="ÉcrireCommentaire">                
             <h2>Commenter :</h2> <br />
-            <asp:UpdatePanel ID="uppantxtCommentaire" runat="server">
+            <asp:Label runat="server" ID="lblCom" Text="Note : Vous devez être connecté pour pouvoir commenter une fiche." Visible="false" CssClass="lblcommentaire"/>
+             <asp:UpdatePanel ID="uppantxtCommentaire" runat="server">
                  <ContentTemplate>
                     <asp:TextBox ID="txtCom" TextMode="MultiLine" Rows="5" Columns="80" runat="server" CssClass="TextCom" />
                     
@@ -97,7 +99,7 @@
                             <asp:ASyncPostBackTrigger ControlID="btnSup" EventName="Click" />                            
                         </Triggers>
                 </asp:UpdatePanel>
-                <asp:Button ID="btnSup" runat="server" Text="Supprimer" />
+                <asp:Button ID="btnSup" runat="server" Text="Supprimer" Visible="false" />
                 
             </div>
         </div>
