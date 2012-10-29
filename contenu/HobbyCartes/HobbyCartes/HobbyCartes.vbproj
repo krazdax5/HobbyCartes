@@ -127,6 +127,7 @@
     <Content Include="MembreListeCartes.aspx" />
     <Content Include="MembreVisualiserMessage.aspx" />
     <Content Include="MembreVisualiserMessages.aspx" />
+    <Content Include="My Project\Global.asax" />
     <Content Include="MySQL\MySql.Data.dll" />
     <Content Include="MySQL\MySql.Data.Entity.dll" />
     <Content Include="MySQL\MySql.Web.dll" />
@@ -167,7 +168,7 @@
     </Compile>
     <Compile Include="FilFiches.aspx.vb">
       <DependentUpon>FilFiches.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="HobbyCartes.master.designer.vb">
       <DependentUpon>HobbyCartes.master</DependentUpon>
@@ -224,20 +225,23 @@
     </Compile>
     <Compile Include="MembreVisualiserMessage.aspx.vb">
       <DependentUpon>MembreVisualiserMessage.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MembreVisualiserMessages.aspx.designer.vb">
       <DependentUpon>MembreVisualiserMessages.aspx</DependentUpon>
     </Compile>
     <Compile Include="MembreVisualiserMessages.aspx.vb">
       <DependentUpon>MembreVisualiserMessages.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Message.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
       <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>

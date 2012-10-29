@@ -58,7 +58,7 @@ Public Class MembreVisualiserMessages
 
         Dim objetLnk As HyperLink = New HyperLink()
         objetLnk.Text = message.objet
-        objetLnk.NavigateUrl = "MembreVisualiserMessage.aspx?id=" & message.id
+        objetLnk.NavigateUrl = "MembreVisualiserMessage.aspx?idMessage=" & message.id
         Dim objetCell As TableCell = New TableCell()
         objetCell.Controls.Add(objetLnk)
         objetCell.CssClass = "colObjet"

@@ -30,4 +30,13 @@ Partial Public Class MembreVisualiserMessage
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
     Protected WithEvents visualiserMessageContenu As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''Contrôle visualiserMessageBtnRepondre.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents visualiserMessageBtnRepondre As Global.System.Web.UI.WebControls.Button
 End Class

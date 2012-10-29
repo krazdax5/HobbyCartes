@@ -3,6 +3,9 @@
 <asp:Content ContentPlaceHolderID="cphPageMembreContenu" runat="server">
     <div id="visualiserMessage">
         <h1 id="visualiserMessageTitre" runat="server" />
-        <p id="visualiserMessageContenu" class="contenu" runat="server" />
+        <div class="visualiserMessageContenu">
+            <p id="visualiserMessageContenu" runat="server" />
+            <asp:Button id="visualiserMessageBtnRepondre" runat="server" Text="Répondre" />
+        </div>
     </div>
 </asp:Content>
