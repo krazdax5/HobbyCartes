@@ -26,6 +26,5 @@
 
 #membre #membre_contenu #visualiserMessages .btnSuppr
 {
-    float : right;
-    margin : 10px;
+    float : left;
 }

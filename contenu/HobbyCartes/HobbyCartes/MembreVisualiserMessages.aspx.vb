@@ -37,6 +37,16 @@ Public Class MembreVisualiserMessages
         For Each message As Entitees.Message In messages
             ajoute_message(message)
         Next
+        ' Ajoute le bouton "Supprimer"
+        Dim btnSupprimer As Button = New Button()
+        btnSupprimer.CssClass = "btnSuppr"
+        btnSupprimer.Text = "Supprimer"
+        Dim btnSupprimerCell As TableCell = New TableCell()
+        btnSupprimerCell.ColumnSpan = 3
+        btnSupprimerCell.Controls.Add(btnSupprimer)
+        Dim btnSupprimerRow As TableRow = New TableRow()
+        btnSupprimerRow.Cells.Add(btnSupprimerCell)
+        listeMessages.Rows.Add(btnSupprimerRow)
     End Sub
 
     ''' <summary>
@@ -69,9 +79,9 @@ Public Class MembreVisualiserMessages
         checkBoxes.Add(selectChk)
 
         Dim ligne As TableRow = New TableRow()
+        ligne.Cells.Add(selectCell)
         ligne.Cells.Add(destinateurCell)
         ligne.Cells.Add(objetCell)
-        ligne.Cells.Add(selectCell)
 
         listeMessages.Rows.Add(ligne)
     End Sub
