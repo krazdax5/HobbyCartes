@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class HobbyCartes
 
     '''<summary>
+    '''Contrôle siteBody.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents siteBody As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''Contrôle form.
     '''</summary>
     '''<remarks>
@@ -21,6 +30,15 @@ Partial Public Class HobbyCartes
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
     Protected WithEvents form As Global.System.Web.UI.HtmlControls.HtmlForm
+
+    '''<summary>
+    '''Contrôle mnuProfil.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents mnuProfil As Global.System.Web.UI.HtmlControls.HtmlAnchor
 
     '''<summary>
     '''Contrôle cphCorps.

@@ -408,6 +408,28 @@ Namespace Entitees
             End Try
         End Function
 
+        Public Shared Function getArrierePlanbyID(id As Integer, connection As MySqlConnection) As String
+            Dim requete As MySqlCommand = New MySqlCommand("SELECT arriereplanmem FROM membre WHERE idmembre='" + id.ToString + "'", connection)
+            Dim reader As MySqlDataReader
+            Dim chemin As String
+
+            Try
+                reader = requete.ExecuteReader
+                reader.Read()
+                chemin = reader.GetString("arriereplanmem")
+                reader.Close()
+
+                Return chemin
+            Catch ex As Exception
+                If Not reader.IsClosed Then
+                    reader.Close()
+                End If
+
+                Return "*"
+            End Try
+            
+        End Function
+
     End Class
 
 End Namespace

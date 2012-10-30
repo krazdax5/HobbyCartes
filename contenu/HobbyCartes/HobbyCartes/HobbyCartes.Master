@@ -1,4 +1,4 @@
-﻿<%@ Master Language="vb" %>
+﻿<%@ Master Language="vb" CodeBehind="~/HobbyCartes.Master.vb" Inherits="HobbyCartes.HobbyCartes" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -6,7 +6,7 @@
 <head runat="server">
     <title>Hobby Cartes</title>
 </head>
-<body>
+<body id="siteBody" runat="server">
     <form id="form" runat="server">
     <div id="contenu">
         <a href="Accueil.aspx" id="entete">
@@ -18,7 +18,7 @@
             <li><a href="Recherche.aspx" runat="server">Recherche</a></li>
             <li><a href="FilFiches.aspx" runat="server">Fil des fiches</a></li>
             <li><a href="Administration.aspx" runat="server">Administration</a></li>
-            <li><a href="MembreInfo.aspx" runat="server">Profil</a></li>
+            <li><a href="MembreInfo.aspx" runat="server" id="mnuProfil" visible="false">Profil</a></li>
         </ul>
         <div id="corps">
             <asp:ContentPlaceHolder ID="cphCorps" runat="server" />

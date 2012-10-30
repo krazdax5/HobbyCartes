@@ -1,5 +1,6 @@
 ﻿Imports MySql.Data
 Imports MySql.Data.MySqlClient
+Imports System.IO
 
 Public Class Connexion
     Inherits System.Web.UI.Page
@@ -21,12 +22,22 @@ Public Class Connexion
         Dim pseudo As String = txtUtilisateur.Text
         Dim motPasse As String = txtMotPasse.Text
         Dim id As Integer
+        Dim chemin As String
 
         id = Entitees.Membre.ConnexionMembre(pseudo, motPasse, m_connection)
 
         If Not id.Equals(-1) Then
             Session("connected") = True
             Session("idMembre") = id
+
+            chemin = Entitees.Membre.getArrierePlanbyID(id, m_connection)
+
+            If Not chemin.Equals("*") Then
+                Dim cook As HttpCookie = New HttpCookie(id.ToString + "_arriereplan", chemin)
+                Response.Cookies.Clear()
+                Response.Cookies.Add(cook)
+            End If
+
             Response.Redirect("Accueil.aspx")
         Else
             lblMessage.Visible = True

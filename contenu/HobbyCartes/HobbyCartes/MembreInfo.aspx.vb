@@ -50,7 +50,7 @@ Public Class MembreInfo
             fuArrierePlan.Enabled = False
         End If
 
-
+        'Affichage des informations
         lblPrenom_membre.Text = m_membre.prenom
         lblNom_membre.Text = m_membre.nom
         lblUtilisateur_membre.Text = m_membre.nomUtilisateur
@@ -119,7 +119,7 @@ Public Class MembreInfo
                             fichier.Close()
 
                             'Association du chemin de l'arrière-plan dans la base de données
-                            m_membre.EnregistrerChemin(chemin)
+                            m_membre.EnregistrerChemin(chemin, Entitees.Membre.TypeImage.arriereplan)
 
                             lblfuMessage.Text = "Succès du transfert!"
                         Else
