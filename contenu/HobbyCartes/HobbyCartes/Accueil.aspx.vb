@@ -13,6 +13,9 @@ Public Class Accueil
         If Session("idMembre") Is Nothing Then
             Session.Add("idMembre", -1)
         End If
+        If Session("Admin") Is Nothing Then
+            Session.Add("Admin", False)
+        End If
         m_connection = New MySqlConnection(My.Resources.StringConnexionBdd)
         m_connection.Open()
         NouveauxMembre()

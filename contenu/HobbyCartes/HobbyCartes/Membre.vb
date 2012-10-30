@@ -100,7 +100,9 @@ Namespace Entitees
             If dbRead("arriereplanmem") IsNot DBNull.Value Then
                 m_arrierePlan = dbRead.GetString("arriereplanmem")
             End If
-            m_imageMEmbre = dbRead.GetString("imagemem")
+            If dbRead("imagemem") IsNot DBNull.Value Then
+                m_imageMEmbre = dbRead.GetString("imagemem")
+            End If
             m_DateInscription = dbRead.GetDateTime("dateinscriptionmem")
 
             m_dbConnection = dbCon
@@ -262,7 +264,7 @@ Namespace Entitees
         ''' <summary>
         ''' Crée un nouveau membre dans la base de données.
         ''' </summary>
-        Public Function nouvMembre(ByVal membre As Entitees.Membre, ByVal motPass As String, ByRef msgErreur As String) As Boolean
+        Public Function nouvMembre(ByVal membre As Entitees.Membre, ByVal motPass As String, ByRef msgErreur As String, Optional ByRef idMembre As Integer = -1) As Boolean
             m_arrierePlan = ""
             m_codePostal = membre.CodePostal
             m_courriel = membre.Courriel
@@ -288,6 +290,7 @@ Namespace Entitees
 
             Try
                 requete.ExecuteNonQuery()
+                idMembre = Integer.Parse(requete.LastInsertedId)
                 Return True
             Catch ex As Exception
                 msgErreur = ex.Message

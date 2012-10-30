@@ -20,6 +20,7 @@ Public Class Inscription
 
         Dim msgErreur As String = ""
         Dim nomsUtilisés As ArrayList = m_membre.getNomsPseudo()
+        Dim idNouvMembre As Integer
 
         If (nomsUtilisés.Contains(txtUtilisateur.Text)) Then
             lblMessage.Text = "Ce nom d'utilisateur est déjà utilisé!"
@@ -34,11 +35,14 @@ Public Class Inscription
         m_membre.CodePostal = txtCodePostal.Text
         m_membre.Courriel = txtCourriel.Text
 
-        If (Not m_membre.nouvMembre(m_membre, txtMotPasse.Text, msgErreur)) Then
+        If (Not m_membre.nouvMembre(m_membre, txtMotPasse.Text, msgErreur, idNouvMembre)) Then
             lblMessage.Text = msgErreur
             lblMessage.Visible = True
         Else
-            Response.Redirect("Acceuil.aspx")
+            Session("connected") = True
+            Session("idMembre") = idNouvMembre
+            Session("Admin") = m_membre.isAdmin
+            Response.Redirect("Accueil.aspx")
         End If
     End Sub
 

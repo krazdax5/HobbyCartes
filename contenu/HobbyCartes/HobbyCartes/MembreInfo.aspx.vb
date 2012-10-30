@@ -39,7 +39,14 @@ Public Class MembreInfo
                 id = Integer.Parse(Session("idMembre"))
 
                 If id.Equals(m_membre.id) Then
-                    fuArrierePlan.Enabled = True
+                    fuArrierePlan.Visible = True
+                    txtCodePostal.Visible = True
+                    txtCourriel.Visible = True
+                    txtNom.Visible = True
+                    txtPrenom.Visible = True
+                    txtUtilisateur.Visible = True
+                    txtVille.Visible = True
+                    btnEnregistrer.Visible = True
                 Else
                     fuArrierePlan.Enabled = False
                 End If

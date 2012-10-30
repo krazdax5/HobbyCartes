@@ -9,6 +9,10 @@
 <body id="siteBody" runat="server">
     <form id="form" runat="server">
     <div id="contenu">
+        <asp:Label runat="server" ID="lblConnecter" Text="Déconnecté" ForeColor="Red" ></asp:Label>
+        <asp:HyperLink runat="server" ID="hlnkConnection" Text="Se connecter" NavigateUrl="~/Connexion.aspx" Visible="true" ></asp:HyperLink>
+        <asp:LinkButton runat="server" ID="hlnkDeconnection" Text="Se déconnecter" OnClick="hlnkDeconnection_OnClick" Visible="false"></asp:LinkButton>
+        <br />
         <a href="Accueil.aspx" id="entete">
             <img alt="Hobby-Cartes" src="img/titre.png" />
         </a>
@@ -17,7 +21,7 @@
             <li><a href="Inscription.aspx" runat="server">Inscription</a></li>
             <li><a href="Recherche.aspx" runat="server">Recherche</a></li>
             <li><a href="FilFiches.aspx" runat="server">Fil des fiches</a></li>
-            <li><a href="Administration.aspx" runat="server">Administration</a></li>
+            <li><a href="Administration.aspx" runat="server" id="mnuAdmin" visible="false">Administration</a></li>
             <li><a href="MembreInfo.aspx" runat="server" id="mnuProfil" visible="false">Profil</a></li>
         </ul>
         <div id="corps">

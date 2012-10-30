@@ -29,7 +29,7 @@
                             <asp:TableCell runat="server" CssClass="gauche"><asp:Label ID="lblPrenom" runat="server" Text="Prénom:" AssociatedControlID="txtPrenom" CssClass="lblDescription"></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server" CssClass="centre"><asp:Label ID="lblPrenom_membre" runat="server" Text=""></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server">
-                                <asp:TextBox runat="server" ID="txtPrenom" Width="85%"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txtPrenom" Width="85%" Visible="false"></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
 
@@ -37,7 +37,7 @@
                             <asp:TableCell runat="server" CssClass="gauche"><asp:Label ID="lblNom" runat="server" Text="Nom:" AssociatedControlID="txtNom" CssClass="lblDescription"></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server" CssClass="centre"><asp:Label ID="lblNom_membre" runat="server" Text=""></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server">
-                                <asp:TextBox ID="txtNom" runat="server" Width="85%"></asp:TextBox>
+                                <asp:TextBox ID="txtNom" runat="server" Width="85%" Visible="false"></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
 
@@ -45,7 +45,7 @@
                             <asp:TableCell runat="server" CssClass="gauche"><asp:Label ID="lblUtilisateur" runat="server" Text="Nom d'utilisateur:" AssociatedControlID="txtUtilisateur" CssClass="lblDescription"></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server" CssClass="centre"><asp:Label ID="lblUtilisateur_membre" runat="server" Text=""></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server">
-                                <asp:TextBox ID="txtUtilisateur" runat="server" Width="85%"></asp:TextBox>
+                                <asp:TextBox ID="txtUtilisateur" runat="server" Width="85%" Visible="false"></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
 
@@ -53,7 +53,7 @@
                             <asp:TableCell runat="server" CssClass="gauche"><asp:Label ID="lblVille" runat="server" Text="Ville:" AssociatedControlID="txtVille" CssClass="lblDescription"></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server" CssClass="centre"><asp:Label ID="lblVille_membre" runat="server" Text=""></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server">
-                                <asp:TextBox ID="txtVille" runat="server" Width="85%"></asp:TextBox>
+                                <asp:TextBox ID="txtVille" runat="server" Width="85%" Visible="false"></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
 
@@ -61,7 +61,7 @@
                             <asp:TableCell runat="server" CssClass="gauche"><asp:Label ID="lblCodePostal" runat="server" Text="Code Postal:" AssociatedControlID="txtCodePostal" CssClass="lblDescription"></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server" CssClass="centre"><asp:Label ID="lblCodePostal_membre" runat="server" Text=""></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server">
-                                <asp:TextBox ID="txtCodePostal" runat="server" Width="85%"></asp:TextBox><br />
+                                <asp:TextBox ID="txtCodePostal" runat="server" Width="85%" Visible="false"></asp:TextBox><br />
                                 <asp:RegularExpressionValidator 
                                     ID="regexCodePostal" 
                                     runat="server" 
@@ -76,7 +76,7 @@
                             <asp:TableCell runat="server" CssClass="gauche"><asp:Label ID="lblCourriel" runat="server" Text="Courriel:" AssociatedControlID="txtCourriel" CssClass="lblDescription"></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server" CssClass="centre"><asp:Label ID="lblCourriel_membre" runat="server" Text=""></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server">
-                                <asp:TextBox ID="txtCourriel" runat="server" Width="85%"></asp:TextBox><br />
+                                <asp:TextBox ID="txtCourriel" runat="server" Width="85%" Visible="false"></asp:TextBox><br />
                                 <asp:RegularExpressionValidator 
                                     ID="regexCourriel" 
                                     runat="server" 
@@ -89,7 +89,7 @@
 
                         <asp:TableRow runat="server">
                             <asp:TableCell runat="server"><asp:Label ID="lblArrierePlan" runat="server" Text="Arrière Plan"></asp:Label></asp:TableCell>
-                            <asp:TableCell runat="server"><asp:FileUpload ID="fuArrierePlan" runat="server" /></asp:TableCell>
+                            <asp:TableCell runat="server"><asp:FileUpload ID="fuArrierePlan" runat="server" Visible="false" /></asp:TableCell>
                             <asp:TableCell runat="server"><asp:Label ID="lblfuMessage" runat="server" Text=""></asp:Label></asp:TableCell>
                         </asp:TableRow>
 
@@ -100,7 +100,7 @@
                         </asp:TableRow>
 
                         <asp:TableRow runat="server">
-                            <asp:TableCell ColumnSpan="3" runat="server"><asp:Button ID="btnEnregistrer" runat="server" Text="Enregistrer les modifications" CssClass="buttonAlign" /></asp:TableCell>
+                            <asp:TableCell ColumnSpan="3" runat="server"><asp:Button ID="btnEnregistrer" runat="server" Text="Enregistrer les modifications" CssClass="buttonAlign" Visible="false" /></asp:TableCell>
                         </asp:TableRow>
 
              </asp:Table>

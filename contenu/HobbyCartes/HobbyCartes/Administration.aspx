@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" MasterPageFile="~/HobbyCartes.master" %>
+﻿<%@ Page Language="vb" MasterPageFile="~/HobbyCartes.master" CodeBehind="~/Administration.aspx.vb" Inherits="HobbyCartes.Administration" %>
 
 <asp:Content ContentPlaceHolderID="cphCorps" runat="server">
     <div id="administration">

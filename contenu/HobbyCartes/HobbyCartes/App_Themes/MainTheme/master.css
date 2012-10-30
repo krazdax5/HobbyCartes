@@ -38,7 +38,11 @@
     padding : 0px;
     float: left;
     list-style: none;
-    border-right: 1px solid white;
+    
+}
+#contenu #menu li a:hover
+{
+    color:Red;
 }
 
 #contenu #menu li a

@@ -23,7 +23,7 @@ Public Class Connexion
         Dim motPasse As String = txtMotPasse.Text
         Dim id As Integer
         Dim chemin As String
-
+        Dim Membre As Entitees.Membre
         id = Entitees.Membre.ConnexionMembre(pseudo, motPasse, m_connection)
 
         If Not id.Equals(-1) Then
@@ -38,6 +38,10 @@ Public Class Connexion
                 Response.Cookies.Add(cook)
             End If
 
+            Membre = New Entitees.Membre(id, m_connection)
+            If Membre.isAdmin Then
+                Session("Admin") = True
+            End If
             Response.Redirect("Accueil.aspx")
         Else
             lblMessage.Visible = True
