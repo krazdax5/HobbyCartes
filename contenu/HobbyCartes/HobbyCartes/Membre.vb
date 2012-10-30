@@ -5,6 +5,13 @@ Namespace Entitees
 
     Public Class Membre
 
+        Public Enum TypeImage
+            arriereplan
+            profil
+            cartedevant
+            cartederriere
+        End Enum
+
         Private m_id As Integer
 
         Private m_prenom As String
@@ -380,6 +387,24 @@ Namespace Entitees
                 Return Membres
             Catch ex As Exception
                 Return Nothing
+            End Try
+        End Function
+
+        Public Function EnregistrerChemin(chemin As String, type As TypeImage) As Boolean
+            Dim requete As MySqlCommand
+
+            Select Case type
+                Case TypeImage.arriereplan
+                    requete = New MySqlCommand("UPDATE membre SET arriereplanmem='" + chemin + "' WHERE idmembre='" + m_id.ToString + "'", m_dbConnection)
+                Case TypeImage.profil
+                    requete = New MySqlCommand("UPDATE membre SET imagemem='" + chemin + "' WHERE idmembre='" + m_id.ToString + "'", m_dbConnection)
+            End Select
+
+            Try
+                requete.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Return False
             End Try
         End Function
 

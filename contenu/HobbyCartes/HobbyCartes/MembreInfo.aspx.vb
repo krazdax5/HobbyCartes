@@ -12,19 +12,42 @@ Public Class MembreInfo
         m_connection = New MySqlConnection(My.Resources.StringConnexionBdd)
         m_connection.Open()
 
+        lblfuMessage.Text = ""
+
         Dim id As Integer
+        Dim accesParId As Boolean = False
 
         id = Entitees.Membre.getIDbyPseudo(Request.QueryString("pseudo"), m_connection)
 
+        'Vérifie si la page est accédée par pseudo
         If Not id.Equals(-1) Then
             m_membre = New Entitees.Membre(id, m_connection)
         Else
+            'Ou par identificateur
             id = Integer.Parse(Session("idMembre"))
             If Not id.Equals(-1) Then
                 m_membre = New Entitees.Membre(id, m_connection)
+                accesParId = True
             Else
                 m_membre = New Entitees.Membre(1, m_connection)
             End If
+        End If
+
+        'Détermination du droit à changer l'arrière-plan
+        If Boolean.Parse(Session("connected")) Then
+            If accesParId Then
+                id = Integer.Parse(Session("idMembre"))
+
+                If id.Equals(m_membre.id) Then
+                    fuArrierePlan.Enabled = True
+                Else
+                    fuArrierePlan.Enabled = False
+                End If
+            Else
+                fuArrierePlan.Enabled = False
+            End If
+        Else
+            fuArrierePlan.Enabled = False
         End If
 
 
@@ -55,6 +78,7 @@ Public Class MembreInfo
                 End If
             End If
 
+            'Enregistrement des informations si il y a lieu
             If Not txtPrenom.Text.Equals("") Then
                 m_membre.prenom = txtPrenom.Text
                 txtPrenom.Text = ""
@@ -80,12 +104,43 @@ Public Class MembreInfo
                 txtCourriel.Text = ""
             End If
 
+            'Enregistrement de l'image d'arrière-plan
+            If fuArrierePlan.HasFile Then
+                Try
+                    If fuArrierePlan.PostedFile.ContentType.Equals("image/jpeg") Then
+
+                        If fuArrierePlan.PostedFile.ContentLength < 10240000 Then
+                            Dim chemin As String = "img/" + m_membre.id.ToString + "_arriereplan.jpg"
+                            Dim fichier As FileStream = New FileStream(Server.MapPath("~/") + chemin, FileMode.OpenOrCreate)
+
+                            'Écriture du fichier à partir de ses octets
+                            Dim data As Byte() = fuArrierePlan.FileBytes
+                            fichier.Write(data, 0, data.Length)
+                            fichier.Close()
+
+                            'Association du chemin de l'arrière-plan dans la base de données
+                            m_membre.EnregistrerChemin(chemin)
+
+                            lblfuMessage.Text = "Succès du transfert!"
+                        Else
+                            lblfuMessage.Text = "L'image est trop volumineuse!"
+                        End If
+                    Else
+                        lblfuMessage.Text = "Seulement JPEG!"
+                    End If
+                Catch ex As Exception
+                    lblfuMessage.Text = ex.Message
+                End Try
+            End If
+
+            'Enregistrement définitif des informations dans la base de données
             If (m_membre.setAttMembre(msgErreur)) Then
                 lblMessage.Text = "Les informations ont été enregistrées"
             Else
                 lblMessage.Text = msgErreur
             End If
 
+            'Affichage des nouvelles informations
             lblPrenom_membre.Text = m_membre.prenom
             lblNom_membre.Text = m_membre.nom
             lblUtilisateur_membre.Text = m_membre.nomUtilisateur
@@ -96,13 +151,6 @@ Public Class MembreInfo
 
             lblMessage.Visible = True
         End If
-    End Sub
-
-    Protected Sub lol32(sender As Object, e As EventArgs) Handles txtCourriel.TextChanged
-        Dim test As String = txtCourriel.Text
-
-        Dim test2 As String = txtPrenom.Text
-
     End Sub
 
     Protected Sub Page_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload

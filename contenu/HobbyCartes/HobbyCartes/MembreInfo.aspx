@@ -76,7 +76,7 @@
                             <asp:TableCell runat="server" CssClass="gauche"><asp:Label ID="lblCourriel" runat="server" Text="Courriel:" AssociatedControlID="txtCourriel" CssClass="lblDescription"></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server" CssClass="centre"><asp:Label ID="lblCourriel_membre" runat="server" Text=""></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server">
-                                <asp:TextBox ID="txtCourriel" OnTextChanged="lol32" runat="server" Width="85%"></asp:TextBox><br />
+                                <asp:TextBox ID="txtCourriel" runat="server" Width="85%"></asp:TextBox><br />
                                 <asp:RegularExpressionValidator 
                                     ID="regexCourriel" 
                                     runat="server" 
@@ -89,7 +89,8 @@
 
                         <asp:TableRow runat="server">
                             <asp:TableCell runat="server"><asp:Label ID="lblArrierePlan" runat="server" Text="Arrière Plan"></asp:Label></asp:TableCell>
-                            <asp:TableCell runat="server" ColumnSpan="2"><asp:FileUpload ID="fuArrierePlan" runat="server" /></asp:TableCell>
+                            <asp:TableCell runat="server"><asp:FileUpload ID="fuArrierePlan" runat="server" /></asp:TableCell>
+                            <asp:TableCell runat="server"><asp:Label ID="lblfuMessage" runat="server" Text=""></asp:Label></asp:TableCell>
                         </asp:TableRow>
 
                         <asp:TableRow runat="server">

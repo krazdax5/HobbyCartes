@@ -266,6 +266,15 @@ Partial Public Class MembreInfo
     Protected WithEvents fuArrierePlan As Global.System.Web.UI.WebControls.FileUpload
 
     '''<summary>
+    '''Contrôle lblfuMessage.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents lblfuMessage As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Contrôle vsDescription.
     '''</summary>
     '''<remarks>
