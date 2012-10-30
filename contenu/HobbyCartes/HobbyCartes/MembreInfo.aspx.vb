@@ -1,5 +1,6 @@
 ﻿Imports MySql.Data
 Imports MySql.Data.MySqlClient
+Imports System.IO
 
 Public Class MembreInfo
     Inherits System.Web.UI.Page
@@ -11,12 +12,19 @@ Public Class MembreInfo
         m_connection = New MySqlConnection(My.Resources.StringConnexionBdd)
         m_connection.Open()
 
-        Dim id As Integer = Entitees.Membre.getIDbyPseudo(Request.QueryString("pseudo"), m_connection)
+        Dim id As Integer
 
-        If Not id = -1 Then
+        id = Entitees.Membre.getIDbyPseudo(Request.QueryString("pseudo"), m_connection)
+
+        If Not id.Equals(-1) Then
             m_membre = New Entitees.Membre(id, m_connection)
         Else
-            m_membre = New Entitees.Membre(1, m_connection)
+            id = Integer.Parse(Session("idMembre"))
+            If Not id.Equals(-1) Then
+                m_membre = New Entitees.Membre(id, m_connection)
+            Else
+                m_membre = New Entitees.Membre(1, m_connection)
+            End If
         End If
 
 

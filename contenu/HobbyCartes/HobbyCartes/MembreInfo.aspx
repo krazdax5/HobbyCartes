@@ -88,6 +88,11 @@
                         </asp:TableRow>
 
                         <asp:TableRow runat="server">
+                            <asp:TableCell runat="server"><asp:Label ID="lblArrierePlan" runat="server" Text="Arrière Plan"></asp:Label></asp:TableCell>
+                            <asp:TableCell runat="server" ColumnSpan="2"><asp:FileUpload ID="fuArrierePlan" runat="server" /></asp:TableCell>
+                        </asp:TableRow>
+
+                        <asp:TableRow runat="server">
                             <asp:TableCell ColumnSpan="3" runat="server">
                                 <asp:ValidationSummary ID="vsDescription" runat="server" />
                             </asp:TableCell>

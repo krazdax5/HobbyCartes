@@ -248,6 +248,24 @@ Partial Public Class MembreInfo
     Protected WithEvents regexCourriel As Global.System.Web.UI.WebControls.RegularExpressionValidator
 
     '''<summary>
+    '''Contrôle lblArrierePlan.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents lblArrierePlan As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Contrôle fuArrierePlan.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents fuArrierePlan As Global.System.Web.UI.WebControls.FileUpload
+
+    '''<summary>
     '''Contrôle vsDescription.
     '''</summary>
     '''<remarks>

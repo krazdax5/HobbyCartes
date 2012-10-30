@@ -59,6 +59,9 @@ Namespace Entitees
 
                 Return id
             Catch ex As Exception
+                If Not reader.IsClosed Then
+                    reader.Close()
+                End If
                 Return -1
             End Try
         End Function
