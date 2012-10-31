@@ -151,11 +151,11 @@
       <DependentUpon>Administration.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="Fiche.vb" />
-    <Compile Include="Collection.vb" />
-    <Compile Include="Commentaire.vb" />
-    <Compile Include="Editeur.vb" />
-    <Compile Include="Equipe.vb" />
+    <Compile Include="Entites\Fiche.vb" />
+    <Compile Include="Entites\Collection.vb" />
+    <Compile Include="Entites\Commentaire.vb" />
+    <Compile Include="Entites\Editeur.vb" />
+    <Compile Include="Entites\Equipe.vb" />
     <Compile Include="Erreur.aspx.designer.vb">
       <DependentUpon>Erreur.aspx</DependentUpon>
     </Compile>
@@ -191,7 +191,7 @@
       <DependentUpon>Membre.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Membre.vb" />
+    <Compile Include="Entites\Membre.vb" />
     <Compile Include="MembreGererCollections.aspx.designer.vb">
       <DependentUpon>MembreGererCollections.aspx</DependentUpon>
     </Compile>
@@ -234,7 +234,7 @@
       <DependentUpon>MembreVisualiserMessages.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Message.vb" />
+    <Compile Include="Entites\Message.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
