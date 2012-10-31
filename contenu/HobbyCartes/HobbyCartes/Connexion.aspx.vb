@@ -30,7 +30,7 @@ Public Class Connexion
             Session("connected") = True
             Session("idMembre") = id
 
-            chemin = Entitees.Membre.getArrierePlanbyID(id, m_connection)
+            chemin = Entitees.Membre.getImagebyID(id, m_connection, Entitees.Membre.TypeImage.arriereplan)
 
             If Not chemin.Equals("*") Then
                 Dim cook As HttpCookie = New HttpCookie(id.ToString + "_arriereplan", chemin)

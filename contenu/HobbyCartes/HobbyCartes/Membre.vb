@@ -411,15 +411,30 @@ Namespace Entitees
             End Try
         End Function
 
-        Public Shared Function getArrierePlanbyID(id As Integer, connection As MySqlConnection) As String
-            Dim requete As MySqlCommand = New MySqlCommand("SELECT arriereplanmem FROM membre WHERE idmembre='" + id.ToString + "'", connection)
+        Public Shared Function getImagebyID(id As Integer, connection As MySqlConnection, type As Entitees.Membre.TypeImage) As String
+            Dim requete As MySqlCommand
+
+            Select Case type
+                Case TypeImage.arriereplan
+                    requete = New MySqlCommand("SELECT arriereplanmem FROM membre WHERE idmembre='" + id.ToString + "'", connection)
+                Case TypeImage.profil
+                    requete = New MySqlCommand("SELECT imagemem FROM membre WHERE idmembre='" + id.ToString + "'", connection)
+            End Select
+
             Dim reader As MySqlDataReader
             Dim chemin As String
 
             Try
                 reader = requete.ExecuteReader
                 reader.Read()
-                chemin = reader.GetString("arriereplanmem")
+
+                Select Case type
+                    Case TypeImage.arriereplan
+                        chemin = reader.GetString("arriereplanmem")
+                    Case TypeImage.profil
+                        chemin = reader.GetString("imagemem")
+                End Select
+
                 reader.Close()
 
                 Return chemin
@@ -430,7 +445,7 @@ Namespace Entitees
 
                 Return "*"
             End Try
-            
+
         End Function
 
     End Class

@@ -10,6 +10,7 @@
                 lblConnecter.ForeColor = Drawing.Color.LightGreen
                 hlnkConnection.Visible = False
                 hlnkDeconnection.Visible = True
+                mnuInscription.Visible = False
 
                 mnuProfil.Visible = True
 

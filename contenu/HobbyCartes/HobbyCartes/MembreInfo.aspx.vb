@@ -13,6 +13,7 @@ Public Class MembreInfo
         m_connection.Open()
 
         lblfuMessage.Text = ""
+        lblfuProfilMessage.Text = ""
 
         Dim id As Integer
         Dim accesParId As Boolean = False
@@ -40,6 +41,7 @@ Public Class MembreInfo
 
                 If id.Equals(m_membre.id) Then
                     fuArrierePlan.Visible = True
+                    fuImgProfil.Visible = True
                     txtCodePostal.Visible = True
                     txtCourriel.Visible = True
                     txtNom.Visible = True
@@ -47,14 +49,8 @@ Public Class MembreInfo
                     txtUtilisateur.Visible = True
                     txtVille.Visible = True
                     btnEnregistrer.Visible = True
-                Else
-                    fuArrierePlan.Enabled = False
                 End If
-            Else
-                fuArrierePlan.Enabled = False
             End If
-        Else
-            fuArrierePlan.Enabled = False
         End If
 
         'Affichage des informations
@@ -65,6 +61,7 @@ Public Class MembreInfo
         lblVille_membre.Text = m_membre.Ville
         lblCodePostal_membre.Text = m_membre.CodePostal
         lblCourriel_membre.Text = m_membre.Courriel
+        imgProfil.ImageUrl = m_membre.Image
 
     End Sub
 
@@ -140,6 +137,34 @@ Public Class MembreInfo
                 End Try
             End If
 
+            'Enregistrement de l'image de profil
+            If fuImgProfil.HasFile Then
+                Try
+                    If fuImgProfil.PostedFile.ContentType.Equals("image/jpeg") Then
+                        If fuArrierePlan.PostedFile.ContentLength < 102400 Then
+                            Dim chemin As String = "img/" + m_membre.id.ToString + "_profil.jpg"
+                            Dim fichier As FileStream = New FileStream(Server.MapPath("~/") + chemin, FileMode.OpenOrCreate)
+
+                            'Écriture du fichier à partir de ses octets
+                            Dim data As Byte() = fuImgProfil.FileBytes
+                            fichier.Write(data, 0, data.Length)
+                            fichier.Close()
+
+                            'Association de l'image de profil avec le membre
+                            m_membre.EnregistrerChemin(chemin, Entitees.Membre.TypeImage.profil)
+
+                            lblfuProfilMessage.Text = "Succès du transfert"
+                        Else
+                            lblfuProfilMessage.Text = "L'image est trop volumineuse"
+                        End If
+                    Else
+                        lblfuProfilMessage.Text = "Seulement JPEG!"
+                    End If
+                Catch ex As Exception
+                    lblfuProfilMessage.Text = ex.Message
+                End Try
+            End If
+
             'Enregistrement définitif des informations dans la base de données
             If (m_membre.setAttMembre(msgErreur)) Then
                 lblMessage.Text = "Les informations ont été enregistrées"
@@ -155,6 +180,7 @@ Public Class MembreInfo
             lblVille_membre.Text = m_membre.Ville
             lblCodePostal_membre.Text = m_membre.CodePostal
             lblCourriel_membre.Text = m_membre.Courriel
+            imgProfil.ImageUrl = m_membre.Image
 
             lblMessage.Visible = True
         End If

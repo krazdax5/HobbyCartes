@@ -11,7 +11,6 @@
                     <asp:TableHeaderCell runat="server"><asp:Image 
                                                             ID="imgProfil" 
                                                             runat="server" 
-                                                            ImageUrl="~/img/profil.jpg" 
                                                             Width="150px" 
                                                             Height="150px" 
                                                             ImageAlign="Left" /></asp:TableHeaderCell>
@@ -87,10 +86,16 @@
                             </asp:TableCell>
                         </asp:TableRow>
 
-                        <asp:TableRow runat="server">
-                            <asp:TableCell runat="server"><asp:Label ID="lblArrierePlan" runat="server" Text="Arrière Plan"></asp:Label></asp:TableCell>
+                        <asp:TableRow runat="server" CssClass="trDescription">
+                            <asp:TableCell runat="server"><asp:Label ID="lblArrierePlan" runat="server" Text="Arrière Plan" CssClass="lblDescription"></asp:Label></asp:TableCell>
                             <asp:TableCell runat="server"><asp:FileUpload ID="fuArrierePlan" runat="server" Visible="false" /></asp:TableCell>
                             <asp:TableCell runat="server"><asp:Label ID="lblfuMessage" runat="server" Text=""></asp:Label></asp:TableCell>
+                        </asp:TableRow>
+
+                        <asp:TableRow runat="server" CssClass="trDescription">
+                            <asp:TableCell runat="server"><asp:Label ID="lblImgProfil" runat="server" Text="Image de profil" CssClass="lblDescription"></asp:Label></asp:TableCell>
+                            <asp:TableCell runat="server"><asp:FileUpload ID="fuImgProfil" runat="server" Visible="false" /></asp:TableCell>
+                            <asp:TableCell runat="server"><asp:Label ID="lblfuProfilMessage" runat="server" Text=""></asp:Label></asp:TableCell>
                         </asp:TableRow>
 
                         <asp:TableRow runat="server">

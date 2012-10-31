@@ -275,6 +275,33 @@ Partial Public Class MembreInfo
     Protected WithEvents lblfuMessage As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''Contrôle lblImgProfil.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents lblImgProfil As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Contrôle fuImgProfil.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents fuImgProfil As Global.System.Web.UI.WebControls.FileUpload
+
+    '''<summary>
+    '''Contrôle lblfuProfilMessage.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents lblfuProfilMessage As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Contrôle vsDescription.
     '''</summary>
     '''<remarks>

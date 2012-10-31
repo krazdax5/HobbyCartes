@@ -59,6 +59,15 @@ Partial Public Class HobbyCartes
     Protected WithEvents hlnkDeconnection As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
+    '''Contrôle mnuInscription.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents mnuInscription As Global.System.Web.UI.HtmlControls.HtmlAnchor
+
+    '''<summary>
     '''Contrôle mnuAdmin.
     '''</summary>
     '''<remarks>
