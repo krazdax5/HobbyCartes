@@ -14,12 +14,12 @@ Public Class MembreEnvoiMessage
     ''' <summary>
     ''' Le destinataire du message
     ''' </summary>
-    Private destinataire As Entitees.Membre
+    Private destinataire As Entites.Membre
 
     ''' <summary>
     ''' Le destinateur du message
     ''' </summary>
-    Private destinateur As Entitees.Membre
+    Private destinateur As Entites.Membre
 
     ''' <summary>
     ''' L'objet du message
@@ -40,8 +40,8 @@ Public Class MembreEnvoiMessage
         dbCon.Open()
         Try
             ' Chargement du destinateur et du destinataire
-            destinataire = New Entitees.Membre(Request.QueryString("idDestinataire"), dbCon)
-            destinateur = New Entitees.Membre(Request.QueryString("idDestinateur"), dbCon)
+            destinataire = New Entites.Membre(Request.QueryString("idDestinataire"), dbCon)
+            destinateur = New Entites.Membre(Request.QueryString("idDestinateur"), dbCon)
         Catch ex As Exception
             ' Affiche la page d'erreur en cas d'exception
             Erreur.afficherException(ex, Request.UrlReferrer, Me)

@@ -1,6 +1,6 @@
 ﻿Imports MySql.Data
 Imports MySql.Data.MySqlClient
-Namespace Entitees
+Namespace Entites
 
     Public Class Equipe
 
@@ -35,7 +35,7 @@ Namespace Entitees
 
     End Class
 
-    
+
 
 
 

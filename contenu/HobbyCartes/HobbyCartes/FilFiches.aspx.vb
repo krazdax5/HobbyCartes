@@ -9,11 +9,11 @@ Public Class FilFiches
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         m_connection = New MySqlConnection(My.Resources.StringConnexionBdd)
         m_connection.Open()
-        chargerListe(Entitees.Collection.Type.Hockey)
+        chargerListe(Entites.Collection.Type.Hockey)
     End Sub
 
-    Private Sub chargerListe(sport As Entitees.Collection.Type)
-        Dim fiches As List(Of Entitees.Fiche) = Entitees.Fiche.ListeFichesOrdonnee(sport, m_connection)
+    Private Sub chargerListe(sport As Entites.Collection.Type)
+        Dim fiches As List(Of Entites.Fiche) = Entites.Fiche.ListeFichesOrdonnee(sport, m_connection)
         phFilFiches.Controls.Clear()
 
         If fiches IsNot Nothing Then
@@ -83,19 +83,19 @@ Public Class FilFiches
     End Sub
 
     Protected Sub lnkbtnHockey_click(sender As Object, e As EventArgs) Handles lnkbtnHockey.Click
-        chargerListe(Entitees.Collection.Type.Hockey)
+        chargerListe(Entites.Collection.Type.Hockey)
     End Sub
 
     Protected Sub lnkbtnBaseball_click(sender As Object, e As EventArgs) Handles lnkbtnBaseball.Click
-        chargerListe(Entitees.Collection.Type.Baseball)
+        chargerListe(Entites.Collection.Type.Baseball)
     End Sub
 
     Protected Sub lnkbtnBasketball_click(sender As Object, e As EventArgs) Handles lnkbtnBasketball.Click
-        chargerListe(Entitees.Collection.Type.Basketball)
+        chargerListe(Entites.Collection.Type.Basketball)
     End Sub
 
     Protected Sub lnkbtnFootball_click(sender As Object, e As EventArgs) Handles lnkbtnFootball.Click
-        chargerListe(Entitees.Collection.Type.Football)
+        chargerListe(Entites.Collection.Type.Football)
     End Sub
 
     Protected Sub Page_Unload(sender As Object, e As EventArgs) Handles Me.Unload

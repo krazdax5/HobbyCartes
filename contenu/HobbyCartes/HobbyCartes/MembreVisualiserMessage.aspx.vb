@@ -9,7 +9,7 @@ Public Class MembreVisualiserMessage
     ''' <summary>
     ''' Le message a visualiser
     ''' </summary>
-    Dim m_message As Entitees.Message
+    Dim m_message As Entites.Message
 
     ''' <summary>
     ''' Chargement de la page
@@ -20,7 +20,7 @@ Public Class MembreVisualiserMessage
         dbCon.Open()
         ' Charge le message via l'id passée par l'url
         Dim idMessage As Integer = Request.QueryString("idMessage")
-        m_message = New Entitees.Message(idMessage, dbCon)
+        m_message = New Entites.Message(idMessage, dbCon)
         dbCon.Close()
         visualiserMessageTitre.InnerText = m_message.objet
         visualiserMessageContenu.InnerHtml = m_message.contenu.Replace(vbCrLf, "<br />")

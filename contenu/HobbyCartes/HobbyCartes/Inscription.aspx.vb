@@ -5,14 +5,14 @@ Public Class Inscription
     Inherits System.Web.UI.Page
 
     Dim m_connection As MySqlConnection
-    Dim m_membre As Entitees.Membre
+    Dim m_membre As Entites.Membre
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         m_connection = New MySqlConnection(My.Resources.StringConnexionBdd)
 
         m_connection.Open()
 
-        m_membre = New Entitees.Membre(m_connection)
+        m_membre = New Entites.Membre(m_connection)
     End Sub
 
     Protected Sub btnTerminer_clique(ByVal sender As Object, ByVal e As WizardNavigationEventArgs)

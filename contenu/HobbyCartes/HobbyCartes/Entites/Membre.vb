@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data
 Imports MySql.Data.MySqlClient
 
-Namespace Entitees
+Namespace Entites
 
     Public Class Membre
 
@@ -264,7 +264,7 @@ Namespace Entitees
         ''' <summary>
         ''' Crée un nouveau membre dans la base de données.
         ''' </summary>
-        Public Function nouvMembre(ByVal membre As Entitees.Membre, ByVal motPass As String, ByRef msgErreur As String, Optional ByRef idMembre As Integer = -1) As Boolean
+        Public Function nouvMembre(ByVal membre As Entites.Membre, ByVal motPass As String, ByRef msgErreur As String, Optional ByRef idMembre As Integer = -1) As Boolean
             m_arrierePlan = ""
             m_codePostal = membre.CodePostal
             m_courriel = membre.Courriel
@@ -367,9 +367,9 @@ Namespace Entitees
             End Try
         End Function
 
-        Public Shared Function ListeMembresOrdonnee(connection As MySqlConnection) As List(Of Entitees.Membre)
+        Public Shared Function ListeMembresOrdonnee(connection As MySqlConnection) As List(Of Entites.Membre)
             Dim ids As List(Of Integer) = New List(Of Integer)()
-            Dim Membres As List(Of Entitees.Membre) = New List(Of Entitees.Membre)()
+            Dim Membres As List(Of Entites.Membre) = New List(Of Entites.Membre)()
             Dim requete As MySqlCommand = New MySqlCommand("SELECT idmembre FROM membre ORDER BY dateinscriptionmem DESC", connection)
             Dim reader As MySqlDataReader
 
@@ -384,7 +384,7 @@ Namespace Entitees
 
                 'Construction de la liste de membres
                 For Each identificateur In ids
-                    Membres.Add(New Entitees.Membre(identificateur, connection))
+                    Membres.Add(New Entites.Membre(identificateur, connection))
                 Next
 
                 Return Membres
@@ -411,7 +411,7 @@ Namespace Entitees
             End Try
         End Function
 
-        Public Shared Function getImagebyID(id As Integer, connection As MySqlConnection, type As Entitees.Membre.TypeImage) As String
+        Public Shared Function getImagebyID(id As Integer, connection As MySqlConnection, type As Entites.Membre.TypeImage) As String
             Dim requete As MySqlCommand
 
             Select Case type

@@ -4,9 +4,9 @@ Imports MySql.Data.MySqlClient
 Public Class MembreListeCartes
     Inherits System.Web.UI.Page
 
-    Private m_sportEnCours As Entitees.Collection.Type
-    Private m_membre As Entitees.Membre
-    Private m_collection As Entitees.Collection
+    Private m_sportEnCours As Entites.Collection.Type
+    Private m_membre As Entites.Membre
+    Private m_collection As Entites.Collection
     Private m_connection As MySqlConnection
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -15,12 +15,12 @@ Public Class MembreListeCartes
         m_connection.Open()
 
         'Détermination du membre en cours
-        m_membre = New Entitees.Membre(1, m_connection)
+        m_membre = New Entites.Membre(1, m_connection)
         'Création de la collection du membre si existe
-        m_collection = New Entitees.Collection(m_membre.id, m_connection)
+        m_collection = New Entites.Collection(m_membre.id, m_connection)
         m_sportEnCours = m_collection.TypeCollection
         If Not changementSport() Then
-            changerVisibilite(Entitees.Collection.Type.Hockey, True)
+            changerVisibilite(Entites.Collection.Type.Hockey, True)
         End If
     End Sub
 
@@ -30,35 +30,35 @@ Public Class MembreListeCartes
 
         'Détermintation de la liste à afficher
         Select Case m_sportEnCours
-            Case Entitees.Collection.Type.Baseball
-                changerVisibilite(Entitees.Collection.Type.Baseball, False)
+            Case Entites.Collection.Type.Baseball
+                changerVisibilite(Entites.Collection.Type.Baseball, False)
 
                 'Chargement de la liste de fiches pour Baseball
                 If Not chargementListe(phBaseball) Then
                     lblPasDeFiche.Visible = True
                 End If
-            Case Entitees.Collection.Type.Basketball
-                changerVisibilite(Entitees.Collection.Type.Basketball, False)
+            Case Entites.Collection.Type.Basketball
+                changerVisibilite(Entites.Collection.Type.Basketball, False)
 
                 'Chargement de la liste de fiches pour Basketball
                 If Not chargementListe(phBasketball) Then
                     lblPasDeFiche.Visible = True
                 End If
-            Case Entitees.Collection.Type.Football
-                changerVisibilite(Entitees.Collection.Type.Football, False)
+            Case Entites.Collection.Type.Football
+                changerVisibilite(Entites.Collection.Type.Football, False)
 
                 'Chargement de la liste de fiches pour Football
                 If Not chargementListe(phFootball) Then
                     lblPasDeFiche.Visible = True
                 End If
-            Case Entitees.Collection.Type.Hockey
-                changerVisibilite(Entitees.Collection.Type.Hockey, False)
+            Case Entites.Collection.Type.Hockey
+                changerVisibilite(Entites.Collection.Type.Hockey, False)
 
                 'Chargement de la liste de fiches pour Hockey
                 If Not chargementListe(phHockey) Then
                     lblPasDeFiche.Visible = True
                 End If
-            Case Entitees.Collection.Type.aucun
+            Case Entites.Collection.Type.aucun
                 Return False
         End Select
         Return True
@@ -122,9 +122,9 @@ Public Class MembreListeCartes
         End If
     End Function
 
-    Private Sub changerVisibilite(ByVal sport As Entitees.Collection.Type, ByVal isSportNothing As Boolean)
+    Private Sub changerVisibilite(ByVal sport As Entites.Collection.Type, ByVal isSportNothing As Boolean)
         Select Case sport
-            Case Entitees.Collection.Type.Baseball
+            Case Entites.Collection.Type.Baseball
                 phBaseball.Visible = True
                 phBasketball.Visible = False
                 phFootball.Visible = False
@@ -136,7 +136,7 @@ Public Class MembreListeCartes
                     btnAjouterFootball.Visible = False
                     btnAjouterHockey.Visible = False
                 End If
-            Case Entitees.Collection.Type.Basketball
+            Case Entites.Collection.Type.Basketball
                 phBaseball.Visible = False
                 phBasketball.Visible = True
                 phFootball.Visible = False
@@ -148,7 +148,7 @@ Public Class MembreListeCartes
                     btnAjouterFootball.Visible = False
                     btnAjouterHockey.Visible = False
                 End If
-            Case Entitees.Collection.Type.Football
+            Case Entites.Collection.Type.Football
                 phBaseball.Visible = False
                 phBasketball.Visible = False
                 phFootball.Visible = True
@@ -160,7 +160,7 @@ Public Class MembreListeCartes
                     btnAjouterFootball.Visible = True
                     btnAjouterHockey.Visible = False
                 End If
-            Case Entitees.Collection.Type.Hockey
+            Case Entites.Collection.Type.Hockey
                 phBaseball.Visible = False
                 phBasketball.Visible = False
                 phFootball.Visible = False
@@ -176,30 +176,30 @@ Public Class MembreListeCartes
     End Sub
 
     Protected Sub lnkbtnHockey_click(sender As Object, e As EventArgs) Handles lnkbtnHockey.Click
-        m_sportEnCours = Entitees.Collection.Type.Hockey
+        m_sportEnCours = Entites.Collection.Type.Hockey
         If Not changementSport() Then
-            changerVisibilite(Entitees.Collection.Type.Hockey, True)
+            changerVisibilite(Entites.Collection.Type.Hockey, True)
         End If
     End Sub
 
     Protected Sub lnkbtnBaseball_click(sender As Object, e As EventArgs) Handles lnkbtnBaseball.Click
-        m_sportEnCours = Entitees.Collection.Type.Baseball
+        m_sportEnCours = Entites.Collection.Type.Baseball
         If Not changementSport() Then
-            changerVisibilite(Entitees.Collection.Type.Baseball, True)
+            changerVisibilite(Entites.Collection.Type.Baseball, True)
         End If
     End Sub
 
     Protected Sub lnkbtnBasketball_click(sender As Object, e As EventArgs) Handles lnkbtnBasketball.Click
-        m_sportEnCours = Entitees.Collection.Type.Basketball
+        m_sportEnCours = Entites.Collection.Type.Basketball
         If Not changementSport() Then
-            changerVisibilite(Entitees.Collection.Type.Basketball, True)
+            changerVisibilite(Entites.Collection.Type.Basketball, True)
         End If
     End Sub
 
     Protected Sub lnkbtnFootball_click(sender As Object, e As EventArgs) Handles lnkbtnFootball.Click
-        m_sportEnCours = Entitees.Collection.Type.Football
+        m_sportEnCours = Entites.Collection.Type.Football
         If Not changementSport() Then
-            changerVisibilite(Entitees.Collection.Type.Football, True)
+            changerVisibilite(Entites.Collection.Type.Football, True)
         End If
     End Sub
 

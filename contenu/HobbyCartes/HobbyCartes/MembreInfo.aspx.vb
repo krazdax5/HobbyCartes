@@ -6,7 +6,7 @@ Public Class MembreInfo
     Inherits System.Web.UI.Page
 
     Dim m_connection As MySqlConnection
-    Dim m_membre As Entitees.Membre
+    Dim m_membre As Entites.Membre
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         m_connection = New MySqlConnection(My.Resources.StringConnexionBdd)
@@ -18,19 +18,19 @@ Public Class MembreInfo
         Dim id As Integer
         Dim accesParId As Boolean = False
 
-        id = Entitees.Membre.getIDbyPseudo(Request.QueryString("pseudo"), m_connection)
+        id = Entites.Membre.getIDbyPseudo(Request.QueryString("pseudo"), m_connection)
 
         'Vérifie si la page est accédée par pseudo
         If Not id.Equals(-1) Then
-            m_membre = New Entitees.Membre(id, m_connection)
+            m_membre = New Entites.Membre(id, m_connection)
         Else
             'Ou par identificateur
             id = Integer.Parse(Session("idMembre"))
             If Not id.Equals(-1) Then
-                m_membre = New Entitees.Membre(id, m_connection)
+                m_membre = New Entites.Membre(id, m_connection)
                 accesParId = True
             Else
-                m_membre = New Entitees.Membre(1, m_connection)
+                m_membre = New Entites.Membre(1, m_connection)
             End If
         End If
 
@@ -123,7 +123,7 @@ Public Class MembreInfo
                             fichier.Close()
 
                             'Association du chemin de l'arrière-plan dans la base de données
-                            m_membre.EnregistrerChemin(chemin, Entitees.Membre.TypeImage.arriereplan)
+                            m_membre.EnregistrerChemin(chemin, Entites.Membre.TypeImage.arriereplan)
 
                             lblfuMessage.Text = "Succès du transfert!"
                         Else
@@ -151,7 +151,7 @@ Public Class MembreInfo
                             fichier.Close()
 
                             'Association de l'image de profil avec le membre
-                            m_membre.EnregistrerChemin(chemin, Entitees.Membre.TypeImage.profil)
+                            m_membre.EnregistrerChemin(chemin, Entites.Membre.TypeImage.profil)
 
                             lblfuProfilMessage.Text = "Succès du transfert"
                         Else

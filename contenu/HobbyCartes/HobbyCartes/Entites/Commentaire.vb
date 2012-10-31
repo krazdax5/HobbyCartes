@@ -1,4 +1,4 @@
-﻿Namespace Entitees
+﻿Namespace Entites
 
     Public Class Commentaire
 

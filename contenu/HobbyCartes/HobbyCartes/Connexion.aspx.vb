@@ -23,14 +23,14 @@ Public Class Connexion
         Dim motPasse As String = txtMotPasse.Text
         Dim id As Integer
         Dim chemin As String
-        Dim Membre As Entitees.Membre
-        id = Entitees.Membre.ConnexionMembre(pseudo, motPasse, m_connection)
+        Dim Membre As Entites.Membre
+        id = Entites.Membre.ConnexionMembre(pseudo, motPasse, m_connection)
 
         If Not id.Equals(-1) Then
             Session("connected") = True
             Session("idMembre") = id
 
-            chemin = Entitees.Membre.getImagebyID(id, m_connection, Entitees.Membre.TypeImage.arriereplan)
+            chemin = Entites.Membre.getImagebyID(id, m_connection, Entites.Membre.TypeImage.arriereplan)
 
             If Not chemin.Equals("*") Then
                 Dim cook As HttpCookie = New HttpCookie(id.ToString + "_arriereplan", chemin)
@@ -38,7 +38,7 @@ Public Class Connexion
                 Response.Cookies.Add(cook)
             End If
 
-            Membre = New Entitees.Membre(id, m_connection)
+            Membre = New Entites.Membre(id, m_connection)
             If Membre.isAdmin Then
                 Session("Admin") = True
             End If

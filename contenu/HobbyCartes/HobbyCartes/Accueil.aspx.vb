@@ -22,7 +22,7 @@ Public Class Accueil
     End Sub
 
     Public Sub NouveauxMembre()
-        Dim Membres As List(Of Entitees.Membre) = Entitees.Membre.ListeMembresOrdonnee(m_connection)
+        Dim Membres As List(Of Entites.Membre) = Entites.Membre.ListeMembresOrdonnee(m_connection)
         Dim Nombre As Integer = Membres.Count
 
         If (Nombre > 5) Then
@@ -32,7 +32,7 @@ Public Class Accueil
 
         If Membres IsNot Nothing Then
             For value As Integer = 0 To Nombre - 1
-                Dim Membre As Entitees.Membre = Membres(value)
+                Dim Membre As Entites.Membre = Membres(value)
                 Dim nouvDiv As New HtmlGenericControl("div")
                 nouvDiv.Attributes.Add("class", "membre")
 

@@ -10,7 +10,7 @@ Public Class MembreVisualiserMessages
     ''' La liste des messages
     ''' </summary>
     ''' <remarks></remarks>
-    Private messages As List(Of Entitees.Message)
+    Private messages As List(Of Entites.Message)
 
     ''' <summary>
     ''' La connexion a la base de donnees
@@ -33,8 +33,8 @@ Public Class MembreVisualiserMessages
         dbCon = New MySqlConnection(My.Resources.StringConnexionBdd)
         dbCon.Open()
         ' Chargement de la liste de messages
-        messages = Entitees.Message.getListe(Request.QueryString("idMembre"), dbCon)
-        For Each message As Entitees.Message In messages
+        messages = Entites.Message.getListe(Request.QueryString("idMembre"), dbCon)
+        For Each message As Entites.Message In messages
             ajoute_message(message)
         Next
         ' Ajoute le bouton "Supprimer"
@@ -59,9 +59,9 @@ Public Class MembreVisualiserMessages
     ''' <summary>
     ''' Ajoute un message a la liste des messages sur la vue
     ''' </summary>
-    Private Sub ajoute_message(message As Entitees.Message)
+    Private Sub ajoute_message(message As Entites.Message)
         Dim destinateurText As Label = New Label()
-        destinateurText.Text = Entitees.Membre.getNomUtilisateurParId(message.idDestinateur, dbCon)
+        destinateurText.Text = Entites.Membre.getNomUtilisateurParId(message.idDestinateur, dbCon)
 
         Dim destinateurCell As TableCell = New TableCell()
         destinateurCell.Controls.Add(destinateurText)

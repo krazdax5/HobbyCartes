@@ -1,6 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 
-Namespace Entitees
+Namespace Entites
 
     Public Class Message
 

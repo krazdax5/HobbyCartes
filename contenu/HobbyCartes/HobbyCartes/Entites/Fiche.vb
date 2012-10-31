@@ -1,6 +1,6 @@
 ﻿Imports MySql.Data
 Imports MySql.Data.MySqlClient
-Namespace Entitees
+Namespace Entites
 
     Public Class Fiche
 
@@ -104,9 +104,9 @@ Namespace Entitees
         ''' Éditeur de la carte.
         ''' </summary>
         ''' <returns>Retourne une instance de la classe Entitees.Editeur</returns>
-        Public ReadOnly Property Editeur As Entitees.Editeur
+        Public ReadOnly Property Editeur As Entites.Editeur
             Get
-                Return New Entitees.Editeur(m_idEditeur, m_dbConnectionFiche)
+                Return New Entites.Editeur(m_idEditeur, m_dbConnectionFiche)
             End Get
         End Property
 
@@ -165,7 +165,7 @@ Namespace Entitees
             End Get
         End Property
 
-        Public ReadOnly Property Etatfiche As Entitees.Fiche.Etat
+        Public ReadOnly Property Etatfiche As Entites.Fiche.Etat
             Get
                 Return m_Etat
             End Get
@@ -303,15 +303,15 @@ Namespace Entitees
         ''' </summary>
         ''' <param name="idCollection">Identificateur de la collection.</param>
         ''' <returns>Retourne une liste de fiches représentant les fiches de la collection.</returns>
-        Public Shared Function retrouverListeMembre(ByVal idCollection As Integer, ByVal connection As MySqlConnection) As List(Of Entitees.Fiche)
-            Dim liste As List(Of Entitees.Fiche) = New List(Of Entitees.Fiche)()
+        Public Shared Function retrouverListeMembre(ByVal idCollection As Integer, ByVal connection As MySqlConnection) As List(Of Entites.Fiche)
+            Dim liste As List(Of Entites.Fiche) = New List(Of Entites.Fiche)()
             Dim requete As MySqlCommand = New MySqlCommand("SELECT * FROM fiche WHERE idcollection='" + idCollection + "'")
             Dim dbRead As MySqlDataReader
 
             Try
                 dbRead = requete.ExecuteReader()
                 While dbRead.NextResult
-                    Dim nouvFiche As Entitees.Fiche = New Entitees.Fiche(dbRead.GetInt32("idfiche"), connection)
+                    Dim nouvFiche As Entites.Fiche = New Entites.Fiche(dbRead.GetInt32("idfiche"), connection)
                     liste.Add(nouvFiche)
                 End While
                 dbRead.Close()
@@ -327,9 +327,9 @@ Namespace Entitees
         ''' <param name="connection">Connection à une base de donnée MySQL.</param>
         ''' <param name="sport">Type de sport.</param>
         ''' <returns>Retourne une liste de fiches. Si un problème, retourne une valeur nulle.</returns>
-        Public Shared Function ListeFichesOrdonnee(sport As Entitees.Collection.Type, connection As MySqlConnection) As List(Of Entitees.Fiche)
+        Public Shared Function ListeFichesOrdonnee(sport As Entites.Collection.Type, connection As MySqlConnection) As List(Of Entites.Fiche)
             Dim ids As List(Of Integer) = New List(Of Integer)()
-            Dim fiches As List(Of Entitees.Fiche) = New List(Of Entitees.Fiche)()
+            Dim fiches As List(Of Entites.Fiche) = New List(Of Entites.Fiche)()
             Dim requete As MySqlCommand = New MySqlCommand("SELECT fiche.idfiche FROM fiche " +
                                                            "JOIN collection ON collection.idcollection = fiche.idcollection " +
                                                            "WHERE collection.typecol='" + sport.ToString.ToLower + "' " +
@@ -347,7 +347,7 @@ Namespace Entitees
 
                 'Construction de la liste de fiches
                 For Each identificateur In ids
-                    fiches.Add(New Entitees.Fiche(identificateur, connection))
+                    fiches.Add(New Entites.Fiche(identificateur, connection))
                 Next
 
                 Return fiches

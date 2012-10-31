@@ -6,8 +6,8 @@ Public Class Fiche
     Inherits System.Web.UI.Page
 
     Dim m_connection As MySqlConnection
-    Dim m_Membre As Entitees.Membre
-    Dim m_Fiche As Entitees.Fiche
+    Dim m_Membre As Entites.Membre
+    Dim m_Fiche As Entites.Fiche
     Dim m_Admin As Boolean
 
 
@@ -19,25 +19,25 @@ Public Class Fiche
         m_connection = New MySqlConnection(My.Resources.StringConnexionBdd)
         m_connection.Open()
 
-        m_Fiche = New Entitees.Fiche(idFiche, m_connection)
+        m_Fiche = New Entites.Fiche(idFiche, m_connection)
         Dim NbCom As Integer = m_Fiche.nbCom()
 
         'Affiche le bouton supprimer commentaires si le membre est administrateur
         idMembre = Integer.Parse(Session("idMembre"))
         If Not idMembre.Equals(-1) Then
-            m_Membre = New Entitees.Membre(idMembre, m_connection)
+            m_Membre = New Entites.Membre(idMembre, m_connection)
             If (m_Membre.isAdmin) Then
                 btnSup.Visible = True
             End If
         Else
-            m_Membre = New Entitees.Membre(m_connection)
+            m_Membre = New Entites.Membre(m_connection)
         End If
 
         AfficheFiche()
 
         For value As Integer = 0 To NbCom - 1
             'Création et remplissage de l'objet commentaire temporaire
-            Dim Com As Entitees.Commentaire = New Entitees.Commentaire
+            Dim Com As Entites.Commentaire = New Entites.Commentaire
             Com = m_Fiche.ChercheCom(value)
             AfficheCom(Com)
         Next
@@ -48,9 +48,9 @@ Public Class Fiche
             lblCom.Visible = True
         End If
 
-       
 
-        
+
+
 
     End Sub
 
@@ -60,7 +60,7 @@ Public Class Fiche
             Return
         End If
         Dim idFiche As Integer = Request.QueryString("idFiche")
-        Dim Com As Entitees.Commentaire = New Entitees.Commentaire("Jean Coutue", idFiche)
+        Dim Com As Entites.Commentaire = New Entites.Commentaire("Jean Coutue", idFiche)
         Com.pMessage() = txtCom.Text
         'Com.pIDFiche() = idFiche
         'Com.pDestinateur() = "Jean Coutue"
@@ -75,7 +75,7 @@ Public Class Fiche
         Dim DivSup As New HtmlGenericControl("div")
 
         For value As Integer = 0 To m_Fiche.nbCom - 1
-            Dim Com As Entitees.Commentaire = New Entitees.Commentaire
+            Dim Com As Entites.Commentaire = New Entites.Commentaire
             'Récupération de la division à vérifier
             Com = m_Fiche.ChercheCom(value)
             NomDiv = Com.pIDCommentaire.ToString()
@@ -94,7 +94,7 @@ Public Class Fiche
     End Sub
 
     'Afficher un commentaire
-    Private Sub AfficheCom(Com As Entitees.Commentaire)
+    Private Sub AfficheCom(Com As Entites.Commentaire)
         'Crée dymaniquement une nouvelle division pour afficher un commentaire
         Dim NouvDiv As New HtmlGenericControl("div")
         NouvDiv.Attributes.Add("class", "commentaire")
@@ -126,7 +126,7 @@ Public Class Fiche
     'Afficher un nouveau commentaire
     Private Sub AfficheNouvCom(IDCom As Integer)
         'Création et remplissage de l'objet commentaire temporaire
-        Dim Com As Entitees.Commentaire = New Entitees.Commentaire
+        Dim Com As Entites.Commentaire = New Entites.Commentaire
         Com = m_Fiche.ChercheCom(m_Fiche.nbCom - 1)
         AfficheCom(Com)
     End Sub

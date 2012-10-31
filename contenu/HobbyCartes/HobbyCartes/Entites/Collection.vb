@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data
 Imports MySql.Data.MySqlClient
 
-Namespace Entitees
+Namespace Entites
 
     Public Class Collection
 
@@ -26,7 +26,7 @@ Namespace Entitees
         ''' <summary>
         ''' Représente la liste de cartes de la collection.
         ''' </summary>
-        Private m_fiches As List(Of Entitees.Fiche) = New List(Of Entitees.Fiche)
+        Private m_fiches As List(Of Entites.Fiche) = New List(Of Entites.Fiche)
 
         ''' <summary>
         ''' Connexion à la base de données MySQL
@@ -45,7 +45,7 @@ Namespace Entitees
         ''' <summary>
         ''' Liste de fiches de la collection
         ''' </summary>
-        Public ReadOnly Property ListeFiches As List(Of Entitees.Fiche)
+        Public ReadOnly Property ListeFiches As List(Of Entites.Fiche)
             Get
                 Return m_fiches
             End Get
@@ -54,7 +54,7 @@ Namespace Entitees
         ''' <summary>
         ''' Type de sport de la collection (hockey, baseball, basketball ou football)
         ''' </summary>
-        Public ReadOnly Property TypeCollection As Entitees.Collection.Type
+        Public ReadOnly Property TypeCollection As Entites.Collection.Type
             Get
                 Return m_type
             End Get
@@ -138,10 +138,10 @@ Namespace Entitees
                 End While
 
                 reader.Close()
-                m_fiches = New List(Of Entitees.Fiche)()
+                m_fiches = New List(Of Entites.Fiche)()
                 'Remplissage de la liste de fiches
                 For Each identificateur In listeID
-                    m_fiches.Add(New Entitees.Fiche(identificateur, m_connection))
+                    m_fiches.Add(New Entites.Fiche(identificateur, m_connection))
                 Next
             Catch ex As Exception
                 m_fiches = Nothing
@@ -153,7 +153,7 @@ Namespace Entitees
         ''' </summary>
         ''' <param name="sport">Représente un type de collection.</param>
         ''' <param name="idMembre">Identificateur du membre à qui appartient la collection.</param>
-        Public Sub chargementNouvCollection(ByVal sport As Entitees.Collection.Type, ByVal idMembre As Integer)
+        Public Sub chargementNouvCollection(ByVal sport As Entites.Collection.Type, ByVal idMembre As Integer)
             m_type = sport
             m_fiches = Nothing
 
