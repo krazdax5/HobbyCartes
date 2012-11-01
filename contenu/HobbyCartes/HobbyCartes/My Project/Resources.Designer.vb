@@ -61,7 +61,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Recherche une chaîne localisée semblable à Server=localhost;Database=test;Uid=root;Pwd=toor;.
+        '''  Recherche une chaîne localisée semblable à Server=raspi.dlinkddns.com;Database=hobbycartes;Uid=root;Pwd=root;.
         '''</summary>
         Friend ReadOnly Property StringConnexionBdd() As String
             Get
