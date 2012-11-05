@@ -14,10 +14,12 @@ Public Class Membre
         Dim pseudoMembre As String = Entites.Membre.getNomUtilisateurParId(idMembre, connection)
         connection.Close()
         Dim pseudo As String = Request.QueryString("pseudo")
+        Dim surPropreProfil As Boolean = connected And (pseudo = Nothing OrElse pseudo.Equals(pseudoMembre))
+        Dim surAutreProfil As Boolean = Not pseudo = Nothing AndAlso Not pseudo.Equals(pseudoMembre)
 
-        If IsNothing(pseudo) And Not connected Then
+        If Not surPropreProfil And Not surAutreProfil Then
             Erreur.afficherErreur(Page)
-        ElseIf IsNothing(pseudo) And connected Then
+        ElseIf surPropreProfil Then
             ongletGererCollections.Visible = True
             ongletVisualiserMessages.Visible = True
             ongletEnvoiMessage.Visible = False
