@@ -267,7 +267,7 @@ Namespace Entites
         ''' Crée un nouveau membre dans la base de données.
         ''' </summary>
         Public Function nouvMembre(ByVal membre As Entites.Membre, ByVal motPass As String, ByRef msgErreur As String, Optional ByRef idMembre As Integer = -1) As Boolean
-            m_arrierePlan = ""
+            m_arrierePlan = "img/standard.png"
             m_codePostal = membre.CodePostal
             m_courriel = membre.Courriel
             m_ville = membre.Ville
@@ -447,6 +447,37 @@ Namespace Entites
 
                 Return "*"
             End Try
+
+        End Function
+
+        Public Shared Function Rechercher(MotCle As String, connection As MySqlConnection) As List(Of Entites.Membre)
+            Dim Membres As List(Of Entites.Membre) = New List(Of Entites.Membre)()
+            Dim requete As MySqlCommand = New MySqlCommand("SELECT idmembre FROM membre WHERE nomutilisateurmem LIKE '%" + MotCle & _
+                                                           "%'", connection)
+            Dim ids As List(Of Integer) = New List(Of Integer)()
+
+
+            Dim reader As MySqlDataReader
+
+            Try
+                reader = requete.ExecuteReader()
+
+                'Récuprération des identificateurs
+                While reader.Read()
+                    ids.Add(reader.GetInt32("idmembre"))
+                End While
+                reader.Close()
+
+                'Construction de la liste de fiches
+                For Each identificateur In ids
+                    Membres.Add(New Entites.Membre(identificateur, connection))
+                Next
+
+                Return Membres
+            Catch ex As Exception
+                Return Nothing
+            End Try
+
 
         End Function
 
