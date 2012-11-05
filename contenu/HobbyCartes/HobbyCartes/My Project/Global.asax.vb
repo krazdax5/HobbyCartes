@@ -1,15 +1,12 @@
-﻿Imports System.Web.SessionState
-Imports MySql.Data.MySqlClient
-
-Public Class Global_asax
+﻿Public Class Global_asax
     Inherits System.Web.HttpApplication
 
     Sub Application_Start(ByVal sender As Object, ByVal e As EventArgs)
     End Sub
 
+
     Sub Session_Start(ByVal sender As Object, ByVal e As EventArgs)
-        Session.Add("connected", False)
-        Session.Timeout = 30
+        Session("connected") = False
     End Sub
 
     Sub Application_BeginRequest(ByVal sender As Object, ByVal e As EventArgs)

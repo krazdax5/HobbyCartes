@@ -14,8 +14,8 @@
                                                             Width="150px" 
                                                             Height="150px" 
                                                             ImageAlign="Left" /></asp:TableHeaderCell>
-                    <asp:TableHeaderCell runat="server"><asp:Label ID="lblPeusdo" runat="server" Font-Size="XX-Large" ForeColor="Red"></asp:Label></asp:TableHeaderCell>
-                    <asp:TableHeaderCell runat="server"><asp:Button ID="btnEnvoyerMessage" runat="server" Text="Envoyer un message" Height="50px" Width="180px" /></asp:TableHeaderCell>
+                    <asp:TableHeaderCell HorizontalAlign="Left" runat="server"><asp:Label HorizontalAlign="Left" ID="lblPeusdo" runat="server" Font-Size="XX-Large" ForeColor="Red"></asp:Label></asp:TableHeaderCell>
+                    <asp:TableHeaderCell runat="server"><asp:Button visible="false" ID="btnEnvoyerMessage" runat="server" Text="Envoyer un message" Height="50px" Width="180px" /></asp:TableHeaderCell>
                 </asp:TableHeaderRow>
             </asp:Table>
         </div>

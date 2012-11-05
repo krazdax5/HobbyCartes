@@ -9,6 +9,8 @@ Public Class MembreInfo
     Dim m_membre As Entites.Membre
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        initSession()
+
         m_connection = New MySqlConnection(My.Resources.StringConnexionBdd)
         m_connection.Open()
 
@@ -188,5 +190,18 @@ Public Class MembreInfo
 
     Protected Sub Page_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
         m_connection.Close()
+    End Sub
+
+    Private Sub initSession()
+        If Session("connected") Is Nothing Then
+            Session.Add("connected", False)
+            Session.Timeout = 30
+        End If
+        If Session("idMembre") Is Nothing Then
+            Session.Add("idMembre", -1)
+        End If
+        If Session("Admin") Is Nothing Then
+            Session.Add("Admin", False)
+        End If
     End Sub
 End Class

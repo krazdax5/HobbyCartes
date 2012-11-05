@@ -23,6 +23,33 @@ Partial Public Class MembreVisualiserMessage
     Protected WithEvents visualiserMessageTitre As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
+    '''Contrôle visualiserMessageDestinateur.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents visualiserMessageDestinateur As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''Contrôle lblDestinateur.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents lblDestinateur As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Contrôle lblDestinataire.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents lblDestinataire As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Contrôle visualiserMessageContenu.
     '''</summary>
     '''<remarks>

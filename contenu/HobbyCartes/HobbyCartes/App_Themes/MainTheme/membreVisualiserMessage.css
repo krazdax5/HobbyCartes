@@ -4,6 +4,13 @@
     width : 100%;
 }
 
+#membre #membre_contenu #visualiserMessage .visualiserMessageDest
+{
+    margin: 5px;
+    padding: 15px;
+    font-size : 120%;
+}
+
 #membre #membre_contenu #visualiserMessage .visualiserMessageContenu
 {
     padding : 20px;

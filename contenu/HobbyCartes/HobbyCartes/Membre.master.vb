@@ -7,6 +7,8 @@ Public Class Membre
     Inherits System.Web.UI.MasterPage
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        initSession()
+
         Dim connected As Boolean = Boolean.Parse(Session("connected"))
         Dim idMembre As Integer = Integer.Parse(Session("idMembre"))
         Dim connection As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
@@ -36,4 +38,16 @@ Public Class Membre
         End If
     End Sub
 
+    Private Sub initSession()
+        If Session("connected") Is Nothing Then
+            Session.Add("connected", False)
+            Session.Timeout = 30
+        End If
+        If Session("idMembre") Is Nothing Then
+            Session.Add("idMembre", -1)
+        End If
+        If Session("Admin") Is Nothing Then
+            Session.Add("Admin", False)
+        End If
+    End Sub
 End Class

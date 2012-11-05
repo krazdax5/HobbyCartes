@@ -15,6 +15,8 @@ Public Class MembreVisualiserMessage
     ''' Chargement de la page
     ''' </summary>
     Protected Sub Page_Load() Handles Me.Load
+        initSession()
+
         ' Ouvre la connexion a la bdd
         Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
         dbCon.Open()
@@ -22,7 +24,6 @@ Public Class MembreVisualiserMessage
         ' Recupere le message désiré via l'id passée par l'url
         Dim idMessage As Integer = Request.QueryString("idMessage")
         m_message = New Entites.Message(idMessage, dbCon)
-        dbCon.Close()
 
         ' Vérifie si l'utilisateur courant y a acces
         Dim connected As Boolean = Boolean.Parse(Session("connected"))
@@ -31,15 +32,34 @@ Public Class MembreVisualiserMessage
             Erreur.afficherErreur("Vous n'avez pas accès à ce message !", Page)
         Else
             visualiserMessageTitre.InnerText = m_message.objet
+            lblDestinateur.Text = Entites.Membre.getNomCompletParId(m_message.idDestinateur, dbCon) & " (" & Entites.Membre.getNomUtilisateurParId(m_message.idDestinateur, dbCon) & ")"
+            lblDestinataire.Text = Entites.Membre.getNomCompletParId(m_message.idDestinataire, dbCon) & " (" & Entites.Membre.getNomUtilisateurParId(m_message.idDestinataire, dbCon) & ")"
             visualiserMessageContenu.InnerHtml = m_message.contenu.Replace(vbCrLf, "<br />")
         End If
+        dbCon.Close()
     End Sub
 
     ''' <summary>
     ''' Clic sur le bouton "Répondre"
     ''' </summary>
     Protected Sub visualiserMessageBtnRepondre_Click() Handles visualiserMessageBtnRepondre.Click
-        Response.Redirect("MembreEnvoiMessage.aspx?idDestinataire=" & m_message.idDestinataire & "&idDestinateur=" & m_message.idDestinateur)
+        Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+        dbCon.Open()
+        Dim pseudo As String = Entites.Membre.getNomUtilisateurParId(m_message.idDestinateur, dbCon)
+        dbCon.Close()
+        Response.Redirect("MembreEnvoiMessage.aspx?pseudo=" & pseudo & "&reponse=" & m_message.objet)
     End Sub
 
+    Private Sub initSession()
+        If Session("connected") Is Nothing Then
+            Session.Add("connected", False)
+            Session.Timeout = 30
+        End If
+        If Session("idMembre") Is Nothing Then
+            Session.Add("idMembre", -1)
+        End If
+        If Session("Admin") Is Nothing Then
+            Session.Add("Admin", False)
+        End If
+    End Sub
 End Class

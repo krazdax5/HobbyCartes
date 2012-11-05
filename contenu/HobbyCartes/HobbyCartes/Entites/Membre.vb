@@ -348,6 +348,17 @@ Namespace Entites
             Return com.ExecuteScalar()
         End Function
 
+        ''' <summary>
+        ''' Donne le nom complet (Prenom Nom) d'un membre en fonction de son ID
+        ''' </summary>
+        Public Shared Function getNomCompletParId(id As Integer, dbCon As MySqlConnection) As String
+            Dim com As MySqlCommand = New MySqlCommand("SELECT prenommem FROM membre WHERE idmembre=" & id, dbCon)
+            Dim prenom As String = com.ExecuteScalar()
+            com = New MySqlCommand("SELECT nommem FROM membre WHERE idmembre=" & id, dbCon)
+            Dim nom As String = com.ExecuteScalar()
+            Return prenom & " " & nom
+        End Function
+
         Public Shared Function ConnexionMembre(pseudo As String, motPasse As String, connexion As MySqlConnection) As Integer
             Dim requete As MySqlCommand = New MySqlCommand("SELECT idMembre FROM membre WHERE nomutilisateurmem='" + pseudo + "' AND motpassemem='" + motPasse + "'", connexion)
             Dim reader As MySqlDataReader

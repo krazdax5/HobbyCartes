@@ -24,9 +24,17 @@ Public Class MembreVisualiserMessages
     Private checkBoxes As List(Of CheckBox)
 
     ''' <summary>
+    ''' Le bouton "Supprimer"
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private WithEvents btnSupprimer As Button
+
+    ''' <summary>
     ''' Chargement de la page
     ''' </summary>
     Protected Sub Page_Load() Handles Me.Load
+        initSession()
+
         ' Si l'utilisateur n'est pas connecté, erreur
         If Not Boolean.Parse(Session("connected")) Then
             Erreur.afficherErreur("Connectez vous pour visualiser vos messages !", Me)
@@ -47,15 +55,17 @@ Public Class MembreVisualiserMessages
         Next
 
         ' Ajoute le bouton "Supprimer"
-        Dim btnSupprimer As Button = New Button()
-        btnSupprimer.CssClass = "btnSuppr"
-        btnSupprimer.Text = "Supprimer"
-        Dim btnSupprimerCell As TableCell = New TableCell()
-        btnSupprimerCell.ColumnSpan = 3
-        btnSupprimerCell.Controls.Add(btnSupprimer)
-        Dim btnSupprimerRow As TableRow = New TableRow()
-        btnSupprimerRow.Cells.Add(btnSupprimerCell)
-        listeMessages.Rows.Add(btnSupprimerRow)
+        If messages.Count <> 0 Then
+            btnSupprimer = New Button()
+            btnSupprimer.CssClass = "btnSuppr"
+            btnSupprimer.Text = "Supprimer"
+            Dim btnSupprimerCell As TableCell = New TableCell()
+            btnSupprimerCell.ColumnSpan = 3
+            btnSupprimerCell.Controls.Add(btnSupprimer)
+            Dim btnSupprimerRow As TableRow = New TableRow()
+            btnSupprimerRow.Cells.Add(btnSupprimerCell)
+            listeMessages.Rows.Add(btnSupprimerRow)
+        End If
     End Sub
 
     ''' <summary>
@@ -100,7 +110,7 @@ Public Class MembreVisualiserMessages
     ''' <summary>
     ''' Clic sur le bouton "Supprimer"
     ''' </summary>
-    Private Sub btnSuppr_Click() Handles btnSuppr.Click
+    Protected Sub btnSupprimer_Click() Handles btnSupprimer.Click
         ' Supprime tous les messages selectionnes de la base de donnees
         For i As Integer = 1 To checkBoxes.Count
             If checkBoxes(i - 1).Checked Then
@@ -111,4 +121,16 @@ Public Class MembreVisualiserMessages
         Response.Redirect(Request.RawUrl)
     End Sub
 
+    Private Sub initSession()
+        If Session("connected") Is Nothing Then
+            Session.Add("connected", False)
+            Session.Timeout = 30
+        End If
+        If Session("idMembre") Is Nothing Then
+            Session.Add("idMembre", -1)
+        End If
+        If Session("Admin") Is Nothing Then
+            Session.Add("Admin", False)
+        End If
+    End Sub
 End Class

@@ -4,7 +4,9 @@ Imports MySql.Data.MySqlClient
 Public Class HobbyCartes
     Inherits System.Web.UI.MasterPage
 
-    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+    Protected Sub Page_Load() Handles Me.Load
+        initSession()
+
         Dim connection As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
         connection.Open()
 
@@ -43,6 +45,19 @@ Public Class HobbyCartes
     Protected Sub hlnkDeconnection_OnClick(sender As Object, e As EventArgs) Handles hlnkDeconnection.Click
         Session.Abandon()
         Response.Redirect("Accueil.aspx")
+    End Sub
+
+    Private Sub initSession()
+        If Session("connected") Is Nothing Then
+            Session.Add("connected", False)
+            Session.Timeout = 30
+        End If
+        If Session("idMembre") Is Nothing Then
+            Session.Add("idMembre", -1)
+        End If
+        If Session("Admin") Is Nothing Then
+            Session.Add("Admin", False)
+        End If
     End Sub
 
 End Class

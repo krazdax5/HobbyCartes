@@ -21,13 +21,4 @@ Partial Public Class MembreVisualiserMessages
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
     Protected WithEvents listeMessages As Global.System.Web.UI.WebControls.Table
-
-    '''<summary>
-    '''Contrôle btnSuppr.
-    '''</summary>
-    '''<remarks>
-    '''Champ généré automatiquement.
-    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-    '''</remarks>
-    Protected WithEvents btnSuppr As Global.System.Web.UI.WebControls.Button
 End Class
