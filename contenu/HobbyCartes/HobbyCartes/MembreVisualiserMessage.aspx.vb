@@ -18,12 +18,21 @@ Public Class MembreVisualiserMessage
         ' Ouvre la connexion a la bdd
         Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
         dbCon.Open()
-        ' Charge le message via l'id passée par l'url
+
+        ' Recupere le message désiré via l'id passée par l'url
         Dim idMessage As Integer = Request.QueryString("idMessage")
         m_message = New Entites.Message(idMessage, dbCon)
         dbCon.Close()
-        visualiserMessageTitre.InnerText = m_message.objet
-        visualiserMessageContenu.InnerHtml = m_message.contenu.Replace(vbCrLf, "<br />")
+
+        ' Vérifie si l'utilisateur courant y a acces
+        Dim connected As Boolean = Boolean.Parse(Session("connected"))
+        Dim idMembre As Integer = Integer.Parse(Session("idMembre"))
+        If Not connected Or m_message.idDestinataire <> idMembre Then
+            Erreur.afficherErreur("Vous n'avez pas accès à ce message !", Page)
+        Else
+            visualiserMessageTitre.InnerText = m_message.objet
+            visualiserMessageContenu.InnerHtml = m_message.contenu.Replace(vbCrLf, "<br />")
+        End If
     End Sub
 
     ''' <summary>

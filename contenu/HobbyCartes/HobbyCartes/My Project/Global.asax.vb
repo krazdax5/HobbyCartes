@@ -8,6 +8,8 @@ Public Class Global_asax
     End Sub
 
     Sub Session_Start(ByVal sender As Object, ByVal e As EventArgs)
+        Session.Add("connected", False)
+        Session.Timeout = 30
     End Sub
 
     Sub Application_BeginRequest(ByVal sender As Object, ByVal e As EventArgs)

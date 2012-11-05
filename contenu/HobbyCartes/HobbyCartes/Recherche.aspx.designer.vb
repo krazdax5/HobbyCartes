@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class Recherche
 
     '''<summary>
+    '''Contrôle smFiche.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents smFiche As Global.System.Web.UI.ScriptManager
+
+    '''<summary>
     '''Contrôle txtRecherche.
     '''</summary>
     '''<remarks>
@@ -48,4 +57,22 @@ Partial Public Class Recherche
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
     Protected WithEvents phRechercheFiche As Global.System.Web.UI.WebControls.PlaceHolder
+
+    '''<summary>
+    '''Contrôle uppanRechercherMembre.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents uppanRechercherMembre As Global.System.Web.UI.UpdatePanel
+
+    '''<summary>
+    '''Contrôle phRechercherMembre.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents phRechercherMembre As Global.System.Web.UI.WebControls.PlaceHolder
 End Class

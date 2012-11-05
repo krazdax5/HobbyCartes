@@ -40,11 +40,11 @@ Public Class MembreEnvoiMessage
         dbCon.Open()
         Try
             ' Chargement du destinateur et du destinataire
-            destinataire = New Entites.Membre(Request.QueryString("idDestinataire"), dbCon)
-            destinateur = New Entites.Membre(Request.QueryString("idDestinateur"), dbCon)
+            destinataire = New Entites.Membre(Entites.Membre.getIDbyPseudo(Request.QueryString("pseudo"), dbCon), dbCon)
+            destinateur = New Entites.Membre(Integer.Parse(Session("idMembre")), dbCon)
         Catch ex As Exception
             ' Affiche la page d'erreur en cas d'exception
-            Erreur.afficherException(ex, Request.UrlReferrer, Me)
+            Erreur.afficherException(ex, Me, Request.UrlReferrer)
         End Try
         ' Application du nom complet du membre sur les labels "Destinataire" et "Destinateur"
         lblDestinataire.Text = destinataire.nomComplet & " (" & destinataire.nomUtilisateur & ")"
@@ -64,7 +64,7 @@ Public Class MembreEnvoiMessage
             destinateur.envoyerMessage(destinataire, objet, contenu)
         Catch ex As Exception
             ' Affiche la page d'erreur en cas d'exception
-            Erreur.afficherException(ex, Page, Me)
+            Erreur.afficherException(ex, Me, Page)
         End Try
         ' Affiche la page de succes si tout s'est bien passe
         Response.Redirect(Request.RawUrl)

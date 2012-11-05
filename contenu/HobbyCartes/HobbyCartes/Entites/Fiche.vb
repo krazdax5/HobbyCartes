@@ -334,32 +334,15 @@ Namespace Entites
                                                            "JOIN collection ON collection.idcollection = fiche.idcollection " +
                                                            "WHERE collection.typecol='" + sport.ToString.ToLower + "' " +
                                                            "ORDER BY fiche.publicationsursitefi DESC", connection)
-            Dim reader As MySqlDataReader
+          fiches = ListeCarte(requete, connection)
 
-            Try
-                reader = requete.ExecuteReader()
-
-                'Récuprération des identificateurs en ordre
-                While reader.Read()
-                    ids.Add(reader.GetInt32("idfiche"))
-                End While
-                reader.Close()
-
-                'Construction de la liste de fiches
-                For Each identificateur In ids
-                    fiches.Add(New Entites.Fiche(identificateur, connection))
-                Next
-
-                Return fiches
-            Catch ex As Exception
-                Return Nothing
-            End Try
+            Return fiches
         End Function
 
         Public Shared Function Rechercher(MotCle As String, connection As MySqlConnection) As List(Of Entites.Fiche)
             Dim fiches As List(Of Entites.Fiche) = New List(Of Entites.Fiche)()
             Dim requete As MySqlCommand = New MySqlCommand("SELECT idfiche FROM fiche WHERE CONCAT(prenomjoueurfi, ' ', nomjoueurfi) LIKE '%" + MotCle & _
-                                                           "%' OR WHERE CONCAT(prenomjoueurfi, ' ', nomjoueurfi) LIKE '%" + MotCle + "%'", connection)
+                                                           "%' OR CONCAT(nomjoueurfi, ' ', prenomjoueurfi) LIKE '%" + MotCle + "%'", connection)
             fiches = ListeCarte(requete, connection)
 
             Return fiches
@@ -375,7 +358,7 @@ Namespace Entites
             Try
                 reader = requete.ExecuteReader()
 
-                'Récuprération des identificateurs en ordre
+                'Récuprération des identificateurs
                 While reader.Read()
                     ids.Add(reader.GetInt32("idfiche"))
                 End While

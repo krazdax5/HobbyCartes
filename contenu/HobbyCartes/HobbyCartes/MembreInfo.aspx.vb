@@ -25,12 +25,12 @@ Public Class MembreInfo
             m_membre = New Entites.Membre(id, m_connection)
         Else
             'Ou par identificateur
-            id = Integer.Parse(Session("idMembre"))
-            If Not id.Equals(-1) Then
+            If Boolean.Parse(Session("connected")) Then
+                id = Integer.Parse(Session("idMembre"))
                 m_membre = New Entites.Membre(id, m_connection)
                 accesParId = True
             Else
-                m_membre = New Entites.Membre(1, m_connection)
+                Erreur.afficherErreur(Me)
             End If
         End If
 
