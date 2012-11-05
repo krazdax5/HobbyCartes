@@ -102,6 +102,8 @@ Namespace Entites
             End If
             If dbRead("imagemem") IsNot DBNull.Value Then
                 m_imageMEmbre = dbRead.GetString("imagemem")
+            Else
+                m_imageMEmbre = "img/profil.jpg"
             End If
             m_DateInscription = dbRead.GetDateTime("dateinscriptionmem")
 
