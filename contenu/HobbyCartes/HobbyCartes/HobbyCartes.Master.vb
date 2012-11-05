@@ -11,6 +11,7 @@
                 hlnkConnection.Visible = False
                 hlnkDeconnection.Visible = True
                 mnuInscription.Visible = False
+                mnuConnexion.Visible = False
 
                 mnuProfil.Visible = True
 
