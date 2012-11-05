@@ -19,6 +19,7 @@ Public Class Accueil
         m_connection = New MySqlConnection(My.Resources.StringConnexionBdd)
         m_connection.Open()
         NouveauxMembre()
+        m_connection.Close()
     End Sub
 
     Public Sub NouveauxMembre()

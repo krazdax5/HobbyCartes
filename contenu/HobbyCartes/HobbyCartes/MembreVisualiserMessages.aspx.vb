@@ -27,16 +27,25 @@ Public Class MembreVisualiserMessages
     ''' Chargement de la page
     ''' </summary>
     Protected Sub Page_Load() Handles Me.Load
+        ' Si l'utilisateur n'est pas connecté, erreur
+        If Not Boolean.Parse(Session("connected")) Then
+            Erreur.afficherErreur("Connectez vous pour visualiser vos messages !", Me)
+        End If
+
         ' Initialise la liste des checkboxes
         checkBoxes = New List(Of CheckBox)
+
         ' Ouvre la connexion a la base de donnees
         dbCon = New MySqlConnection(My.Resources.StringConnexionBdd)
         dbCon.Open()
-        ' Chargement de la liste de messages
-        messages = Entites.Message.getListe(Request.QueryString("idMembre"), dbCon)
+
+        ' Chargement de la liste de messages avec l'id du membre connecté
+        Dim idMembre As Integer = Integer.Parse(Session("idMembre"))
+        messages = Entites.Message.getListe(idMembre, dbCon)
         For Each message As Entites.Message In messages
             ajoute_message(message)
         Next
+
         ' Ajoute le bouton "Supprimer"
         Dim btnSupprimer As Button = New Button()
         btnSupprimer.CssClass = "btnSuppr"
@@ -53,7 +62,9 @@ Public Class MembreVisualiserMessages
     ''' Fermeture de la page
     ''' </summary>
     Protected Sub Page_Unload() Handles Me.Unload
-        dbCon.Close()
+        If Not IsNothing(dbCon) Then
+            dbCon.Close()
+        End If
     End Sub
 
     ''' <summary>
