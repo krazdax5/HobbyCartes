@@ -356,6 +356,42 @@ Namespace Entites
             End Try
         End Function
 
+        Public Shared Function Rechercher(MotCle As String, connection As MySqlConnection) As List(Of Entites.Fiche)
+            Dim fiches As List(Of Entites.Fiche) = New List(Of Entites.Fiche)()
+            Dim requete As MySqlCommand = New MySqlCommand("SELECT idfiche FROM fiche WHERE CONCAT(prenomjoueurfi, ' ', nomjoueurfi) LIKE '%" + MotCle & _
+                                                           "%' OR WHERE CONCAT(prenomjoueurfi, ' ', nomjoueurfi) LIKE '%" + MotCle + "%'", connection)
+            fiches = ListeCarte(requete, connection)
+
+            Return fiches
+
+        End Function
+
+        Private Shared Function ListeCarte(requete As MySqlCommand, connection As MySqlConnection) As List(Of Entites.Fiche)
+            Dim ids As List(Of Integer) = New List(Of Integer)()
+            Dim fiches As List(Of Entites.Fiche) = New List(Of Entites.Fiche)()
+
+            Dim reader As MySqlDataReader
+
+            Try
+                reader = requete.ExecuteReader()
+
+                'Récuprération des identificateurs en ordre
+                While reader.Read()
+                    ids.Add(reader.GetInt32("idfiche"))
+                End While
+                reader.Close()
+
+                'Construction de la liste de fiches
+                For Each identificateur In ids
+                    fiches.Add(New Entites.Fiche(identificateur, connection))
+                Next
+
+                Return fiches
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
     End Class
 
 End Namespace
