@@ -10,8 +10,28 @@ Public Class Recherche
     End Sub
 
     Private Sub Rechercher() Handles btnRechercher.Click
-        RechercherFiche()
-        RechercherMembre()
+        If Not (txtRecherche.Text = "") And Not (txtRecherche.Text = " ") Then
+            RechercherFiche()
+            RechercherMembre()
+        Else
+            Dim nouvDivFiche As New HtmlGenericControl("div")
+            nouvDivFiche.Attributes.Add("class", "FichesRechercher")
+            Dim nouvDivMembre As New HtmlGenericControl("div")
+            nouvDivMembre.Attributes.Add("class", "membreRechercher")
+
+            Dim nouvMembre As New Label
+            nouvMembre.Text = "Aucun résultats de recherche"
+            nouvDivMembre.Controls.Add(nouvMembre)
+
+            Dim nouvFiche As New Label
+            nouvFiche.Text = "Aucun résultats de recherche"
+            nouvDivFiche.Controls.Add(nouvFiche)
+
+            phRechercherMembre.Controls.Add(nouvDivMembre)
+            phRechercheFiche.Controls.Add(nouvDivFiche)
+
+        End If
+
     End Sub
 
     Private Sub RechercherMembre()
@@ -91,28 +111,28 @@ Public Class Recherche
                     Dim nouvAnnee As New Label()
                     nouvAnnee.Attributes.Add("class", "lblAnneeFichesRechercher")
                     nouvAnnee.ID = "lblAnneeCarte" + Fiche.ID.ToString
-                    nouvAnnee.Text = "Année: " + Fiche.DateCarte.Year.ToString + " "
+                nouvAnnee.Text = "Année: " + Fiche.DateCarte.Year.ToString + " "
                     nouvDiv.Controls.Add(nouvAnnee)
 
                     'Éditeur de la carte
                     Dim nouvEditeur As New Label()
                     nouvEditeur.Attributes.Add("class", "lblEditeurFichesRechercher")
                     nouvEditeur.ID = "lblEditeur" + Fiche.ID.ToString
-                    nouvEditeur.Text = "Éditeur: " + Fiche.Editeur.NomEditeur + " "
+                nouvEditeur.Text = "Éditeur: " + Fiche.Editeur.NomEditeur + " "
                     nouvDiv.Controls.Add(nouvEditeur)
 
                     'Valeur de la carte
                     Dim nouvValeur As New Label()
                     nouvValeur.Attributes.Add("class", "lblValeurFichesRechercher")
                     nouvValeur.ID = "lblValeur" + Fiche.ID.ToString
-                    nouvValeur.Text = "Valeur: " + FormatCurrency(Fiche.Valeur, 2) + "CAD"
+                nouvValeur.Text = "Valeur: " + FormatCurrency(Fiche.Valeur, 2) + "CAD"
                     nouvDiv.Controls.Add(nouvValeur)
 
                     'Date de publication
                     Dim nouvDatePub As New Label()
                     nouvDatePub.Attributes.Add("class", "lblDatePubFicheRechercher")
                     nouvDatePub.ID = "lblDatePub" + Fiche.ID.ToString
-                    nouvDatePub.Text = "Date de publication: " + Fiche.DatePublication.ToString
+                nouvDatePub.Text = "Date de publication: " + Fiche.DatePublication.ToString
                     nouvDiv.Controls.Add(nouvDatePub)
 
                     'Détenteur

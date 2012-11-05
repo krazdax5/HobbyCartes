@@ -2,11 +2,23 @@
 {
     text-align:center;
 }
+
 #AfficherFiche
 {
     float:left;
-    width:45%;
+    width:40%;
+        
 }
+#AfficherMembre
+{
+    float:right;
+    width:45%;
+ }
+ #Test
+ {
+     clear:both;
+ }
+
 .imgRecherche
 {
     height : 64px;
@@ -20,7 +32,7 @@
     padding: 20px;
     border: 1px solid white;
     clear: both;
-    min-height: 130px;
+    
 }
 
 .FichesRechercher
@@ -32,67 +44,76 @@
     min-height: 130px;
 }
 
-
-#resultat
+.FichesRechercher img
 {
-    margin : auto;
-    margin-top : 20px;
-    border-spacing: 0px;
-    border-collapse: collapse; 
+    float: left;
 }
-
-#resultat td, #resultat th
+.lnkbtnNomFichesRechercher
 {
-    padding : 20px;
-    margin : 0px;
-    border : 1px solid white;
+    float: left;
+    position: relative;
+    clear: left;
+    text-decoration: none;
+    font-size:large;
+    color:Red;
+    bottom: 125px;
+    left:   110px;
 }
-
-#resultat th
+.lnkbtnNomFichesRechercher:hover
 {
-    text-align:center;
+    text-decoration: underline;
+    color: White;
 }
-
-#resultat td
+.lblEditeurFichesRechercher
 {
-    text-align: left;
+    float:left;
+    position:relative;
+    left: 110px;
+    clear: left;
+    bottom:145px;
+    font-size:medium;
+    clear:left;
 }
-
-#resultat tr
+.lblAnneeFichesRechercher
 {
-    margin : 0px;
-    padding : 0px;
-    clear : left;
+    float:left;
+    position:relative;
+    left:110px;
+    bottom:50px;
+    font-size:medium;
+    clear:left;
 }
-
-#resultat .membre
+.lblValeurFichesRechercher
 {
-    border-right : 2px solid white;
+    float: left;
+    position: relative;
+    clear: left;
+    font-size: medium;
+    bottom: 145px;
+    left: 110px;
 }
-
-#resultat .fiche
+.lblDatePubFicheRechercher
 {
-    border-left : 2px solid white;
+    float: left;
+    position: relative;
+    clear: left;
+    font-size: small;
+    bottom: 145px;
+    left: 110px;
 }
-
-#resultat .membre img
+.lblMembreFichesRechercher
 {
-    height : 100px;
-    width : 100px;
-    float : left;
-    margin-right : 20px;
+    float: left;
+    position: relative;
+    clear: left;
+    font-size: medium;
+    bottom: 145px;
+    left: 110px;
+    color: Red;
+    text-decoration: none;
 }
-
-#resultat .fiche img
+.lblMembreFichesRechercher:hover
 {
-    height : 140px;
-    width : 100px;
-    float : left;
-    margin-right : 20px;
-}
-
-#resultat a
-{
-    color : inherit;
-    text-decoration : inherit;
+    text-decoration: underline;
+    color: White;
 }
