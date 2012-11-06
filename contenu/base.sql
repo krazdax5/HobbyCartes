@@ -25,7 +25,7 @@ CREATE TABLE message(
 	idmess INTEGER PRIMARY KEY AUTO_INCREMENT,
 	iddestinataire INTEGER NOT NULL,
 	iddestinateur INTEGER NOT NULL,
-	objetmes VARCHAR(30),
+	objetmes VARCHAR(60),
 	mesmes LONGTEXT NOT NULL,
 	FOREIGN KEY(iddestinataire) REFERENCES membre(idmembre),
 	FOREIGN KEY(iddestinateur) REFERENCES membre(idmembre)
@@ -165,9 +165,24 @@ VALUES ('2','3','Wow', 'Que de belles cartes je suis sans mot!');
 INSERT INTO message (iddestinataire, iddestinateur, objetmes, mesmes)
 VALUES ('3','1','Ouf', 'Tes cartes sont vraiment de la merde!');
 INSERT INTO message (iddestinataire, iddestinateur, objetmes, mesmes)
-VALUES ('1','1','Salut', 'Je suis inutile!');
+VALUES ('1','2','Salut', 'Je suis inutile!');
+INSERT INTO message (iddestinataire, iddestinateur, objetmes, mesmes) 
+VALUES ('2','3','Offre pour ta carte de Crosby Sidney', 'Salut !
+Ta carte de Crosby Sidney m\'interesse beaucoup, je te propose 60$ pour son acquisition.
+Ca t\'interesserais ?');
 INSERT INTO message (iddestinataire, iddestinateur, objetmes, mesmes)
-VALUES ('1','3','Long message', 'Bien le bonjour, je cherche à évaluer la capacité de la base de données à enregistrer de longs textes contenant une multitude d\'âççêñt$,
+VALUES ('4','3','Salut toi :)', 'Je t''envoie ce message uniquement pour tester le cas d''envoi de messages, donc tu n''es pas obligé de me répondre...
+Mais si tu veux tester le bouton ""Répondre"" en bas du message, fais toi plaisir.
+
+Bye !');
+INSERT INTO message (iddestinataire, iddestinateur, objetmes, mesmes)
+VALUES ('2','3','Offre pour Wayne Gretzky', 'Salut,
+je t''ai déjà fait une offre pour ta carte de Crosby, mais celle de Gretzky me plait beaucoup aussi !
+Si ça te va, je te propose 100$ les deux, ok ?');
+INSERT INTO message (iddestinataire, iddestinateur, objetmes, mesmes)
+VALUES ('3','2','Salut', 'Je suis inutile!');
+INSERT INTO message (iddestinataire, iddestinateur, objetmes, mesmes)
+VALUES ('5','3','Long message', 'Bien le bonjour, je cherche à évaluer la capacité de la base de données à enregistrer de longs textes contenant une multitude d''âççêñt$,
 des sauts de lignes, et des caractères <\'spéciaux\'>.');
 INSERT INTO message (iddestinataire, iddestinateur, objetmes, mesmes)
 VALUES ('3','1','Ouf', 'Tes cartes sont vraiment de la merde!');
