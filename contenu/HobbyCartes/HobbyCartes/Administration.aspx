@@ -3,34 +3,24 @@
 <asp:Content ContentPlaceHolderID="cphCorps" runat="server">
     <div id="administration">
          <div id="boutons">
-            <div>
-                <a>Envoyer un communiqué</a>
-            </div>
-            <div>
-                <a>Supprimer</a>
-            </div>
+            <ul>
+                <li runat="server"><asp:LinkButton ID="lnkbtnCommu" runat="server" CssClass="lnkbtnAdmin">Envoyer un communiqué</asp:LinkButton></li>
+                <li runat="server"><asp:LinkButton ID="lnkbtnSupp" runat="server" CssClass="lnkbtnAdmin">Supprimé</asp:LinkButton></li>
+            </ul>
         </div>
-        <table id="membres">
-            <thead>
-                <tr>
-                    <th class="membre">Membre</th>
-                    <th class="checkbox"><asp:CheckBox runat="server" /> select all</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="membre"><img src="img/profil.jpg" />Pseudo<br />Vues : 195, Fiches : 51</td>
-                    <td class="checkbox"><asp:CheckBox ID="CheckBox1" runat="server" /></td>
-                </tr>
-                <tr>
-                    <td class="membre"><img src="img/profil.jpg" />Pseudo<br />Vues : 195, Fiches : 51</td>
-                    <td class="checkbox"><asp:CheckBox ID="CheckBox2" runat="server" /></td>
-                </tr>
-                <tr>
-                    <td class="membre"><img src="img/profil.jpg" />Pseudo<br />Vues : 195, Fiches : 51</td>
-                    <td class="checkbox"><asp:CheckBox ID="CheckBox3" runat="server" /></td>
-                </tr>
-            </tbody>
-        </table>
+        <br />
+        <div id="ContenuAdmin">
+            <asp:PlaceHolder ID="phAdmin" runat="server">
+                
+            </asp:PlaceHolder>
+        </div>
+        <asp:UpdatePanel ID="uppanAdmin" runat="server">
+            <ContentTemplate>
+                <asp:Button ID="btnSup" runat="server" />
+            </ContentTemplate>
+            <Triggers>
+                <asp:AsyncPostBackTrigger ControlID="btnSup" EventName="Click" />
+            </Triggers>
+        </asp:UpdatePanel>
     </div>
 </asp:Content>
