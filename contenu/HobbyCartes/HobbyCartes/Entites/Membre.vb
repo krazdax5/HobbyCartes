@@ -499,9 +499,18 @@ Namespace Entites
             Catch ex As Exception
                 Return Nothing
             End Try
-
-
         End Function
+
+        Public Shared Function SupMembre(idMem As Integer, connection As MySqlConnection) As Boolean
+            Dim requete As MySqlCommand = New MySqlCommand("DELETE from membre WHERE idmembre='" + idMem.ToString + "'", connection)
+            Try
+                requete.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Return False
+            End Try
+        End Function
+
 
     End Class
 

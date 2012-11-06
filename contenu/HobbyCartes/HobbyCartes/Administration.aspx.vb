@@ -26,7 +26,7 @@ Public Class Administration
             For Each Membre In Membres
                 Dim nouvDiv As New HtmlGenericControl("div")
                 nouvDiv.Attributes.Add("class", "membreAdmin")
-                nouvDiv.ID = "divMembre" + Membre.id
+                nouvDiv.ID = "divMembre" + Membre.id.ToString
 
                 'Image
                 Dim nouvA As New HtmlGenericControl("a")
@@ -61,7 +61,7 @@ Public Class Administration
                 ckSup.CssClass = "CheckBAdmin"
                 nouvDiv.Controls.Add(ckSup)
 
-                phAdmin.Controls.Add(nouvDiv)
+                phAdminMembre.Controls.Add(nouvDiv)
             Next
         End If
         
@@ -73,7 +73,7 @@ Public Class Administration
         Dim Membres As List(Of Entites.Membre) = Entites.Membre.ListeMembresOrdonnee(m_connection)
 
         For Each Membre In Membres
-            NomDiv = "divMembre" + Membre.id
+            NomDiv = "divMembre" + Membre.id.ToString
             DivSup = uppanAdmin.ContentTemplateContainer.FindControl(NomDiv)
 
             Dim ckSup As New CheckBox
@@ -81,7 +81,11 @@ Public Class Administration
 
             'Supprime les commentaires dont les Checkbox sont cochés
             If (ckSup.Checked) Then
-                uppanAdmin.Controls.Remove(DivSup)
+                If (Entites.Membre.SupMembre(Membre.id, m_connection)) Then
+                    phAdminMembre.Controls.Remove(DivSup)
+                Else
+
+                End If
             End If
         Next
     End Sub

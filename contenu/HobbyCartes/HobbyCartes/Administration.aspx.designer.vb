@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class Administration
 
     '''<summary>
+    '''Contrôle smAdmin.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents smAdmin As Global.System.Web.UI.ScriptManager
+
+    '''<summary>
     '''Contrôle lnkbtnCommu.
     '''</summary>
     '''<remarks>
@@ -32,15 +41,6 @@ Partial Public Class Administration
     Protected WithEvents lnkbtnSupp As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
-    '''Contrôle phAdmin.
-    '''</summary>
-    '''<remarks>
-    '''Champ généré automatiquement.
-    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-    '''</remarks>
-    Protected WithEvents phAdmin As Global.System.Web.UI.WebControls.PlaceHolder
-
-    '''<summary>
     '''Contrôle uppanAdmin.
     '''</summary>
     '''<remarks>
@@ -48,6 +48,15 @@ Partial Public Class Administration
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
     Protected WithEvents uppanAdmin As Global.System.Web.UI.UpdatePanel
+
+    '''<summary>
+    '''Contrôle phAdminMembre.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents phAdminMembre As Global.System.Web.UI.WebControls.PlaceHolder
 
     '''<summary>
     '''Contrôle btnSup.

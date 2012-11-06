@@ -27,15 +27,15 @@ CREATE TABLE message(
 	iddestinateur INTEGER NOT NULL,
 	objetmes VARCHAR(60),
 	mesmes LONGTEXT NOT NULL,
-	FOREIGN KEY(iddestinataire) REFERENCES membre(idmembre),
-	FOREIGN KEY(iddestinateur) REFERENCES membre(idmembre)
+	FOREIGN KEY(iddestinataire) REFERENCES membre(idmembre) ON DELETE CASCADE,
+	FOREIGN KEY(iddestinateur) REFERENCES membre(idmembre) ON DELETE CASCADE
 );
 
 CREATE TABLE collection(
 	idcollection INTEGER PRIMARY KEY AUTO_INCREMENT,
 	idmembre INTEGER NOT NULL,
 	typecol ENUM('hockey', 'baseball', 'football', 'basketball') NOT NULL,
-	FOREIGN KEY(idmembre) REFERENCES membre(idmembre)
+	FOREIGN KEY(idmembre) REFERENCES membre(idmembre) ON DELETE CASCADE
 );
 
 CREATE TABLE editeur(
@@ -65,9 +65,9 @@ CREATE TABLE fiche(
 	imagedevantfi VARCHAR(30) NOT NULL,
 	imagederrierefi VARCHAR(30) NOT NULL,
 	publicationsursitefi DATETIME NOT NULL,
-	FOREIGN KEY(idcollection) REFERENCES collection(idcollection),
-	FOREIGN KEY(idediteur) REFERENCES editeur(idediteur),
-	FOREIGN KEY(idequipe) REFERENCES equipe(idequipe)
+	FOREIGN KEY(idcollection) REFERENCES collection(idcollection) ON DELETE CASCADE,
+	FOREIGN KEY(idediteur) REFERENCES editeur(idediteur) ON DELETE CASCADE,
+	FOREIGN KEY(idequipe) REFERENCES equipe(idequipe) ON DELETE CASCADE
 );
 
 CREATE TABLE commentaire(
@@ -75,7 +75,7 @@ CREATE TABLE commentaire(
 	idfiche INTEGER NOT NULL,
 	destinateurcom VARCHAR(30) NOT NULL,
 	messagecom LONGTEXT NOT NULL,
-	FOREIGN KEY(idfiche) REFERENCES fiche(idfiche)
+	FOREIGN KEY(idfiche) REFERENCES fiche(idfiche) ON DELETE CASCADE
 );
 
 INSERT INTO membre (prenommem, nommem, nomutilisateurmem, motpassemem, villemem, codepostalmem, courrielmem, dateinscriptionmem, imagemem) 
@@ -161,31 +161,31 @@ INSERT INTO commentaire (idfiche,destinateurcom, messagecom) VALUES ('1','jfcoll
 INSERT INTO message (iddestinataire, iddestinateur, objetmes, mesmes) 
 VALUES ('1','2','Belles cartes', 'Mon dieu que tu as de belles cartes!');
 INSERT INTO message (iddestinataire, iddestinateur, objetmes, mesmes)
-VALUES ('3','2','Wow', 'Que de belles cartes je suis sans mot!');
+VALUES ('2','3','Wow', 'Que de belles cartes je suis sans mot!');
 INSERT INTO message (iddestinataire, iddestinateur, objetmes, mesmes)
-VALUES ('1','3','Ouf', 'Tes cartes sont vraiment de la merde!');
+VALUES ('3','1','Ouf', 'Tes cartes sont vraiment de la merde!');
 INSERT INTO message (iddestinataire, iddestinateur, objetmes, mesmes)
 VALUES ('1','2','Salut', 'Je suis inutile!');
 INSERT INTO message (iddestinataire, iddestinateur, objetmes, mesmes) 
-VALUES ('3','2','Offre pour ta carte de Crosby Sidney', 'Salut !\r\n
-Ta carte de Crosby Sidney m''interesse beaucoup, je te propose 60$ pour son acquisition.\r\n
-Ca t''interesserais ?');
+VALUES ('2','3','Offre pour ta carte de Crosby Sidney', 'Salut !
+Ta carte de Crosby Sidney m\'interesse beaucoup, je te propose 60$ pour son acquisition.
+Ca t\'interesserais ?');
 INSERT INTO message (iddestinataire, iddestinateur, objetmes, mesmes)
-VALUES ('3','4','Salut toi :)', 'Je t''envoie ce message uniquement pour tester le cas d''envoi de messages, donc tu n''es pas obligé de me répondre...\r\n
-Mais si tu veux tester le bouton ""Répondre"" en bas du message, fais toi plaisir.\r\n
-\r\n
+VALUES ('4','3','Salut toi :)', 'Je t''envoie ce message uniquement pour tester le cas d''envoi de messages, donc tu n''es pas obligé de me répondre...
+Mais si tu veux tester le bouton ""Répondre"" en bas du message, fais toi plaisir.
+
 Bye !');
 INSERT INTO message (iddestinataire, iddestinateur, objetmes, mesmes)
-VALUES ('3','2','Offre pour Wayne Gretzky', 'Salut,\r\n
-je t''ai déjà fait une offre pour ta carte de Crosby, mais celle de Gretzky me plait beaucoup aussi !\r\n
+VALUES ('2','3','Offre pour Wayne Gretzky', 'Salut,
+je t''ai déjà fait une offre pour ta carte de Crosby, mais celle de Gretzky me plait beaucoup aussi !
 Si ça te va, je te propose 100$ les deux, ok ?');
 INSERT INTO message (iddestinataire, iddestinateur, objetmes, mesmes)
-VALUES ('1','2','Salut', 'Je suis inutile!');
+VALUES ('3','2','Salut', 'Je suis inutile!');
 INSERT INTO message (iddestinataire, iddestinateur, objetmes, mesmes)
-VALUES ('5','3','Long message', 'Bien le bonjour, je cherche à évaluer la capacité de la base de données à enregistrer de longs textes contenant une multitude d''âççêñt$,\r\n
+VALUES ('5','3','Long message', 'Bien le bonjour, je cherche à évaluer la capacité de la base de données à enregistrer de longs textes contenant une multitude d''âççêñt$,
 des sauts de lignes, et des caractères <\'spéciaux\'>.');
 INSERT INTO message (iddestinataire, iddestinateur, objetmes, mesmes)
-VALUES ('1','3','Ouf', 'Tes cartes sont vraiment de la merde!');
+VALUES ('3','1','Ouf', 'Tes cartes sont vraiment de la merde!');
 
 
 
