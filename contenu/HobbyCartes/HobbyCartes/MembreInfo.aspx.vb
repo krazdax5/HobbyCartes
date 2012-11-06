@@ -127,6 +127,11 @@ Public Class MembreInfo
                             'Association du chemin de l'arrière-plan dans la base de données
                             m_membre.EnregistrerChemin(chemin, Entites.Membre.TypeImage.arriereplan)
 
+                            'Ajout de l'image dans un cookie
+                            Dim cook As HttpCookie = New HttpCookie(m_membre.id.ToString + "_arriereplan", chemin)
+                            Response.Cookies.Clear()
+                            Response.Cookies.Add(cook)
+
                             lblfuMessage.Text = "Succès du transfert!"
                         Else
                             lblfuMessage.Text = "L'image est trop volumineuse!"
