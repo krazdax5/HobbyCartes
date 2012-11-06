@@ -24,6 +24,7 @@ Public Class MembreVisualiserMessage
         ' Recupere le message désiré via l'id passée par l'url
         Dim idMessage As Integer = Request.QueryString("idMessage")
         m_message = New Entites.Message(idMessage, dbCon)
+        dbCon.Close()
 
         ' Vérifie si l'utilisateur courant y a acces
         Dim connected As Boolean = Boolean.Parse(Session("connected"))
@@ -31,12 +32,12 @@ Public Class MembreVisualiserMessage
         If Not connected Or m_message.idDestinataire <> idMembre Then
             Erreur.afficherErreur("Vous n'avez pas accès à ce message !", Page)
         Else
+            ' Affiche le message
             visualiserMessageTitre.InnerText = m_message.objet
-            lblDestinateur.Text = Entites.Membre.getNomCompletParId(m_message.idDestinateur, dbCon) & " (" & Entites.Membre.getNomUtilisateurParId(m_message.idDestinateur, dbCon) & ")"
-            lblDestinataire.Text = Entites.Membre.getNomCompletParId(m_message.idDestinataire, dbCon) & " (" & Entites.Membre.getNomUtilisateurParId(m_message.idDestinataire, dbCon) & ")"
+            lblDestinateur.Text = Entites.Membre.getNomCompletEtPseudoParId(m_message.idDestinateur)
+            lblDestinataire.Text = Entites.Membre.getNomCompletEtPseudoParId(m_message.idDestinataire)
             visualiserMessageContenu.InnerHtml = m_message.contenu.Replace(vbCrLf, "<br />")
         End If
-        dbCon.Close()
     End Sub
 
     ''' <summary>
@@ -48,6 +49,24 @@ Public Class MembreVisualiserMessage
         Dim pseudo As String = Entites.Membre.getNomUtilisateurParId(m_message.idDestinateur, dbCon)
         dbCon.Close()
         Response.Redirect("MembreEnvoiMessage.aspx?pseudo=" & pseudo & "&reponse=" & m_message.objet)
+    End Sub
+
+    ''' <summary>
+    ''' Clic sur le bouton "Supprimer"
+    ''' </summary>
+    Protected Sub visualiserMessageBtnSupprimer_Click() Handles visualiserMessageBtnSupprimer.Click
+        Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+        dbCon.Open()
+        m_message.supprimer(dbCon)
+        dbCon.Close()
+        Response.Redirect("MembreVisualiserMessages.aspx")
+    End Sub
+
+    ''' <summary>
+    ''' Clic sur le bouton "Retour"
+    ''' </summary>
+    Protected Sub visualiserMessageBtnRetour_Click() Handles visualiserMessageBtnRetour.Click
+        Response.Redirect("MembreVisualiserMessages.aspx")
     End Sub
 
     Private Sub initSession()

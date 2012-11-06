@@ -66,4 +66,22 @@ Partial Public Class MembreVisualiserMessage
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
     Protected WithEvents visualiserMessageBtnRepondre As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Contrôle visualiserMessageBtnSupprimer.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents visualiserMessageBtnSupprimer As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Contrôle visualiserMessageBtnRetour.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents visualiserMessageBtnRetour As Global.System.Web.UI.WebControls.Button
 End Class

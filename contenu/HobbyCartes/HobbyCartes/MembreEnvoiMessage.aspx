@@ -22,7 +22,9 @@
                     <td class="maxCol" colspan="2"><asp:TextBox ID="txtContenu" TextMode="MultiLine" Rows="20" runat="server" Width="100%" /></td>
                 </tr>
                 <tr>
-                    <td class="maxCol" colspan="2"><asp:Button runat="server" id="btnEnvoyer" text="Envoyer" /></td>
+                    <td class="maxCol" colspan="2"><asp:Button runat="server" id="btnEnvoyer" text="Envoyer" />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtObjet" ForeColor="Red" Font-Bold="true" ErrorMessage="Vous devez spécifier un objet !" />
+                    </td>
                 </tr>
             </tbody>
         </table>

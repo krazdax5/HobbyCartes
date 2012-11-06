@@ -107,7 +107,9 @@ Public Class Fiche
         'Création d'un lbl pour le commentaire
         Dim lblCom As New Label
         Dim Commentaires As String = Com.pDestinateur + " dit : <br/><br/>" + Com.pMessage()
-        lblCom.Text = Commentaires
+        lblCom.Text = "<a href=" & Chr(34) & "Membreinfo.aspx?pseudo=" + Com.pDestinateur & Chr(34) & _
+                                    "STYLE=" & Chr(34) & "TEXT-DECORATION: NONE" & Chr(34) & "><font color=" & Chr(34) & "B8C3B8" & Chr(34) & ">" & _
+                                    Com.pDestinateur + "</a> dit : </font><br/><br/>" + Com.pMessage()
 
         'ajout du commentaires
         NouvDiv.Controls.Add(lblCom)
