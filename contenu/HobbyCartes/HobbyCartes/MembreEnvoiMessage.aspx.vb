@@ -7,11 +7,6 @@ Public Class MembreEnvoiMessage
     Inherits System.Web.UI.Page
 
     ''' <summary>
-    ''' La connexion a la base de donnees
-    ''' </summary>
-    Private dbCon As MySqlConnection
-
-    ''' <summary>
     ''' Le destinataire du message
     ''' </summary>
     Private destinataire As Entites.Membre
@@ -36,26 +31,30 @@ Public Class MembreEnvoiMessage
     ''' </summary>
     Protected Sub Page_Load() Handles Me.Load
         ' Ouvre la connexion a la base de donnees
-        dbCon = New MySqlConnection(My.Resources.StringConnexionBdd)
+        Dim dbCon As New MySqlConnection(My.Resources.StringConnexionBdd)
         dbCon.Open()
 
         Try
             ' Chargement du destinateur et du destinataire
-            destinataire = New Entites.Membre(Entites.Membre.getIDbyPseudo(Request.QueryString("pseudo"), dbCon), dbCon)
-            destinateur = New Entites.Membre(Integer.Parse(Session("idMembre")), dbCon)
+            Dim idDestinataire As Integer = Entites.Membre.getIDbyPseudo(Request.QueryString("pseudo"), dbCon)
+            destinataire = New Entites.Membre(idDestinataire, dbCon)
+            Dim idDestinateur As Integer = Integer.Parse(Session("idMembre"))
+            destinateur = New Entites.Membre(idDestinateur, dbCon)
 
             ' Pré-rempli l'objet en cas de réponse à un message
             If Request.QueryString("reponse") <> Nothing Then
                 txtObjet.Text = "Re : " & Request.QueryString("reponse")
             End If
+
+            ' Application du nom complet du membre sur les labels "Destinataire" et "Destinateur"
+            lblDestinataire.Text = Entites.Membre.getNomCompletEtPseudoParId(idDestinataire)
+            lblDestinateur.Text = Entites.Membre.getNomCompletEtPseudoParId(idDestinateur)
         Catch ex As Exception
             ' Affiche la page d'erreur en cas d'exception
             Erreur.afficherException(ex, Me, Request.UrlReferrer)
         End Try
 
-        ' Application du nom complet du membre sur les labels "Destinataire" et "Destinateur"
-        lblDestinataire.Text = destinataire.nomComplet & " (" & destinataire.nomUtilisateur & ")"
-        lblDestinateur.Text = destinateur.nomComplet & " (" & destinateur.nomUtilisateur & ")"
+        dbCon.Close()
     End Sub
 
     ''' <summary>
@@ -73,14 +72,11 @@ Public Class MembreEnvoiMessage
             ' Affiche la page d'erreur en cas d'exception
             Erreur.afficherException(ex, Me, Page)
         End Try
-        ' Affiche la page de succes si tout s'est bien passe
-        Response.Write("<script LANGUAGE='JavaScript'>alert('Message envoyé avec succès !');</script>")
-    End Sub
-
-    ''' <summary>
-    ''' Fermeture de la page
-    ''' </summary>
-    Protected Sub Page_Unload() Handles Me.Unload
-        dbCon.Close() ' Ferme la connexion a la base de donnees
+        ' Affiche un message de succes si tout s'est bien passe
+        Dim script As String = "<script language='javascript'>"
+        script += "alert('Message envoyé avec succès !');"
+        script += "window.location = 'MembreVisualiserMessages.aspx';"
+        script += "</script>"
+        Response.Write(script)
     End Sub
 End Class

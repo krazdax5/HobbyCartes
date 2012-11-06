@@ -1,0 +1,11 @@
+Test cases pour les cas "Envoyer des messages" et "Faire des offres" :
+- Visualiser sa messagerie avec des messages
+- Visualiser sa messagerie vide (sans message)
+- Visualiser le contenu d'un message
+- Envoyer un message à un autre membre
+- Tester le cas ou l'objet est vide
+- Tester le bouton "Répondre" de quand on visualise le contenu d'un message
+- Tester le bouton "Supprimer" de quand on visualise le contenu d'un message
+- Tester le bouton "Supprimer" de quand on visualiser la liste des messages
+- Tester le bouton "Retour" de quand on visualise un message
+- Tester le bouton "Retour" de quand on écrit un message

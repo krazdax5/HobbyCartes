@@ -257,10 +257,13 @@ Namespace Entites
         ''' <param name="objet">L'objet du message</param>
         ''' <param name="contenu">Le contenu du message</param>
         Sub envoyerMessage(destinataire As Membre, objet As String, contenu As String)
+            Dim dbCon As New MySqlConnection(My.Resources.StringConnexionBdd)
+            dbCon.Open()
             Dim dbCom As MySqlCommand = New MySqlCommand("INSERT INTO message (iddestinataire, iddestinateur, objetmes, mesmes) " &
                                                         "VALUES(" & destinataire.id & ", " & Me.id & ", '" & objet & "', '" & contenu & "');",
-                                                        m_dbConnection)
+                                                        dbCon)
             dbCom.ExecuteNonQuery()
+            dbCon.Close()
         End Sub
 
         ''' <summary>
@@ -349,14 +352,20 @@ Namespace Entites
         End Function
 
         ''' <summary>
-        ''' Donne le nom complet (Prenom Nom) d'un membre en fonction de son ID
+        ''' Donne le nom complet d'un membre en fonction de son ID,
+        ''' Sous la forme : "Prénom Nom (pseudo)"
         ''' </summary>
-        Public Shared Function getNomCompletParId(id As Integer, dbCon As MySqlConnection) As String
+        Public Shared Function getNomCompletEtPseudoParId(id As Integer) As String
+            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+            dbCon.Open()
             Dim com As MySqlCommand = New MySqlCommand("SELECT prenommem FROM membre WHERE idmembre=" & id, dbCon)
             Dim prenom As String = com.ExecuteScalar()
             com = New MySqlCommand("SELECT nommem FROM membre WHERE idmembre=" & id, dbCon)
             Dim nom As String = com.ExecuteScalar()
-            Return prenom & " " & nom
+            com = New MySqlCommand("SELECT nomutilisateurmem FROM membre WHERE idmembre=" & id, dbCon)
+            Dim nomutilisateurmem As String = com.ExecuteScalar()
+            dbCon.Close()
+            Return prenom & " " & nom & " (" & nomutilisateurmem & ")"
         End Function
 
         Public Shared Function ConnexionMembre(pseudo As String, motPasse As String, connexion As MySqlConnection) As Integer

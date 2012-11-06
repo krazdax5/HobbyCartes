@@ -82,9 +82,10 @@ Public Class MembreVisualiserMessages
     ''' </summary>
     Private Sub ajoute_message(message As Entites.Message)
         Dim destinateurText As Label = New Label()
-        destinateurText.Text = Entites.Membre.getNomUtilisateurParId(message.idDestinateur, dbCon)
+        destinateurText.Text = Entites.Membre.getNomCompletEtPseudoParId(message.idDestinateur)
 
         Dim destinateurCell As TableCell = New TableCell()
+        destinateurCell.Style.Add("white-space", "nowrap")
         destinateurCell.Controls.Add(destinateurText)
 
         Dim objetLnk As HyperLink = New HyperLink()

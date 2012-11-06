@@ -10,6 +10,8 @@
         <div class="visualiserMessageContenu">
             <p id="visualiserMessageContenu" runat="server" />
             <asp:Button id="visualiserMessageBtnRepondre" runat="server" Text="Répondre" />
+            <asp:Button id="visualiserMessageBtnSupprimer" OnClientClick="javascript:return confirm('Voulez vous vraiment supprimer ce message ?');" runat="server" Text="Supprimer" />
+            <asp:Button id="visualiserMessageBtnRetour" runat="server" Text="Retour" />
         </div>
     </div>
 </asp:Content>
