@@ -48,10 +48,6 @@ Public Class Fiche
             lblCom.Visible = True
         End If
 
-
-
-
-
     End Sub
 
     'Ajouter un commentaire
@@ -60,11 +56,9 @@ Public Class Fiche
             Return
         End If
         Dim idFiche As Integer = Request.QueryString("idFiche")
-        Dim Com As Entites.Commentaire = New Entites.Commentaire("Jean Coutue", idFiche)
+        Dim Com As Entites.Commentaire = New Entites.Commentaire(m_Membre.nomUtilisateur, idFiche)
         Com.pMessage() = txtCom.Text
-        'Com.pIDFiche() = idFiche
-        'Com.pDestinateur() = "Jean Coutue"
-        Dim IDCom As Integer = m_Fiche.NouvCommentaire(Com)
+         Dim IDCom As Integer = m_Fiche.NouvCommentaire(Com)
         AfficheNouvCom(IDCom)
         txtCom.Text = ""
     End Sub
