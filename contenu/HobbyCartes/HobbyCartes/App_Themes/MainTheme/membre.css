@@ -13,6 +13,19 @@
     border-left : 1px solid white;
     border-right : 1px solid white;
     padding : 20px;
+    background-color: Red;
+    color: White;
+    font-weight: bold;
+}
+
+#membre #membre_onglets .ongletcourant
+{
+    background-color: Black;
+}
+
+#membre #membre_onglets .onglet:hover
+{
+    background-color: Black;
 }
 
 #membre #membre_contenu

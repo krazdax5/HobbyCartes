@@ -36,6 +36,18 @@ Public Class Membre
                 ongletEnvoiMessage.Visible = False
             End If
         End If
+
+        If Request.ServerVariables("URL").Equals("/MembreInfo.aspx") Then
+            ongletInformations.Style.Add("background-color", "Black")
+        ElseIf Request.ServerVariables("URL").Equals("/MembreListeCartes.aspx") Then
+            ongletListeCartes.Style.Add("background-color", "Black")
+        ElseIf Request.ServerVariables("URL").Equals("/MembreGererCollections.aspx") Then
+            ongletGererCollections.Style.Add("background-color", "Black")
+        ElseIf Request.ServerVariables("URL").Equals("/MembreVisualiserMessages.aspx") Then
+            ongletVisualiserMessages.Style.Add("background-color", "Black")
+        ElseIf Request.ServerVariables("URL").Equals("/MembreEnvoiMessage.aspx") Then
+            ongletEnvoiMessage.Style.Add("background-color", "Black")
+        End If
     End Sub
 
     Private Sub initSession()
