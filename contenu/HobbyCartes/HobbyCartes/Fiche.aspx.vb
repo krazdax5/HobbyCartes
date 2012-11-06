@@ -57,8 +57,8 @@ Public Class Fiche
         End If
         Dim idFiche As Integer = Request.QueryString("idFiche")
         Dim Com As Entites.Commentaire = New Entites.Commentaire(m_Membre.nomUtilisateur, idFiche)
-        Com.pMessage() = txtCom.Text
-         Dim IDCom As Integer = m_Fiche.NouvCommentaire(Com)
+        Com.pMessage() = txtCom.Text.Replace(vbCrLf, "<br />")
+        Dim IDCom As Integer = m_Fiche.NouvCommentaire(Com)
         AfficheNouvCom(IDCom)
         txtCom.Text = ""
     End Sub

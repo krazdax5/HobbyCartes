@@ -88,9 +88,7 @@
                             </asp:TableCell>
                         </asp:TableRow>
 
-                    </asp:Table>
-
-                    <asp:ValidationSummary ID="vsResumePerso" runat="server" />
+                    </asp:Table>                   
                 </asp:WizardStep>
 
                 <asp:WizardStep ID="wizEtapeCompte" runat="server" Title="Informations du compte" StepType="Finish">
@@ -142,8 +140,6 @@
                         </asp:TableRow>
 
                     </asp:Table>
-
-                    <asp:ValidationSummary ID="vsResumeCompte" runat="server" />
                 </asp:WizardStep>
             </WizardSteps>
         </asp:Wizard>

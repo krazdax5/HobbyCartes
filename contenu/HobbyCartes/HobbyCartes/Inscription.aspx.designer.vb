@@ -194,15 +194,6 @@ Partial Public Class Inscription
     Protected WithEvents regexCourriel As Global.System.Web.UI.WebControls.RegularExpressionValidator
 
     '''<summary>
-    '''Contrôle vsResumePerso.
-    '''</summary>
-    '''<remarks>
-    '''Champ généré automatiquement.
-    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-    '''</remarks>
-    Protected WithEvents vsResumePerso As Global.System.Web.UI.WebControls.ValidationSummary
-
-    '''<summary>
     '''Contrôle wizEtapeCompte.
     '''</summary>
     '''<remarks>
@@ -309,15 +300,6 @@ Partial Public Class Inscription
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
     Protected WithEvents cvRepMotPasse As Global.System.Web.UI.WebControls.CompareValidator
-
-    '''<summary>
-    '''Contrôle vsResumeCompte.
-    '''</summary>
-    '''<remarks>
-    '''Champ généré automatiquement.
-    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-    '''</remarks>
-    Protected WithEvents vsResumeCompte As Global.System.Web.UI.WebControls.ValidationSummary
 
     '''<summary>
     '''Contrôle lblMessage.

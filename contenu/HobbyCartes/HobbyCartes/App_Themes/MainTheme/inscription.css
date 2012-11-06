@@ -20,7 +20,15 @@
     color: White;
     background-color: Red;
     border: 2px solid White;
+    font-size: small;
 }
+.wizInscriptionSideBtn:hover
+{
+    text-decoration: none;
+    background-color: black;
+    color: Red;
+}
+
 .wizInscription
 {
     background-color: #404040;
