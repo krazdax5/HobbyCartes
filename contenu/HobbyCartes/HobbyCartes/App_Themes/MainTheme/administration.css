@@ -39,19 +39,45 @@
     margin-right : 20px;
 }
 
-#administration #boutons
-{
-    border : 1px solid white;
-    float : right;
 
+#administration #boutons ul li
+{
+    display: inline-block;
+    padding: 15px;
+    margin-left: 15px;
+    border: 1px solid White;
+    background-color: Red;
+    width: 300px;
+    text-align: center;
+    list-style:nonè;
+}
+#menuFilFiches ul li:hover
+{
+    background-color: Black;
+    text-decoration: none;
+}
+.lnkbtnAdmin
+{
+    color:White;
+    text-decoration:none;
+    font-size:large;
 }
 
-#administration #boutons a
+#administration #ContenuAdmin .membreAdmin
 {
-    display : block;
-    padding : 20px;
-    border : 1px solid white;
-    text-align : center;
-    color : inherit;
-    text-decoration : inherit;
+    padding:20px;
+    border : white 1px solid;
+    margin:20px;   
+}
+
+.CheckBAdmin
+{
+	float:right
+}
+#administration #ContenuAdmin .membreAdmin img
+{
+    height : 64px;
+    width : 64px;
+    margin-right : 20px;
+    float : left;
 }
