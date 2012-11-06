@@ -79,17 +79,17 @@ CREATE TABLE commentaire(
 );
 
 INSERT INTO membre (prenommem, nommem, nomutilisateurmem, motpassemem, villemem, codepostalmem, courrielmem, dateinscriptionmem, imagemem) 
-VALUES ('Homer', 'Simpson', 'hsimpson', 'hsimpson123', 'Springfield', 'X0X0X0', 'hsimpson@test.com', CURDATE(), "img/profil.jpg");
+VALUES ('Homer', 'Simpson', 'hsimpson', 'hsimpson123', 'Springfield', 'X0X0X0', 'hsimpson@test.com', '2012-11-03 15:28', "img/profil.jpg");
 INSERT INTO membre (prenommem, nommem, nomutilisateurmem, motpassemem, villemem, codepostalmem, courrielmem, dateinscriptionmem, imagemem) 
-VALUES ('Jean-François', 'Collin', 'jfcollin', 'jfcollin123','Lévis','G1Q1Q9', 'jfcollin@test.com', CURDATE(), "img/profil.jpg");
+VALUES ('Jean-François', 'Collin', 'jfcollin', 'jfcollin123','Lévis','G1Q1Q9', 'jfcollin@test.com', '2012-11-02 15:28', "img/jf.jpg");
 INSERT INTO membre (prenommem, nommem, nomutilisateurmem, motpassemem, villemem, codepostalmem, courrielmem, dateinscriptionmem, imagemem) 
-VALUES ('Loïc', 'Vial', 'lvial', 'lvial123','Lévis','G1Q1Q9', 'lvial@test.com', CURDATE(), "img/profil.jpg");
+VALUES ('Loïc', 'Vial', 'lvial', 'lvial123','Lévis','G1Q1Q9', 'lvial@test.com', '2012-11-01 15:28', "img/loic.jpg");
 INSERT INTO membre (prenommem, nommem, nomutilisateurmem, motpassemem, villemem, codepostalmem, courrielmem, dateinscriptionmem, imagemem) 
-VALUES ('Charles', 'Lesveque', 'clevesque', 'clevesque123','Lévis','G1Q1Q9', 'clesveque@test.com', CURDATE(), "img/profil.jpg");
+VALUES ('Charles', 'Lesveque', 'clevesque', 'clevesque123','Lévis','G1Q1Q9', 'clesveque@test.com', '2012-10-31 15:28', "img/charles.jpg");
 INSERT INTO membre (prenommem, nommem, nomutilisateurmem, motpassemem, villemem, codepostalmem, courrielmem, adminmem, dateinscriptionmem, imagemem) 
-VALUES ('Admin', 'Nistrateur', 'admin', 'admin123','Lévis','G1Q1Q9', 'admin@test.com', TRUE, '2011-09-20 15:28', "img/profil.jpg");
+VALUES ('Admin', 'Nistrateur', 'admin', 'admin123','Lévis','G1Q1Q9', 'admin@test.com', TRUE, '2012-10-30 15:28', "img/loup.jpg");
 INSERT INTO membre (prenommem, nommem, nomutilisateurmem, motpassemem, villemem, codepostalmem, courrielmem, dateinscriptionmem, imagemem) 
-VALUES ('Rory', 'B. Bellows', 'rbellows', 'rbellows123', 'Springfield', 'X0X0X0', 'rb@test.com', '2012-09-20 15:28', "img/profil.jpg");
+VALUES ('Rory', 'B. Bellows', 'rbellows', 'rbellows123', 'Springfield', 'X0X0X0', 'rb@test.com', '2012-10-29 15:28', "img/chevaux.jpg");
 
 INSERT INTO collection (idmembre, typecol) VALUES (1, 'hockey');
 INSERT INTO collection (idmembre, typecol) VALUES (2, 'baseball');
