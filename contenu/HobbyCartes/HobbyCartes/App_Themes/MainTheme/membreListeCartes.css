@@ -1,96 +1,74 @@
-﻿#onglets ul li
-{
+﻿#onglets ul li {
+    background-color: Red;
+    border: 1px solid White;
     display: inline-block;
     padding: 15px;
-    border: 1px solid White;
-    background-color: Red;
+    text-align: center;
     width: 155px;
-    text-align: center; 
 }
-#onglets ul li:hover
-{
+#onglets ul li:hover {
     background-color: Black;
     text-decoration: none;
 }
-.lnkbtnOnlgets
-{
+.lnkbtnOnlgets {
     color: White;
-    text-decoration: none;
     font-size: medium;
     font-weight: bold;
-}
-.lnkbtnOnlgets:hover
-{
     text-decoration: none;
-    color: Red;
 }
-.listeFiches
-{
-    position:relative;
-    top:20px;
-    padding: 20px;
-    margin-bottom: 10px;
+.lnkbtnOnlgets:hover {
+    color: Red;
+    text-decoration: none;
+}
+.listeFiches {
     border: 1px solid white;
-    min-height: 130px;  
+    margin-bottom: 10px;
+    min-height: 130px;
+    padding: 20px;
+    position: relative;
+    top: 20px;
 }
-.listeFiches img
-{
+.listeFiches img {
     float: left;
 }
-.lnkbtnNomFiches
-{
-    float:left;
-    left:10px;
-    text-decoration: none;
-    position:relative;
-    font-size:x-large;
-    color:Red;    
-}
-.lnkbtnNomFiches:hover
-{
-    text-decoration: none;
-    color: White;
-}
-.lblEditeurFiches
-{
-    float:left;
-    position:relative;
-    left: 110px;
-    bottom:90px;
-    font-size:large;
-    clear:left;
-}
-.lblAnneeFiches
-{
-    float:left;
-    position:relative;
-    left:625px;
-    bottom:120px;
-    font-size:large;
-    clear:left;
-}
-.lblValeurFiches
-{
-    float: left;
-    position: relative;
-    clear: left;
-    font-size: medium;
-    bottom: 60px;
-    left: 110px;
-}
-.btnAjouterCollection
-{
-    position: relative;
-    width: 45%;
-    height: 50px;
-    top: 125px;
-    left: 175px;
-}
-.lblPasDeFiches
-{
-    position: relative;
-    top: 125px;
-    left: 175px;
-    font-size: xx-large;
+.lnkbtnNomFiches {
     color: Red;
+    font-size: x-large;
+    left: 10px;
+    position: relative;
+    text-decoration: none;
 }
+.lnkbtnNomFiches:hover {
+    color: White;
+    text-decoration: none;
+}
+.lblEditeurFiches {
+    font-size: large;
+    right: 50px;
+    position : relative;
+}
+.lblAnneeFiches {
+    font-size: large;
+    left: 350px;
+    position: relative;
+}
+.lblValeurFiches {
+    top: 90px;
+    clear: left;
+    font-size: x-large;
+    position: absolute;
+    left:  320px;
+}
+.btnAjouterCollection {
+    height: 50px;
+    left: 175px;
+    top: 125px;
+    width: 45%;
+}
+.lblPasDeFiches {
+    color: Red;
+    font-size: xx-large;
+    left: 175px;
+    top: 125px;
+}
+

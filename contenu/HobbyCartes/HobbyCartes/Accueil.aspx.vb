@@ -30,7 +30,7 @@ Public Class Accueil
 
                 'Image
                 Dim nouvA As New HtmlGenericControl("a")
-                nouvA.Attributes.Add("href", "Membreinfo.aspx?pseudo=" + Membre.getNomUtilisateurParId(Membre.id, m_connection))
+                nouvA.Attributes.Add("href", "MembreInfo.aspx?pseudo=" + Membre.getNomUtilisateurParId(Membre.id, m_connection))
                 Dim nouvImage As New Image()
                 nouvImage.ID = "img" + Membre.id.ToString
                 nouvImage.ImageUrl = Membre.Image
@@ -43,7 +43,7 @@ Public Class Accueil
                 nouvMembre.Attributes.Add("class", "lblMembreAcceuil")
                 nouvMembre.ID = "lblMembre2" + Membre.id.ToString
                 'Label avec un balise a, font et 2 balises br dedans pour rediriger vers la page MembreInfo
-                nouvMembre.Text = "<a href=" & Chr(34) & "Membreinfo.aspx?pseudo=" + Membre.getNomUtilisateurParId(Membre.id, m_connection) & Chr(34) & _
+                nouvMembre.Text = "<a href=" & Chr(34) & "MembreInfo.aspx?pseudo=" + Membre.getNomUtilisateurParId(Membre.id, m_connection) & Chr(34) & _
                                     "STYLE=" & Chr(34) & "TEXT-DECORATION: NONE" & Chr(34) & "><font color=" & Chr(34) & "B8C3B8" & Chr(34) & ">" & _
                                     Membre.getNomUtilisateurParId(Membre.id, m_connection) + " <br/> <br/></font></a>"
                 nouvDiv.Controls.Add(nouvMembre)
