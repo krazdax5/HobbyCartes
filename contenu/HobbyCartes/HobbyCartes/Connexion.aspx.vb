@@ -1,6 +1,7 @@
 ﻿Imports MySql.Data
 Imports MySql.Data.MySqlClient
 Imports System.IO
+Imports HobbyCartes.ServiceSecurite
 
 Public Class Connexion
     Inherits System.Web.UI.Page
@@ -10,10 +11,6 @@ Public Class Connexion
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         lblMessage.Visible = False
 
-        If Boolean.Parse(Session("connected")) Then
-            Response.Redirect("Accueil.aspx")
-        End If
-
         m_connection = New MySqlConnection(My.Resources.StringConnexionBdd)
         m_connection.Open()
     End Sub
@@ -21,6 +18,11 @@ Public Class Connexion
     Protected Sub btnConnexion_OnClick(sender As Object, e As EventArgs) Handles btnConnexion.Click
         Dim pseudo As String = txtUtilisateur.Text
         Dim motPasse As String = txtMotPasse.Text
+
+        'Sécurité mot de passe
+        Dim securite As Securite_hcClient = New Securite_hcClient()
+        motPasse = securite.HashPass(motPasse, pseudo)
+
         Dim id As Integer
         Dim chemin As String
         Dim Membre As Entites.Membre

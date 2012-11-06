@@ -324,7 +324,7 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="Service References\ServiceSecurite\Lise.xsd">
+    <None Include="Service References\ServiceSecurite\HC_service_web.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ServiceSecurite\service.wsdl" />

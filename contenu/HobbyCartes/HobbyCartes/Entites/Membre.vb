@@ -267,7 +267,7 @@ Namespace Entites
         ''' Crée un nouveau membre dans la base de données.
         ''' </summary>
         Public Function nouvMembre(ByVal membre As Entites.Membre, ByVal motPass As String, ByRef msgErreur As String, Optional ByRef idMembre As Integer = -1) As Boolean
-            m_arrierePlan = "img/standard.png"
+            m_arrierePlan = ""
             m_codePostal = membre.CodePostal
             m_courriel = membre.Courriel
             m_ville = membre.Ville
@@ -276,10 +276,11 @@ Namespace Entites
             m_nom = membre.nom
             m_prenom = membre.prenom
             m_nomUtilisateur = membre.nomUtilisateur
+            m_imageMEmbre = "img/standard.png"
             msgErreur = ""
             m_DateInscription = Date.Now
 
-            Dim requete As MySqlCommand = New MySqlCommand("INSERT INTO membre(prenommem, nommem, nomutilisateurmem, motpassemem, villemem, codepostalmem, courrielmem, adminmem, arriereplanmem, dateinscriptionmem) VALUES('" +
+            Dim requete As MySqlCommand = New MySqlCommand("INSERT INTO membre(prenommem, nommem, nomutilisateurmem, motpassemem, villemem, codepostalmem, courrielmem, adminmem, arriereplanmem, imagemem, dateinscriptionmem) VALUES('" +
                                                            membre.prenom + "','" +
                                                            membre.nom + "','" +
                                                            membre.nomUtilisateur + "','" +
@@ -288,6 +289,7 @@ Namespace Entites
                                                            membre.CodePostal + "','" +
                                                            membre.Courriel + "','0','" +
                                                            m_arrierePlan + "','" +
+                                                           m_imageMEmbre + "','" +
                                                            m_DateInscription + "')", m_dbConnection)
 
             Try

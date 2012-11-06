@@ -18,7 +18,7 @@ Namespace ServiceSecurite
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
-     System.Runtime.Serialization.DataContractAttribute(Name:="CompositeType", [Namespace]:="http://schemas.datacontract.org/2004/07/Lise"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="CompositeType", [Namespace]:="http://schemas.datacontract.org/2004/07/HC_service_web"),  _
      System.SerializableAttribute()>  _
     Partial Public Class CompositeType
         Inherits Object

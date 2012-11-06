@@ -252,7 +252,7 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import namespace="http://tempuri.org/" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Lise" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/HC_service_web" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="ISecurite_hc_GetData_InputMessage">

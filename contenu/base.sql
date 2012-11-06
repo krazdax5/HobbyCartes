@@ -11,7 +11,7 @@ CREATE TABLE membre(
 	prenommem VARCHAR(30) NOT NULL,
 	nommem VARCHAR(30) NOT NULL,
 	nomutilisateurmem VARCHAR(30) NOT NULL UNIQUE,
-	motpassemem VARCHAR(30) NOT NULL,
+	motpassemem TEXT NOT NULL,
 	villemem VARCHAR(30) NOT NULL,
 	codepostalmem VARCHAR(6) NOT NULL,
 	courrielmem VARCHAR(30) NOT NULL,
@@ -79,17 +79,17 @@ CREATE TABLE commentaire(
 );
 
 INSERT INTO membre (prenommem, nommem, nomutilisateurmem, motpassemem, villemem, codepostalmem, courrielmem, dateinscriptionmem, imagemem) 
-VALUES ('Homer', 'Simpson', 'hsimpson', 'hsimpson123', 'Springfield', 'X0X0X0', 'hsimpson@test.com', '2012-11-03 15:28', "img/profil.jpg");
+VALUES ('Homer', 'Simpson', 'hsimpson', 'k/MSzDGfkER1OM4lE9yJLq3Z/7PeoBzvwkVpn/Vy+YoZi0P5qa+v7mPW+rU0CrTc', 'Springfield', 'X0X0X0', 'hsimpson@test.com', '2012-11-03 15:28', "img/profil.jpg");
 INSERT INTO membre (prenommem, nommem, nomutilisateurmem, motpassemem, villemem, codepostalmem, courrielmem, dateinscriptionmem, imagemem) 
-VALUES ('Jean-François', 'Collin', 'jfcollin', 'jfcollin123','Lévis','G1Q1Q9', 'jfcollin@test.com', '2012-11-02 15:28', "img/jf.jpg");
+VALUES ('Jean-François', 'Collin', 'jfcollin', 'BpfFWZqvZUViODQvwzyvae+JAmTYwOe1+tfhLCdpcdpqrJXnHoV/6ZoQZgfuKFCe','Lévis','G1Q1Q9', 'jfcollin@test.com', '2012-11-02 15:28', "img/jf.jpg");
 INSERT INTO membre (prenommem, nommem, nomutilisateurmem, motpassemem, villemem, codepostalmem, courrielmem, dateinscriptionmem, imagemem) 
-VALUES ('Loïc', 'Vial', 'lvial', 'lvial123','Lévis','G1Q1Q9', 'lvial@test.com', '2012-11-01 15:28', "img/loic.jpg");
+VALUES ('Loïc', 'Vial', 'lvial', 'uVnVe/1uYgdRMd7zrLFs5d/2ctFG6Fj88vKlUdVYrD2I9hRASJ9muzDsrDIuGuFW','Lévis','G1Q1Q9', 'lvial@test.com', '2012-11-01 15:28', "img/loic.jpg");
 INSERT INTO membre (prenommem, nommem, nomutilisateurmem, motpassemem, villemem, codepostalmem, courrielmem, dateinscriptionmem, imagemem) 
-VALUES ('Charles', 'Lesveque', 'clevesque', 'clevesque123','Lévis','G1Q1Q9', 'clesveque@test.com', '2012-10-31 15:28', "img/charles.jpg");
+VALUES ('Charles', 'Lesveque', 'clevesque', 'jP5qt+0cWzg4uAumlDUoWYPoyae8Q7JhtmhvfT35uyBCciV8Mtvm5h8xi02kez3q','Lévis','G1Q1Q9', 'clesveque@test.com', '2012-10-31 15:28', "img/charles.jpg");
 INSERT INTO membre (prenommem, nommem, nomutilisateurmem, motpassemem, villemem, codepostalmem, courrielmem, adminmem, dateinscriptionmem, imagemem) 
-VALUES ('Admin', 'Nistrateur', 'admin', 'admin123','Lévis','G1Q1Q9', 'admin@test.com', TRUE, '2012-10-30 15:28', "img/loup.jpg");
+VALUES ('Admin', 'Nistrateur', 'admin', '6ZIKdw0V70tLQGA2UXpNozu4DhQtKkrrsB5hzaM4Za/diYmLrRbZtv7Nu9yVOb2j','Lévis','G1Q1Q9', 'admin@test.com', TRUE, '2012-10-30 15:28', "img/loup.jpg");
 INSERT INTO membre (prenommem, nommem, nomutilisateurmem, motpassemem, villemem, codepostalmem, courrielmem, dateinscriptionmem, imagemem) 
-VALUES ('Rory', 'B. Bellows', 'rbellows', 'rbellows123', 'Springfield', 'X0X0X0', 'rb@test.com', '2012-10-29 15:28', "img/chevaux.jpg");
+VALUES ('Rory', 'B. Bellows', 'rbellows', '014G4Z3mrozn8IgOl9d4WU5oPRTVIeFZRT6LHdoMhNCCe41LvkrmXhPbZFGuIA03', 'Springfield', 'X0X0X0', 'rb@test.com', '2012-10-29 15:28', "img/chevaux.jpg");
 
 INSERT INTO collection (idmembre, typecol) VALUES (1, 'hockey');
 INSERT INTO collection (idmembre, typecol) VALUES (2, 'baseball');
