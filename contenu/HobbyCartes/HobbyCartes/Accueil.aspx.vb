@@ -1,4 +1,10 @@
-﻿Imports MySql.Data
+'--------------------------------------------------------------------------
+' Titre: Acceuil.aspx.vb
+' Auteur: Jean-François Collin
+' Date: Octobre 2012
+'--------------------------------------------------------------------------
+
+Imports MySql.Data
 Imports MySql.Data.MySqlClient
 
 Public Class Accueil
