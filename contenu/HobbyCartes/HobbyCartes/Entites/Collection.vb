@@ -10,7 +10,6 @@ Namespace Entites
             Baseball
             Football
             Basketball
-            aucun
         End Enum
 
         ''' <summary>
@@ -92,11 +91,11 @@ Namespace Entites
                     Case "basketball"
                         m_type = Type.Basketball
                     Case Else
-                        m_type = Type.aucun
+                        m_type = Nothing
                 End Select
 
             Catch ex As Exception
-                m_type = Type.aucun
+                m_type = Nothing
             End Try
         End Sub
 
@@ -172,13 +171,13 @@ Namespace Entites
                     reader.Close()
                     chargementListeFiches()
                 Else
-                    m_type = Type.aucun
+                    m_type = Nothing
                     m_id = -1
                     reader.Close()
                 End If
 
             Catch ex As Exception
-                m_type = Type.aucun
+                m_type = Nothing
                 m_id = -1
             End Try
 
@@ -187,9 +186,35 @@ Namespace Entites
         ''' <summary>
         ''' Retourne true ssi le membre dont l'identificateur est passé en parametre possede une collection du type passé en parametre.
         ''' </summary>
-        Public Shared Function existe(idMembre As Integer, typeCol As Type, dbCon As MySqlConnection) As Boolean
-            Return Not New MySqlCommand("SELECT COUNT(*) FROM collection WHERE idmembre=" & idMembre & " AND typecol='" & typeCol.ToString & "'", dbCon).ExecuteScalar = 0
+        Public Shared Function existe(idMembre As Integer, typeCol As Type) As Boolean
+            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+            dbCon.Open()
+            Dim num As Integer = New MySqlCommand("SELECT COUNT(*) FROM collection WHERE idmembre=" & idMembre & " AND typecol='" & typeCol.ToString & "'", dbCon).ExecuteScalar
+            dbCon.Close()
+            Return num <> 0
         End Function
+
+        ''' <summary>
+        ''' Supprime la collection
+        ''' </summary>
+        Public Sub supprimer()
+            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+            dbCon.Open()
+            Dim req As MySqlCommand = New MySqlCommand("DELETE FROM collection WHERE idcollection=" & m_id, dbCon)
+            req.ExecuteNonQuery()
+            dbCon.Close()
+        End Sub
+
+        ''' <summary>
+        ''' Cree une nouvelle collection
+        ''' </summary>
+        Public Shared Sub ajouter(idMembre As Integer, typeCol As Type)
+            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+            dbCon.Open()
+            Dim req As MySqlCommand = New MySqlCommand("INSERT INTO collection (idmembre, typecol) VALUES (" & idMembre & ", '" & typeCol.ToString & "')", dbCon)
+            req.ExecuteNonQuery()
+            dbCon.Close()
+        End Sub
 
     End Class
 

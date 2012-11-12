@@ -29,7 +29,9 @@ Namespace Entites
         ''' Construit un message depuis la base de donnees.
         ''' Leve une exception si le message n'existe pas.
         ''' </summary>
-        Public Sub New(id As Integer, dbCon As MySqlConnection)
+        Public Sub New(id As Integer)
+            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+            dbCon.Open()
             Dim dbCom As MySqlCommand = New MySqlCommand("SELECT * FROM message WHERE idmess=" & id, dbCon)
             Dim dbRead As MySqlDataReader = dbCom.ExecuteReader()
             dbRead.Read()
@@ -39,6 +41,7 @@ Namespace Entites
             m_objet = dbRead.GetString("objetmes")
             m_contenu = dbRead.GetString("mesmes")
             dbRead.Close()
+            dbCon.Close()
         End Sub
 
         ''' <summary>
@@ -89,7 +92,9 @@ Namespace Entites
         ''' <summary>
         ''' Recupere et retourne la liste des messages dont le destinataire est le membre dont l'id est passee en parametre
         ''' </summary>
-        Public Shared Function getListe(idMembre As Integer, dbCon As MySqlConnection) As List(Of Message)
+        Public Shared Function getListe(idMembre As Integer) As List(Of Message)
+            Dim dbCon = New MySqlConnection(My.Resources.StringConnexionBdd)
+            dbCon.Open()
             Dim listeMessages As List(Of Message) = New List(Of Message)
             Dim dbCom As MySqlCommand = New MySqlCommand("SELECT * FROM message WHERE iddestinataire=" & idMembre, dbCon)
             Dim dbRead As MySqlDataReader = dbCom.ExecuteReader()
@@ -102,15 +107,19 @@ Namespace Entites
                 listeMessages.Add(message)
             End While
             dbRead.Close()
+            dbCon.Close()
             Return listeMessages
         End Function
 
         ''' <summary>
         ''' Supprime le message de la base de donnees
         ''' </summary>
-        Public Sub supprimer(dbCon As MySqlConnection)
+        Public Sub supprimer()
+            Dim dbCon = New MySqlConnection(My.Resources.StringConnexionBdd)
+            dbCon.Open()
             Dim dbCom As MySqlCommand = New MySqlCommand("DELETE FROM message WHERE idmess=" & m_id, dbCon)
             dbCom.ExecuteNonQuery()
+            dbCon.close()
         End Sub
 
     End Class

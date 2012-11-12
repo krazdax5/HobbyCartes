@@ -58,7 +58,7 @@ Public Class MembreListeCartes
                 If Not chargementListe(phHockey) Then
                     lblPasDeFiche.Visible = True
                 End If
-            Case Entites.Collection.Type.aucun
+            Case Else
                 Return False
         End Select
         Return True
@@ -130,48 +130,24 @@ Public Class MembreListeCartes
                 phFootball.Visible = False
                 phHockey.Visible = False
 
-                If isSportNothing Then
-                    btnAjouterBaseball.Visible = True
-                    btnAjouterBasketball.Visible = False
-                    btnAjouterFootball.Visible = False
-                    btnAjouterHockey.Visible = False
-                End If
             Case Entites.Collection.Type.Basketball
                 phBaseball.Visible = False
                 phBasketball.Visible = True
                 phFootball.Visible = False
                 phHockey.Visible = False
 
-                If isSportNothing Then
-                    btnAjouterBaseball.Visible = False
-                    btnAjouterBasketball.Visible = True
-                    btnAjouterFootball.Visible = False
-                    btnAjouterHockey.Visible = False
-                End If
             Case Entites.Collection.Type.Football
                 phBaseball.Visible = False
                 phBasketball.Visible = False
                 phFootball.Visible = True
                 phHockey.Visible = False
 
-                If isSportNothing Then
-                    btnAjouterBaseball.Visible = False
-                    btnAjouterBasketball.Visible = False
-                    btnAjouterFootball.Visible = True
-                    btnAjouterHockey.Visible = False
-                End If
             Case Entites.Collection.Type.Hockey
                 phBaseball.Visible = False
                 phBasketball.Visible = False
                 phFootball.Visible = False
                 phHockey.Visible = True
 
-                If isSportNothing Then
-                    btnAjouterBaseball.Visible = False
-                    btnAjouterBasketball.Visible = False
-                    btnAjouterFootball.Visible = False
-                    btnAjouterHockey.Visible = True
-                End If
         End Select
     End Sub
 

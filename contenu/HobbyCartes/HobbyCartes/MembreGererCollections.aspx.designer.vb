@@ -23,6 +23,33 @@ Partial Public Class MembreGererCollections
     Protected WithEvents comboCollections As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
+    '''Contrôle btnSupprimerCollection.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents btnSupprimerCollection As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Contrôle comboCollectionsDisponibles.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents comboCollectionsDisponibles As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''Contrôle btnAjouterCollection.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents btnAjouterCollection As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''Contrôle DropDownList1.
     '''</summary>
     '''<remarks>

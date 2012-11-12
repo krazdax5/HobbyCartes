@@ -23,8 +23,7 @@ Public Class MembreVisualiserMessage
 
         ' Recupere le message désiré via l'id passée par l'url
         Dim idMessage As Integer = Request.QueryString("idMessage")
-        m_message = New Entites.Message(idMessage, dbCon)
-        dbCon.Close()
+        m_message = New Entites.Message(idMessage)
 
         ' Vérifie si l'utilisateur courant y a acces
         Dim connected As Boolean = Boolean.Parse(Session("connected"))
@@ -57,7 +56,7 @@ Public Class MembreVisualiserMessage
     Protected Sub visualiserMessageBtnSupprimer_Click() Handles visualiserMessageBtnSupprimer.Click
         Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
         dbCon.Open()
-        m_message.supprimer(dbCon)
+        m_message.supprimer()
         dbCon.Close()
         Response.Redirect("MembreVisualiserMessages.aspx")
     End Sub

@@ -1,12 +1,13 @@
-﻿<%@ Page MasterPageFile="~/Membre.master" CodeBehind="MembreGererCollections.aspx.vb" Inherits="HobbyCartes.MembreGererCollections" AutoEventWireup="false" %>
+﻿<%@ Page MasterPageFile="~/Membre.master" CodeBehind="MembreGererCollections.aspx.vb" Inherits="HobbyCartes.MembreGererCollections" AutoEventWireup="true" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="cphPageMembreContenu" runat="server">
+<asp:Content ContentPlaceHolderID="cphPageMembreContenu" runat="server">
     <div id="membreGererCollections" >
         <h1>Collections</h1>
         Mes collections : <asp:DropDownList id="comboCollections" runat="server" />
-        <asp:Button runat="server" text="Supprimer la collection" Enabled="false" />
+        <asp:Button id="btnSupprimerCollection" runat="server" text="Supprimer la collection" OnClientClick="javascript:return confirm('Voulez vous vraiment supprimer cette collection ?');"  />
         <br />
-        <asp:Button runat="server" text="Ajouter une nouvelle collection" />
+        Collections disponibles : <asp:DropDownList id="comboCollectionsDisponibles" runat="server" />
+        <asp:Button id="btnAjouterCollection" runat="server" text="Ajouter cette nouvelle collection" />
         <table style="display:none">
         <tbody>
             <tr>

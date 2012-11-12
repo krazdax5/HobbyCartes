@@ -60,10 +60,10 @@
     left:  320px;
 }
 .btnAjouterCollection {
-    height: 50px;
-    left: 175px;
-    top: 125px;
-    width: 45%;
+   /* height: 50px;
+    width: 45%;*/
+    text-align: center;
+    margin-top : 20px;
 }
 .lblPasDeFiches {
     color: Red;
