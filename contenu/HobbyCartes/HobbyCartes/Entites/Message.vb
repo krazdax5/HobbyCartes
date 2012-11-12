@@ -1,4 +1,10 @@
-ï»¿Imports MySql.Data.MySqlClient
+'--------------------------------------------------------------------------
+' Titre: Message.vb
+' Auteur: Loïc Vial
+' Date: Septembre 2012
+'--------------------------------------------------------------------------
+
+Imports MySql.Data.MySqlClient
 
 Namespace Entites
 
@@ -32,6 +38,10 @@ Namespace Entites
         Public Sub New(id As Integer)
             Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
             dbCon.Open()
+	End Sub
+            
+        Public Sub New(id As Integer, dbCon As MySqlConnection)
+
             Dim dbCom As MySqlCommand = New MySqlCommand("SELECT * FROM message WHERE idmess=" & id, dbCon)
             Dim dbRead As MySqlDataReader = dbCom.ExecuteReader()
             dbRead.Read()

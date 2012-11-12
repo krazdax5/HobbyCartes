@@ -1,4 +1,11 @@
-﻿Imports MySql.Data
+﻿'--------------------------------------------------------------------------
+' Titre: Fiche.aspx.vb
+' Auteur: Jean-François Collin
+' Date: 29 Octobre 2012
+' Contribution : Charles Levesque
+'-------------------------------------------------------------------------
+
+Imports MySql.Data
 Imports MySql.Data.MySqlClient
 
 Public Class Fiche

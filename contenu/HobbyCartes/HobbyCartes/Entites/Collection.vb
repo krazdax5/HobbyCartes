@@ -1,4 +1,11 @@
-﻿Imports MySql.Data
+﻿'--------------------------------------------------------------------------
+' Titre: Collection.vb
+' Auteur: Charles Levesque
+' Date: Septembre 2012
+' Contribution: Loïc Vial
+'--------------------------------------------------------------------------
+
+Imports MySql.Data
 Imports MySql.Data.MySqlClient
 
 Namespace Entites
@@ -216,6 +223,13 @@ Namespace Entites
             dbCon.Close()
         End Sub
 
+
+        Public Shared Function existe(idMembre As Integer, typeCol As Type, dbCon As MySqlConnection) As Boolean
+            Return Not New MySqlCommand("SELECT COUNT(*) FROM collection WHERE idmembre=" & idMembre & " AND typecol='" & typeCol.ToString & "'", dbCon).ExecuteScalar = 0
+        End Function
+
+
+        
     End Class
 
 End Namespace

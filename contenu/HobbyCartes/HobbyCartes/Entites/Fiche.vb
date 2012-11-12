@@ -1,4 +1,11 @@
-﻿Imports MySql.Data
+﻿'--------------------------------------------------------------------------
+' Titre: Fiche.vb
+' Auteur: Charles Levesque
+' Date: Septembre 2012
+' Contribution: Jean-François Collin, Loïc Vial
+'--------------------------------------------------------------------------
+
+Imports MySql.Data
 Imports MySql.Data.MySqlClient
 Namespace Entites
 
