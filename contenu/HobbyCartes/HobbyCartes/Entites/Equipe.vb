@@ -1,4 +1,10 @@
-﻿Imports MySql.Data
+﻿'--------------------------------------------------------------------------
+' Titre: Equipe.vb
+' Auteur: Jean-François Collin
+' Date: Septembre 2012
+'--------------------------------------------------------------------------
+
+Imports MySql.Data
 Imports MySql.Data.MySqlClient
 Namespace Entites
 

@@ -1,4 +1,10 @@
-﻿''' <summary>
+﻿'--------------------------------------------------------------------------
+' Titre: Erreur.aspx.vb
+' Auteur: Loïc Vial
+' Date: 29 Octobre 2012
+'-------------------------------------------------------------------------
+
+''' <summary>
 ''' Page d'erreur standard
 ''' </summary>
 Public Class Erreur

@@ -1,4 +1,15 @@
+<<<<<<< HEAD
 ﻿Imports MySql.Data
+=======
+﻿'--------------------------------------------------------------------------
+' Titre: Collection.vb
+' Auteur: Charles Levesque
+' Date: Septembre 2012
+' Contribution: Loïc Vial
+'--------------------------------------------------------------------------
+
+Imports MySql.Data
+>>>>>>> Adminstration terminé
 Imports MySql.Data.MySqlClient
 
 Namespace Entites
@@ -10,6 +21,10 @@ Namespace Entites
             Baseball
             Football
             Basketball
+<<<<<<< HEAD
+=======
+            aucun
+>>>>>>> Adminstration terminé
         End Enum
 
         ''' <summary>
@@ -91,11 +106,19 @@ Namespace Entites
                     Case "basketball"
                         m_type = Type.Basketball
                     Case Else
+<<<<<<< HEAD
                         m_type = Nothing
                 End Select
 
             Catch ex As Exception
                 m_type = Nothing
+=======
+                        m_type = Type.aucun
+                End Select
+
+            Catch ex As Exception
+                m_type = Type.aucun
+>>>>>>> Adminstration terminé
             End Try
         End Sub
 
@@ -171,13 +194,21 @@ Namespace Entites
                     reader.Close()
                     chargementListeFiches()
                 Else
+<<<<<<< HEAD
                     m_type = Nothing
+=======
+                    m_type = Type.aucun
+>>>>>>> Adminstration terminé
                     m_id = -1
                     reader.Close()
                 End If
 
             Catch ex As Exception
+<<<<<<< HEAD
                 m_type = Nothing
+=======
+                m_type = Type.aucun
+>>>>>>> Adminstration terminé
                 m_id = -1
             End Try
 
@@ -186,6 +217,7 @@ Namespace Entites
         ''' <summary>
         ''' Retourne true ssi le membre dont l'identificateur est passé en parametre possede une collection du type passé en parametre.
         ''' </summary>
+<<<<<<< HEAD
         Public Shared Function existe(idMembre As Integer, typeCol As Type) As Boolean
             Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
             dbCon.Open()
@@ -216,6 +248,12 @@ Namespace Entites
             dbCon.Close()
         End Sub
 
+=======
+        Public Shared Function existe(idMembre As Integer, typeCol As Type, dbCon As MySqlConnection) As Boolean
+            Return Not New MySqlCommand("SELECT COUNT(*) FROM collection WHERE idmembre=" & idMembre & " AND typecol='" & typeCol.ToString & "'", dbCon).ExecuteScalar = 0
+        End Function
+
+>>>>>>> Adminstration terminé
     End Class
 
 End Namespace

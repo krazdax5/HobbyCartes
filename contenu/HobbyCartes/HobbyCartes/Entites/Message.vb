@@ -1,4 +1,14 @@
+<<<<<<< HEAD
 ﻿Imports MySql.Data.MySqlClient
+=======
+﻿'--------------------------------------------------------------------------
+' Titre: Message.vb
+' Auteur: Loïc Vial
+' Date: Septembre 2012
+'--------------------------------------------------------------------------
+
+Imports MySql.Data.MySqlClient
+>>>>>>> Adminstration terminé
 
 Namespace Entites
 
@@ -29,9 +39,13 @@ Namespace Entites
         ''' Construit un message depuis la base de donnees.
         ''' Leve une exception si le message n'existe pas.
         ''' </summary>
+<<<<<<< HEAD
         Public Sub New(id As Integer)
             Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
             dbCon.Open()
+=======
+        Public Sub New(id As Integer, dbCon As MySqlConnection)
+>>>>>>> Adminstration terminé
             Dim dbCom As MySqlCommand = New MySqlCommand("SELECT * FROM message WHERE idmess=" & id, dbCon)
             Dim dbRead As MySqlDataReader = dbCom.ExecuteReader()
             dbRead.Read()
@@ -41,7 +55,10 @@ Namespace Entites
             m_objet = dbRead.GetString("objetmes")
             m_contenu = dbRead.GetString("mesmes")
             dbRead.Close()
+<<<<<<< HEAD
             dbCon.Close()
+=======
+>>>>>>> Adminstration terminé
         End Sub
 
         ''' <summary>
@@ -92,9 +109,13 @@ Namespace Entites
         ''' <summary>
         ''' Recupere et retourne la liste des messages dont le destinataire est le membre dont l'id est passee en parametre
         ''' </summary>
+<<<<<<< HEAD
         Public Shared Function getListe(idMembre As Integer) As List(Of Message)
             Dim dbCon = New MySqlConnection(My.Resources.StringConnexionBdd)
             dbCon.Open()
+=======
+        Public Shared Function getListe(idMembre As Integer, dbCon As MySqlConnection) As List(Of Message)
+>>>>>>> Adminstration terminé
             Dim listeMessages As List(Of Message) = New List(Of Message)
             Dim dbCom As MySqlCommand = New MySqlCommand("SELECT * FROM message WHERE iddestinataire=" & idMembre, dbCon)
             Dim dbRead As MySqlDataReader = dbCom.ExecuteReader()
@@ -107,19 +128,28 @@ Namespace Entites
                 listeMessages.Add(message)
             End While
             dbRead.Close()
+<<<<<<< HEAD
             dbCon.Close()
+=======
+>>>>>>> Adminstration terminé
             Return listeMessages
         End Function
 
         ''' <summary>
         ''' Supprime le message de la base de donnees
         ''' </summary>
+<<<<<<< HEAD
         Public Sub supprimer()
             Dim dbCon = New MySqlConnection(My.Resources.StringConnexionBdd)
             dbCon.Open()
             Dim dbCom As MySqlCommand = New MySqlCommand("DELETE FROM message WHERE idmess=" & m_id, dbCon)
             dbCom.ExecuteNonQuery()
             dbCon.close()
+=======
+        Public Sub supprimer(dbCon As MySqlConnection)
+            Dim dbCom As MySqlCommand = New MySqlCommand("DELETE FROM message WHERE idmess=" & m_id, dbCon)
+            dbCom.ExecuteNonQuery()
+>>>>>>> Adminstration terminé
         End Sub
 
     End Class

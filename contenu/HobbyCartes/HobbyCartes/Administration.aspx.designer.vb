@@ -23,6 +23,15 @@ Partial Public Class Administration
     Protected WithEvents smAdmin As Global.System.Web.UI.ScriptManager
 
     '''<summary>
+    '''Contrôle lblDialogue.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents lblDialogue As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Contrôle lnkbtnCommu.
     '''</summary>
     '''<remarks>
@@ -41,6 +50,51 @@ Partial Public Class Administration
     Protected WithEvents lnkbtnSupp As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
+    '''Contrôle lblMessage.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents lblMessage As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Contrôle txtMessage.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents txtMessage As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Contrôle btnEnvoyer.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents btnEnvoyer As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Contrôle btnAnnuler.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents btnAnnuler As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Contrôle ckTous.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents ckTous As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
     '''Contrôle uppanAdmin.
     '''</summary>
     '''<remarks>
@@ -57,13 +111,4 @@ Partial Public Class Administration
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
     Protected WithEvents phAdminMembre As Global.System.Web.UI.WebControls.PlaceHolder
-
-    '''<summary>
-    '''Contrôle btnSup.
-    '''</summary>
-    '''<remarks>
-    '''Champ généré automatiquement.
-    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-    '''</remarks>
-    Protected WithEvents btnSup As Global.System.Web.UI.WebControls.Button
 End Class

@@ -1,4 +1,11 @@
-﻿Imports MySql.Data
+﻿'--------------------------------------------------------------------------
+' Titre: Membre.vb
+' Auteur: Loïc Vial
+' Date: Septembre 2012
+' Contribution: Charles Levesque, Jean-François Collin
+'--------------------------------------------------------------------------
+
+Imports MySql.Data
 Imports MySql.Data.MySqlClient
 
 Namespace Entites

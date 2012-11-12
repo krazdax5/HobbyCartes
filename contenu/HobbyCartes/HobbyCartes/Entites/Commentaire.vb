@@ -1,4 +1,10 @@
-﻿Namespace Entites
+﻿'--------------------------------------------------------------------------
+' Titre: Commentaire.vb
+' Auteur: Jean-François Collin
+' Date: Septembre 2012
+'--------------------------------------------------------------------------
+
+Namespace Entites
 
     Public Class Commentaire
 
@@ -43,7 +49,7 @@
         ''' </summary>
         Public Property pMessage() As String
             Get
-                Return Message
+                Return message
             End Get
             Set(ByVal value As String)
                 message = value

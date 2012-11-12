@@ -81,3 +81,17 @@
     margin-right : 20px;
     float : left;
 }
+#administration #dMessage
+{
+    padding:20px;
+    border : white 1px solid;
+    margin:20px;    
+}
+#administration .ckTouscss
+{
+    position:relative;
+    left:750px;
+    bottom:40px;
+    margin-right:20px;
+    font-size:large;
+}

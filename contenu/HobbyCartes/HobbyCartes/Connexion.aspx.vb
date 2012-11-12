@@ -1,4 +1,10 @@
-﻿Imports MySql.Data
+﻿'--------------------------------------------------------------------------
+' Titre: Connexion.aspx.vb
+' Auteur: Charles Levesque
+' Date: 29 Octobre 2012
+'-------------------------------------------------------------------------
+
+Imports MySql.Data
 Imports MySql.Data.MySqlClient
 Imports System.IO
 Imports HobbyCartes.ServiceSecurite
