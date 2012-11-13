@@ -19,12 +19,18 @@
 
         <p>Liste des cartes pour la collection séléctionnée : </p>
         <asp:table runat="server" id="tableListeFiches" cssclass="membreGererCollectionsTableListeFiches">
-            <asp:TableHeaderRow>
+            <asp:TableHeaderRow CssClass="membreGererCollectionsTableListeFichesHeader" >
                 <asp:TableCell>Nom</asp:TableCell>
                 <asp:TableCell>Prénom</asp:TableCell>
                 <asp:TableCell>Etat de la fiche</asp:TableCell>
-                <asp:TableCell>Chabada</asp:TableCell>
+                <asp:TableCell>Numéro</asp:TableCell>
+                <asp:TableCell>Recrue</asp:TableCell>
+                <asp:TableCell>Valeur</asp:TableCell>
+                <asp:TableCell>Equipe</asp:TableCell>
+                <asp:TableCell>Editeur</asp:TableCell>
                 <asp:TableCell>Position</asp:TableCell>
+                <asp:TableCell></asp:TableCell>
+                <asp:TableCell></asp:TableCell>
             </asp:TableHeaderRow>
         </asp:table>
 

@@ -113,7 +113,7 @@ Namespace Entites
         ''' <returns>Retourne une instance de la classe Entitees.Editeur</returns>
         Public ReadOnly Property Editeur As Entites.Editeur
             Get
-                Return New Entites.Editeur(m_idEditeur, m_dbConnectionFiche)
+                Return New Entites.Editeur(m_idEditeur)
             End Get
         End Property
 
@@ -382,6 +382,14 @@ Namespace Entites
                 Return Nothing
             End Try
         End Function
+
+        Public Shared Sub supprimer(idFiche As Integer)
+            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+            dbCon.Open()
+            Dim req As MySqlCommand = New MySqlCommand("DELETE FROM fiche WHERE idfiche=" & idFiche, dbCon)
+            req.ExecuteNonQuery()
+            dbCon.Close()
+        End Sub
 
     End Class
 

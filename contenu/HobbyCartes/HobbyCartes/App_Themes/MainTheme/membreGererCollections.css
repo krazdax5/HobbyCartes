@@ -20,7 +20,6 @@
 {
     margin : 10px;
     border-top : 1px solid white;
-    width : 80%;
     padding : 10px;
     border-collapse: collapse;
 }
@@ -47,3 +46,8 @@
     border-right : none;
 }
 */
+#membre #membre_contenu #membreGererCollections .membreGererCollectionsTableListeFichesHeader
+{
+    text-align : center;
+    font-weight : bold;
+}
