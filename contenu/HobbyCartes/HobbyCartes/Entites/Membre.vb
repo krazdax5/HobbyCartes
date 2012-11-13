@@ -518,6 +518,13 @@ Namespace Entites
             End Try
         End Function
 
+        Public Function nombreFiche() As Integer
+            Dim requete As MySqlCommand = New MySqlCommand("SELECT COUNT(*) FROM fiche JOIN collection ON collection.idcollection = fiche.idcollection JOIN membre ON collection.idmembre = membre.idmembre WHERE collection.idmembre ='" + m_id.ToString + "'", m_dbConnection)
+            Dim Nombre As Integer
+            Nombre = Integer.Parse(requete.ExecuteScalar)
+
+            Return Nombre
+        End Function
 
     End Class
 

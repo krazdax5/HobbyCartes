@@ -21,7 +21,7 @@
                 <li runat="server"><asp:LinkButton ID="lnkbtnSupp" runat="server" CssClass="lnkbtnAdmin">Supprimer</asp:LinkButton></li>
             </ul>
         </div>
-        <asp:CheckBox runat="server" ID="ckTous" AutoPostBack="true" Text="Sélectionner tous" CssClass="ckTouscss"/>
+        <asp:CheckBox runat="server" ID="ckTous" AutoPostBack="true" Text=" Sélectionner tout" CssClass="ckTouscss"/>
         <div id="dMessage">
                     <asp:Label ID="lblMessage" runat="server" Text="Entrez votre message:" /> <br /><br />
                     <asp:TextBox ID="txtMessage" runat="server" TextMode="MultiLine" Width="100%" Height="100px"></asp:TextBox><br /><br />

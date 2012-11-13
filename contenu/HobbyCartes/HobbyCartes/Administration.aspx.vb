@@ -68,6 +68,13 @@ Public Class Administration
                                                 Membre.DateInscription.Month.ToString + "-" + Membre.DateInscription.Year.ToString
                     nouvDiv.Controls.Add(nouvDateInscription)
 
+                    'Nombre de Fiches
+                    Dim nbFiche As New Label
+                    nbFiche.Attributes.Add("class", "lblnbFiche")
+                    nbFiche.ID = "lblNb" + Membre.id.ToString
+                    nbFiche.Text = "<br/> <br/> Nombre de fiches : " + Membre.nombreFiche.ToString
+                    nouvDiv.Controls.Add(nbFiche)
+
                     Dim ckSup As New CheckBox
                     ckSup.ID = "ck" + Membre.id.ToString
                     ckSup.CssClass = "CheckBAdmin"

@@ -50,6 +50,15 @@ Partial Public Class Administration
     Protected WithEvents lnkbtnSupp As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
+    '''Contrôle ckTous.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents ckTous As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
     '''Contrôle lblMessage.
     '''</summary>
     '''<remarks>
@@ -84,15 +93,6 @@ Partial Public Class Administration
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
     Protected WithEvents btnAnnuler As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''Contrôle ckTous.
-    '''</summary>
-    '''<remarks>
-    '''Champ généré automatiquement.
-    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-    '''</remarks>
-    Protected WithEvents ckTous As Global.System.Web.UI.WebControls.CheckBox
 
     '''<summary>
     '''Contrôle uppanAdmin.
