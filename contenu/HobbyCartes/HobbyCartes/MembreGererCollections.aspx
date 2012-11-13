@@ -17,7 +17,7 @@
             </tr>
         </table>
 
-        <p>Liste des cartes pour la collection séléctionnée : </p>
+        <p>Liste des fiches pour la collection séléctionnée : </p>
         <asp:table runat="server" id="tableListeFiches" cssclass="membreGererCollectionsTableListeFiches">
             <asp:TableHeaderRow CssClass="membreGererCollectionsTableListeFichesHeader" >
                 <asp:TableCell>Nom</asp:TableCell>

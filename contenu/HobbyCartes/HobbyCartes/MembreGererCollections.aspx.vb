@@ -110,6 +110,15 @@ Public Class MembreGererCollections
         For i As Integer = 0 To Collection.ListeFiches.Count - 1
             tableListeFiches.Rows.Add(getFicheRow(Collection.ListeFiches.Item(i)))
         Next
+        ' Ajoute une ligne pour ajouter une fiche a la collection
+        Dim rowBtnAjouter As TableRow = New TableRow
+        Dim cellBtnAjouter As TableCell = New TableCell
+        Dim btnAjouter As Button = New Button
+        btnAjouter.Text = "Ajouter une fiche"
+        cellBtnAjouter.Controls.Add(btnAjouter)
+        cellBtnAjouter.ColumnSpan = 11
+        rowBtnAjouter.Cells.Add(cellBtnAjouter)
+        tableListeFiches.Rows.Add(rowBtnAjouter)
     End Sub
 
     ''' <summary>
@@ -183,7 +192,7 @@ Public Class MembreGererCollections
 
         Dim btnVoirCell As TableCell = New TableCell()
         Dim btnVoir As Button = New Button()
-        btnVoir.Text = "Voir la carte"
+        btnVoir.Text = "Voir la fiche"
         btnVoir.ID = "btnVoir" & fiche.ID
         AddHandler btnVoir.Click, AddressOf btnVoir_Click
         btnVoirCell.Controls.Add(btnVoir)
