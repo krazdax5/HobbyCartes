@@ -1,4 +1,11 @@
-﻿Imports MySql.Data
+﻿'--------------------------------------------------------------------------
+' Titre: HobbyCartes.master.vb
+' Auteur: Charles Levesque
+' Date: Octobre 2012
+' Contribution : Loïc Vial
+'-------------------------------------------------------------------------
+
+Imports MySql.Data
 Imports MySql.Data.MySqlClient
 
 Public Class HobbyCartes

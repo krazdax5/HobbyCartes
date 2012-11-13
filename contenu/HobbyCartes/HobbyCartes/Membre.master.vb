@@ -1,4 +1,10 @@
-﻿Imports MySql.Data.MySqlClient
+﻿'--------------------------------------------------------------------------
+' Titre: Membre.master.vb
+' Auteur: Loïc Vial
+' Date: Septembre 2012
+'-------------------------------------------------------------------------
+
+Imports MySql.Data.MySqlClient
 
 ''' <summary>
 ''' Page maitre pour l'affichage des informations, des cartes d'un membre, et pour l'envoi de messages

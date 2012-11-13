@@ -1,4 +1,10 @@
-﻿Imports MySql.Data
+﻿'--------------------------------------------------------------------------
+' Titre: MembreInfo.aspx.vb
+' Auteur: Charles Levesque
+' Date: Octobre 2012
+'-------------------------------------------------------------------------
+
+Imports MySql.Data
 Imports MySql.Data.MySqlClient
 Imports System.IO
 

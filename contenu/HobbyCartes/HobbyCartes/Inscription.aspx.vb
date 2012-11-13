@@ -1,4 +1,10 @@
-﻿Imports MySql.Data
+﻿'--------------------------------------------------------------------------
+' Titre: Inscription.aspx.vb
+' Auteur: Charles Levesque
+' Date: Octobre 2012 et Novembre 2012(Sécurité)
+'-------------------------------------------------------------------------
+
+Imports MySql.Data
 Imports MySql.Data.MySqlClient
 Imports HobbyCartes.ServiceSecurite
 

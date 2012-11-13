@@ -1,4 +1,10 @@
-﻿Imports MySql.Data
+﻿'--------------------------------------------------------------------------
+' Titre: FilFiches.aspx.vb
+' Auteur: Charles Levesque
+' Date: Octobre 2012
+'-------------------------------------------------------------------------
+
+Imports MySql.Data
 Imports MySql.Data.MySqlClient
 
 Public Class FilFiches

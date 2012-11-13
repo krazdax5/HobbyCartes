@@ -1,4 +1,10 @@
-﻿Imports MySql.Data.MySqlClient
+﻿'--------------------------------------------------------------------------
+' Titre: MembreVisualiserMessage.aspx.vb
+' Auteur: Loïc Vial
+' Date: Octobre 2012
+'-------------------------------------------------------------------------
+
+Imports MySql.Data.MySqlClient
 
 ''' <summary>
 ''' Page de visualisation d'un seul message

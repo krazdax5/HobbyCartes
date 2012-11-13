@@ -1,4 +1,10 @@
-﻿Imports MySql.Data.MySqlClient
+﻿'--------------------------------------------------------------------------
+' Titre: MembreEnvoieMessage.aspx.vb
+' Auteur: Loïc Vial
+' Date: Novembre 2012
+'-------------------------------------------------------------------------
+
+Imports MySql.Data.MySqlClient
 
 ''' <summary>
 ''' Page d'envoi de message d'un membre a un autre

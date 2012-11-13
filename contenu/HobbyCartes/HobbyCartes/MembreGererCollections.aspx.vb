@@ -1,4 +1,10 @@
-﻿Imports MySql.Data.MySqlClient
+﻿'--------------------------------------------------------------------------
+' Titre: MembreGererCollections.aspx.vb
+' Auteur: Loïc Vial
+' Date: 6 Novembre 2012
+'-------------------------------------------------------------------------
+
+Imports MySql.Data.MySqlClient
 
 ''' <summary>
 ''' Page de gestion des collections de cartes du membre.

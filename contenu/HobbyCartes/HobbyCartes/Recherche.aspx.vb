@@ -1,4 +1,10 @@
-﻿Imports MySql.Data
+﻿'--------------------------------------------------------------------------
+' Titre: Recherche.aspx.vb
+' Auteur: Jean-François Collin
+' Date: 2 Novembre 2012
+'-------------------------------------------------------------------------
+
+Imports MySql.Data
 Imports MySql.Data.MySqlClient
 Public Class Recherche
     Inherits System.Web.UI.Page
