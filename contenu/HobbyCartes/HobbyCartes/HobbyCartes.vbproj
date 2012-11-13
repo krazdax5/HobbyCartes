@@ -161,7 +161,7 @@
     </Compile>
     <Compile Include="Administration.aspx.vb">
       <DependentUpon>Administration.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Entites\Fiche.vb" />
     <Compile Include="Entites\Collection.vb" />

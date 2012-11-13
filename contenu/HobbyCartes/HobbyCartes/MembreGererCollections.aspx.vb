@@ -83,6 +83,7 @@ Public Class MembreGererCollections
         comboCollectionsDisponibles.Items.Add(comboCollections.SelectedValue)
         comboCollections.Items.Remove(comboCollections.SelectedValue)
         majBoutons()
+        Response.Redirect("MembreGererCollections.aspx")
     End Sub
 
     ''' <summary>
@@ -94,6 +95,7 @@ Public Class MembreGererCollections
         comboCollections.Items.Add(comboCollectionsDisponibles.SelectedValue)
         comboCollectionsDisponibles.Items.Remove(comboCollectionsDisponibles.SelectedValue)
         majBoutons()
+        Response.Redirect("MembreGererCollections.aspx")
     End Sub
 
     ''' <summary>
@@ -116,37 +118,90 @@ Public Class MembreGererCollections
     Private Function getFicheRow(fiche As Entites.Fiche) As TableRow
         Dim row As TableRow = New TableRow
 
-        Dim cell As TableCell = New TableCell
-        Dim lab As Label = New Label()
-        lab.Text = fiche.NomJoueur
-        cell.Controls.Add(lab)
-        row.Cells.Add(cell)
+        Dim cellNom As TableCell = New TableCell
+        Dim labNom As Label = New Label()
+        labNom.Text = fiche.NomJoueur
+        cellNom.Controls.Add(labNom)
+        row.Cells.Add(cellNom)
 
-        cell = New TableCell
-        lab = New Label()
-        lab.Text = fiche.PrenomJoueur
-        cell.Controls.Add(lab)
-        row.Cells.Add(cell)
+        Dim cellPrenom = New TableCell
+        Dim labPrenom = New Label()
+        labPrenom.Text = fiche.PrenomJoueur
+        cellPrenom.Controls.Add(labPrenom)
+        row.Cells.Add(cellPrenom)
 
-        cell = New TableCell
-        lab = New Label()
-        lab.Text = fiche.Etatfiche.ToString
-        cell.Controls.Add(lab)
-        row.Cells.Add(cell)
+        Dim cellEtat = New TableCell
+        Dim labEtat = New Label()
+        labEtat.Text = fiche.Etatfiche.ToString
+        cellEtat.Controls.Add(labEtat)
+        row.Cells.Add(cellEtat)
 
-        cell = New TableCell
-        lab = New Label()
-        lab.Text = fiche.Numero
-        cell.Controls.Add(lab)
-        row.Cells.Add(cell)
+        Dim cellNumero = New TableCell
+        Dim labNumero = New Label()
+        labNumero.Text = fiche.Numero
+        cellNumero.Controls.Add(labNumero)
+        row.Cells.Add(cellNumero)
 
-        cell = New TableCell
-        lab = New Label()
-        lab.Text = fiche.Position
-        cell.Controls.Add(lab)
-        row.Cells.Add(cell)
+        Dim cellRecrue = New TableCell
+        Dim labRecrue = New Label()
+        labNumero.Text = fiche.Recrue
+        cellRecrue.Controls.Add(labNumero)
+        row.Cells.Add(cellRecrue)
+
+        Dim cellValeur = New TableCell
+        Dim labValeur = New Label()
+        labValeur.Text = fiche.Valeur
+        cellValeur.Controls.Add(labValeur)
+        row.Cells.Add(cellValeur)
+
+        Dim cellEquipe = New TableCell
+        Dim labEquipe = New Label()
+        labEquipe.Text = fiche.Equipe
+        cellEquipe.Controls.Add(labEquipe)
+        row.Cells.Add(cellEquipe)
+
+        Dim cellEditeur = New TableCell
+        Dim labEditeur = New Label()
+        labEditeur.Text = fiche.Editeur.nomEditeur
+        cellEditeur.Controls.Add(labEditeur)
+        row.Cells.Add(cellEditeur)
+
+        Dim cellPosition = New TableCell
+        Dim labPosition = New Label()
+        labPosition.Text = fiche.Position
+        cellPosition.Controls.Add(labPosition)
+        row.Cells.Add(cellPosition)
+
+        Dim btnSupprCell As TableCell = New TableCell()
+        Dim btnSuppr As Button = New Button()
+        btnSuppr.Text = "Supprimer"
+        btnSuppr.ID = "btnSuppr" & fiche.ID
+        AddHandler btnSuppr.Click, AddressOf btnSuppr_Click
+        btnSuppr.OnClientClick = "javascript:return confirm('Etes vous sur de vouloir supprimer cette fiche ?');"
+        btnSupprCell.Controls.Add(btnSuppr)
+        row.Cells.Add(btnSupprCell)
+
+        Dim btnVoirCell As TableCell = New TableCell()
+        Dim btnVoir As Button = New Button()
+        btnVoir.Text = "Voir la carte"
+        btnVoir.ID = "btnVoir" & fiche.ID
+        AddHandler btnVoir.Click, AddressOf btnVoir_Click
+        btnVoirCell.Controls.Add(btnVoir)
+        row.Cells.Add(btnVoirCell)
 
         Return row
     End Function
 
+    Private Sub btnSuppr_Click(ByVal sender As Object, ByVal e As EventArgs)
+        Dim btnSuppr As Button = DirectCast(sender, Button)
+        Dim idFiche As String = btnSuppr.ID.Substring(8)
+        Entites.Fiche.supprimer(idFiche)
+        Response.Redirect("MembreGererCollections.aspx")
+    End Sub
+
+    Private Sub btnVoir_Click(ByVal sender As Object, ByVal e As EventArgs)
+        Dim btnVoir As Button = DirectCast(sender, Button)
+        Dim idFiche As String = btnVoir.ID.Substring(7)
+        Response.Redirect("Fiche.aspx?idFiche=" & idFiche)
+    End Sub
 End Class
