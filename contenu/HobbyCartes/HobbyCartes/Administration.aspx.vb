@@ -162,5 +162,12 @@ Public Class Administration
         lblDialogue.Text = ""
     End Sub
 
+    Private Sub Sauvegarde() Handles btnSauvegarde.Click
+        Process.Start("C:\\Program Files (x86)\\MySQL\\MySQL Server 5.5\\bin\\mysqldump.exe", "--user=root --password=toor --host=localhost --all-databases ""Z:\\test.sql""")
+    End Sub
+
+    Private Sub Restauration() Handles btnRestauration.Click
+        Process.Start("C:\\Program Files (x86)\\MySQL\\MySQL Server 5.5\\bin\\mysql.exe", "--user=root --password=toor < Z:\\test.sql")
+    End Sub
 
 End Class

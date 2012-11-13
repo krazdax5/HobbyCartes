@@ -59,6 +59,24 @@ Partial Public Class Administration
     Protected WithEvents ckTous As Global.System.Web.UI.WebControls.CheckBox
 
     '''<summary>
+    '''Contrôle btnSauvegarde.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents btnSauvegarde As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Contrôle btnRestauration.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents btnRestauration As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''Contrôle lblMessage.
     '''</summary>
     '''<remarks>

@@ -22,6 +22,8 @@
             </ul>
         </div>
         <asp:CheckBox runat="server" ID="ckTous" AutoPostBack="true" Text=" Sélectionner tout" CssClass="ckTouscss"/>
+        <asp:Button runat="server" ID="btnSauvegarde" Text="Copie de sauvegarde" />
+        <asp:Button runat="server" ID="btnRestauration" Text="Restaurer" />
         <div id="dMessage">
                     <asp:Label ID="lblMessage" runat="server" Text="Entrez votre message:" /> <br /><br />
                     <asp:TextBox ID="txtMessage" runat="server" TextMode="MultiLine" Width="100%" Height="100px"></asp:TextBox><br /><br />

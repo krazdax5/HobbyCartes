@@ -4,7 +4,13 @@ DROP TABLE IF EXISTS fiche;
 DROP TABLE IF EXISTS editeur;
 DROP TABLE IF EXISTS equipe;
 DROP TABLE IF EXISTS collection;
+DROP TABLE IF EXISTS transactions;
 DROP TABLE IF EXISTS membre;
+
+DROP TRIGGER IF EXISTS infiche;
+DROP TRIGGER IF EXISTS delfiche;
+DROP TRIGGER IF EXISTS inmembre;
+DROP TRIGGER IF EXISTS delmembre;
 
 CREATE TABLE membre(
 	idmembre INTEGER PRIMARY KEY AUTO_INCREMENT,
@@ -76,6 +82,14 @@ CREATE TABLE commentaire(
 	destinateurcom VARCHAR(30) NOT NULL,
 	messagecom LONGTEXT NOT NULL,
 	FOREIGN KEY(idfiche) REFERENCES fiche(idfiche) ON DELETE CASCADE
+);
+
+CREATE TABLE transactions (
+	idtransactions INTEGER PRIMARY KEY AUTO_INCREMENT,
+	nomutilisateurtrans TEXT NOT NULL,
+	typetrans ENUM ('ajout', 'suppression'),
+	typeobjettrans ENUM ('fiche','membre'),
+	datetrans DATETIME
 );
 
 INSERT INTO membre (prenommem, nommem, nomutilisateurmem, motpassemem, villemem, codepostalmem, courrielmem, dateinscriptionmem, imagemem) 
