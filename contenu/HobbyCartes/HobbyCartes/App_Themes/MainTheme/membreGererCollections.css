@@ -1,11 +1,49 @@
 ﻿#membre #membre_contenu #membreGererCollections
 {
     border : 1px solid white;
-    padding : 20px;
 }
 
-#membre #membre_contenu #membreGererCollections table
+#membre #membre_contenu #membreGererCollections .membreGererCollectionsTableCollections
 {
     border-top : 1px solid white;
     width : 100%;
+    padding : 15px;
 }
+
+#membre #membre_contenu #membreGererCollections p
+{
+    margin : 15px;
+    padding : 0px;
+}
+
+#membre #membre_contenu #membreGererCollections .membreGererCollectionsTableListeFiches
+{
+    margin : 10px;
+    border-top : 1px solid white;
+    width : 80%;
+    padding : 10px;
+    border-collapse: collapse;
+}
+
+#membre #membre_contenu #membreGererCollections .membreGererCollectionsTableListeFiches tr
+{
+    border-bottom : 1px solid white;
+}
+/*
+#membre #membre_contenu #membreGererCollections .membreGererCollectionsTableListeFiches tr:last-child
+{
+    border-bottom : none;
+}
+*/
+#membre #membre_contenu #membreGererCollections .membreGererCollectionsTableListeFiches td
+{
+    border-right : 1px solid white;
+    border-left : 1px solid white;
+    padding : 5px;
+}
+/*
+#membre #membre_contenu #membreGererCollections .membreGererCollectionsTableListeFiches td:last-child
+{
+    border-right : none;
+}
+*/

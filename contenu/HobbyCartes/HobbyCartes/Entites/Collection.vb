@@ -223,6 +223,26 @@ Namespace Entites
             dbCon.Close()
         End Sub
 
+        ''' <summary>
+        ''' Supprime une collection existante
+        ''' </summary>
+        Public Shared Sub supprimer(idMembre As Integer, typeCol As Type)
+            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+            dbCon.Open()
+            Dim req As MySqlCommand = New MySqlCommand("DELETE FROM collection WHERE idmembre=" & idMembre & " AND typecol='" & typeCol.ToString & "'", dbCon)
+            req.ExecuteNonQuery()
+            dbCon.Close()
+        End Sub
+
+        Public Shared Function getIdCollectionParTypeEtMembre(idMembre As Integer, typeCol As Type)
+            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+            dbCon.Open()
+            Dim req As MySqlCommand = New MySqlCommand("SELECT idcollection FROM collection WHERE idMembre=" & idMembre & " AND typecol='" & typeCol & "'", dbCon)
+            Dim ret = req.ExecuteScalar
+            dbCon.Close()
+            Return ret
+        End Function
+
 
         Public Shared Function existe(idMembre As Integer, typeCol As Type, dbCon As MySqlConnection) As Boolean
             Return Not New MySqlCommand("SELECT COUNT(*) FROM collection WHERE idmembre=" & idMembre & " AND typecol='" & typeCol.ToString & "'", dbCon).ExecuteScalar = 0

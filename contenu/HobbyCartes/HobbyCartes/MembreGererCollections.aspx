@@ -1,74 +1,32 @@
-﻿<%@ Page MasterPageFile="~/Membre.master" CodeBehind="MembreGererCollections.aspx.vb" Inherits="HobbyCartes.MembreGererCollections" AutoEventWireup="true" %>
+﻿<%@ Page MasterPageFile="~/Membre.master" CodeBehind="MembreGererCollections.aspx.vb" Inherits="HobbyCartes.MembreGererCollections" AutoEventWireup="false" %>
 
 <asp:Content ContentPlaceHolderID="cphPageMembreContenu" runat="server">
     <div id="membreGererCollections" >
         <h1>Collections</h1>
-        Mes collections : <asp:DropDownList id="comboCollections" runat="server" />
-        <asp:Button id="btnSupprimerCollection" runat="server" text="Supprimer la collection" OnClientClick="javascript:return confirm('Voulez vous vraiment supprimer cette collection ?');"  />
-        <br />
-        Collections disponibles : <asp:DropDownList id="comboCollectionsDisponibles" runat="server" />
-        <asp:Button id="btnAjouterCollection" runat="server" text="Ajouter cette nouvelle collection" />
-        <table style="display:none">
-        <tbody>
+
+        <table class="membreGererCollectionsTableCollections" >
             <tr>
-                <td>
-                    Type de carte :
-                </td>
-                <td>
-                    <asp:DropDownList ID="DropDownList1" runat="server">
-                        <asp:ListItem Text="Hockey" />
-                    </asp:DropDownList>
-                </td>
+                <td>Mes collections : </td>
+                <td><asp:DropDownList id="comboCollections" runat="server" /></td>
+                <td><asp:Button id="btnSupprimerCollection" runat="server" text="Supprimer la collection" OnClientClick="javascript:return confirm('Voulez vous vraiment supprimer cette collection ?');"  /></td>
             </tr>
             <tr>
-                <td>
-                    Nom du joueur : 
-                </td>
-                <td>
-                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                </td>
+                <td>Collections disponibles : </td>
+                <td><asp:DropDownList id="comboCollectionsDisponibles" runat="server" /></td>
+                <td><asp:Button id="btnAjouterCollection" runat="server" text="Ajouter cette nouvelle collection" /></td>
             </tr>
-           <tr>
-                <td>
-                    N° : 
-                </td>
-                <td>
-                    <asp:TextBox ID="TextBox2" runat="server" />
-                </td>
-           </tr>
-           <tr>
-                <td>
-                    Equipe : 
-                </td>
-                <td>
-                    <asp:TextBox ID="TextBox3" runat="server" />
-                </td>
-           </tr>
-           <tr>
-                <td>
-                    Série : 
-                </td>
-                <td>
-                    <asp:TextBox ID="TextBox4" runat="server" />
-                </td>
-           </tr>
-           <tr>
-                <td>
-                    Image avant :
-                </td>
-                <td>
-                    <asp:FileUpload ID="FileUpload1" runat="server" />
-                </td>
-           </tr>
-           <tr>
-                <td>
-                    Image arrière :
-                </td>
-                <td>
-                    <asp:FileUpload ID="FileUpload2" runat="server" />
-                </td>
-           </tr>
-        </tbody>
         </table>
+
+        <p>Liste des cartes pour la collection séléctionnée : </p>
+        <asp:table runat="server" id="tableListeFiches" cssclass="membreGererCollectionsTableListeFiches">
+            <asp:TableHeaderRow>
+                <asp:TableCell>Nom</asp:TableCell>
+                <asp:TableCell>Prénom</asp:TableCell>
+                <asp:TableCell>Etat de la fiche</asp:TableCell>
+                <asp:TableCell>Chabada</asp:TableCell>
+                <asp:TableCell>Position</asp:TableCell>
+            </asp:TableHeaderRow>
+        </asp:table>
+
     </div>
 </asp:Content>

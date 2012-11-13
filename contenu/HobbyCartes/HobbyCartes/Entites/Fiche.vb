@@ -177,6 +177,7 @@ Namespace Entites
                 Return m_Etat
             End Get
         End Property
+
         ''' <summary>
         ''' Constructeur par defaut. Lorsque la construction a échoué, l'identificateur est -1. 
         ''' </summary>

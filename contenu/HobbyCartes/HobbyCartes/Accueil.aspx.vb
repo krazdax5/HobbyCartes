@@ -12,7 +12,7 @@ Public Class Accueil
 
     Private m_connection As MySqlConnection
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        initSession()
+        initSession(Session)
         m_connection = New MySqlConnection(My.Resources.StringConnexionBdd)
         m_connection.Open()
         NouveauxMembre()
@@ -67,16 +67,16 @@ Public Class Accueil
         End If
     End Sub
 
-    Private Sub initSession()
-        If Session("connected") Is Nothing Then
-            Session.Add("connected", False)
-            Session.Timeout = 30
+    Public Shared Sub initSession(session As HttpSessionState)
+        If session("connected") Is Nothing Then
+            session.Add("connected", False)
+            session.Timeout = 30
         End If
-        If Session("idMembre") Is Nothing Then
-            Session.Add("idMembre", -1)
+        If session("idMembre") Is Nothing Then
+            session.Add("idMembre", -1)
         End If
-        If Session("Admin") Is Nothing Then
-            Session.Add("Admin", False)
+        If session("Admin") Is Nothing Then
+            session.Add("Admin", False)
         End If
     End Sub
 End Class
