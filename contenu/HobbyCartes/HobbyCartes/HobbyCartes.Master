@@ -30,7 +30,12 @@
         </div>
     </div>
     <div id="piedpage">
-        Tous droits réservés Hobby-Cartes 2012
+        <table>
+            <tr>
+                <td>Tous droits réservés Hobby-Cartes 2012</td>
+                <td><asp:LinkButton ID="lnkbtnContacter" runat="server">Nous contacter</asp:LinkButton></td>
+            </tr>
+        </table>
     </div>
     </form>
 </body>
