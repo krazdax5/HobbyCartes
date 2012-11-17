@@ -15,7 +15,7 @@ Public Class MembreGererCollections
     ''' <summary>
     ''' L'identifiant du membre connecté
     ''' </summary>
-    Dim idMembre As Integer
+    Dim m_idMembre As Integer
 
     ''' <summary>
     ''' Initialisation de la page
@@ -28,16 +28,16 @@ Public Class MembreGererCollections
         If Not connected Then Erreur.afficherErreur("Vous devez être connecté pour gérer vos collections.", Page)
 
         ' Recupere l'id du membre et charge toutes ses collections
-        idMembre = Integer.Parse(Session("idMembre"))
+        m_idMembre = Integer.Parse(Session("idMembre"))
         ' collections = New Dictionary(Of Entites.Collection.Type, Entites.Collection)
         Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
         dbCon.Open()
         For Each typeCol As Entites.Collection.Type In System.Enum.GetValues(GetType(Entites.Collection.Type))
-            If Not Entites.Collection.existe(idMembre, typeCol) Then
-                comboCollectionsDisponibles.Items.Add(typeCol.ToString)
+            If Not Entites.Collection.existe(m_idMembre, typeCol) Then
+                cboCollectionsDisponibles.Items.Add(typeCol.ToString)
             Else
                 ' collections.Add(typeCol, New Entites.Collection(idMembre, typeCol, dbCon))
-                comboCollections.Items.Add(typeCol.ToString)
+                cboCollections.Items.Add(typeCol.ToString)
             End If
         Next
         dbCon.Close()
@@ -53,21 +53,21 @@ Public Class MembreGererCollections
 
         majBoutons()
 
-        If comboCollections.Items.Count <> 0 Then
-            Dim type As Entites.Collection.Type = Entites.Collection.Type.Parse(GetType(Entites.Collection.Type), comboCollections.SelectedValue)
-            remplirListeFiches(Entites.Collection.getIdCollectionParTypeEtMembre(idMembre, type))
+        If cboCollections.Items.Count <> 0 Then
+            Dim type As Entites.Collection.Type = Entites.Collection.Type.Parse(GetType(Entites.Collection.Type), cboCollections.SelectedValue)
+            remplirListeFiches(Entites.Collection.getIdCollectionParTypeEtMembre(m_idMembre, type))
         End If
         ' On click sur une carte, detail de la carte
 
     End Sub
 
     Private Sub majBoutons()
-        If comboCollections.Items.Count = 0 Then
+        If cboCollections.Items.Count = 0 Then
             btnSupprimerCollection.Enabled = False
         Else
             btnSupprimerCollection.Enabled = True
         End If
-        If comboCollectionsDisponibles.Items.Count = 0 Then
+        If cboCollectionsDisponibles.Items.Count = 0 Then
             btnAjouterCollection.Enabled = False
         Else
             btnAjouterCollection.Enabled = True
@@ -78,10 +78,10 @@ Public Class MembreGererCollections
     ''' Clic sur le bouton "Supprimer la collection"
     ''' </summary>
     Protected Sub BtnSupprimerCollection_Click() Handles btnSupprimerCollection.Click
-        Dim oldType As Entites.Collection.Type = Entites.Collection.Type.Parse(GetType(Entites.Collection.Type), comboCollections.SelectedValue)
-        Entites.Collection.supprimer(idMembre, oldType)
-        comboCollectionsDisponibles.Items.Add(comboCollections.SelectedValue)
-        comboCollections.Items.Remove(comboCollections.SelectedValue)
+        Dim oldType As Entites.Collection.Type = Entites.Collection.Type.Parse(GetType(Entites.Collection.Type), cboCollections.SelectedValue)
+        Entites.Collection.supprimer(m_idMembre, oldType)
+        cboCollectionsDisponibles.Items.Add(cboCollections.SelectedValue)
+        cboCollections.Items.Remove(cboCollections.SelectedValue)
         majBoutons()
         Response.Redirect("MembreGererCollections.aspx")
     End Sub
@@ -90,10 +90,10 @@ Public Class MembreGererCollections
     ''' Clic sur le bouton "Ajouter une collection"
     ''' </summary>
     Protected Sub BtnAjouterCollection_Click() Handles btnAjouterCollection.Click
-        Dim newType As Entites.Collection.Type = Entites.Collection.Type.Parse(GetType(Entites.Collection.Type), comboCollectionsDisponibles.SelectedValue)
-        Entites.Collection.ajouter(idMembre, newType)
-        comboCollections.Items.Add(comboCollectionsDisponibles.SelectedValue)
-        comboCollectionsDisponibles.Items.Remove(comboCollectionsDisponibles.SelectedValue)
+        Dim newType As Entites.Collection.Type = Entites.Collection.Type.Parse(GetType(Entites.Collection.Type), cboCollectionsDisponibles.SelectedValue)
+        Entites.Collection.ajouter(m_idMembre, newType)
+        cboCollections.Items.Add(cboCollectionsDisponibles.SelectedValue)
+        cboCollectionsDisponibles.Items.Remove(cboCollectionsDisponibles.SelectedValue)
         majBoutons()
         Response.Redirect("MembreGererCollections.aspx")
     End Sub
@@ -104,11 +104,11 @@ Public Class MembreGererCollections
     Private Sub remplirListeFiches(idCollection As Integer)
         Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
         dbCon.Open()
-        Dim typeCol As Entites.Collection.Type = Entites.Collection.Type.Parse(GetType(Entites.Collection.Type), comboCollections.SelectedValue)
-        Dim Collection As Entites.Collection = New Entites.Collection(idMembre, typeCol, dbCon)
+        Dim typeCol As Entites.Collection.Type = Entites.Collection.Type.Parse(GetType(Entites.Collection.Type), cboCollections.SelectedValue)
+        Dim Collection As Entites.Collection = New Entites.Collection(m_idMembre, typeCol, dbCon)
         dbCon.Close()
         For i As Integer = 0 To Collection.ListeFiches.Count - 1
-            tableListeFiches.Rows.Add(getFicheRow(Collection.ListeFiches.Item(i)))
+            tblListeFiches.Rows.Add(getFicheRow(Collection.ListeFiches.Item(i)))
         Next
         ' Ajoute une ligne pour ajouter une fiche a la collection
         Dim rowBtnAjouter As TableRow = New TableRow
@@ -118,7 +118,7 @@ Public Class MembreGererCollections
         cellBtnAjouter.Controls.Add(btnAjouter)
         cellBtnAjouter.ColumnSpan = 11
         rowBtnAjouter.Cells.Add(cellBtnAjouter)
-        tableListeFiches.Rows.Add(rowBtnAjouter)
+        tblListeFiches.Rows.Add(rowBtnAjouter)
     End Sub
 
     ''' <summary>

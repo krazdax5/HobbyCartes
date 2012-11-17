@@ -75,11 +75,11 @@ Public Class Administration
                     nbFiche.Text = "<br/> <br/> Nombre de fiches : " + Membre.nombreFiche.ToString
                     nouvDiv.Controls.Add(nbFiche)
 
-                    Dim ckSup As New CheckBox
-                    ckSup.ID = "ck" + Membre.id.ToString
-                    ckSup.CssClass = "CheckBAdmin"
-                    nouvDiv.Controls.Add(ckSup)
-                    m_checkBoxes.Add(ckSup)
+                    Dim cbSup As New CheckBox
+                    cbSup.ID = "cb" + Membre.id.ToString
+                    cbSup.CssClass = "CheckBAdmin"
+                    nouvDiv.Controls.Add(cbSup)
+                    m_checkBoxes.Add(cbSup)
                     phAdminMembre.Controls.Add(nouvDiv)
                 End If
             Next
@@ -91,17 +91,17 @@ Public Class Administration
         Dim NomDiv As String
         Dim DivSup As New HtmlGenericControl("div")
         Dim Membres As List(Of Entites.Membre) = Entites.Membre.ListeMembresOrdonnee(m_connection)
-        ckTous.Checked = False
+        cbTous.Checked = False
         For Each Membre In Membres
             If Not Membre.nomUtilisateur.Equals("admin") Then
                 NomDiv = "divMembre" + Membre.id.ToString
                 DivSup = uppanAdmin.ContentTemplateContainer.FindControl(NomDiv)
 
-                Dim ckSup As New CheckBox
-                ckSup = DivSup.FindControl("ck" + Membre.id.ToString)
+                Dim cbSup As New CheckBox
+                cbSup = DivSup.FindControl("cb" + Membre.id.ToString)
 
                 'Supprime les commentaires dont les Checkbox sont cochés
-                If (ckSup.Checked) Then
+                If (cbSup.Checked) Then
                     If (Entites.Membre.SupMembre(Membre.id, m_connection)) Then
                         phAdminMembre.Controls.Remove(DivSup)
                     Else
@@ -112,9 +112,9 @@ Public Class Administration
         Next
     End Sub
 
-    Private Sub Selecttous() Handles ckTous.CheckedChanged
+    Private Sub Selecttous() Handles cbTous.CheckedChanged
 
-        If ckTous.Checked = True Then
+        If cbTous.Checked = True Then
             For Each Check In m_checkBoxes
                 Check.Checked = True
             Next
@@ -140,7 +140,7 @@ Public Class Administration
                 i += 1
             End If
         Next
-        ckTous.Checked = False
+        cbTous.Checked = False
 
         If (i = 0) Then
             lblDialogue.Text = "Aucun destinataire sélectionné"
@@ -157,7 +157,7 @@ Public Class Administration
                 checkbox.Checked = False
             End If
         Next
-        ckTous.Checked = False
+        cbTous.Checked = False
         txtMessage.Text = ""
         lblDialogue.Text = ""
     End Sub

@@ -15,12 +15,12 @@ Public Class MembreVisualiserMessages
     ''' <summary>
     ''' La liste des messages
     ''' </summary>
-    Private messages As List(Of Entites.Message)
+    Private m_messages As List(Of Entites.Message)
 
     ''' <summary>
     ''' La liste des boites a cocher pour la suppression de messages
     ''' </summary>
-    Private checkBoxes As List(Of CheckBox)
+    Private m_checkBoxes As List(Of CheckBox)
 
     ''' <summary>
     ''' Le bouton "Supprimer"
@@ -39,17 +39,17 @@ Public Class MembreVisualiserMessages
         End If
 
         ' Initialise la liste des checkboxes
-        checkBoxes = New List(Of CheckBox)
+        m_checkBoxes = New List(Of CheckBox)
 
         ' Chargement de la liste de messages avec l'id du membre connecté
         Dim idMembre As Integer = Integer.Parse(Session("idMembre"))
-        messages = Entites.Message.getListe(idMembre)
-        For Each message As Entites.Message In messages
+        m_messages = Entites.Message.getListe(idMembre)
+        For Each message As Entites.Message In m_messages
             ajoute_message(message)
         Next
 
         ' Ajoute le bouton "Supprimer"
-        If messages.Count <> 0 Then
+        If m_messages.Count <> 0 Then
             btnSupprimer = New Button()
             btnSupprimer.CssClass = "btnSuppr"
             btnSupprimer.Text = "Supprimer"
@@ -58,7 +58,7 @@ Public Class MembreVisualiserMessages
             btnSupprimerCell.Controls.Add(btnSupprimer)
             Dim btnSupprimerRow As TableRow = New TableRow()
             btnSupprimerRow.Cells.Add(btnSupprimerCell)
-            listeMessages.Rows.Add(btnSupprimerRow)
+            tblMessages.Rows.Add(btnSupprimerRow)
         End If
     End Sub
 
@@ -83,14 +83,14 @@ Public Class MembreVisualiserMessages
         Dim selectChk As CheckBox = New CheckBox()
         Dim selectCell As TableCell = New TableCell()
         selectCell.Controls.Add(selectChk)
-        checkBoxes.Add(selectChk)
+        m_checkBoxes.Add(selectChk)
 
         Dim ligne As TableRow = New TableRow()
         ligne.Cells.Add(selectCell)
         ligne.Cells.Add(destinateurCell)
         ligne.Cells.Add(objetCell)
 
-        listeMessages.Rows.Add(ligne)
+        tblMessages.Rows.Add(ligne)
     End Sub
 
     ''' <summary>
@@ -98,9 +98,9 @@ Public Class MembreVisualiserMessages
     ''' </summary>
     Protected Sub btnSupprimer_Click() Handles btnSupprimer.Click
         ' Supprime tous les messages selectionnes de la base de donnees
-        For i As Integer = 1 To checkBoxes.Count
-            If checkBoxes(i - 1).Checked Then
-                messages(i - 1).supprimer()
+        For i As Integer = 1 To m_checkBoxes.Count
+            If m_checkBoxes(i - 1).Checked Then
+                m_messages(i - 1).supprimer()
             End If
         Next
         ' Refresh la page

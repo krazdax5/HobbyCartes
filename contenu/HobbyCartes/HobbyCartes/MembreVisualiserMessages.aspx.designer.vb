@@ -14,11 +14,11 @@ Option Explicit On
 Partial Public Class MembreVisualiserMessages
 
     '''<summary>
-    '''Contrôle listeMessages.
+    '''Contrôle tblMessages.
     '''</summary>
     '''<remarks>
     '''Champ généré automatiquement.
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
-    Protected WithEvents listeMessages As Global.System.Web.UI.WebControls.Table
+    Protected WithEvents tblMessages As Global.System.Web.UI.WebControls.Table
 End Class

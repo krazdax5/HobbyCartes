@@ -7,18 +7,18 @@
         <table class="membreGererCollectionsTableCollections" >
             <tr>
                 <td>Mes collections : </td>
-                <td><asp:DropDownList id="comboCollections" runat="server" /></td>
+                <td><asp:DropDownList id="cboCollections" runat="server" /></td>
                 <td><asp:Button id="btnSupprimerCollection" runat="server" text="Supprimer la collection" OnClientClick="javascript:return confirm('Voulez vous vraiment supprimer cette collection ?');"  /></td>
             </tr>
             <tr>
                 <td>Collections disponibles : </td>
-                <td><asp:DropDownList id="comboCollectionsDisponibles" runat="server" /></td>
+                <td><asp:DropDownList id="cboCollectionsDisponibles" runat="server" /></td>
                 <td><asp:Button id="btnAjouterCollection" runat="server" text="Ajouter cette nouvelle collection" /></td>
             </tr>
         </table>
 
         <p>Liste des fiches pour la collection séléctionnée : </p>
-        <asp:table runat="server" id="tableListeFiches" cssclass="membreGererCollectionsTableListeFiches">
+        <asp:table runat="server" id="tblListeFiches" cssclass="membreGererCollectionsTableListeFiches">
             <asp:TableHeaderRow CssClass="membreGererCollectionsTableListeFichesHeader" >
                 <asp:TableCell>Nom</asp:TableCell>
                 <asp:TableCell>Prénom</asp:TableCell>

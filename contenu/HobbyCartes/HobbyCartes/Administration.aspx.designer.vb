@@ -50,13 +50,13 @@ Partial Public Class Administration
     Protected WithEvents lnkbtnSupp As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
-    '''Contrôle ckTous.
+    '''Contrôle cbTous.
     '''</summary>
     '''<remarks>
     '''Champ généré automatiquement.
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
-    Protected WithEvents ckTous As Global.System.Web.UI.WebControls.CheckBox
+    Protected WithEvents cbTous As Global.System.Web.UI.WebControls.CheckBox
 
     '''<summary>
     '''Contrôle btnSauvegarde.

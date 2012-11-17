@@ -48,7 +48,7 @@ Public Class MembreVisualiserMessage
     ''' <summary>
     ''' Clic sur le bouton "Répondre"
     ''' </summary>
-    Protected Sub visualiserMessageBtnRepondre_Click() Handles visualiserMessageBtnRepondre.Click
+    Protected Sub visualiserMessageBtnRepondre_Click() Handles btnvisualiserMessageBtnRepondre.Click
         Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
         dbCon.Open()
         Dim pseudo As String = Entites.Membre.getNomUtilisateurParId(m_message.idDestinateur, dbCon)
@@ -59,7 +59,7 @@ Public Class MembreVisualiserMessage
     ''' <summary>
     ''' Clic sur le bouton "Supprimer"
     ''' </summary>
-    Protected Sub visualiserMessageBtnSupprimer_Click() Handles visualiserMessageBtnSupprimer.Click
+    Protected Sub visualiserMessageBtnSupprimer_Click() Handles btnvisualiserMessageBtnSupprimer.Click
         Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
         dbCon.Open()
         m_message.supprimer()
@@ -70,7 +70,7 @@ Public Class MembreVisualiserMessage
     ''' <summary>
     ''' Clic sur le bouton "Retour"
     ''' </summary>
-    Protected Sub visualiserMessageBtnRetour_Click() Handles visualiserMessageBtnRetour.Click
+    Protected Sub visualiserMessageBtnRetour_Click() Handles btnvisualiserMessageBtnRetour.Click
         Response.Redirect("MembreVisualiserMessages.aspx")
     End Sub
 

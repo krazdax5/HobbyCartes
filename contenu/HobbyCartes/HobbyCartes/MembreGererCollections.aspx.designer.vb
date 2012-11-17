@@ -14,13 +14,13 @@ Option Explicit On
 Partial Public Class MembreGererCollections
 
     '''<summary>
-    '''Contrôle comboCollections.
+    '''Contrôle cboCollections.
     '''</summary>
     '''<remarks>
     '''Champ généré automatiquement.
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
-    Protected WithEvents comboCollections As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents cboCollections As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''Contrôle btnSupprimerCollection.
@@ -32,13 +32,13 @@ Partial Public Class MembreGererCollections
     Protected WithEvents btnSupprimerCollection As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Contrôle comboCollectionsDisponibles.
+    '''Contrôle cboCollectionsDisponibles.
     '''</summary>
     '''<remarks>
     '''Champ généré automatiquement.
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
-    Protected WithEvents comboCollectionsDisponibles As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents cboCollectionsDisponibles As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''Contrôle btnAjouterCollection.
@@ -50,11 +50,11 @@ Partial Public Class MembreGererCollections
     Protected WithEvents btnAjouterCollection As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Contrôle tableListeFiches.
+    '''Contrôle tblListeFiches.
     '''</summary>
     '''<remarks>
     '''Champ généré automatiquement.
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
-    Protected WithEvents tableListeFiches As Global.System.Web.UI.WebControls.Table
+    Protected WithEvents tblListeFiches As Global.System.Web.UI.WebControls.Table
 End Class

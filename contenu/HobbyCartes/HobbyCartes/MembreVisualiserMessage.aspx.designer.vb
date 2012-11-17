@@ -68,29 +68,29 @@ Partial Public Class MembreVisualiserMessage
     Protected WithEvents visualiserMessageContenu As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Contrôle visualiserMessageBtnRepondre.
+    '''Contrôle btnvisualiserMessageBtnRepondre.
     '''</summary>
     '''<remarks>
     '''Champ généré automatiquement.
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
-    Protected WithEvents visualiserMessageBtnRepondre As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnvisualiserMessageBtnRepondre As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Contrôle visualiserMessageBtnSupprimer.
+    '''Contrôle btnvisualiserMessageBtnSupprimer.
     '''</summary>
     '''<remarks>
     '''Champ généré automatiquement.
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
-    Protected WithEvents visualiserMessageBtnSupprimer As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnvisualiserMessageBtnSupprimer As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Contrôle visualiserMessageBtnRetour.
+    '''Contrôle btnvisualiserMessageBtnRetour.
     '''</summary>
     '''<remarks>
     '''Champ généré automatiquement.
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
-    Protected WithEvents visualiserMessageBtnRetour As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnvisualiserMessageBtnRetour As Global.System.Web.UI.WebControls.Button
 End Class

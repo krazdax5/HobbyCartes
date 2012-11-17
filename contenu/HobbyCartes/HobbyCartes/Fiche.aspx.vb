@@ -82,11 +82,11 @@ Public Class Fiche
             NomDiv = Com.pIDCommentaire.ToString()
             DivSup = uppanCommentaire.ContentTemplateContainer.FindControl(NomDiv)
 
-            Dim ckSup As New CheckBox
-            ckSup = DivSup.FindControl("ck" + NomDiv)
+            Dim cbSup As New CheckBox
+            cbSup = DivSup.FindControl("cb" + NomDiv)
 
             'Supprime les commentaires dont les Checkbox sont cochés
-            If (ckSup.Checked) Then
+            If (cbSup.Checked) Then
                 m_Fiche.SupCommentaire(NomDiv)
                 phCommentaire.Controls.Remove(DivSup)
             End If
@@ -104,10 +104,10 @@ Public Class Fiche
         'Si le membre est administrateur, ajouter un CheckBox pour la suppression de commentaire
         If Not m_Membre.id.Equals(-1) Then
             If (m_Membre.isAdmin) Then
-                Dim ckSup As New CheckBox
-                ckSup.ID = "ck" + Com.pIDCommentaire.ToString()
-                ckSup.CssClass = "CheckB"
-                NouvDiv.Controls.Add(ckSup)
+                Dim cbSup As New CheckBox
+                cbSup.ID = "cb" + Com.pIDCommentaire.ToString()
+                cbSup.CssClass = "CheckB"
+                NouvDiv.Controls.Add(cbSup)
             End If
         End If
 

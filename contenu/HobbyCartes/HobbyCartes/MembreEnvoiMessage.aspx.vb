@@ -15,22 +15,22 @@ Public Class MembreEnvoiMessage
     ''' <summary>
     ''' Le destinataire du message
     ''' </summary>
-    Private destinataire As Entites.Membre
+    Private m_destinataire As Entites.Membre
 
     ''' <summary>
     ''' Le destinateur du message
     ''' </summary>
-    Private destinateur As Entites.Membre
+    Private m_destinateur As Entites.Membre
 
     ''' <summary>
     ''' L'objet du message
     ''' </summary>
-    Private objet As String
+    Private m_objet As String
 
     ''' <summary>
     ''' Le contenu du message
     ''' </summary>
-    Private contenu As String
+    Private m_contenu As String
 
     ''' <summary>
     ''' Chargement de la page
@@ -43,9 +43,9 @@ Public Class MembreEnvoiMessage
         Try
             ' Chargement du destinateur et du destinataire
             Dim idDestinataire As Integer = Entites.Membre.getIDbyPseudo(Request.QueryString("pseudo"), dbCon)
-            destinataire = New Entites.Membre(idDestinataire, dbCon)
+            m_destinataire = New Entites.Membre(idDestinataire, dbCon)
             Dim idDestinateur As Integer = Integer.Parse(Session("idMembre"))
-            destinateur = New Entites.Membre(idDestinateur, dbCon)
+            m_destinateur = New Entites.Membre(idDestinateur, dbCon)
 
             ' Pré-rempli l'objet en cas de réponse à un message
             If Request.QueryString("reponse") <> Nothing Then
@@ -73,7 +73,7 @@ Public Class MembreEnvoiMessage
         Dim contenu As String = txtContenu.Text
         Try
             ' Envoi du message au destinataire
-            destinateur.envoyerMessage(destinataire, objet, contenu)
+            m_destinateur.envoyerMessage(m_destinataire, objet, contenu)
         Catch ex As Exception
             ' Affiche la page d'erreur en cas d'exception
             Erreur.afficherException(ex, Me, Page)

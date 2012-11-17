@@ -10,9 +10,9 @@
         </div>
         <div class="visualiserMessageContenu">
             <p id="visualiserMessageContenu" runat="server" />
-                <asp:Button id="visualiserMessageBtnRepondre" runat="server" Text="Répondre" />
-                <asp:Button id="visualiserMessageBtnSupprimer" OnClientClick="javascript:return confirm('Voulez vous vraiment supprimer ce message ?');" runat="server" Text="Supprimer" />
-                <asp:Button id="visualiserMessageBtnRetour" runat="server" Text="Retour" />
+                <asp:Button id="btnvisualiserMessageBtnRepondre" runat="server" Text="Répondre" />
+                <asp:Button id="btnvisualiserMessageBtnSupprimer" OnClientClick="javascript:return confirm('Voulez vous vraiment supprimer ce message ?');" runat="server" Text="Supprimer" />
+                <asp:Button id="btnvisualiserMessageBtnRetour" runat="server" Text="Retour" />
         </div>
     </div>
 </asp:Content>

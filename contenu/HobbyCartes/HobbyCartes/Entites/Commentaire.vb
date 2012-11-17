@@ -8,13 +8,13 @@ Namespace Entites
 
     Public Class Commentaire
 
-        Private destinateur As String
+        Private m_Destinateur As String
 
-        Private message As String
+        Private m_Message As String
 
-        Private IDFiche As Integer
+        Private m_IDFiche As Integer
 
-        Private IDCommentaire As Integer
+        Private m_IDCommentaire As Integer
 
         ''' <summary>
         ''' Construit un commentaire avec une destinataire et un Idfiche de la propriétaire
@@ -29,8 +29,8 @@ Namespace Entites
         ''' </summary>
         ''' 
         Public Sub New(ByVal Dest As String, ByVal FicheID As Integer)
-            destinateur = Dest
-            IDFiche = FicheID
+            m_Destinateur = Dest
+            m_IDFiche = FicheID
         End Sub
 
         ''' <summary>
@@ -38,10 +38,10 @@ Namespace Entites
         ''' </summary>
         ''' 
         Public Sub New(ByVal Dest As String, ByVal FicheID As Integer, ByVal CommentaireID As Integer, ByVal messages As String)
-            destinateur = Dest
-            IDFiche = FicheID
-            IDCommentaire = CommentaireID
-            message = messages
+            m_Destinateur = Dest
+            m_IDFiche = FicheID
+            m_IDCommentaire = CommentaireID
+            m_Message = messages
         End Sub
 
         ''' <summary>
@@ -49,10 +49,10 @@ Namespace Entites
         ''' </summary>
         Public Property pMessage() As String
             Get
-                Return message
+                Return m_Message
             End Get
             Set(ByVal value As String)
-                message = value
+                m_Message = value
             End Set
         End Property
 
@@ -61,28 +61,28 @@ Namespace Entites
         ''' </summary>
         Public Property pDestinateur() As String
             Get
-                Return destinateur
+                Return m_Destinateur
             End Get
             Set(ByVal value As String)
-                destinateur = value
+                m_Destinateur = value
             End Set
         End Property
 
         Public Property pIDFiche() As Integer
             Get
-                Return IDFiche
+                Return m_IDFiche
             End Get
             Set(ByVal value As Integer)
-                IDFiche = value
+                m_IDFiche = value
             End Set
         End Property
 
         Public Property pIDCommentaire() As Integer
             Get
-                Return IDCommentaire
+                Return m_IDCommentaire
             End Get
             Set(ByVal value As Integer)
-                IDCommentaire = value
+                m_IDCommentaire = value
             End Set
         End Property
 

@@ -3,6 +3,6 @@
 <asp:Content ContentPlaceHolderID="cphPageMembreContenu" runat="server">
     <div id="visualiserMessages">
         <h1>Messagerie</h1>
-        <asp:Table id="listeMessages" runat="server" />
+        <asp:Table id="tblMessages" runat="server" />
     </div>
 </asp:Content>
