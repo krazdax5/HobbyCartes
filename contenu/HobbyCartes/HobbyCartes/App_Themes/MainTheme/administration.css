@@ -101,3 +101,20 @@
     left: 85px;
     
 }
+
+.btnAdminSauv
+{
+    position: relative;
+    top: 5px;
+    left: 15px;
+    width: 200px;
+    height: 35px;
+}
+
+.fupRestaurer
+{
+    position:relative;
+    top: 10px;
+    left: 400px;
+}
+

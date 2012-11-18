@@ -7,7 +7,7 @@
 
 Imports MySql.Data
 Imports MySql.Data.MySqlClient
-
+Imports System.IO
 
 Public Class Administration
     Inherits System.Web.UI.Page
@@ -163,7 +163,22 @@ Public Class Administration
     End Sub
 
     Private Sub Sauvegarde() Handles btnSauvegarde.Click
-        Process.Start("C:\\Program Files (x86)\\MySQL\\MySQL Server 5.5\\bin\\mysqldump.exe", "--user=root --password=toor --host=localhost --all-databases ""Z:\\test.sql""")
+        Dim chemin As String = Server.MapPath("~/sauvegardes/sauvegarde.sql")
+
+        If File.Exists(chemin) Then
+            File.Delete(chemin)
+        End If
+
+        Process.Start("c:\\Program Files (x86)\\MySQL\\MySQL Server 5.5\\bin\\mysqldump.exe", "-uroot -ptoor --result-file=""" + chemin + """ --all-databases")
+
+    End Sub
+
+    Private Sub Obtenir() Handles btnObtenir.Click
+        If File.Exists(Server.MapPath("~/sauvegardes/sauvegarde.sql")) Then
+            Response.AppendHeader("Content-Disposition", "attachment; filename=hobbycartes_db.sql")
+            Response.TransmitFile(Server.MapPath("~/sauvegardes/sauvegarde.sql"))
+            Response.End()
+        End If
     End Sub
 
     Private Sub Restauration() Handles btnRestauration.Click

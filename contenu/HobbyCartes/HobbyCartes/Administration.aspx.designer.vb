@@ -77,6 +77,24 @@ Partial Public Class Administration
     Protected WithEvents btnRestauration As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''Contrôle btnObtenir.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents btnObtenir As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Contrôle fupRestaurer.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents fupRestaurer As Global.System.Web.UI.WebControls.FileUpload
+
+    '''<summary>
     '''Contrôle lblMessage.
     '''</summary>
     '''<remarks>
