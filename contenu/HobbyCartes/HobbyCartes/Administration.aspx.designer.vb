@@ -95,6 +95,15 @@ Partial Public Class Administration
     Protected WithEvents fupRestaurer As Global.System.Web.UI.WebControls.FileUpload
 
     '''<summary>
+    '''Contrôle lblErreur.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents lblErreur As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Contrôle lblMessage.
     '''</summary>
     '''<remarks>

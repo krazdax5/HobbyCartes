@@ -25,7 +25,8 @@
         <asp:Button runat="server" ID="btnSauvegarde" Text="Sauvegarder la base de données" CssClass="btnAdminSauv" />
         <asp:Button runat="server" ID="btnRestauration" Text="Restaurer" CssClass="btnAdminSauv" />
         <asp:Button runat="server" ID="btnObtenir" Text="Obtenir un cope de sauvegarde" CssClass="btnAdminSauv" /><br />
-        <asp:FileUpload ID="fupRestaurer" runat="server" CssClass="fupRestaurer" />
+        <asp:FileUpload ID="fupRestaurer" runat="server" CssClass="fupRestaurer" /><br />
+        <asp:Label ID="lblErreur" runat="server"></asp:Label>
         <div id="dMessage">
                     <asp:Label ID="lblMessage" runat="server" Text="Entrez votre message:" /> <br /><br />
                     <asp:TextBox ID="txtMessage" runat="server" TextMode="MultiLine" Width="100%" Height="100px"></asp:TextBox><br /><br />

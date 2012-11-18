@@ -178,11 +178,31 @@ Public Class Administration
             Response.AppendHeader("Content-Disposition", "attachment; filename=hobbycartes_db.sql")
             Response.TransmitFile(Server.MapPath("~/sauvegardes/sauvegarde.sql"))
             Response.End()
+        Else
+            lblErreur.Text = "Le fichier de sauvegarde n'existe pas. Sauvegarder la base de données avant de pouvoir récupérer le fichier."
         End If
     End Sub
 
     Private Sub Restauration() Handles btnRestauration.Click
-        Process.Start("C:\\Program Files (x86)\\MySQL\\MySQL Server 5.5\\bin\\mysql.exe", "--user=root --password=toor < Z:\\test.sql")
-    End Sub
+        Dim chemin As String = Server.MapPath("~/sauvegardes/sauvegarde.sql")
+        Dim fichier As FileStream
 
+        'Transfert du fichier sur le serveur
+        If fupRestaurer.HasFile Then
+            Try
+                fichier = New FileStream(chemin, FileMode.Create, FileAccess.Write)
+
+                'Écriture du fichier de sauvegarde
+                Dim data() As Byte = fupRestaurer.FileBytes
+                fichier.Write(data, 0, data.Length)
+                fichier.Close()
+
+                Process.Start("c:\\Program Files (x86)\\MySQL\\MySQL Server 5.5\\bin\\mysql.exe", "-uroot -ptoor <  " + chemin)
+            Catch ex As Exception
+                lblErreur.Text = ex.Message
+            End Try
+        Else
+            lblErreur.Text = "Veuillez sélectionner un fichier à télécharger sur le serveur. (.sql)"
+        End If
+    End Sub
 End Class
