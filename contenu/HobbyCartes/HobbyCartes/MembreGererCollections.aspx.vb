@@ -52,15 +52,13 @@ Public Class MembreGererCollections
         If Not connected Then Erreur.afficherErreur("Vous devez être connecté pour gérer vos collections.", Page)
 
         majBoutons()
-
-        If cboCollections.Items.Count <> 0 Then
-            Dim type As Entites.Collection.Type = Entites.Collection.Type.Parse(GetType(Entites.Collection.Type), cboCollections.SelectedValue)
-            remplirListeFiches(Entites.Collection.getIdCollectionParTypeEtMembre(m_idMembre, type))
-        End If
-        ' On click sur une carte, detail de la carte
-
+        majListeFiches()
     End Sub
 
+    ''' <summary>
+    ''' Mise a jour des boutons pour "Supprimer" et "Ajouter" une collection
+    ''' </summary>
+    ''' <remarks></remarks>
     Private Sub majBoutons()
         If cboCollections.Items.Count = 0 Then
             btnSupprimerCollection.Enabled = False
@@ -99,18 +97,35 @@ Public Class MembreGererCollections
     End Sub
 
     ''' <summary>
-    ''' Rempli le tableau de la liste des fiches avec une collection
+    ''' Changement de selection dans la combobox des collections
     ''' </summary>
-    Private Sub remplirListeFiches(idCollection As Integer)
-        Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
-        dbCon.Open()
-        Dim typeCol As Entites.Collection.Type = Entites.Collection.Type.Parse(GetType(Entites.Collection.Type), cboCollections.SelectedValue)
-        Dim Collection As Entites.Collection = New Entites.Collection(m_idMembre, typeCol, dbCon)
-        dbCon.Close()
-        For i As Integer = 0 To Collection.ListeFiches.Count - 1
-            tblListeFiches.Rows.Add(getFicheRow(Collection.ListeFiches.Item(i)))
-        Next
-        ' Ajoute une ligne pour ajouter une fiche a la collection
+    Protected Sub cboCollections_SelectedIndexChanged() Handles cboCollections.SelectedIndexChanged
+        majListeFiches()
+    End Sub
+
+    ''' <summary>
+    ''' Met a jour le tableau de la liste des fiches en fonction de la collection selectionnee dans le combobox
+    ''' </summary>
+    Private Sub majListeFiches()
+        ' Vide d'abord le tableau
+        tblListeFiches.Rows.Clear()
+
+        ' Ajoute l'entete du tableau
+        tblListeFiches.Rows.Add(getHeaderRow)
+
+        ' Si une collection est selectionnee dans la combobox, on ajoute toutes les fiches de la collection
+        If cboCollections.Items.Count <> 0 Then
+            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+            dbCon.Open()
+            Dim typeCol As Entites.Collection.Type = Entites.Collection.Type.Parse(GetType(Entites.Collection.Type), cboCollections.SelectedValue)
+            Dim Collection As Entites.Collection = New Entites.Collection(m_idMembre, typeCol, dbCon)
+            dbCon.Close()
+            For i As Integer = 0 To Collection.ListeFiches.Count - 1
+                tblListeFiches.Rows.Add(getFicheRow(Collection.ListeFiches.Item(i)))
+            Next
+        End If
+
+        ' Ajoute une derniere ligne pour ajouter une nouvelle fiche a la collection
         Dim rowBtnAjouter As TableRow = New TableRow
         Dim cellBtnAjouter As TableCell = New TableCell
         Dim btnAjouter As Button = New Button
@@ -120,6 +135,73 @@ Public Class MembreGererCollections
         rowBtnAjouter.Cells.Add(cellBtnAjouter)
         tblListeFiches.Rows.Add(rowBtnAjouter)
     End Sub
+
+    ''' <summary>
+    ''' Retourne la ligne d'entete du tableau des fiches
+    ''' </summary>
+    Private Function getHeaderRow() As TableHeaderRow
+        Dim rowEntete As TableHeaderRow = New TableHeaderRow
+        rowEntete.CssClass = "membreGererCollectionsTableListeFichesHeader"
+
+        Dim cellNomEntete As TableCell = New TableCell()
+        Dim lblNomEntete As Label = New Label()
+        lblNomEntete.Text = "Nom"
+        cellNomEntete.Controls.Add(lblNomEntete)
+        rowEntete.Cells.Add(cellNomEntete)
+
+        Dim cellPrenomEntete As TableCell = New TableCell()
+        Dim lblPrenomEntete As Label = New Label()
+        lblPrenomEntete.Text = "Prenom"
+        cellPrenomEntete.Controls.Add(lblPrenomEntete)
+        rowEntete.Cells.Add(cellPrenomEntete)
+
+        Dim cellEtatEntete As TableCell = New TableCell()
+        Dim lblEtatEntete As Label = New Label()
+        lblEtatEntete.Text = "Etat"
+        cellEtatEntete.Controls.Add(lblEtatEntete)
+        rowEntete.Cells.Add(cellEtatEntete)
+
+        Dim cellNumeroEntete As TableCell = New TableCell()
+        Dim lblNumeroEntete As Label = New Label()
+        lblNumeroEntete.Text = "Numero"
+        cellNumeroEntete.Controls.Add(lblNumeroEntete)
+        rowEntete.Cells.Add(cellNumeroEntete)
+
+        Dim cellRecrueEntete As TableCell = New TableCell()
+        Dim lblRecrueEntete As Label = New Label()
+        lblRecrueEntete.Text = "Recrue"
+        cellRecrueEntete.Controls.Add(lblRecrueEntete)
+        rowEntete.Cells.Add(cellRecrueEntete)
+
+        Dim cellValeurEntete As TableCell = New TableCell()
+        Dim lblValeurEntete As Label = New Label()
+        lblValeurEntete.Text = "Valeur"
+        cellValeurEntete.Controls.Add(lblValeurEntete)
+        rowEntete.Cells.Add(cellValeurEntete)
+
+        Dim cellEquipeEntete As TableCell = New TableCell()
+        Dim lblEquipeEntete As Label = New Label()
+        lblEquipeEntete.Text = "Equipe"
+        cellEquipeEntete.Controls.Add(lblEquipeEntete)
+        rowEntete.Cells.Add(cellEquipeEntete)
+
+        Dim cellEditeurEntete As TableCell = New TableCell()
+        Dim lblEditeurEntete As Label = New Label()
+        lblEditeurEntete.Text = "Editeur"
+        cellEditeurEntete.Controls.Add(lblEditeurEntete)
+        rowEntete.Cells.Add(cellEditeurEntete)
+
+        Dim cellPositionEntete As TableCell = New TableCell()
+        Dim lblPositionEntete As Label = New Label()
+        lblPositionEntete.Text = "Position"
+        cellPositionEntete.Controls.Add(lblPositionEntete)
+        rowEntete.Cells.Add(cellPositionEntete)
+
+        rowEntete.Cells.Add(New TableCell)
+        rowEntete.Cells.Add(New TableCell)
+
+        Return rowEntete
+    End Function
 
     ''' <summary>
     ''' Retourne une ligne de tableau representant la fiche passée en parametre
@@ -201,6 +283,9 @@ Public Class MembreGererCollections
         Return row
     End Function
 
+    ''' <summary>
+    ''' Clic sur le bouton pour "Supprimer une fiche"
+    ''' </summary>
     Private Sub btnSuppr_Click(ByVal sender As Object, ByVal e As EventArgs)
         Dim btnSuppr As Button = DirectCast(sender, Button)
         Dim idFiche As String = btnSuppr.ID.Substring(8)
@@ -208,6 +293,9 @@ Public Class MembreGererCollections
         Response.Redirect("MembreGererCollections.aspx")
     End Sub
 
+    ''' <summary>
+    ''' Clic sur le bouton pour "Voir le détail d'une fiche"
+    ''' </summary>
     Private Sub btnVoir_Click(ByVal sender As Object, ByVal e As EventArgs)
         Dim btnVoir As Button = DirectCast(sender, Button)
         Dim idFiche As String = btnVoir.ID.Substring(7)
