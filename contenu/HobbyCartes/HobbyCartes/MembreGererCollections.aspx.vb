@@ -129,6 +129,7 @@ Public Class MembreGererCollections
         Dim rowBtnAjouter As TableRow = New TableRow
         Dim cellBtnAjouter As TableCell = New TableCell
         Dim btnAjouter As Button = New Button
+        AddHandler btnAjouter.Click, AddressOf btnAjouterFiche_Click
         btnAjouter.Text = "Ajouter une fiche"
         cellBtnAjouter.Controls.Add(btnAjouter)
         cellBtnAjouter.ColumnSpan = 11
@@ -267,7 +268,7 @@ Public Class MembreGererCollections
         Dim btnSuppr As Button = New Button()
         btnSuppr.Text = "Supprimer"
         btnSuppr.ID = "btnSuppr" & fiche.ID
-        AddHandler btnSuppr.Click, AddressOf btnSuppr_Click
+        AddHandler btnSuppr.Click, AddressOf btnSupprFiche_Click
         btnSuppr.OnClientClick = "javascript:return confirm('Etes vous sur de vouloir supprimer cette fiche ?');"
         btnSupprCell.Controls.Add(btnSuppr)
         row.Cells.Add(btnSupprCell)
@@ -276,7 +277,7 @@ Public Class MembreGererCollections
         Dim btnVoir As Button = New Button()
         btnVoir.Text = "Voir la fiche"
         btnVoir.ID = "btnVoir" & fiche.ID
-        AddHandler btnVoir.Click, AddressOf btnVoir_Click
+        AddHandler btnVoir.Click, AddressOf btnVoirFiche_Click
         btnVoirCell.Controls.Add(btnVoir)
         row.Cells.Add(btnVoirCell)
 
@@ -286,7 +287,7 @@ Public Class MembreGererCollections
     ''' <summary>
     ''' Clic sur le bouton pour "Supprimer une fiche"
     ''' </summary>
-    Private Sub btnSuppr_Click(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub btnSupprFiche_Click(ByVal sender As Object, ByVal e As EventArgs)
         Dim btnSuppr As Button = DirectCast(sender, Button)
         Dim idFiche As String = btnSuppr.ID.Substring(8)
         Entites.Fiche.supprimer(idFiche)
@@ -296,9 +297,16 @@ Public Class MembreGererCollections
     ''' <summary>
     ''' Clic sur le bouton pour "Voir le détail d'une fiche"
     ''' </summary>
-    Private Sub btnVoir_Click(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub btnVoirFiche_Click(ByVal sender As Object, ByVal e As EventArgs)
         Dim btnVoir As Button = DirectCast(sender, Button)
         Dim idFiche As String = btnVoir.ID.Substring(7)
         Response.Redirect("Fiche.aspx?idFiche=" & idFiche)
+    End Sub
+
+    ''' <summary>
+    ''' Clic sur le bouton pour "Ajouter une fiche"
+    ''' </summary>
+    Private Sub btnAjouterFiche_Click(ByVal sender As Object, ByVal e As EventArgs)
+        Response.Redirect("MembreEditerFiche.aspx?idFiche=-1")
     End Sub
 End Class

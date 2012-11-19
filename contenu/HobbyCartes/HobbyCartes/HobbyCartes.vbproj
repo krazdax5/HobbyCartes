@@ -109,6 +109,7 @@
     <Content Include="App_Themes\MainTheme\filFiches.css" />
     <Content Include="App_Themes\MainTheme\global.css" />
     <Content Include="App_Themes\MainTheme\inscription.css" />
+    <Content Include="App_Themes\MainTheme\membreEditerFiche.css" />
     <Content Include="App_Themes\MainTheme\membreEnvoiMessage.css" />
     <Content Include="App_Themes\MainTheme\membreGererCollections.css" />
     <Content Include="App_Themes\MainTheme\membreInfo.css" />
@@ -122,6 +123,7 @@
     <Content Include="FilFiches.aspx" />
     <Content Include="img\titre.png" />
     <Content Include="Inscription.aspx" />
+    <Content Include="MembreEditerFiche.aspx" />
     <Content Include="MembreGererCollections.aspx" />
     <Content Include="MembreEnvoiMessage.aspx" />
     <Content Include="MembreInfo.aspx" />
@@ -204,6 +206,13 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Entites\Membre.vb" />
+    <Compile Include="MembreEditerFiche.aspx.designer.vb">
+      <DependentUpon>MembreEditerFiche.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MembreEditerFiche.aspx.vb">
+      <DependentUpon>MembreEditerFiche.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="MembreGererCollections.aspx.designer.vb">
       <DependentUpon>MembreGererCollections.aspx</DependentUpon>
     </Compile>
