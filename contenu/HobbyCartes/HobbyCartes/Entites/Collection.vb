@@ -248,8 +248,6 @@ Namespace Entites
             Return Not New MySqlCommand("SELECT COUNT(*) FROM collection WHERE idmembre=" & idMembre & " AND typecol='" & typeCol.ToString & "'", dbCon).ExecuteScalar = 0
         End Function
 
-
-        
     End Class
 
 End Namespace

@@ -140,7 +140,7 @@ Namespace Entites
         ''' </summary>
         Public ReadOnly Property Equipe As String
             Get
-                Dim EquipeFiche As New Equipe(m_idEquipe, m_dbConnectionFiche)
+                Dim EquipeFiche As New Equipe(m_idEquipe)
                 Return EquipeFiche.Nom
             End Get
         End Property

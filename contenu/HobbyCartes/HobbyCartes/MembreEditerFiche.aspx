@@ -7,55 +7,55 @@
         <table>
             <tr>
                 <td>Collection : </td>
-                <td><asp:DropDownList ID="DropDownList1" runat="server" /></td>
+                <td><asp:DropDownList ID="dropDownCollection" runat="server" /></td>
             </tr>
             <tr>
                 <td>Editeur : </td>
-                <td><asp:DropDownList ID="DropDownList2" runat="server" /></td>
+                <td><asp:DropDownList ID="dropDownEditeur" runat="server" />  <asp:Button ID="btnEditeur" runat="server" Text="Ajouter nouveau" /></td>
             </tr>
             <tr>
                 <td>Equipe : </td>
-                <td></td>
+                <td><asp:DropDownList ID="DropDownEquipe" runat="server" />  <asp:Button ID="btnEquipe" runat="server" Text="Ajouter nouveau" /></td>
             </tr>
             <tr>
                 <td>Année : </td>
-                <td></td>
+                <td><asp:TextBox ID="txtAnnee" runat="server" /></td>
             </tr>
             <tr>
                 <td>Nom joueur : </td>
-                <td></td>
+                <td><asp:TextBox ID="TextBox1" runat="server" /></td>
             </tr>
             <tr>
                 <td>Prenom joueur : </td>
-                <td></td>
+                <td><asp:TextBox ID="TextBox2" runat="server" /></td>
             </tr>
             <tr>
                 <td>Numéro joueur : </td>
-                <td></td>
+                <td><asp:TextBox ID="TextBox3" runat="server" /></td>
             </tr>
             <tr>
                 <td>Recrue : </td>
-                <td></td>
+                <td><asp:CheckBox ID="chkRecrue" runat="server" /></td>
             </tr>
             <tr>
                 <td>Position : </td>
-                <td></td>
+                <td><asp:TextBox ID="TextBox4" runat="server" /></td>
             </tr>
             <tr>
                 <td>Valeur : </td>
-                <td></td>
+                <td><asp:TextBox ID="TextBox5" runat="server" /></td>
             </tr>
             <tr>
                 <td>Etat : </td>
-                <td></td>
+                <td><asp:dropdownlist runat="server" /></td>
             </tr>
             <tr>
                 <td>Image avant : </td>
-                <td></td>
+                <td><asp:FileUpload runat="server" /></td>
             </tr>
             <tr>
                 <td>Image arrière : </td>
-                <td></td>
+                <td><asp:FileUpload ID="FileUpload1" runat="server" /></td>
             </tr>
         </table>
 

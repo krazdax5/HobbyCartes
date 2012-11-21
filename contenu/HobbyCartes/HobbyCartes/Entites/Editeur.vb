@@ -67,6 +67,20 @@ Namespace Entites
             End Try
         End Sub
 
+        Public Shared Function getAll() As List(Of Editeur)
+            Dim retour As List(Of Editeur) = New List(Of Editeur)
+            Dim connection As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+            connection.Open()
+            Dim requete As MySqlCommand = New MySqlCommand("SELECT idediteur FROM editeur", connection)
+            Dim reader As MySqlDataReader = requete.ExecuteReader()
+            While reader.Read()
+                retour.Add(New Editeur(reader.GetString("idediteur")))
+            End While
+            reader.Close()
+            connection.Close()
+            Return retour
+        End Function
+
     End Class
 
 End Namespace
