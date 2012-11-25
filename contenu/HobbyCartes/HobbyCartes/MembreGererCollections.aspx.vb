@@ -118,9 +118,9 @@ Public Class MembreGererCollections
             Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
             dbCon.Open()
             Dim typeCol As Entites.Collection.Type = Entites.Collection.Type.Parse(GetType(Entites.Collection.Type), cboCollections.SelectedValue)
-            Dim Collection As Entites.Collection = New Entites.Collection(m_idMembre, typeCol, dbCon)
+            Dim collection As Entites.Collection = New Entites.Collection(m_idMembre, typeCol, dbCon)
             dbCon.Close()
-            For i As Integer = 0 To Collection.ListeFiches.Count - 1
+            For i As Integer = 0 To collection.ListeFiches.Count - 1
                 tblListeFiches.Rows.Add(getFicheRow(Collection.ListeFiches.Item(i)))
             Next
         End If
@@ -129,10 +129,10 @@ Public Class MembreGererCollections
         Dim rowBtnAjouter As TableRow = New TableRow
         Dim cellBtnAjouter As TableCell = New TableCell
         Dim btnAjouter As Button = New Button
-        AddHandler btnAjouter.Click, AddressOf btnAjouterFiche_Click
-        btnAjouter.Text = "Ajouter une fiche"
+        btnAjouter.PostBackUrl = "MembreEditerFiche.aspx?idFiche=-1"
+        btnAjouter.Text = "Ajouter une nouvelle fiche"
         cellBtnAjouter.Controls.Add(btnAjouter)
-        cellBtnAjouter.ColumnSpan = 11
+        cellBtnAjouter.ColumnSpan = 12
         rowBtnAjouter.Cells.Add(cellBtnAjouter)
         tblListeFiches.Rows.Add(rowBtnAjouter)
     End Sub
@@ -158,7 +158,7 @@ Public Class MembreGererCollections
 
         Dim cellEtatEntete As TableCell = New TableCell()
         Dim lblEtatEntete As Label = New Label()
-        lblEtatEntete.Text = "Etat"
+        lblEtatEntete.Text = "Equipe"
         cellEtatEntete.Controls.Add(lblEtatEntete)
         rowEntete.Cells.Add(cellEtatEntete)
 
@@ -170,34 +170,35 @@ Public Class MembreGererCollections
 
         Dim cellRecrueEntete As TableCell = New TableCell()
         Dim lblRecrueEntete As Label = New Label()
-        lblRecrueEntete.Text = "Recrue"
+        lblRecrueEntete.Text = "Position"
         cellRecrueEntete.Controls.Add(lblRecrueEntete)
         rowEntete.Cells.Add(cellRecrueEntete)
 
         Dim cellValeurEntete As TableCell = New TableCell()
         Dim lblValeurEntete As Label = New Label()
-        lblValeurEntete.Text = "Valeur"
+        lblValeurEntete.Text = "Recrue"
         cellValeurEntete.Controls.Add(lblValeurEntete)
         rowEntete.Cells.Add(cellValeurEntete)
 
         Dim cellEquipeEntete As TableCell = New TableCell()
         Dim lblEquipeEntete As Label = New Label()
-        lblEquipeEntete.Text = "Equipe"
+        lblEquipeEntete.Text = "Etat"
         cellEquipeEntete.Controls.Add(lblEquipeEntete)
         rowEntete.Cells.Add(cellEquipeEntete)
 
         Dim cellEditeurEntete As TableCell = New TableCell()
         Dim lblEditeurEntete As Label = New Label()
-        lblEditeurEntete.Text = "Editeur"
+        lblEditeurEntete.Text = "Valeur"
         cellEditeurEntete.Controls.Add(lblEditeurEntete)
         rowEntete.Cells.Add(cellEditeurEntete)
 
         Dim cellPositionEntete As TableCell = New TableCell()
         Dim lblPositionEntete As Label = New Label()
-        lblPositionEntete.Text = "Position"
+        lblPositionEntete.Text = "Editeur"
         cellPositionEntete.Controls.Add(lblPositionEntete)
         rowEntete.Cells.Add(cellPositionEntete)
 
+        rowEntete.Cells.Add(New TableCell)
         rowEntete.Cells.Add(New TableCell)
         rowEntete.Cells.Add(New TableCell)
 
@@ -211,7 +212,7 @@ Public Class MembreGererCollections
         Dim row As TableRow = New TableRow
 
         Dim cellNom As TableCell = New TableCell
-        Dim labNom As Label = New Label()
+        Dim labNom As Label = New Label
         labNom.Text = fiche.NomJoueur
         cellNom.Controls.Add(labNom)
         row.Cells.Add(cellNom)
@@ -222,11 +223,11 @@ Public Class MembreGererCollections
         cellPrenom.Controls.Add(labPrenom)
         row.Cells.Add(cellPrenom)
 
-        Dim cellEtat = New TableCell
-        Dim labEtat = New Label()
-        labEtat.Text = fiche.Etatfiche.ToString
-        cellEtat.Controls.Add(labEtat)
-        row.Cells.Add(cellEtat)
+        Dim cellEquipe = New TableCell
+        Dim labEquipe = New Label()
+        labEquipe.Text = fiche.Equipe.Nom
+        cellEquipe.Controls.Add(labEquipe)
+        row.Cells.Add(cellEquipe)
 
         Dim cellNumero = New TableCell
         Dim labNumero = New Label()
@@ -234,35 +235,35 @@ Public Class MembreGererCollections
         cellNumero.Controls.Add(labNumero)
         row.Cells.Add(cellNumero)
 
+        Dim cellPosition = New TableCell
+        Dim labPosition = New Label()
+        labPosition.Text = fiche.Position
+        cellPosition.Controls.Add(labPosition)
+        row.Cells.Add(cellPosition)
+
         Dim cellRecrue = New TableCell
         Dim labRecrue = New Label()
-        labNumero.Text = fiche.Recrue
-        cellRecrue.Controls.Add(labNumero)
+        If fiche.Recrue Then labRecrue.Text = "Oui" Else labRecrue.Text = "Non"
+        cellRecrue.Controls.Add(labRecrue)
         row.Cells.Add(cellRecrue)
+
+        Dim cellEtat = New TableCell
+        Dim labEtat = New Label()
+        labEtat.Text = fiche.Etatfiche.ToString
+        cellEtat.Controls.Add(labEtat)
+        row.Cells.Add(cellEtat)
 
         Dim cellValeur = New TableCell
         Dim labValeur = New Label()
-        labValeur.Text = fiche.Valeur
+        labValeur.Text = "$" & fiche.Valeur
         cellValeur.Controls.Add(labValeur)
         row.Cells.Add(cellValeur)
-
-        Dim cellEquipe = New TableCell
-        Dim labEquipe = New Label()
-        labEquipe.Text = fiche.Equipe
-        cellEquipe.Controls.Add(labEquipe)
-        row.Cells.Add(cellEquipe)
 
         Dim cellEditeur = New TableCell
         Dim labEditeur = New Label()
         labEditeur.Text = fiche.Editeur.nomEditeur
         cellEditeur.Controls.Add(labEditeur)
         row.Cells.Add(cellEditeur)
-
-        Dim cellPosition = New TableCell
-        Dim labPosition = New Label()
-        labPosition.Text = fiche.Position
-        cellPosition.Controls.Add(labPosition)
-        row.Cells.Add(cellPosition)
 
         Dim btnSupprCell As TableCell = New TableCell()
         Dim btnSuppr As Button = New Button()
@@ -275,11 +276,19 @@ Public Class MembreGererCollections
 
         Dim btnVoirCell As TableCell = New TableCell()
         Dim btnVoir As Button = New Button()
-        btnVoir.Text = "Voir la fiche"
+        btnVoir.Text = "Voir"
         btnVoir.ID = "btnVoir" & fiche.ID
         AddHandler btnVoir.Click, AddressOf btnVoirFiche_Click
         btnVoirCell.Controls.Add(btnVoir)
         row.Cells.Add(btnVoirCell)
+
+        Dim btnEditerCell As TableCell = New TableCell()
+        Dim btnEditer As Button = New Button()
+        btnEditer.Text = "Editer"
+        btnEditer.ID = "btnEditer" & fiche.ID
+        AddHandler btnEditer.Click, AddressOf btnEditerFiche_Click
+        btnEditerCell.Controls.Add(btnEditer)
+        row.Cells.Add(btnEditerCell)
 
         Return row
     End Function
@@ -304,9 +313,12 @@ Public Class MembreGererCollections
     End Sub
 
     ''' <summary>
-    ''' Clic sur le bouton pour "Ajouter une fiche"
+    ''' Clic sur le bouton pour "Editer une fiche"
     ''' </summary>
-    Private Sub btnAjouterFiche_Click(ByVal sender As Object, ByVal e As EventArgs)
-        Response.Redirect("MembreEditerFiche.aspx?idFiche=-1")
+    Private Sub btnEditerFiche_Click(ByVal sender As Object, ByVal e As EventArgs)
+        Dim btnEditer As Button = DirectCast(sender, Button)
+        Dim idFiche As String = btnEditer.ID.Substring(9)
+        Response.Redirect("MembreEditerFiche.aspx?idFiche=" & idFiche)
     End Sub
+
 End Class

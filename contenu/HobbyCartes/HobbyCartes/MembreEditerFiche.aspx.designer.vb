@@ -23,6 +23,87 @@ Partial Public Class MembreEditerFiche
     Protected WithEvents dropDownCollection As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
+    '''Contrôle txtNomJoueur.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents txtNomJoueur As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Contrôle txtPrenomJoueur.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents txtPrenomJoueur As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Contrôle dropDownEquipe.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents dropDownEquipe As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''Contrôle btnEquipe.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents btnEquipe As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Contrôle txtNumeroJoueur.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents txtNumeroJoueur As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Contrôle txtPosition.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents txtPosition As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Contrôle chkRecrue.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents chkRecrue As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''Contrôle dropDownEtat.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents dropDownEtat As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''Contrôle txtValeur.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents txtValeur As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''Contrôle dropDownEditeur.
     '''</summary>
     '''<remarks>
@@ -41,24 +122,6 @@ Partial Public Class MembreEditerFiche
     Protected WithEvents btnEditeur As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Contrôle DropDownEquipe.
-    '''</summary>
-    '''<remarks>
-    '''Champ généré automatiquement.
-    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-    '''</remarks>
-    Protected WithEvents DropDownEquipe As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''Contrôle btnEquipe.
-    '''</summary>
-    '''<remarks>
-    '''Champ généré automatiquement.
-    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-    '''</remarks>
-    Protected WithEvents btnEquipe As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
     '''Contrôle txtAnnee.
     '''</summary>
     '''<remarks>
@@ -68,65 +131,47 @@ Partial Public Class MembreEditerFiche
     Protected WithEvents txtAnnee As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Contrôle TextBox1.
+    '''Contrôle fichierImageAvant.
     '''</summary>
     '''<remarks>
     '''Champ généré automatiquement.
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
-    Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents fichierImageAvant As Global.System.Web.UI.WebControls.FileUpload
 
     '''<summary>
-    '''Contrôle TextBox2.
+    '''Contrôle imageAvant.
     '''</summary>
     '''<remarks>
     '''Champ généré automatiquement.
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
-    Protected WithEvents TextBox2 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents imageAvant As Global.System.Web.UI.WebControls.Image
 
     '''<summary>
-    '''Contrôle TextBox3.
+    '''Contrôle fichierImageArriere.
     '''</summary>
     '''<remarks>
     '''Champ généré automatiquement.
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
-    Protected WithEvents TextBox3 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents fichierImageArriere As Global.System.Web.UI.WebControls.FileUpload
 
     '''<summary>
-    '''Contrôle chkRecrue.
+    '''Contrôle imageArriere.
     '''</summary>
     '''<remarks>
     '''Champ généré automatiquement.
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
-    Protected WithEvents chkRecrue As Global.System.Web.UI.WebControls.CheckBox
+    Protected WithEvents imageArriere As Global.System.Web.UI.WebControls.Image
 
     '''<summary>
-    '''Contrôle TextBox4.
+    '''Contrôle btnEnregistrer.
     '''</summary>
     '''<remarks>
     '''Champ généré automatiquement.
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
-    Protected WithEvents TextBox4 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''Contrôle TextBox5.
-    '''</summary>
-    '''<remarks>
-    '''Champ généré automatiquement.
-    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-    '''</remarks>
-    Protected WithEvents TextBox5 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''Contrôle FileUpload1.
-    '''</summary>
-    '''<remarks>
-    '''Champ généré automatiquement.
-    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-    '''</remarks>
-    Protected WithEvents FileUpload1 As Global.System.Web.UI.WebControls.FileUpload
+    Protected WithEvents btnEnregistrer As Global.System.Web.UI.WebControls.Button
 End Class

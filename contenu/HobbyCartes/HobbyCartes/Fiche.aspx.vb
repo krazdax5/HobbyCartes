@@ -26,7 +26,7 @@ Public Class Fiche
         m_connection = New MySqlConnection(My.Resources.StringConnexionBdd)
         m_connection.Open()
 
-        m_Fiche = New Entites.Fiche(idFiche, m_connection)
+        m_Fiche = New Entites.Fiche(idFiche)
         Dim NbCom As Integer = m_Fiche.nbCom()
 
         'Affiche le bouton supprimer commentaires si le membre est administrateur
@@ -143,7 +143,7 @@ Public Class Fiche
         lblValeur.Text = FormatCurrency(m_Fiche.Valeur, 2) + "CAD"
         hpDetenteur.Text = m_Fiche.PseudoDetenteur()
         hpDetenteur.NavigateUrl = "membreinfo.aspx?pseudo=" + m_Fiche.PseudoDetenteur()
-        lblEquipe.Text = m_Fiche.Equipe
+        lblEquipe.Text = m_Fiche.Equipe.Nom
         lblNumero.Text = m_Fiche.Numero.ToString()
         lblPosition.Text = m_Fiche.Position
         Dim isRecrue As Boolean = m_Fiche.Recrue

@@ -13,10 +13,10 @@ Namespace Entites
     Public Class Collection
 
         Public Enum Type
-            Hockey
-            Baseball
-            Football
-            Basketball
+            hockey
+            baseball
+            football
+            basketball
         End Enum
 
         ''' <summary>
@@ -123,7 +123,7 @@ Namespace Entites
             End While
             read.Close()
             For Each idFiche As Integer In idFiches
-                m_fiches.Add(New Fiche(idFiche, dbCon))
+                m_fiches.Add(New Fiche(idFiche))
             Next
         End Sub
 
@@ -147,7 +147,7 @@ Namespace Entites
                 m_fiches = New List(Of Entites.Fiche)()
                 'Remplissage de la liste de fiches
                 For Each identificateur In listeID
-                    m_fiches.Add(New Entites.Fiche(identificateur, m_connection))
+                    m_fiches.Add(New Entites.Fiche(identificateur))
                 Next
             Catch ex As Exception
                 m_fiches = Nothing
@@ -237,7 +237,7 @@ Namespace Entites
         Public Shared Function getIdCollectionParTypeEtMembre(idMembre As Integer, typeCol As Type)
             Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
             dbCon.Open()
-            Dim req As MySqlCommand = New MySqlCommand("SELECT idcollection FROM collection WHERE idMembre=" & idMembre & " AND typecol='" & typeCol & "'", dbCon)
+            Dim req As MySqlCommand = New MySqlCommand("SELECT idcollection FROM collection WHERE idMembre=" & idMembre & " AND typecol='" & typeCol.ToString & "'", dbCon)
             Dim ret = req.ExecuteScalar
             dbCon.Close()
             Return ret

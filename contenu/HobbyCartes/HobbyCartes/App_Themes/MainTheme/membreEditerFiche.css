@@ -12,12 +12,23 @@
     border-collapse: collapse;
 }
 
-#membre #membre_contenu #membreEditerFiche  td
+#membre #membre_contenu #membreEditerFiche td
 {
     border : 1px solid white;
     padding : 10px;
 }
 
+#membre #membre_contenu #membreEditerFiche td.align_center
+{
+    text-align : center;
+}
+
+#membre #membre_contenu #membreEditerFiche td .img
+{
+    display : block;
+    padding-top : 10px;
+    width : 100px;
+}
 
 /*
 #membre #membre_contenu #membreEditerFiche p

@@ -12,7 +12,7 @@ Namespace Entites
 
         Private m_nom As String
 
-        Private m_ID As Integer
+        Private m_id As Integer
 
         Public ReadOnly Property Nom As String
             Get
@@ -20,7 +20,15 @@ Namespace Entites
             End Get
         End Property
 
-        'Constructeur de L'équipe
+        Public ReadOnly Property ID As String
+            Get
+                Return m_id
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' Constructeur via l'id
+        ''' </summary>
         Public Sub New(id As Integer)
             Dim connection As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
             connection.Open()
@@ -28,8 +36,24 @@ Namespace Entites
             Dim reader As MySqlDataReader
             reader = requete.ExecuteReader()
             reader.Read()
+            m_id = id
             m_nom = reader.GetString("nomeq")
-            m_ID = id
+            reader.Close()
+            connection.Close()
+        End Sub
+
+        ''' <summary>
+        ''' Constructeur via le nom
+        ''' </summary>
+        Public Sub New(nom As String)
+            Dim connection As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+            connection.Open()
+            Dim requete As MySqlCommand = New MySqlCommand("SELECT * FROM equipe WHERE nomeq=""" & nom & """", connection)
+            Dim reader As MySqlDataReader
+            reader = requete.ExecuteReader()
+            reader.Read()
+            m_id = reader.GetString("idequipe")
+            m_nom = nom
             reader.Close()
             connection.Close()
         End Sub
@@ -49,9 +73,6 @@ Namespace Entites
         End Function
 
     End Class
-
-
-
 
 
 End Namespace

@@ -44,27 +44,39 @@ Namespace Entites
         End Property
 
         ''' <summary>
-        ''' Constructeur par défaut. m_id est -1 si la construction échoue.
+        ''' Constructeur via l'id. m_id est -1 si la construction échoue.
         ''' </summary>
         ''' <param name="id">Identificateur de l'éditeur.</param>
         Public Sub New(id As Integer)
             Dim connection As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
             connection.Open()
             Dim requete As MySqlCommand = New MySqlCommand("SELECT * FROM editeur WHERE idediteur=" + id.ToString, connection)
-
             Try
                 Dim reader As MySqlDataReader = requete.ExecuteReader()
                 reader.Read()
-
                 m_nom = reader.GetString("nomed")
                 m_id = id
                 reader.Close()
             Catch ex As Exception
                 m_nom = ""
                 m_id = -1
-            Finally
-                connection.Close()
             End Try
+            connection.Close()
+        End Sub
+
+        ''' <summary>
+        ''' Constructeur via le nom
+        ''' </summary>
+        Public Sub New(nom As String)
+            Dim connection As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+            connection.Open()
+            Dim requete As MySqlCommand = New MySqlCommand("SELECT * FROM editeur WHERE nomed=""" & nom & """", connection)
+            Dim reader As MySqlDataReader = requete.ExecuteReader()
+            reader.Read()
+            m_nom = nom
+            m_id = reader.GetString("idediteur")
+            reader.Close()
+            connection.Close()
         End Sub
 
         Public Shared Function getAll() As List(Of Editeur)
@@ -74,7 +86,7 @@ Namespace Entites
             Dim requete As MySqlCommand = New MySqlCommand("SELECT idediteur FROM editeur", connection)
             Dim reader As MySqlDataReader = requete.ExecuteReader()
             While reader.Read()
-                retour.Add(New Editeur(reader.GetString("idediteur")))
+                retour.Add(New Editeur(reader.GetInt32("idediteur")))
             End While
             reader.Close()
             connection.Close()

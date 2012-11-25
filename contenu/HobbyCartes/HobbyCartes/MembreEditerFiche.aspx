@@ -3,59 +3,66 @@
 <asp:Content ContentPlaceHolderID="cphPageMembreContenu" runat="server">
     <div id="membreEditerFiche" >
         <h1>Editer une fiche</h1>
-        <div class="line" />
+        <div class="line" ></div>
         <table>
             <tr>
                 <td>Collection : </td>
                 <td><asp:DropDownList ID="dropDownCollection" runat="server" /></td>
             </tr>
             <tr>
-                <td>Editeur : </td>
-                <td><asp:DropDownList ID="dropDownEditeur" runat="server" />  <asp:Button ID="btnEditeur" runat="server" Text="Ajouter nouveau" /></td>
-            </tr>
-            <tr>
-                <td>Equipe : </td>
-                <td><asp:DropDownList ID="DropDownEquipe" runat="server" />  <asp:Button ID="btnEquipe" runat="server" Text="Ajouter nouveau" /></td>
-            </tr>
-            <tr>
-                <td>Année : </td>
-                <td><asp:TextBox ID="txtAnnee" runat="server" /></td>
-            </tr>
-            <tr>
                 <td>Nom joueur : </td>
-                <td><asp:TextBox ID="TextBox1" runat="server" /></td>
+                <td><asp:TextBox ID="txtNomJoueur" runat="server" /></td>
             </tr>
             <tr>
                 <td>Prenom joueur : </td>
-                <td><asp:TextBox ID="TextBox2" runat="server" /></td>
+                <td><asp:TextBox ID="txtPrenomJoueur" runat="server" /></td>
+            </tr>
+            <tr>
+                <td>Equipe : </td>
+                <td><asp:DropDownList ID="dropDownEquipe" runat="server" />  
+                <asp:Button ID="btnEquipe" runat="server" Text="Ajouter nouveau" /></td>
             </tr>
             <tr>
                 <td>Numéro joueur : </td>
-                <td><asp:TextBox ID="TextBox3" runat="server" /></td>
+                <td><asp:TextBox ID="txtNumeroJoueur" runat="server" /></td>
+            </tr>
+            <tr>
+                <td>Position : </td>
+                <td><asp:TextBox ID="txtPosition" runat="server" /></td>
             </tr>
             <tr>
                 <td>Recrue : </td>
                 <td><asp:CheckBox ID="chkRecrue" runat="server" /></td>
             </tr>
             <tr>
-                <td>Position : </td>
-                <td><asp:TextBox ID="TextBox4" runat="server" /></td>
+                <td>Etat de la fiche : </td>
+                <td><asp:dropdownlist id="dropDownEtat" runat="server" /></td>
             </tr>
             <tr>
                 <td>Valeur : </td>
-                <td><asp:TextBox ID="TextBox5" runat="server" /></td>
+                <td><asp:TextBox ID="txtValeur" runat="server" /></td>
             </tr>
             <tr>
-                <td>Etat : </td>
-                <td><asp:dropdownlist runat="server" /></td>
+                <td>Editeur : </td>
+                <td><asp:DropDownList ID="dropDownEditeur" runat="server" />  
+                <asp:Button ID="btnEditeur" runat="server" Text="Ajouter nouveau" /></td>
             </tr>
+            <!--<tr>
+                <td>Année : </td>
+                <td><asp:TextBox ID="txtAnnee" runat="server" /></td>
+            </tr>-->
             <tr>
                 <td>Image avant : </td>
-                <td><asp:FileUpload runat="server" /></td>
+                <td><asp:FileUpload id="fichierImageAvant" runat="server" />
+                <asp:Image runat="server" ID="imageAvant" cssclass="img" /></td>
             </tr>
             <tr>
                 <td>Image arrière : </td>
-                <td><asp:FileUpload ID="FileUpload1" runat="server" /></td>
+                <td><asp:FileUpload ID="fichierImageArriere" runat="server" />
+                <asp:Image runat="server" ID="imageArriere" cssclass="img" /></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="align_center"><asp:Button ID="btnEnregistrer" runat="server" Text="Enregistrer" /></td>
             </tr>
         </table>
 

@@ -526,6 +526,22 @@ Namespace Entites
             Return Nombre
         End Function
 
+        ''' <summary>
+        ''' Check si l'id de la fiche passee en parametre correspond a une fiche du membre dont l'id est passee en parametre
+        ''' </summary>
+        Public Shared Function isPropreFiche(idFiche As Integer, idMembre As Integer) As Boolean
+            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+            dbCon.Open()
+            Dim requete As MySqlCommand = New MySqlCommand("SELECT COUNT(*) FROM fiche, collection, membre " &
+                                                           "WHERE fiche.idcollection = collection.idcollection " &
+                                                           "AND collection.idmembre = membre.idmembre " &
+                                                           "AND fiche.idfiche = " & idFiche & " " &
+                                                           "AND membre.idmembre = " & idMembre, dbCon)
+            Dim nb As Integer = Integer.Parse(requete.ExecuteScalar)
+            dbCon.Close()
+            Return nb <> 0
+        End Function
+
     End Class
 
 End Namespace
