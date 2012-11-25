@@ -4,8 +4,8 @@
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>160</x>
-      <y>190</y>
+      <x>0</x>
+      <y>170</y>
       <w>110</w>
       <h>120</h>
     </coordinates>
@@ -14,39 +14,39 @@
 #IDMess
 _IDDestinataire_
 _IDDestinateur_
-Objet
-Mess</panel_attributes>
+Objetmes
+Mesmes</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>350</x>
-      <y>180</y>
+      <x>190</x>
+      <y>160</y>
       <w>120</w>
       <h>240</h>
     </coordinates>
     <panel_attributes>Membre
 --
 #IDMembre
-Prenom
-Nom
-NomUtilisateur
-MotPasse
-Ville
-CodePostal
-Courriel
-Admin
-ArrierePlan
-DateInscription
-ImageMembre</panel_attributes>
+Prenommem
+Nommem
+NomUtilisateurmem
+MotPassemem
+Villemem
+CodePostalmem
+Courrielmem
+Adminmem
+ArrierePlanmem
+DateInscriptionmem
+ImageMembremem</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>600</x>
-      <y>180</y>
+      <x>440</x>
+      <y>160</y>
       <w>150</w>
       <h>90</h>
     </coordinates>
@@ -54,14 +54,14 @@ ImageMembre</panel_attributes>
 --
 #IDCollection
 _IDMembre_
-Type</panel_attributes>
+Typecol</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>830</x>
-      <y>200</y>
+      <x>670</x>
+      <y>180</y>
       <w>150</w>
       <h>300</h>
     </coordinates>
@@ -71,53 +71,53 @@ Type</panel_attributes>
 _IDCollection_
 _IDEditeur_
 _IDEquipe_
-Annee
-NomJoueur
-PrenomJoueur
-NoJoueur
-Recrue
-Position
-Numerotation
-Valeur
-Etat
-ImageDevant
-ImageDerriere
-PublicationSurSite</panel_attributes>
+Anneefi
+NomJoueurfi
+PrenomJoueurfi
+NoJoueurfi
+Recruefi
+Positionfi
+Numerotationfi
+Valeurfi
+Etatfi
+ImageDevantfi
+ImageDerrierefi
+PublicationSurSitefi</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>1070</x>
-      <y>270</y>
+      <x>910</x>
+      <y>250</y>
       <w>150</w>
       <h>70</h>
     </coordinates>
     <panel_attributes>Editeur
 --
 #IDEditeur
-Nom</panel_attributes>
+Nomedi</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>1070</x>
-      <y>370</y>
+      <x>910</x>
+      <y>350</y>
       <w>150</w>
       <h>70</h>
     </coordinates>
     <panel_attributes>Equipe
 --
 #IDEquipe
-Nom</panel_attributes>
+Nomeq</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>1070</x>
-      <y>140</y>
+      <x>910</x>
+      <y>120</y>
       <w>150</w>
       <h>100</h>
     </coordinates>
@@ -125,15 +125,15 @@ Nom</panel_attributes>
 --
 #IDCommentaire
 _IDFiche_
-Destinateur
-Message</panel_attributes>
+Destinateurcom
+Messagecom</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>240</x>
-      <y>180</y>
+      <x>80</x>
+      <y>160</y>
       <w>130</w>
       <h>80</h>
     </coordinates>
@@ -143,8 +143,8 @@ Message</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>240</x>
-      <y>180</y>
+      <x>80</x>
+      <y>160</y>
       <w>130</w>
       <h>100</h>
     </coordinates>
@@ -154,8 +154,8 @@ Message</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>440</x>
-      <y>180</y>
+      <x>280</x>
+      <y>160</y>
       <w>180</w>
       <h>70</h>
     </coordinates>
@@ -165,8 +165,8 @@ Message</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>720</x>
-      <y>180</y>
+      <x>560</x>
+      <y>160</y>
       <w>130</w>
       <h>90</h>
     </coordinates>
@@ -176,8 +176,8 @@ Message</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>950</x>
-      <y>260</y>
+      <x>790</x>
+      <y>240</y>
       <w>140</w>
       <h>160</h>
     </coordinates>
@@ -187,8 +187,8 @@ Message</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>950</x>
-      <y>240</y>
+      <x>790</x>
+      <y>220</y>
       <w>140</w>
       <h>80</h>
     </coordinates>
@@ -198,12 +198,30 @@ Message</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>950</x>
-      <y>160</y>
+      <x>790</x>
+      <y>140</y>
       <w>140</w>
       <h>90</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>120;30;30;70</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>440</x>
+      <y>290</y>
+      <w>140</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>Transactions
+--
+#IDMembre
+IDTransactions
+NomUtilisateurtrans
+Typetrans
+TypeObjectrans
+Datetrans</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
