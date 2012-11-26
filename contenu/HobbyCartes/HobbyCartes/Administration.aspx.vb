@@ -135,7 +135,7 @@ Public Class Administration
         Dim Admin As Entites.Membre = New Entites.Membre(Integer.Parse(Session("idMembre")), m_connection)
         For Each checkbox In m_checkBoxes
             If checkbox.Checked Then
-                Admin.envoyerMessage(New Entites.Membre(Integer.Parse(checkbox.ID.Remove(0, 2)), m_connection), "Communiqué", txtMessage.Text)
+                Admin.envoyerMessageInterne(New Entites.Membre(Integer.Parse(checkbox.ID.Remove(0, 2)), m_connection), "Communiqué", txtMessage.Text)
                 checkbox.Checked = False
                 i += 1
             End If

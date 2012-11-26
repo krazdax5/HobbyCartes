@@ -22,8 +22,13 @@
                     <td class="maxCol" colspan="2"><asp:TextBox ID="txtContenu" TextMode="MultiLine" Rows="20" runat="server" Width="100%" /></td>
                 </tr>
                 <tr>
+                    <td class="maxCol" colspan="2"><asp:CheckBox runat="server" ID="chkMessagerieExterne" /> 
+                    Envoi sur messagerie externe
+                    </td>
+                </tr>
+                <tr>
                     <td class="maxCol" colspan="2"><asp:Button runat="server" id="btnEnvoyer" text="Envoyer" />
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtObjet" ForeColor="Red" Font-Bold="true" ErrorMessage="Vous devez spécifier un objet !" />
+                    <asp:RequiredFieldValidator runat="server" ControlToValidate="txtObjet" ForeColor="Red" Font-Bold="true" ErrorMessage="Vous devez spécifier un objet !" />
                     </td>
                 </tr>
             </tbody>
