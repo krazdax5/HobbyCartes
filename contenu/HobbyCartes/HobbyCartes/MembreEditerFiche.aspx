@@ -11,24 +11,29 @@
             </tr>
             <tr>
                 <td>Nom joueur : </td>
-                <td><asp:TextBox ID="txtNomJoueur" runat="server" /></td>
+                <td><asp:TextBox ID="txtNomJoueur" runat="server" /> * 
+                <asp:RequiredFieldValidator controltovalidate="txtNomJoueur" ErrorMessage="Requis" runat="server" /></td>
             </tr>
             <tr>
                 <td>Prenom joueur : </td>
-                <td><asp:TextBox ID="txtPrenomJoueur" runat="server" /></td>
+                <td><asp:TextBox ID="txtPrenomJoueur" runat="server" /> * 
+                <asp:RequiredFieldValidator controltovalidate="txtPrenomJoueur" ErrorMessage="Requis" runat="server" /></td>
             </tr>
             <tr>
                 <td>Equipe : </td>
                 <td><asp:DropDownList ID="dropDownEquipe" runat="server" />  
-                <asp:Button ID="btnEquipe" runat="server" Text="Ajouter nouveau" /></td>
+                <!-- <asp:Button ID="btnEquipe" runat="server" Text="Ajouter nouveau" /> --></td>
             </tr>
             <tr>
                 <td>Numéro joueur : </td>
-                <td><asp:TextBox ID="txtNumeroJoueur" runat="server" /></td>
+                <td><asp:TextBox ID="txtNumeroJoueur" runat="server" /> * 
+                <asp:RequiredFieldValidator controltovalidate="txtNumeroJoueur" ErrorMessage="Requis" runat="server" />
+                <asp:RangeValidator ID="RangeValidator2" MinimumValue="0" MaximumValue="99" controltovalidate="txtNumeroJoueur" ErrorMessage="Incorrect" runat="server" /></td>
             </tr>
             <tr>
                 <td>Position : </td>
-                <td><asp:TextBox ID="txtPosition" runat="server" /></td>
+                <td><asp:TextBox ID="txtPosition" runat="server" /> * 
+                <asp:RequiredFieldValidator controltovalidate="txtPosition" ErrorMessage="Requis" runat="server" /></td>
             </tr>
             <tr>
                 <td>Recrue : </td>
@@ -40,17 +45,21 @@
             </tr>
             <tr>
                 <td>Valeur : </td>
-                <td><asp:TextBox ID="txtValeur" runat="server" /></td>
+                <td><asp:TextBox ID="txtValeur" runat="server" /> * 
+                <asp:RequiredFieldValidator controltovalidate="txtValeur" ErrorMessage="Requis" runat="server" />
+                <asp:RangeValidator MinimumValue="0" MaximumValue="999999999" controltovalidate="txtValeur" ErrorMessage="Incorrect" runat="server" /></td>
             </tr>
             <tr>
                 <td>Editeur : </td>
                 <td><asp:DropDownList ID="dropDownEditeur" runat="server" />  
-                <asp:Button ID="btnEditeur" runat="server" Text="Ajouter nouveau" /></td>
+                <!-- <asp:Button ID="btnEditeur" runat="server" Text="Ajouter nouveau" /> --></td>
             </tr>
-            <!--<tr>
+            <tr>
                 <td>Année : </td>
-                <td><asp:TextBox ID="txtAnnee" runat="server" /></td>
-            </tr>-->
+                <td><asp:TextBox ID="txtAnnee" runat="server" /> * 
+                <asp:RequiredFieldValidator controltovalidate="txtAnnee" ErrorMessage="Requis" runat="server" />
+                <asp:RangeValidator MinimumValue="0" MaximumValue="3000" controltovalidate="txtAnnee" ErrorMessage="Incorrect" runat="server" /></td>
+            </tr>
             <tr>
                 <td>Image avant : </td>
                 <td><asp:FileUpload id="fichierImageAvant" runat="server" />

@@ -8,7 +8,7 @@
             <tr>
                 <td>Mes collections : </td>
                 <td><asp:DropDownList id="cboCollections" runat="server" AutoPostBack="true" /></td>
-                <td><asp:Button id="btnSupprimerCollection" runat="server" text="Supprimer la collection" OnClientClick="javascript:return confirm('Voulez vous vraiment supprimer cette collection ?');"  /></td>
+                <td><asp:Button id="btnSupprimerCollection" runat="server" text="Supprimer la collection" OnClientClick="javascript:return confirm('Voulez vous vraiment supprimer cette collection ainsi que toutes les fiches qui la composent?');"  /></td>
             </tr>
             <tr>
                 <td>Collections disponibles : </td>

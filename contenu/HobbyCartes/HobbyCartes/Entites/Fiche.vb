@@ -333,8 +333,12 @@ Namespace Entites
                             m_etat = Fiche.Etat.pietre
                     End Select
 
-                    m_imageDevant = dbReadfiche.GetString("imagedevantfi")
-                    m_imageDerriere = dbReadfiche.GetString("imagederrierefi")
+                    If dbReadfiche("imagedevantfi") IsNot DBNull.Value Then
+                        m_imageDevant = dbReadfiche.GetString("imagedevantfi")
+                    End If
+                    If dbReadfiche("imagederrierefi") IsNot DBNull.Value Then
+                        m_imageDerriere = dbReadfiche.GetString("imagederrierefi")
+                    End If
                     m_publicationSurSite = dbReadfiche.GetDateTime("publicationsursitefi")
                 End While
 
@@ -420,15 +424,27 @@ Namespace Entites
         Public Sub sauvegarde()
             Dim dbCon = New MySqlConnection(My.Resources.StringConnexionBdd)
             dbCon.Open()
-            Dim requete As MySqlCommand = New MySqlCommand("INSERT INTO fiche(idcollection, idediteur, idequipe, " &
-                                                           "anneefi, publicationsursitefi, " &
-                                                           "nomjoueurfi, prenomjoueurfi, nojoueurfi, " &
-                                                           "recruefi, positionfi, valeurfi, etatfi) " &
-                                                           "VALUES(" & m_idCollection & ", " & m_idEditeur & ", " & m_idEquipe &
-                                                           ", """ & m_annee.Date & """, NOW() " &
-                                                           ", """ & m_nomJoueur & """, """ & m_prenomJoueur & """, " & Numero &
-                                                           ", " & m_isRecrue & ", """ & m_position & """, """ & m_valeur &
-                                                           """, """ & m_etat & """)", dbCon)
+            Dim requete As MySqlCommand = New MySqlCommand
+            If m_id = -1 Then
+                requete = New MySqlCommand("INSERT INTO fiche(idcollection, idediteur, idequipe, " &
+                                                               "anneefi, publicationsursitefi, " &
+                                                               "nomjoueurfi, prenomjoueurfi, nojoueurfi, " &
+                                                               "recruefi, positionfi, valeurfi, etatfi) " &
+                                                               "VALUES(" & m_idCollection & ", " & m_idEditeur & ", " & m_idEquipe &
+                                                               ", """ & m_annee.Year & "-" & m_annee.Month & "-" & m_annee.Day & """, NOW() " &
+                                                               ", """ & m_nomJoueur & """, """ & m_prenomJoueur & """, " & Numero &
+                                                               ", " & m_isRecrue & ", """ & m_position & """, """ & m_valeur &
+                                                               """, """ & [Enum].GetName(GetType(Etat), m_etat) & """)", dbCon)
+            Else
+                requete = New MySqlCommand("UPDATE fiche SET idcollection=" & m_idCollection & ", idediteur=" &
+                                           m_idEditeur & ", idequipe=" & m_idEquipe & ", anneefi=""" &
+                                           m_annee.Year & "-" & m_annee.Month & "-" & m_annee.Day & """, nomjoueurfi=""" &
+                                           m_nomJoueur & """, prenomjoueurfi=""" & m_prenomJoueur & """, nojoueurfi=" &
+                                           m_numeroJoueur & ", recruefi=" & m_isRecrue & ", positionfi=""" &
+                                           m_position & """, valeurfi=" & m_valeur & ", etatfi=""" &
+                                           [Enum].GetName(GetType(Etat), m_etat) & """ " &
+                                           "WHERE idfiche=" & m_id, dbCon)
+            End If
             requete.ExecuteNonQuery()
             dbCon.Close()
         End Sub

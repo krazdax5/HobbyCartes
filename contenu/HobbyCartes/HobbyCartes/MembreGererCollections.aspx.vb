@@ -47,10 +47,6 @@ Public Class MembreGererCollections
     ''' Chargement de la page
     ''' </summary>
     Protected Sub Page_Load() Handles Me.Load
-        ' Vérifie si l'utilisateur est connecté
-        Dim connected As Boolean = Boolean.Parse(Session("connected"))
-        If Not connected Then Erreur.afficherErreur("Vous devez être connecté pour gérer vos collections.", Page)
-
         majBoutons()
         majListeFiches()
     End Sub

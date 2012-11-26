@@ -68,6 +68,15 @@ Partial Public Class MembreEditerFiche
     Protected WithEvents txtNumeroJoueur As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''Contrôle RangeValidator2.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents RangeValidator2 As Global.System.Web.UI.WebControls.RangeValidator
+
+    '''<summary>
     '''Contrôle txtPosition.
     '''</summary>
     '''<remarks>
