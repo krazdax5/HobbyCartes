@@ -50,6 +50,15 @@ Partial Public Class MembreEnvoiMessage
     Protected WithEvents txtContenu As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''Contrôle chkMessagerieExterne.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents chkMessagerieExterne As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
     '''Contrôle btnEnvoyer.
     '''</summary>
     '''<remarks>

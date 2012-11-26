@@ -258,12 +258,12 @@ Namespace Entites
         End Property
 
         ''' <summary>
-        ''' Envoie un message a un autre membre.
+        ''' Envoie un message a un autre membre sur sa messagerie interne.
         ''' </summary>
         ''' <param name="destinataire">Le destinataire du message</param>
         ''' <param name="objet">L'objet du message</param>
         ''' <param name="contenu">Le contenu du message</param>
-        Sub envoyerMessage(destinataire As Membre, objet As String, contenu As String)
+        Sub envoyerMessageInterne(destinataire As Membre, objet As String, contenu As String)
             Dim dbCon As New MySqlConnection(My.Resources.StringConnexionBdd)
             dbCon.Open()
             Dim dbCom As MySqlCommand = New MySqlCommand("INSERT INTO message (iddestinataire, iddestinateur, objetmes, mesmes) " &
@@ -271,6 +271,30 @@ Namespace Entites
                                                         dbCon)
             dbCom.ExecuteNonQuery()
             dbCon.Close()
+        End Sub
+
+        ''' <summary>
+        ''' Envoie un message a un autre membre sur sa messagerie externe.
+        ''' </summary>
+        ''' <param name="destinataire">Le destinataire du message</param>
+        ''' <param name="objet">L'objet du message</param>
+        ''' <param name="contenu">Le contenu du message</param>
+        Sub envoyerMessageExterne(destinataire As Membre, objet As String, contenu As String)
+            ' hobbycartes@gmail.com / hobbycartes123
+            Dim message As New System.Net.Mail.MailMessage
+            Dim smtpClient As New System.Net.Mail.SmtpClient
+            Dim fromAddress = New System.Net.Mail.MailAddress("hobbycartes@gmail.com")
+            message.From = fromAddress
+            message.To.Add(destinataire.Courriel)
+            message.Subject = objet
+            message.IsBodyHtml = True
+            message.Body = contenu
+            smtpClient.Host = "smtp.gmail.com"
+            smtpClient.Port = 587
+            smtpClient.EnableSsl = True
+            smtpClient.UseDefaultCredentials = True
+            smtpClient.Credentials = New System.Net.NetworkCredential("hobbycartes", "hobbycartes123")
+            smtpClient.Send(message)
         End Sub
 
         ''' <summary>

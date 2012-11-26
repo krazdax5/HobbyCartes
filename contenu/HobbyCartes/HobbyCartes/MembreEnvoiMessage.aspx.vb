@@ -73,7 +73,11 @@ Public Class MembreEnvoiMessage
         Dim contenu As String = txtContenu.Text
         Try
             ' Envoi du message au destinataire
-            m_destinateur.envoyerMessage(m_destinataire, objet, contenu)
+            If chkMessagerieExterne.Checked Then
+                m_destinateur.envoyerMessageExterne(m_destinataire, objet, contenu)
+            Else
+                m_destinateur.envoyerMessageInterne(m_destinataire, objet, contenu)
+            End If
         Catch ex As Exception
             ' Affiche la page d'erreur en cas d'exception
             Erreur.afficherException(ex, Me, Page)
