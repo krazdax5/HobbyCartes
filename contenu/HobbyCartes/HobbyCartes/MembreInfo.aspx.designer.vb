@@ -59,15 +59,6 @@ Partial Public Class MembreInfo
     Protected WithEvents btnEnvoyerMessage As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Contrôle uppanMembreIndo.
-    '''</summary>
-    '''<remarks>
-    '''Champ généré automatiquement.
-    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-    '''</remarks>
-    Protected WithEvents uppanMembreIndo As Global.System.Web.UI.UpdatePanel
-
-    '''<summary>
     '''Contrôle tblDescription.
     '''</summary>
     '''<remarks>

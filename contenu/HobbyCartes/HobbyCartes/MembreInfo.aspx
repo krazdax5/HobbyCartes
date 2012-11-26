@@ -22,9 +22,7 @@
 
         <div id="description">
              <!-- Tableau pour afficher les informations du membre -->
-             <asp:UpdatePanel ID="uppanMembreIndo" runat="server">
-                <ContentTemplate>
-                     <asp:Table ID="tblDescription" runat="server" Width="100%">
+                                  <asp:Table ID="tblDescription" runat="server" Width="100%">
                         
                                 <asp:TableRow runat="server" CssClass="trDescription">
                                     <asp:TableCell runat="server" CssClass="gauche"><asp:Label ID="lblPrenom" runat="server" Text="Prénom:" AssociatedControlID="txtPrenom" CssClass="lblDescription"></asp:Label></asp:TableCell>
@@ -114,11 +112,7 @@
 
                      <!-- Contrôle pour afficher un message destiné à l'utilisateur -->
                      <asp:Label ID="lblMessage" runat="server" Text="Message" Visible="false"></asp:Label>
-                </ContentTemplate>
-                <Triggers>
-                    <asp:AsyncPostBackTrigger ControlID="btnEnregistrer" EventName="Click" /> 
-                </Triggers>
-             </asp:UpdatePanel>
+               
         </div>
 
     </div>
