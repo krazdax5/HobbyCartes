@@ -25,6 +25,10 @@ Public Class Inscription
     Protected Sub btnTerminer_clique(ByVal sender As Object, ByVal e As WizardNavigationEventArgs)
         lblMessage.Visible = False
 
+        If Not Page.IsValid Then
+            Return
+        End If
+
         Dim msgErreur As String = ""
         Dim nomsUtilisés As ArrayList = m_membre.getNomsPseudo()
         Dim idNouvMembre As Integer
