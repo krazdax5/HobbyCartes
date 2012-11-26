@@ -140,13 +140,22 @@ Partial Public Class MembreEditerFiche
     Protected WithEvents txtAnnee As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Contrôle fichierImageAvant.
+    '''Contrôle fuImageAvant.
     '''</summary>
     '''<remarks>
     '''Champ généré automatiquement.
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
-    Protected WithEvents fichierImageAvant As Global.System.Web.UI.WebControls.FileUpload
+    Protected WithEvents fuImageAvant As Global.System.Web.UI.WebControls.FileUpload
+
+    '''<summary>
+    '''Contrôle lbImageAvant.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents lbImageAvant As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Contrôle imageAvant.
@@ -158,13 +167,31 @@ Partial Public Class MembreEditerFiche
     Protected WithEvents imageAvant As Global.System.Web.UI.WebControls.Image
 
     '''<summary>
-    '''Contrôle fichierImageArriere.
+    '''Contrôle chkImageAvant.
     '''</summary>
     '''<remarks>
     '''Champ généré automatiquement.
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
-    Protected WithEvents fichierImageArriere As Global.System.Web.UI.WebControls.FileUpload
+    Protected WithEvents chkImageAvant As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''Contrôle fuImageArriere.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents fuImageArriere As Global.System.Web.UI.WebControls.FileUpload
+
+    '''<summary>
+    '''Contrôle lbImageArriere.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents lbImageArriere As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Contrôle imageArriere.
@@ -174,6 +201,15 @@ Partial Public Class MembreEditerFiche
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
     Protected WithEvents imageArriere As Global.System.Web.UI.WebControls.Image
+
+    '''<summary>
+    '''Contrôle chkImageArriere.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents chkImageArriere As Global.System.Web.UI.WebControls.CheckBox
 
     '''<summary>
     '''Contrôle btnEnregistrer.

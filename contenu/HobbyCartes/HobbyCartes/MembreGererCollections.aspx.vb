@@ -128,7 +128,7 @@ Public Class MembreGererCollections
         btnAjouter.PostBackUrl = "MembreEditerFiche.aspx?idFiche=-1"
         btnAjouter.Text = "Ajouter une nouvelle fiche"
         cellBtnAjouter.Controls.Add(btnAjouter)
-        cellBtnAjouter.ColumnSpan = 12
+        cellBtnAjouter.ColumnSpan = 13
         rowBtnAjouter.Cells.Add(cellBtnAjouter)
         tblListeFiches.Rows.Add(rowBtnAjouter)
     End Sub
@@ -152,11 +152,11 @@ Public Class MembreGererCollections
         cellPrenomEntete.Controls.Add(lblPrenomEntete)
         rowEntete.Cells.Add(cellPrenomEntete)
 
-        Dim cellEtatEntete As TableCell = New TableCell()
-        Dim lblEtatEntete As Label = New Label()
-        lblEtatEntete.Text = "Equipe"
-        cellEtatEntete.Controls.Add(lblEtatEntete)
-        rowEntete.Cells.Add(cellEtatEntete)
+        Dim cellEquipeEntete As TableCell = New TableCell()
+        Dim lblEquipeEntete As Label = New Label()
+        lblEquipeEntete.Text = "Equipe"
+        cellEquipeEntete.Controls.Add(lblEquipeEntete)
+        rowEntete.Cells.Add(cellEquipeEntete)
 
         Dim cellNumeroEntete As TableCell = New TableCell()
         Dim lblNumeroEntete As Label = New Label()
@@ -164,35 +164,41 @@ Public Class MembreGererCollections
         cellNumeroEntete.Controls.Add(lblNumeroEntete)
         rowEntete.Cells.Add(cellNumeroEntete)
 
+        Dim cellPositionEntete As TableCell = New TableCell()
+        Dim lblPositionEntete As Label = New Label()
+        lblPositionEntete.Text = "Position"
+        cellPositionEntete.Controls.Add(lblPositionEntete)
+        rowEntete.Cells.Add(cellPositionEntete)
+
         Dim cellRecrueEntete As TableCell = New TableCell()
         Dim lblRecrueEntete As Label = New Label()
-        lblRecrueEntete.Text = "Position"
+        lblRecrueEntete.Text = "Recrue"
         cellRecrueEntete.Controls.Add(lblRecrueEntete)
         rowEntete.Cells.Add(cellRecrueEntete)
 
+        Dim cellEtatEntete As TableCell = New TableCell()
+        Dim lblEtatEntete As Label = New Label()
+        lblEtatEntete.Text = "Etat"
+        cellEtatEntete.Controls.Add(lblEtatEntete)
+        rowEntete.Cells.Add(cellEtatEntete)
+
         Dim cellValeurEntete As TableCell = New TableCell()
         Dim lblValeurEntete As Label = New Label()
-        lblValeurEntete.Text = "Recrue"
+        lblValeurEntete.Text = "Valeur"
         cellValeurEntete.Controls.Add(lblValeurEntete)
         rowEntete.Cells.Add(cellValeurEntete)
 
-        Dim cellEquipeEntete As TableCell = New TableCell()
-        Dim lblEquipeEntete As Label = New Label()
-        lblEquipeEntete.Text = "Etat"
-        cellEquipeEntete.Controls.Add(lblEquipeEntete)
-        rowEntete.Cells.Add(cellEquipeEntete)
-
         Dim cellEditeurEntete As TableCell = New TableCell()
         Dim lblEditeurEntete As Label = New Label()
-        lblEditeurEntete.Text = "Valeur"
+        lblEditeurEntete.Text = "Editeur"
         cellEditeurEntete.Controls.Add(lblEditeurEntete)
         rowEntete.Cells.Add(cellEditeurEntete)
 
-        Dim cellPositionEntete As TableCell = New TableCell()
-        Dim lblPositionEntete As Label = New Label()
-        lblPositionEntete.Text = "Editeur"
-        cellPositionEntete.Controls.Add(lblPositionEntete)
-        rowEntete.Cells.Add(cellPositionEntete)
+        Dim cellAnneeEntete As TableCell = New TableCell()
+        Dim lblAnneeEntete As Label = New Label()
+        lblAnneeEntete.Text = "Année"
+        cellAnneeEntete.Controls.Add(lblAnneeEntete)
+        rowEntete.Cells.Add(cellAnneeEntete)
 
         rowEntete.Cells.Add(New TableCell)
         rowEntete.Cells.Add(New TableCell)
@@ -260,6 +266,12 @@ Public Class MembreGererCollections
         labEditeur.Text = fiche.Editeur.nomEditeur
         cellEditeur.Controls.Add(labEditeur)
         row.Cells.Add(cellEditeur)
+
+        Dim cellAnnee = New TableCell
+        Dim labAnnee = New Label()
+        labAnnee.Text = fiche.DateCarte.Year
+        cellAnnee.Controls.Add(labAnnee)
+        row.Cells.Add(cellAnnee)
 
         Dim btnSupprCell As TableCell = New TableCell()
         Dim btnSuppr As Button = New Button()

@@ -47,9 +47,11 @@ Public Class Membre
             ongletInformations.Style.Add("background-color", "Black")
         ElseIf Request.ServerVariables("URL").Equals("/MembreListeCartes.aspx") Then
             ongletListeCartes.Style.Add("background-color", "Black")
-        ElseIf Request.ServerVariables("URL").Equals("/MembreGererCollections.aspx") Then
+        ElseIf Request.ServerVariables("URL").Equals("/MembreGererCollections.aspx") Or
+            Request.ServerVariables("URL").Equals("/MembreEditerFiche.aspx") Then
             ongletGererCollections.Style.Add("background-color", "Black")
-        ElseIf Request.ServerVariables("URL").Equals("/MembreVisualiserMessages.aspx") Then
+        ElseIf Request.ServerVariables("URL").Equals("/MembreVisualiserMessages.aspx") Or
+            Request.ServerVariables("URL").Equals("/MembreVisualiserMessage.aspx") Then
             ongletVisualiserMessages.Style.Add("background-color", "Black")
         ElseIf Request.ServerVariables("URL").Equals("/MembreEnvoiMessage.aspx") Then
             ongletEnvoiMessage.Style.Add("background-color", "Black")

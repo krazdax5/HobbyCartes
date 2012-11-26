@@ -62,13 +62,17 @@
             </tr>
             <tr>
                 <td>Image avant : </td>
-                <td><asp:FileUpload id="fichierImageAvant" runat="server" />
-                <asp:Image runat="server" ID="imageAvant" cssclass="img" /></td>
+                <td><asp:FileUpload id="fuImageAvant" runat="server" /><br />
+                <asp:Label runat="server" ID="lbImageAvant" Text="/!\ Images JPEG seulement" />
+                <asp:Image runat="server" ID="imageAvant" cssclass="img" /><br />
+                <asp:CheckBox runat="server" autopostback="true" ID="chkImageAvant" /> Aucune image</td>
             </tr>
             <tr>
                 <td>Image arrière : </td>
-                <td><asp:FileUpload ID="fichierImageArriere" runat="server" />
-                <asp:Image runat="server" ID="imageArriere" cssclass="img" /></td>
+                <td><asp:FileUpload ID="fuImageArriere" runat="server" /><br />
+                <asp:Label runat="server" ID="lbImageArriere" Text="/!\ Images JPEG seulement" />
+                <asp:Image runat="server" ID="imageArriere" cssclass="img" /><br />
+                <asp:CheckBox runat="server" autopostback="true" ID="chkImageArriere" /> Aucune image</td>
             </tr>
             <tr>
                 <td colspan="2" class="align_center"><asp:Button ID="btnEnregistrer" runat="server" Text="Enregistrer" /></td>

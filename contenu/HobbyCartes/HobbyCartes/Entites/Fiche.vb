@@ -429,12 +429,12 @@ Namespace Entites
                 requete = New MySqlCommand("INSERT INTO fiche(idcollection, idediteur, idequipe, " &
                                                                "anneefi, publicationsursitefi, " &
                                                                "nomjoueurfi, prenomjoueurfi, nojoueurfi, " &
-                                                               "recruefi, positionfi, valeurfi, etatfi) " &
+                                                               "recruefi, positionfi, valeurfi, etatfi, imagedevantfi, imagederrierefi) " &
                                                                "VALUES(" & m_idCollection & ", " & m_idEditeur & ", " & m_idEquipe &
                                                                ", """ & m_annee.Year & "-" & m_annee.Month & "-" & m_annee.Day & """, NOW() " &
                                                                ", """ & m_nomJoueur & """, """ & m_prenomJoueur & """, " & Numero &
                                                                ", " & m_isRecrue & ", """ & m_position & """, """ & m_valeur &
-                                                               """, """ & [Enum].GetName(GetType(Etat), m_etat) & """)", dbCon)
+                                                               """, """ & [Enum].GetName(GetType(Etat), m_etat) & """, """ & m_imageDevant & """, """ & m_imageDerriere & """)", dbCon)
             Else
                 requete = New MySqlCommand("UPDATE fiche SET idcollection=" & m_idCollection & ", idediteur=" &
                                            m_idEditeur & ", idequipe=" & m_idEquipe & ", anneefi=""" &
@@ -442,7 +442,7 @@ Namespace Entites
                                            m_nomJoueur & """, prenomjoueurfi=""" & m_prenomJoueur & """, nojoueurfi=" &
                                            m_numeroJoueur & ", recruefi=" & m_isRecrue & ", positionfi=""" &
                                            m_position & """, valeurfi=" & m_valeur & ", etatfi=""" &
-                                           [Enum].GetName(GetType(Etat), m_etat) & """ " &
+                                           [Enum].GetName(GetType(Etat), m_etat) & """, imagedevantfi=""" & m_imageDevant & """, imagederrierefi=""" & m_imageDerriere & """ " &
                                            "WHERE idfiche=" & m_id, dbCon)
             End If
             requete.ExecuteNonQuery()

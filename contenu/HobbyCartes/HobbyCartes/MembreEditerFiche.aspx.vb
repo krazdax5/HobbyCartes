@@ -1,4 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports System.IO
 
 Public Class MembreEditerFiche
     Inherits System.Web.UI.Page
@@ -12,6 +13,9 @@ Public Class MembreEditerFiche
     ''' L'id de la fiche qu'on veut editer (-1 = nouvelle fiche)
     ''' </summary>
     Dim idFiche As Integer
+
+    Dim exImageAvant As String
+    Dim exImageArriere As String
 
     ''' <summary>
     ''' Initialisation de la page
@@ -54,8 +58,13 @@ Public Class MembreEditerFiche
             txtValeur.Text = fiche.Valeur
             dropDownEditeur.SelectedValue = fiche.Editeur.nomEditeur
             txtAnnee.Text = fiche.DateCarte.Year
+            exImageAvant = fiche.ImageAvant
             imageAvant.ImageUrl = fiche.ImageAvant
+            exImageArriere = fiche.ImageArriere
             imageArriere.ImageUrl = fiche.ImageArriere
+        Else
+            exImageAvant = ""
+            exImageArriere = ""
         End If
 
     End Sub
@@ -92,7 +101,7 @@ Public Class MembreEditerFiche
     ''' </summary>
     Private Sub initDropDownEquipe()
         For Each equipe As Entites.Equipe In Entites.Equipe.getAll()
-            DropDownEquipe.Items.Add(equipe.Nom)
+            dropDownEquipe.Items.Add(equipe.Nom)
         Next
     End Sub
 
@@ -122,10 +131,81 @@ Public Class MembreEditerFiche
         fiche.Valeur = txtValeur.Text
         fiche.Editeur = New Entites.Editeur(dropDownEditeur.SelectedValue)
         fiche.DateCarte = New Date(txtAnnee.Text, 1, 1)
+        If chkImageAvant.Checked Then
+            fiche.ImageAvant = ""
+        Else
+            fiche.ImageAvant = exImageAvant
+        End If
+        If chkImageArriere.Checked Then
+            fiche.ImageArriere = ""
+        Else
+            fiche.ImageArriere = exImageArriere
+        End If
 
+        If fuImageAvant.HasFile Then
+            Try
+                If fuImageAvant.PostedFile.ContentType.Equals("image/jpeg") Then
+                    If fuImageAvant.PostedFile.ContentLength < 102400 Then
+                        Dim chemin As String = "img/" + idFiche.ToString + "_avant.jpg"
+                        Dim fichier As FileStream = New FileStream(Server.MapPath("~/") + chemin, FileMode.OpenOrCreate)
+                        Dim data As Byte() = fuImageAvant.FileBytes
+                        fichier.Write(data, 0, data.Length)
+                        fichier.Close()
+                        fiche.ImageAvant = chemin
+                    Else
+                        lbImageAvant.Text = "L'image est trop volumineuse"
+                    End If
+                Else
+                    lbImageAvant.Text = "Seulement JPEG!"
+                End If
+            Catch ex As Exception
+                lbImageAvant.Text = ex.Message
+            End Try
+        End If
+
+        If fuImageArriere.HasFile Then
+            Try
+                If fuImageArriere.PostedFile.ContentType.Equals("image/jpeg") Then
+                    If fuImageArriere.PostedFile.ContentLength < 102400 Then
+                        Dim chemin As String = "img/" + idFiche.ToString + "_arriere.jpg"
+                        Dim fichier As FileStream = New FileStream(Server.MapPath("~/") + chemin, FileMode.OpenOrCreate)
+                        Dim data As Byte() = fuImageArriere.FileBytes
+                        fichier.Write(data, 0, data.Length)
+                        fichier.Close()
+                        fiche.ImageArriere = chemin
+                    Else
+                        lbImageArriere.Text = "L'image est trop volumineuse"
+                    End If
+                Else
+                    lbImageArriere.Text = "Seulement JPEG!"
+                End If
+            Catch ex As Exception
+                lbImageArriere.Text = ex.Message
+            End Try
+        End If
 
         fiche.sauvegarde()
         Response.Redirect("/MembreGererCollections.aspx")
+    End Sub
+
+    Protected Sub chkImageAvant_CheckedChanged() Handles chkImageAvant.CheckedChanged
+        If chkImageAvant.Checked Then
+            fuImageAvant.Enabled = False
+            imageAvant.Visible = False
+        Else
+            fuImageAvant.Enabled = True
+            imageAvant.Visible = True
+        End If
+    End Sub
+
+    Protected Sub chkImageArriere_CheckedChanged() Handles chkImageArriere.CheckedChanged
+        If chkImageArriere.Checked Then
+            fuImageArriere.Enabled = False
+            imageArriere.Visible = False
+        Else
+            fuImageArriere.Enabled = True
+            imageArriere.Visible = True
+        End If
     End Sub
 
 End Class
