@@ -200,7 +200,7 @@ Public Class MembreInfo
     End Sub
 
     Protected Sub Page_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
-        m_connection.Close()
+4:      m_connection.Close()
     End Sub
 
     Private Sub initSession()

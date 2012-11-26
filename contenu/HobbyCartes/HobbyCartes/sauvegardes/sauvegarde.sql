@@ -864,8 +864,8 @@ CREATE TABLE `fiche` (
   `numerotationfi` varchar(15) DEFAULT NULL,
   `valeurfi` float(15,2) NOT NULL,
   `etatfi` enum('impeccable','bonne','moyenne','passable','pietre') NOT NULL,
-  `imagedevantfi` varchar(30) NOT NULL,
-  `imagederrierefi` varchar(30) NOT NULL,
+  `imagedevantfi` varchar(30) DEFAULT NULL,
+  `imagederrierefi` varchar(30) DEFAULT NULL,
   `publicationsursitefi` datetime NOT NULL,
   PRIMARY KEY (`idfiche`),
   KEY `idcollection` (`idcollection`),
@@ -883,7 +883,7 @@ CREATE TABLE `fiche` (
 
 LOCK TABLES `fiche` WRITE;
 /*!40000 ALTER TABLE `fiche` DISABLE KEYS */;
-INSERT INTO `fiche` VALUES (1,1,1,1,'2005-01-01','Crosby','Sidney',87,0,'Centre',NULL,50.00,'impeccable','img/avant.jpg','img/arriere.jpg','2012-09-20 15:28:00'),(2,2,2,2,'2008-01-01','Jo','Blo',22,0,'Gardien',NULL,10.00,'pietre','img/avant.jpg','img/arriere.jpg','2012-11-20 00:00:00'),(3,1,1,3,'1982-01-01','Wayne','Gretzky',99,0,'Gardien',NULL,10.00,'passable','img/avant.jpg','img/arriere.jpg','2012-09-22 14:32:00'),(4,3,1,3,'2007-01-01','Michael','Jordan',17,1,'Centre',NULL,100.00,'bonne','img/avant.jpg','img/arriere.jpg','2012-09-24 10:37:00'),(5,4,1,3,'2001-01-01','Jo','Lacrasse',69,1,'Centre',NULL,69.69,'bonne','img/avant.jpg','img/arriere.jpg','2012-09-12 12:45:00'),(6,1,2,1,'2001-01-01','Joe','Lamerveille',6,0,'Defenseur',NULL,2.00,'passable','img/avant.jpg','img/arriere.jpg','2011-09-12 12:45:00'),(7,3,2,1,'2001-01-01','Pat','Lacraque',67,0,'Ailier droit',NULL,12.00,'passable','img/avant.jpg','img/arriere.jpg','2010-09-12 12:45:00'),(8,4,2,1,'2007-01-01','Max','Lefou',98,0,'Centre',NULL,112.00,'impeccable','img/avant.jpg','img/arriere.jpg','2009-09-19 12:45:00'),(9,5,2,1,'2007-01-01','Sam','Letrou',98,0,'Centre',NULL,1112.00,'bonne','img/avant.jpg','img/arriere.jpg','2009-09-19 12:45:00'),(10,5,2,1,'2007-01-01','Gino','Camaro',18,0,'Gardien',NULL,12.00,'impeccable','img/avant.jpg','img/arriere.jpg','2009-08-19 13:48:00'),(11,2,3,3,'1997-01-01','Dany','Lamarre',18,0,'Centre',NULL,125.00,'impeccable','img/avant.jpg','img/arriere.jpg','2010-08-18 13:48:00');
+INSERT INTO `fiche` VALUES (1,1,1,1,'2005-01-01','Crosby','Sidney',87,0,'Centre',NULL,50.00,'impeccable','img/avant.jpg','img/arriere.jpg','2012-09-20 15:28:00'),(2,2,2,2,'2008-01-01','Jo','Blo',22,0,'Gardien',NULL,10.00,'pietre','img/avant.jpg','img/arriere.jpg','2012-11-26 00:00:00'),(3,1,1,3,'1982-01-01','Wayne','Gretzky',99,0,'Gardien',NULL,10.00,'passable','img/avant.jpg','img/arriere.jpg','2012-09-22 14:32:00'),(4,3,1,3,'2007-01-01','Michael','Jordan',17,1,'Centre',NULL,100.00,'bonne','img/avant.jpg','img/arriere.jpg','2012-09-24 10:37:00'),(5,4,1,3,'2001-01-01','Jo','Lacrasse',69,1,'Centre',NULL,69.69,'bonne','img/avant.jpg','img/arriere.jpg','2012-09-12 12:45:00'),(6,1,2,1,'2001-01-01','Joe','Lamerveille',6,0,'Defenseur',NULL,2.00,'passable','img/avant.jpg','img/arriere.jpg','2011-09-12 12:45:00'),(7,3,2,1,'2001-01-01','Pat','Lacraque',67,0,'Ailier droit',NULL,12.00,'passable','img/avant.jpg','img/arriere.jpg','2010-09-12 12:45:00'),(8,4,2,1,'2007-01-01','Max','Lefou',98,0,'Centre',NULL,112.00,'impeccable','img/avant.jpg','img/arriere.jpg','2009-09-19 12:45:00'),(9,5,2,1,'2007-01-01','Sam','Letrou',98,0,'Centre',NULL,1112.00,'bonne','img/avant.jpg','img/arriere.jpg','2009-09-19 12:45:00'),(10,5,2,1,'2007-01-01','Gino','Camaro',18,0,'Gardien',NULL,12.00,'impeccable','img/avant.jpg','img/arriere.jpg','2009-08-19 13:48:00'),(11,2,3,3,'1997-01-01','Dany','Lamarre',18,0,'Centre',NULL,125.00,'impeccable','img/avant.jpg','img/arriere.jpg','2010-08-18 13:48:00');
 /*!40000 ALTER TABLE `fiche` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -961,7 +961,7 @@ CREATE TABLE `membre` (
   `imagemem` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`idmembre`),
   UNIQUE KEY `nomutilisateurmem` (`nomutilisateurmem`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -970,7 +970,7 @@ CREATE TABLE `membre` (
 
 LOCK TABLES `membre` WRITE;
 /*!40000 ALTER TABLE `membre` DISABLE KEYS */;
-INSERT INTO `membre` VALUES (1,'Homer','Simpson','hsimpson','k/MSzDGfkER1OM4lE9yJLq3Z/7PeoBzvwkVpn/Vy+YoZi0P5qa+v7mPW+rU0CrTc','Springfield','X0X0X0','hsimpson@test.com',0,NULL,'2012-11-03 15:28:00','img/profil.jpg'),(2,'Jean-François','Collin','jfcollin','BpfFWZqvZUViODQvwzyvae+JAmTYwOe1+tfhLCdpcdpqrJXnHoV/6ZoQZgfuKFCe','Lévis','G1Q1Q9','jfcollin@test.com',0,NULL,'2012-11-02 15:28:00','img/jf.jpg'),(3,'Loïc','Vial','lvial','uVnVe/1uYgdRMd7zrLFs5d/2ctFG6Fj88vKlUdVYrD2I9hRASJ9muzDsrDIuGuFW','Lévis','G1Q1Q9','lvial@test.com',0,NULL,'2012-11-01 15:28:00','img/loic.jpg'),(4,'Charles','Lesveque','clevesque','jP5qt+0cWzg4uAumlDUoWYPoyae8Q7JhtmhvfT35uyBCciV8Mtvm5h8xi02kez3q','Lévis','G1Q1Q9','clesveque@test.com',0,NULL,'2012-10-31 15:28:00','img/charles.jpg'),(5,'Admin','Nistrateur','admin','6ZIKdw0V70tLQGA2UXpNozu4DhQtKkrrsB5hzaM4Za/diYmLrRbZtv7Nu9yVOb2j','Lévis','G1Q1Q9','admin@test.com',1,NULL,'2012-10-30 15:28:00','img/loup.jpg'),(6,'Rory','B. Bellows','rbellows','014G4Z3mrozn8IgOl9d4WU5oPRTVIeFZRT6LHdoMhNCCe41LvkrmXhPbZFGuIA03','Springfield','X0X0X0','rb@test.com',0,NULL,'2012-10-29 15:28:00','img/chevaux.jpg');
+INSERT INTO `membre` VALUES (1,'Homer','Simpson','hsimpson','k/MSzDGfkER1OM4lE9yJLq3Z/7PeoBzvwkVpn/Vy+YoZi0P5qa+v7mPW+rU0CrTc','Springfield','X0X0X0','homer@homer.ca',0,NULL,'2012-11-03 15:28:00','img/profil.jpg'),(2,'Jean-François','Collin','jfcollin','BpfFWZqvZUViODQvwzyvae+JAmTYwOe1+tfhLCdpcdpqrJXnHoV/6ZoQZgfuKFCe','Lévis','G1Q1Q9','jfcollin@test.com',0,NULL,'2012-11-02 15:28:00','img/jf.jpg'),(3,'Loïc','Vial','lvial','uVnVe/1uYgdRMd7zrLFs5d/2ctFG6Fj88vKlUdVYrD2I9hRASJ9muzDsrDIuGuFW','Lévis','G1Q1Q9','lvial@test.com',0,NULL,'2012-11-01 15:28:00','img/loic.jpg'),(4,'Charles','Lesveque','clevesque','jP5qt+0cWzg4uAumlDUoWYPoyae8Q7JhtmhvfT35uyBCciV8Mtvm5h8xi02kez3q','Lévis','G1Q1Q9','clesveque@test.com',0,NULL,'2012-10-31 15:28:00','img/charles.jpg'),(5,'Admin','Nistrateur','admin','6ZIKdw0V70tLQGA2UXpNozu4DhQtKkrrsB5hzaM4Za/diYmLrRbZtv7Nu9yVOb2j','Lévis','G1Q1Q9','admin@test.com',1,NULL,'2012-10-30 15:28:00','img/loup.jpg'),(6,'Rory','B. Bellows','rbellows','014G4Z3mrozn8IgOl9d4WU5oPRTVIeFZRT6LHdoMhNCCe41LvkrmXhPbZFGuIA03','Springfield','X0X0X0','rb@test.com',0,NULL,'2012-10-29 15:28:00','img/chevaux.jpg');
 /*!40000 ALTER TABLE `membre` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -1061,7 +1061,7 @@ CREATE TABLE `transactions` (
   `typeobjettrans` enum('fiche','membre') DEFAULT NULL,
   `datetrans` datetime DEFAULT NULL,
   PRIMARY KEY (`idtransactions`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1070,6 +1070,7 @@ CREATE TABLE `transactions` (
 
 LOCK TABLES `transactions` WRITE;
 /*!40000 ALTER TABLE `transactions` DISABLE KEYS */;
+INSERT INTO `transactions` VALUES (1,'test','ajout','membre','2012-11-26 13:58:59'),(2,'','ajout','membre','2012-11-26 13:59:54'),(3,'lol','ajout','membre','2012-11-26 14:03:42'),(4,'','suppression','membre','2012-11-26 14:12:18'),(5,'lol','suppression','membre','2012-11-26 14:12:23'),(6,'test','suppression','membre','2012-11-26 14:12:23');
 /*!40000 ALTER TABLE `transactions` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -1082,4 +1083,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-11-20 12:21:43
+-- Dump completed on 2012-11-26 14:12:39
