@@ -86,40 +86,13 @@ Partial Public Class MembreListeCartes
     Protected WithEvents lnkbtnFootball As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
-    '''Contrôle phHockey.
+    '''Contrôle phMembreListeCartes.
     '''</summary>
     '''<remarks>
     '''Champ généré automatiquement.
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
-    Protected WithEvents phHockey As Global.System.Web.UI.WebControls.PlaceHolder
-
-    '''<summary>
-    '''Contrôle phBaseball.
-    '''</summary>
-    '''<remarks>
-    '''Champ généré automatiquement.
-    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-    '''</remarks>
-    Protected WithEvents phBaseball As Global.System.Web.UI.WebControls.PlaceHolder
-
-    '''<summary>
-    '''Contrôle phBasketball.
-    '''</summary>
-    '''<remarks>
-    '''Champ généré automatiquement.
-    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-    '''</remarks>
-    Protected WithEvents phBasketball As Global.System.Web.UI.WebControls.PlaceHolder
-
-    '''<summary>
-    '''Contrôle phFootball.
-    '''</summary>
-    '''<remarks>
-    '''Champ généré automatiquement.
-    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-    '''</remarks>
-    Protected WithEvents phFootball As Global.System.Web.UI.WebControls.PlaceHolder
+    Protected WithEvents phMembreListeCartes As Global.System.Web.UI.WebControls.PlaceHolder
 
     '''<summary>
     '''Contrôle lblPasDeFiche.

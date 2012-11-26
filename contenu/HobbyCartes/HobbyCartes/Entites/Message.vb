@@ -38,10 +38,19 @@ Namespace Entites
         Public Sub New(id As Integer)
             Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
             dbCon.Open()
-	End Sub
+            Dim dbCom As MySqlCommand = New MySqlCommand("SELECT * FROM message WHERE idmess=" & id, dbCon)
+            Dim dbRead As MySqlDataReader = dbCom.ExecuteReader()
+            dbRead.Read()
+            m_id = id
+            m_idDestinataire = dbRead.GetInt32("iddestinataire")
+            m_idDestinateur = dbRead.GetInt32("iddestinateur")
+            m_objet = dbRead.GetString("objetmes")
+            m_contenu = dbRead.GetString("mesmes")
+            dbRead.Close()
+            dbCon.Close()
+        End Sub
             
         Public Sub New(id As Integer, dbCon As MySqlConnection)
-
             Dim dbCom As MySqlCommand = New MySqlCommand("SELECT * FROM message WHERE idmess=" & id, dbCon)
             Dim dbRead As MySqlDataReader = dbCom.ExecuteReader()
             dbRead.Read()

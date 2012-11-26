@@ -12,7 +12,7 @@ Imports MySql.Data.MySqlClient
 Public Class Membre
     Inherits System.Web.UI.MasterPage
 
-    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+    Protected Sub Page_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Init
         initSession()
 
         Dim connected As Boolean = Boolean.Parse(Session("connected"))

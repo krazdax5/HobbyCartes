@@ -9,23 +9,11 @@
         </ul>
     </div>
     <div id="liste_contenu">
-        <asp:PlaceHolder ID="phHockey" runat="server" Visible="false">
+        <asp:PlaceHolder ID="phMembreListeCartes" runat="server">
            
         </asp:PlaceHolder>
         
-        <asp:PlaceHolder ID="phBaseball" runat="server" Visible="false">
-            
-        </asp:PlaceHolder>
-
-        <asp:PlaceHolder ID="phBasketball" runat="server" Visible="false">
-            
-        </asp:PlaceHolder>
-
-        <asp:PlaceHolder ID="phFootball" runat="server" Visible="false">
-            
-        </asp:PlaceHolder>
-        
-        <asp:Label ID="lblPasDeFiche" runat="server" Text="Il n'y a pas de fiches dans votre collection." Visible="false" CssClass="lblPasDeFiches"></asp:Label>
+        <asp:Label ID="lblPasDeFiche" runat="server" Text="" CssClass="lblPasDeFiches"></asp:Label>
         
     </div>
 </asp:Content>
