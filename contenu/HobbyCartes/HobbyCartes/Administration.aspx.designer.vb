@@ -77,6 +77,15 @@ Partial Public Class Administration
     Protected WithEvents btnObtenir As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''Contrôle btnRapport.
+    '''</summary>
+    '''<remarks>
+    '''Champ généré automatiquement.
+    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+    '''</remarks>
+    Protected WithEvents btnRapport As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''Contrôle lblErreur.
     '''</summary>
     '''<remarks>

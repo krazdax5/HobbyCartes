@@ -23,7 +23,9 @@
         </div>
         <asp:CheckBox runat="server" ID="cbTous" AutoPostBack="true" Text=" Sélectionner tout" CssClass="ckTouscss"/>
         <asp:Button runat="server" ID="btnSauvegarde" Text="Sauvegarder la base de données" CssClass="btnAdminSauv" />
-        <asp:Button runat="server" ID="btnObtenir" Text="Obtenir une copie de sauvegarde" CssClass="btnAdminSauv" /><br />
+        <asp:Button runat="server" ID="btnObtenir" Text="Obtenir une copie de sauvegarde" CssClass="btnAdminSauv" />
+        <asp:Button ID="btnRapport" runat="server" Text="Afficher le rapport du site" CssClass="btnAdminSauv" PostBackUrl="~/rapport.aspx" />
+        <br />
         <asp:Label ID="lblErreur" runat="server"></asp:Label>
         <div id="dMessage">
                     <asp:Label ID="lblMessage" runat="server" Text="Entrez votre message:" /> <br /><br />
