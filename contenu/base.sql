@@ -1,3 +1,5 @@
+/* créer un utilisateur mobby ayant tous les accès à la base de données hobbycartes et ayant le mot de passe hob_cartes5*/
+
 DROP TABLE IF EXISTS message;
 DROP TABLE IF EXISTS commentaire;
 DROP TABLE IF EXISTS fiche;
@@ -106,7 +108,7 @@ VALUES ('Loïc', 'Vial', 'lvial', 'uVnVe/1uYgdRMd7zrLFs5d/2ctFG6Fj88vKlUdVYrD2I9
 INSERT INTO membre (prenommem, nommem, nomutilisateurmem, motpassemem, villemem, codepostalmem, courrielmem, dateinscriptionmem, imagemem) 
 VALUES ('Charles', 'Lesveque', 'clevesque', 'jP5qt+0cWzg4uAumlDUoWYPoyae8Q7JhtmhvfT35uyBCciV8Mtvm5h8xi02kez3q','Lévis','G1Q1Q9', 'clesveque@test.com', '2012-10-31 15:28', "img/charles.jpg");
 INSERT INTO membre (prenommem, nommem, nomutilisateurmem, motpassemem, villemem, codepostalmem, courrielmem, adminmem, dateinscriptionmem, imagemem) 
-VALUES ('Admin', 'Nistrateur', 'admin', '6ZIKdw0V70tLQGA2UXpNozu4DhQtKkrrsB5hzaM4Za/diYmLrRbZtv7Nu9yVOb2j','Lévis','G1Q1Q9', 'admin@test.com', TRUE, '2012-10-30 15:28', "img/loup.jpg");
+VALUES ('Mobby', 'Administrateur', 'mobby', 'Y2ARghqsiiZuF1OxV7xORnvHL1y+Do1lZLUy4svcAiXow8LtOgzgp232x/3mmnVx','Lévis','G1Q1Q9', 'admin@test.com', TRUE, '2012-10-30 15:28', "img/loup.jpg");
 INSERT INTO membre (prenommem, nommem, nomutilisateurmem, motpassemem, villemem, codepostalmem, courrielmem, dateinscriptionmem, imagemem) 
 VALUES ('Rory', 'B. Bellows', 'rbellows', '014G4Z3mrozn8IgOl9d4WU5oPRTVIeFZRT6LHdoMhNCCe41LvkrmXhPbZFGuIA03', 'Springfield', 'X0X0X0', 'rb@test.com', '2012-10-29 15:28', "img/chevaux.jpg");
 
