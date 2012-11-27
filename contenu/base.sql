@@ -12,6 +12,11 @@ DROP TRIGGER IF EXISTS delfiche;
 DROP TRIGGER IF EXISTS inmembre;
 DROP TRIGGER IF EXISTS delmembre;
 
+DROP DATABASE IF EXISTS hobbycartes;
+
+CREATE DATABASE hobbycartes;
+USE hobbycartes;
+
 CREATE TABLE membre(
 	idmembre INTEGER PRIMARY KEY AUTO_INCREMENT,
 	prenommem VARCHAR(30) NOT NULL,
