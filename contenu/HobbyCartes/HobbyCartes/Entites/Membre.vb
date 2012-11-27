@@ -505,7 +505,7 @@ Namespace Entites
 
         Public Shared Function Rechercher(MotCle As String, connection As MySqlConnection) As List(Of Entites.Membre)
             Dim Membres As List(Of Entites.Membre) = New List(Of Entites.Membre)()
-            Dim requete As MySqlCommand = New MySqlCommand("SELECT idmembre FROM membre WHERE nomutilisateurmem LIKE '%" + MotCle & _
+            Dim requete As MySqlCommand = New MySqlCommand("SELECT idmembre FROM membre WHERE nomutilisateurmem LIKE '" + MotCle & _
                                                            "%'", connection)
             Dim ids As List(Of Integer) = New List(Of Integer)()
 

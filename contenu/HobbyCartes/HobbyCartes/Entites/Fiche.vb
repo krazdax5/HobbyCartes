@@ -492,8 +492,8 @@ Namespace Entites
 
         Public Shared Function Rechercher(MotCle As String, connection As MySqlConnection) As List(Of Entites.Fiche)
             Dim fiches As List(Of Entites.Fiche) = New List(Of Entites.Fiche)()
-            Dim requete As MySqlCommand = New MySqlCommand("SELECT idfiche FROM fiche WHERE CONCAT(prenomjoueurfi, ' ', nomjoueurfi) LIKE '%" + MotCle & _
-                                                           "%' OR CONCAT(nomjoueurfi, ' ', prenomjoueurfi) LIKE '%" + MotCle + "%'", connection)
+            Dim requete As MySqlCommand = New MySqlCommand("SELECT idfiche FROM fiche WHERE CONCAT(prenomjoueurfi, ' ', nomjoueurfi) LIKE '" + MotCle & _
+                                                           "%' OR CONCAT(nomjoueurfi, ' ', prenomjoueurfi) LIKE '" + MotCle + "%'", connection)
             fiches = ListeCarte(requete, connection)
 
             Return fiches
