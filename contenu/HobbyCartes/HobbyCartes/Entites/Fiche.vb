@@ -537,6 +537,18 @@ Namespace Entites
             dbCon.Close()
         End Sub
 
+        ''' <summary>
+        ''' Retourne l'id de la prochaine fiche qui sera crée
+        ''' </summary>
+        Public Shared Function getNextid() As Integer
+            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+            dbCon.Open()
+            Dim req As MySqlCommand = New MySqlCommand("SELECT idfiche FROM fiche ORDER BY idfiche DESC LIMIT 0, 1", dbCon)
+            Dim ret = req.ExecuteScalar + 1
+            dbCon.Close()
+            Return ret
+        End Function
+
     End Class
 
 End Namespace

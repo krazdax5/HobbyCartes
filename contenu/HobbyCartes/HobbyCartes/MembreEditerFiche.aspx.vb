@@ -1,4 +1,10 @@
-﻿Imports MySql.Data.MySqlClient
+﻿'--------------------------------------------------------------------------
+' Titre: MembreEditerFiche.aspx.vb
+' Auteur: Loïc Vial
+' Date: 20 Novembre 2012
+'-------------------------------------------------------------------------
+
+Imports MySql.Data.MySqlClient
 Imports System.IO
 
 Public Class MembreEditerFiche
@@ -142,19 +148,17 @@ Public Class MembreEditerFiche
             fiche.ImageArriere = exImageArriere
         End If
 
-        If fuImageAvant.HasFile Then
+        If idFiche = -1 Then idFiche = fiche.getNextid
+
+        If Not chkImageAvant.Checked And fuImageAvant.HasFile Then
             Try
                 If fuImageAvant.PostedFile.ContentType.Equals("image/jpeg") Then
-                    If fuImageAvant.PostedFile.ContentLength < 102400 Then
-                        Dim chemin As String = "img/" + idFiche.ToString + "_avant.jpg"
-                        Dim fichier As FileStream = New FileStream(Server.MapPath("~/") + chemin, FileMode.OpenOrCreate)
-                        Dim data As Byte() = fuImageAvant.FileBytes
-                        fichier.Write(data, 0, data.Length)
-                        fichier.Close()
-                        fiche.ImageAvant = chemin
-                    Else
-                        lbImageAvant.Text = "L'image est trop volumineuse"
-                    End If
+                    Dim chemin As String = "img/" + idFiche.ToString + "_avant.jpg"
+                    Dim fichier As FileStream = New FileStream(Server.MapPath("~/") + chemin, FileMode.OpenOrCreate)
+                    Dim data As Byte() = fuImageAvant.FileBytes
+                    fichier.Write(data, 0, data.Length)
+                    fichier.Close()
+                    fiche.ImageAvant = chemin
                 Else
                     lbImageAvant.Text = "Seulement JPEG!"
                 End If
@@ -163,19 +167,15 @@ Public Class MembreEditerFiche
             End Try
         End If
 
-        If fuImageArriere.HasFile Then
+        If Not chkImageArriere.Checked And fuImageArriere.HasFile Then
             Try
                 If fuImageArriere.PostedFile.ContentType.Equals("image/jpeg") Then
-                    If fuImageArriere.PostedFile.ContentLength < 102400 Then
-                        Dim chemin As String = "img/" + idFiche.ToString + "_arriere.jpg"
-                        Dim fichier As FileStream = New FileStream(Server.MapPath("~/") + chemin, FileMode.OpenOrCreate)
-                        Dim data As Byte() = fuImageArriere.FileBytes
-                        fichier.Write(data, 0, data.Length)
-                        fichier.Close()
-                        fiche.ImageArriere = chemin
-                    Else
-                        lbImageArriere.Text = "L'image est trop volumineuse"
-                    End If
+                    Dim chemin As String = "img/" + idFiche.ToString + "_arriere.jpg"
+                    Dim fichier As FileStream = New FileStream(Server.MapPath("~/") + chemin, FileMode.OpenOrCreate)
+                    Dim data As Byte() = fuImageArriere.FileBytes
+                    fichier.Write(data, 0, data.Length)
+                    fichier.Close()
+                    fiche.ImageArriere = chemin
                 Else
                     lbImageArriere.Text = "Seulement JPEG!"
                 End If

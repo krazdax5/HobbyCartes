@@ -1,5 +1,5 @@
 ﻿'--------------------------------------------------------------------------
-' Titre: MembreEnvoieMessage.aspx.vb
+' Titre: MembreEnvoiMessage.aspx.vb
 ' Auteur: Loïc Vial
 ' Date: Novembre 2012
 '-------------------------------------------------------------------------
