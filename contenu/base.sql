@@ -117,6 +117,7 @@ INSERT INTO collection (idmembre, typecol) VALUES (2, 'baseball');
 INSERT INTO collection (idmembre, typecol) VALUES (3, 'basketball');
 INSERT INTO collection (idmembre, typecol) VALUES (1, 'football');
 INSERT INTO collection (idmembre, typecol) VALUES (4, 'hockey');
+INSERT INTO collection (idmembre, typecol) VALUES (3, 'baseball');
 
 INSERT INTO equipe (nomeq) VALUES ('Bruins');
 INSERT INTO equipe (nomeq) VALUES ('Flyers');
@@ -128,8 +129,8 @@ INSERT INTO equipe (nomeq) VALUES ('Colts');
 INSERT INTO equipe (nomeq) VALUES ('Broncos');
 INSERT INTO equipe (nomeq) VALUES ('Stealers');
 INSERT INTO equipe (nomeq) VALUES ('Capitals');
-INSERT INTO equipe (nomeq) VALUES ('Canadiens');
-
+INSERT INTO equipe (nomeq) VALUES ('Atlanta Braves');
+INSERT INTO equipe (nomeq) VALUES ('New York Yankees');
 
 INSERT INTO editeur (nomed) VALUES ('Upper Deck');
 INSERT INTO editeur (nomed) VALUES ('Score');
@@ -137,7 +138,6 @@ INSERT INTO editeur (nomed) VALUES ('Pinnacle');
 INSERT INTO editeur (nomed) VALUES ('Fleer');
 INSERT INTO editeur (nomed) VALUES ('Topps');
 INSERT INTO editeur (nomed) VALUES ('Bowman');
-
 
 INSERT INTO fiche (idcollection, idediteur, idequipe, anneefi, nomjoueurfi, prenomjoueurfi, nojoueurfi, recruefi, 
 positionfi, valeurfi, etatfi, imagedevantfi, imagederrierefi, publicationsursitefi) 
@@ -169,8 +169,20 @@ VALUES ('1','1', '10','2012-01-01','Ovechkin','Alexander','8','0','Centre', '16.
 'img/oviback.jpg','2012-11-20 16:28');
 INSERT INTO fiche (idcollection, idediteur, idequipe, anneefi, nomjoueurfi, prenomjoueurfi, nojoueurfi, recruefi, 
 positionfi, valeurfi, etatfi, imagedevantfi, imagederrierefi, publicationsursitefi) 
-VALUES ('5','1', '11','2012-01-01','Price','Carey','31','1','Gardien', '36.25','moyenne','img/pricefront.jpg',
+VALUES ('5','1', '3','2012-01-01','Price','Carey','31','1','Gardien', '36.25','moyenne','img/pricefront.jpg',
 'img/priceback.jpg','2012-10-20 16:28');
+INSERT INTO fiche (idcollection, idediteur, idequipe, anneefi, nomjoueurfi, prenomjoueurfi, nojoueurfi, recruefi, 
+positionfi, valeurfi, etatfi, imagedevantfi, imagederrierefi, publicationsursitefi) 
+VALUES ('2','2', '11','1991-01-01','Chipper','Jones','10','1','', '3.50','bonne','img/chipper_jones_front.jpg',
+'', CURDATE());
+INSERT INTO fiche (idcollection, idediteur, idequipe, anneefi, nomjoueurfi, prenomjoueurfi, nojoueurfi, recruefi, 
+positionfi, valeurfi, etatfi, imagedevantfi, imagederrierefi, publicationsursitefi) 
+VALUES ('6','6', '12','1993-01-01','Jeter','Derek','2','1','', '20','moyenne','img/derek_jeter_front.jpg',
+'img/derek_jeter_back.jpg','2012-10-20 16:28');
+INSERT INTO fiche (idcollection, idediteur, idequipe, anneefi, nomjoueurfi, prenomjoueurfi, nojoueurfi, recruefi, 
+positionfi, valeurfi, etatfi, imagedevantfi, imagederrierefi, publicationsursitefi) 
+VALUES ('6','5', '12','1959-01-01','Mantle','Mickey','7','0','', '569','impeccable','img/mickey_mantle_front.jpg',
+'img/mickey_mantle_back.jpg','2012-10-20 16:28');
 
 INSERT INTO commentaire (idfiche,destinateurcom, messagecom) VALUES ('1','hsimpson','Ceci est un test');
 INSERT INTO commentaire (idfiche,destinateurcom, messagecom) VALUES ('3','lvial','Ceci est un autre test');
