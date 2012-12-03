@@ -17,6 +17,9 @@ Public Class MembreGererCollections
     ''' </summary>
     Dim m_idMembre As Integer
 
+    Dim isAdmin As Boolean
+    Dim pseudo As String
+
     ''' <summary>
     ''' Initialisation de la page
     ''' </summary>
@@ -27,16 +30,21 @@ Public Class MembreGererCollections
         Dim connected As Boolean = Boolean.Parse(Session("connected"))
         If Not connected Then Erreur.afficherErreur("Vous devez être connecté pour gérer vos collections.", Page)
 
+        isAdmin = Boolean.Parse(Session("Admin"))
+        pseudo = Request.QueryString("pseudo")
         ' Recupere l'id du membre et charge toutes ses collections
-        m_idMembre = Integer.Parse(Session("idMembre"))
-        ' collections = New Dictionary(Of Entites.Collection.Type, Entites.Collection)
+        If isAdmin And Not IsNothing(pseudo) Then
+            m_idMembre = Entites.Membre.getIDbyPseudo(pseudo)
+        Else
+            m_idMembre = Integer.Parse(Session("idMembre"))
+        End If
+
         Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
         dbCon.Open()
         For Each typeCol As Entites.Collection.Type In System.Enum.GetValues(GetType(Entites.Collection.Type))
             If Not Entites.Collection.existe(m_idMembre, typeCol) Then
                 cboCollectionsDisponibles.Items.Add(typeCol.ToString)
             Else
-                ' collections.Add(typeCol, New Entites.Collection(idMembre, typeCol, dbCon))
                 cboCollections.Items.Add(typeCol.ToString)
             End If
         Next
@@ -77,7 +85,11 @@ Public Class MembreGererCollections
         cboCollectionsDisponibles.Items.Add(cboCollections.SelectedValue)
         cboCollections.Items.Remove(cboCollections.SelectedValue)
         majBoutons()
-        Response.Redirect("MembreGererCollections.aspx")
+        If isAdmin And Not IsNothing(pseudo) Then
+            Response.Redirect("MembreGererCollections.aspx?pseudo=" & pseudo)
+        Else
+            Response.Redirect("MembreGererCollections.aspx")
+        End If
     End Sub
 
     ''' <summary>
@@ -89,7 +101,11 @@ Public Class MembreGererCollections
         cboCollections.Items.Add(cboCollectionsDisponibles.SelectedValue)
         cboCollectionsDisponibles.Items.Remove(cboCollectionsDisponibles.SelectedValue)
         majBoutons()
-        Response.Redirect("MembreGererCollections.aspx")
+        If isAdmin And Not IsNothing(pseudo) Then
+            Response.Redirect("MembreGererCollections.aspx?pseudo=" & pseudo)
+        Else
+            Response.Redirect("MembreGererCollections.aspx")
+        End If
     End Sub
 
     ''' <summary>
@@ -125,7 +141,11 @@ Public Class MembreGererCollections
         Dim rowBtnAjouter As TableRow = New TableRow
         Dim cellBtnAjouter As TableCell = New TableCell
         Dim btnAjouter As Button = New Button
-        btnAjouter.PostBackUrl = "MembreEditerFiche.aspx?idFiche=-1"
+        If isAdmin And Not IsNothing(pseudo) Then
+            btnAjouter.PostBackUrl = "MembreEditerFiche.aspx?idFiche=-1&pseudo=" & pseudo
+        Else
+            btnAjouter.PostBackUrl = "MembreEditerFiche.aspx?idFiche=-1"
+        End If
         btnAjouter.Text = "Ajouter une nouvelle fiche"
         cellBtnAjouter.Controls.Add(btnAjouter)
         cellBtnAjouter.ColumnSpan = 13
@@ -307,8 +327,12 @@ Public Class MembreGererCollections
     Private Sub btnSupprFiche_Click(ByVal sender As Object, ByVal e As EventArgs)
         Dim btnSuppr As Button = DirectCast(sender, Button)
         Dim idFiche As String = btnSuppr.ID.Substring(8)
-        Entites.Fiche.supprimer(idFiche)
-        Response.Redirect("MembreGererCollections.aspx")
+        Entites.Fiche.Supprimer(idFiche)
+        If isAdmin And Not IsNothing(pseudo) Then
+            Response.Redirect("MembreGererCollections.aspx?pseudo=" & pseudo)
+        Else
+            Response.Redirect("MembreGererCollections.aspx")
+        End If
     End Sub
 
     ''' <summary>
@@ -326,7 +350,11 @@ Public Class MembreGererCollections
     Private Sub btnEditerFiche_Click(ByVal sender As Object, ByVal e As EventArgs)
         Dim btnEditer As Button = DirectCast(sender, Button)
         Dim idFiche As String = btnEditer.ID.Substring(9)
-        Response.Redirect("MembreEditerFiche.aspx?idFiche=" & idFiche)
+        If isAdmin And Not IsNothing(pseudo) Then
+            Response.Redirect("MembreEditerFiche.aspx?idFiche=" & idFiche & "&pseudo=" & pseudo)
+        Else
+            Response.Redirect("MembreEditerFiche.aspx?idFiche=" & idFiche)
+        End If
     End Sub
 
 End Class

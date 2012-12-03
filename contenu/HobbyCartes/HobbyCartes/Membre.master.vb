@@ -13,10 +13,11 @@ Public Class Membre
     Inherits System.Web.UI.MasterPage
 
     Protected Sub Page_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Init
-        initSession()
+        Accueil.initSession(Session)
 
         Dim connected As Boolean = Boolean.Parse(Session("connected"))
         Dim idMembre As Integer = Integer.Parse(Session("idMembre"))
+        Dim isAdmin As Boolean = Boolean.Parse(Session("Admin"))
         Dim connection As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
         connection.Open()
         Dim pseudoMembre As String = Entites.Membre.getNomUtilisateurParId(idMembre, connection)
@@ -34,7 +35,12 @@ Public Class Membre
         Else
             ongletInformations.HRef += "?pseudo=" & pseudo
             ongletListeCartes.HRef += "?pseudo=" & pseudo
-            ongletGererCollections.Visible = False
+            If isAdmin Then
+                ongletGererCollections.Visible = True
+                ongletGererCollections.HRef += "?pseudo=" & pseudo
+            Else
+                ongletGererCollections.Visible = False
+            End If
             ongletVisualiserMessages.Visible = False
             If connected Then
                 ongletEnvoiMessage.HRef += "?pseudo=" & pseudo
@@ -55,19 +61,6 @@ Public Class Membre
             ongletVisualiserMessages.Style.Add("background-color", "Black")
         ElseIf Request.ServerVariables("URL").Equals("/MembreEnvoiMessage.aspx") Then
             ongletEnvoiMessage.Style.Add("background-color", "Black")
-        End If
-    End Sub
-
-    Private Sub initSession()
-        If Session("connected") Is Nothing Then
-            Session.Add("connected", False)
-            Session.Timeout = 30
-        End If
-        If Session("idMembre") Is Nothing Then
-            Session.Add("idMembre", -1)
-        End If
-        If Session("Admin") Is Nothing Then
-            Session.Add("Admin", False)
         End If
     End Sub
 End Class

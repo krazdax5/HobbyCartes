@@ -31,10 +31,15 @@ Public Class MembreEditerFiche
 
         ' Vérifie si l'utilisateur est connecté
         Dim connected As Boolean = Boolean.Parse(Session("connected"))
+        Dim isAdmin As Boolean = Boolean.Parse(Session("Admin"))
         If Not connected Then Erreur.afficherErreur("Vous devez être connecté pour éditer une fiche.", Page)
 
         ' Recupere l'id du membre
-        idMembre = Session("idMembre")
+        If isAdmin And Not IsNothing(Request.QueryString("pseudo")) Then
+            idMembre = Entites.Membre.getIDbyPseudo(Request.QueryString("pseudo"))
+        Else
+            idMembre = Session("idMembre")
+        End If
 
         ' Recupere l'id de la fiche (-1 = nouvelle fiche)
         idFiche = Request.QueryString("idFiche")
@@ -185,7 +190,11 @@ Public Class MembreEditerFiche
         End If
 
         fiche.sauvegarde()
-        Response.Redirect("/MembreGererCollections.aspx")
+        If Boolean.Parse(Session("Admin")) And Not IsNothing(Request.QueryString("pseudo")) Then
+            Response.Redirect("/MembreGererCollections.aspx?pseudo=" & Request.QueryString("pseudo"))
+        Else
+            Response.Redirect("/MembreGererCollections.aspx")
+        End If
     End Sub
 
     Protected Sub chkImageAvant_CheckedChanged() Handles chkImageAvant.CheckedChanged
