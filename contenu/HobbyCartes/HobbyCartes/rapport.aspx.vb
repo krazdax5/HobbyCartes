@@ -1,4 +1,11 @@
-﻿Public Class rapport
+﻿'--------------------------------------------------------------------------
+' Titre: rapport.aspx.vb
+' Auteur: Charles Levesque
+' Date:  27 novembre 2012
+'--------------------------------------------------------------------------
+
+
+Public Class rapport
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
