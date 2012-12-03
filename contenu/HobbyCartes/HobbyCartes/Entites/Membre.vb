@@ -80,6 +80,14 @@ Namespace Entites
             End Try
         End Function
 
+        Public Shared Function getIDbyPseudo(pseudo As String) As Integer
+            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+            dbCon.Open()
+            Dim retour As Integer = getIDbyPseudo(pseudo, dbCon)
+            dbCon.Close()
+            Return retour
+        End Function
+
         ''' <summary>
         ''' Construit un membre avec son id dans la base de donnees.
         ''' Le membre va se construire en chargeant ses attributs depuis la base de donnees passee en parametre.
