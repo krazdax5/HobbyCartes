@@ -1,0 +1,74 @@
+﻿#onglets ul li {
+    background-color: Red;
+    border: 1px solid White;
+    display: inline-block;
+    padding: 15px;
+    text-align: center;
+    width: 155px;
+}
+#onglets ul li:hover {
+    background-color: Black;
+    text-decoration: none;
+}
+.lnkbtnOnlgets {
+    color: White;
+    font-size: medium;
+    font-weight: bold;
+    text-decoration: none;
+}
+.lnkbtnOnlgets:hover {
+    color: Red;
+    text-decoration: none;
+}
+.listeFiches {
+    border: 1px solid white;
+    margin-bottom: 10px;
+    min-height: 130px;
+    padding: 20px;
+    position: relative;
+    top: 20px;
+}
+.listeFiches img {
+    float: left;
+}
+.lnkbtnNomFiches {
+    color: Red;
+    font-size: x-large;
+    left: 10px;
+    position: relative;
+    text-decoration: none;
+}
+.lnkbtnNomFiches:hover {
+    color: White;
+    text-decoration: none;
+}
+.lblEditeurFiches {
+    font-size: large;
+    right: 50px;
+    position : relative;
+}
+.lblAnneeFiches {
+    font-size: large;
+    left: 350px;
+    position: relative;
+}
+.lblValeurFiches {
+    top: 90px;
+    clear: left;
+    font-size: x-large;
+    position: absolute;
+    left:  320px;
+}
+.btnAjouterCollection {
+   /* height: 50px;
+    width: 45%;*/
+    text-align: center;
+    margin-top : 20px;
+}
+.lblPasDeFiches {
+    color: Red;
+    font-size: xx-large;
+    left: 175px;
+    top: 125px;
+}
+

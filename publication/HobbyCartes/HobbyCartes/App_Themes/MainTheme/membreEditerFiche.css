@@ -1,0 +1,75 @@
+﻿#membre #membre_contenu #membreEditerFiche
+{
+    border : 1px solid white;
+}
+
+#membre #membre_contenu #membreEditerFiche table
+{
+    border-top : 1px solid white;
+    margin : auto;
+    margin-top : 15px;
+    margin-bottom : 15px;
+    border-collapse: collapse;
+}
+
+#membre #membre_contenu #membreEditerFiche td
+{
+    border : 1px solid white;
+    padding : 10px;
+}
+
+#membre #membre_contenu #membreEditerFiche td.align_center
+{
+    text-align : center;
+}
+
+#membre #membre_contenu #membreEditerFiche td .img
+{
+    display : block;
+    padding-top : 10px;
+    width : 100px;
+    margin-bottom : 10px;
+}
+
+/*
+#membre #membre_contenu #membreEditerFiche p
+{
+    margin : 15px;
+    padding : 0px;
+}
+
+#membre #membre_contenu #membreEditerFiche .membreGererCollectionsTableListeFiches
+{
+    margin : 10px;
+    border-top : 1px solid white;
+    padding : 10px;
+    border-collapse: collapse;
+}
+
+#membre #membre_contenu #membreEditerFiche .membreGererCollectionsTableListeFiches tr
+{
+    border-bottom : 1px solid white;
+}
+/*
+#membre #membre_contenu #membreGererCollections .membreGererCollectionsTableListeFiches tr:last-child
+{
+    border-bottom : none;
+}
+*//*
+#membre #membre_contenu #membreEditerFiche .membreGererCollectionsTableListeFiches td
+{
+    border-right : 1px solid white;
+    border-left : 1px solid white;
+    padding : 5px;
+}
+/*
+#membre #membre_contenu #membreGererCollections .membreGererCollectionsTableListeFiches td:last-child
+{
+    border-right : none;
+}
+*//*
+#membre #membre_contenu #membreEditerFiche .membreGererCollectionsTableListeFichesHeader
+{
+    text-align : center;
+    font-weight : bold;
+}*/

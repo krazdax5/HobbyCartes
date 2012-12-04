@@ -1,0 +1,37 @@
+﻿<%@ Master Language="vb" CodeBehind="~/HobbyCartes.Master.vb" Inherits="HobbyCartes.HobbyCartes" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Hobby Cartes</title>
+    <script src="script/jquery.js" type="text/javascript"></script>
+</head>
+<body id="siteBody" runat="server">
+    <form id="form" runat="server">
+    <div id="contenu">
+        <asp:Label runat="server" ID="lblConnecter" Text="Déconnecté" ForeColor="Red" ></asp:Label>
+        <asp:HyperLink runat="server" ID="hlnkConnection" Text="Se connecter" NavigateUrl="~/Connexion.aspx" Visible="true" ></asp:HyperLink>
+        <asp:LinkButton runat="server" ID="hlnkDeconnection" Text="Se déconnecter" OnClick="hlnkDeconnection_OnClick" Visible="false"></asp:LinkButton>
+        <br />
+        <a href="Accueil.aspx" id="entete">
+            <img alt="Hobby-Cartes" src="img/titre.png" />
+        </a>
+        <ul id="menu">
+            <li><a href="Connexion.aspx" runat="server" id="mnuConnexion" visible="true">Connexion</a></li>
+            <li><a href="Inscription.aspx" runat="server" id="mnuInscription">Inscription</a></li>
+            <li><a href="Recherche.aspx" runat="server">Recherche</a></li>
+            <li><a href="FilFiches.aspx" runat="server">Fil des fiches</a></li>
+            <li><a href="Administration.aspx" runat="server" id="mnuAdmin" visible="false">Administration</a></li>
+            <li><a href="MembreInfo.aspx" runat="server" id="mnuProfil" visible="false">Profil</a></li>
+        </ul>
+        <div id="corps">
+            <asp:ContentPlaceHolder ID="cphCorps" runat="server" />
+        </div>
+    </div>
+    <div id="piedpage">
+        Tous droits réservés Hobby-Cartes 2012
+    </div>
+    </form>
+</body>
+</html>

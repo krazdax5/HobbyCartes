@@ -1,0 +1,38 @@
+﻿ #inscription table
+{
+    margin-left : auto;
+    margin-right : auto;   
+}
+
+#inscription h1
+{
+    text-align : center;   
+}
+
+#inscription td
+{
+    padding : 10px;   
+}
+
+.wizInscriptionSideBtn
+{
+    padding: 5px;
+    color: White;
+    background-color: Red;
+    border: 2px solid White;
+    font-size: small;
+}
+.wizInscriptionSideBtn:hover
+{
+    text-decoration: none;
+    background-color: black;
+    color: Red;
+}
+
+.wizInscription
+{
+    background-color: #404040;
+    color: White;
+    border: 2px solid White;
+    width: 100%;
+}

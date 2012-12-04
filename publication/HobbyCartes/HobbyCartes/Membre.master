@@ -1,0 +1,16 @@
+﻿<%@ Master Language="vb" MasterPageFile="~/HobbyCartes.Master"  Inherits="HobbyCartes.Membre" CodeBehind="~/Membre.master.vb" %>
+
+<asp:Content ContentPlaceHolderID="cphCorps" runat="server">
+    <div id="membre">
+        <div id="membre_onglets">
+            <a class="onglet" href="/MembreInfo.aspx" id="ongletInformations" runat="server" >Informations</a>
+            <a class="onglet" href="/MembreListeCartes.aspx" id="ongletListeCartes" runat="server" >Liste des cartes</a>
+            <a class="onglet" href="/MembreGererCollections.aspx" id="ongletGererCollections" runat="server" >Gérer ses collections</a>
+            <a class="onglet" href="/MembreVisualiserMessages.aspx" id="ongletVisualiserMessages" runat="server" >Visualiser ses messages</a>
+            <a class="onglet" href="/MembreEnvoiMessage.aspx" id="ongletEnvoiMessage" runat="server" >Envoyer un message</a>
+        </div>
+        <div id="membre_contenu">
+            <asp:ContentPlaceHolder ID="cphPageMembreContenu" runat="server" />
+        </div>
+    </div>
+</asp:Content>

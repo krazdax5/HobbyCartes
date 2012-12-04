@@ -1,0 +1,24 @@
+﻿#membre #membre_contenu #visualiserMessage 
+{
+    border : 1px solid white;
+    width : 100%;
+}
+
+#membre #membre_contenu #visualiserMessage .visualiserMessageDest
+{
+    margin: 5px;
+    padding: 15px;
+    font-size : 120%;
+}
+
+#membre #membre_contenu #visualiserMessage .visualiserMessageContenu
+{
+    padding : 20px;
+    border-top : 1px solid white;
+    overflow : hidden;
+}
+
+#membre #membre_contenu #visualiserMessage .visualiserMessageRepondre
+{
+    padding : 20px;
+}

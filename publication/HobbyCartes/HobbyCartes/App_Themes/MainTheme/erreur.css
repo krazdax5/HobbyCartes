@@ -1,0 +1,32 @@
+﻿#erreur
+{
+    border : 1px solid white;
+    padding : 20px;
+}
+
+#erreur #erreurTitre
+{
+    text-align : center;
+    font-size : 250%;
+}
+
+#erreur .erreurDescription
+{
+    font-size : 150%;
+}
+
+#erreur .erreurBoutonRetour
+{
+    padding : 5px 20px;
+    text-decoration : none;
+    border : solid 1px white;
+    color : white;
+    background-color : black;
+}
+
+#erreur .erreurBoutonRetour:hover
+{
+    border : solid 1px black;
+    color : black;
+    background-color : white;
+}

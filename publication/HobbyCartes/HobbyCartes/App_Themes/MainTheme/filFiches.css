@@ -1,0 +1,95 @@
+﻿#menuFilFiches ul li
+{
+    display: inline-block;
+    padding: 15px;
+    margin-left: 15px;
+    border: 1px solid White;
+    background-color: Red;
+    width: 186px;
+    text-align: center; 
+}
+#menuFilFiches ul li:hover
+{
+    background-color: Black;
+    text-decoration: none;
+}
+.listeFilFiches
+{
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid white;
+    clear: both;
+    min-height: 130px;
+}
+.listeFilFiches img
+{
+    float: left;
+}
+.lnkbtnNomFilFiches
+{
+    float: left;
+    position: relative;
+    clear: left;
+    text-decoration: none;
+    font-size:x-large;
+    color:Red;
+    bottom: 125px;
+    left: 110px;
+}
+.lnkbtnNomFilFiches:hover
+{
+    text-decoration: underline;
+    color: White;
+}
+.lblEditeurFilFiches
+{
+    float:left;
+    position:relative;
+    left: 110px;
+    bottom:140px;
+    font-size:large;
+    clear:left;
+}
+.lblAnneeFilFiches
+{
+    float:left;
+    position:relative;
+    left:775px;
+    bottom:150px;
+    font-size:large;
+    clear:left;
+}
+.lblValeurFilFiches
+{
+    float: left;
+    position: relative;
+    clear: left;
+    font-size: medium;
+    bottom: 110px;
+    left: 110px;
+}
+.lblDatePubFilFiche
+{
+    float: left;
+    position: relative;
+    clear: left;
+    font-size: medium;
+    bottom: 110px;
+    left: 110px;
+}
+.lblMembreFilFiches
+{
+    float: left;
+    position: relative;
+    clear: left;
+    font-size: medium;
+    bottom: 130px;
+    left: 500px;
+    color: Red;
+    text-decoration: none;
+}
+.lblMembreFilFiches:hover
+{
+    text-decoration: underline;
+    color: White;
+}

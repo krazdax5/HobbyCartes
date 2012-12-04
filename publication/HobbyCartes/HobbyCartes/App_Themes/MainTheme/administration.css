@@ -1,0 +1,135 @@
+﻿#administration th
+{
+    text-align : left;   
+}
+
+#administration th, #administration td
+{
+    padding : 5px;
+}
+
+#administration tr
+{
+    border : 1px solid white;
+}
+
+#administration #membres .membre
+{
+    width : 650px;
+}
+
+#administration #membres .checkbox
+{
+    width : 100px;
+}
+
+#administration #membres
+{
+    border : 1px solid white;
+    border-spacing: 0px;
+    border-collapse: collapse; 
+    /*margin-left : 150px;*/
+}
+
+#administration #membres img
+{
+    height : 30px;
+    width : 30px;
+    float : left;
+    margin-right : 20px;
+}
+
+
+#administration #boutons ul li
+{
+    display: inline-block;
+    padding: 15px;
+    margin-left: 15px;
+    border: 1px solid White;
+    background-color: Red;
+    width: 300px;
+    text-align: center;
+    list-style:none;
+}
+#administration #boutons ul li:hover
+{
+    background-color: Black;
+    color: Red;
+    text-decoration: none;
+}
+.lnkbtnAdmin
+{
+    color:White;
+    text-decoration:none;
+    font-size:large;
+}
+.lnkbtnAdmin:hover
+{
+    background-color: Black;
+    color: Red;
+    text-decoration: none;
+}
+
+#administration #ContenuAdmin .membreAdmin
+{
+    padding:20px;
+    border : white 1px solid;
+    margin:20px;   
+}
+
+.CheckBAdmin
+{
+	float:right
+}
+#administration #ContenuAdmin .membreAdmin img
+{
+    height : 64px;
+    width : 64px;
+    margin-right : 20px;
+    float : left;
+}
+#administration #dMessage
+{
+    padding:20px;
+    border : white 1px solid;
+    margin:20px;    
+}
+#administration .ckTouscss
+{
+    position:relative;
+    left:750px;
+    bottom:40px;
+    margin-right:20px;
+    font-size:large;
+}
+#administration .lblnbFiche
+{
+    position: relative;
+    left: 85px;
+}
+
+.btnAdminSauv
+{
+    position: relative;
+    top: 5px;
+    left: 15px;
+    width: 225px;
+    height: 35px;
+}
+
+#ulRapport li
+{
+    padding: 15px;
+    margin-left: 15px;
+    border: 1px solid White;
+    background-color: Red;
+    width: 300px;
+    text-align: center;
+    list-style: none;
+}
+#ulRapport li:hover
+{
+    background-color: Black;
+    color: Red;
+    text-decoration: none;
+}

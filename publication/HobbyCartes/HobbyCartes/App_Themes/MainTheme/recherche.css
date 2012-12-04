@@ -1,0 +1,126 @@
+﻿#recherche
+{
+    text-align:center;
+}
+
+#AfficherFiche
+{
+    float:left;
+    width:40%;
+        
+}
+#AfficherMembre
+{
+    float:right;
+    width:45%;
+ }
+ #Test
+ {
+     clear:both;
+ }
+
+.imgRecherche
+{
+    height : 64px;
+    width : 64px;
+    margin-right : 20px;
+    float : left;
+}
+.membreRechercher
+{
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid white;
+    clear: both;
+    
+}
+
+.FichesRechercher
+{
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid white;
+    clear: both;
+    min-height: 130px;
+}
+
+.FichesRechercher img
+{
+    float: left;
+}
+.lnkbtnNomFichesRechercher
+{
+    float: left;
+    position: relative;
+    clear: left;
+    text-decoration: none;
+    font-size:large;
+    color:Red;
+    bottom: 125px;
+    left:   110px;
+}
+.lnkbtnNomFichesRechercher:hover
+{
+    text-decoration: underline;
+    color: White;
+}
+.lblEditeurFichesRechercher
+{
+    float:left;
+    position:relative;
+    left: 110px;
+    clear: left;
+    bottom:145px;
+    font-size:medium;
+    clear:left;
+}
+.lblAnneeFichesRechercher
+{
+    float:left;
+    position:relative;
+    left:110px;
+    bottom:50px;
+    font-size:medium;
+    clear:left;
+}
+.lblValeurFichesRechercher
+{
+    float: left;
+    position: relative;
+    clear: left;
+    font-size: medium;
+    bottom: 145px;
+    left: 110px;
+}
+.lblDatePubFicheRechercher
+{
+    float: left;
+    position: relative;
+    clear: left;
+    font-size: small;
+    bottom: 145px;
+    left: 110px;
+}
+.lblMembreFichesRechercher
+{
+    float: left;
+    position: relative;
+    clear: left;
+    font-size: medium;
+    bottom: 145px;
+    left: 110px;
+    color: Red;
+    text-decoration: none;
+}
+.lblMembreFichesRechercher:hover
+{
+    text-decoration: underline;
+    color: White;
+}
+.NonTrouve
+{
+    margin-top: 20px;
+    padding: 20px;
+    clear: both;
+    color:#B8C3B8;
+}

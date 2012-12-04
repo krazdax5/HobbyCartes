@@ -1,0 +1,30 @@
+﻿#membre #membre_contenu #visualiserMessages
+{
+    border : 1px solid white;
+}
+
+#membre #membre_contenu #visualiserMessages table
+{
+    width : 100%;
+    border-collapse : collapse;
+}
+
+#membre #membre_contenu #visualiserMessages table tr
+{
+    border-top : 1px solid white;
+}
+
+#membre #membre_contenu #visualiserMessages table tr td
+{
+    padding : 15px;
+}
+
+#membre #membre_contenu #visualiserMessages table tr td.colObjet
+{
+    width : 100%;
+}
+
+#membre #membre_contenu #visualiserMessages .btnSuppr
+{
+    float : left;
+}

@@ -1,0 +1,24 @@
+﻿#info #entete
+{
+    width: 100%;
+}
+
+#info #description
+{
+    width: 100%;
+}
+
+#info #description .gauche
+{
+    width: 250px;
+}
+
+#info #description .trDescription
+{
+    height: 60px;
+}
+
+#info #description .lblDescription
+{
+    font-size: large;
+}

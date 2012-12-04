@@ -1,0 +1,89 @@
+﻿#contenu
+{
+    margin-left: auto; 
+    margin-right: auto;
+    width: 1000px;
+    margin-top: 20px;
+    background: #404040;
+    padding: 5px;
+}
+
+#contenu #entete
+{
+    display: block;
+    width: 1000px;
+    height: 175px;
+    padding-top: 20px;
+    background: transparent;
+    text-align: center;
+}
+
+#contenu #menu
+{
+    padding:0px;
+    margin: 0px;
+    margin-left : 20px;
+    margin-right : 20px;
+    height: 50px;
+    text-align: center; 
+    color: #000;
+    background: #777; /* #C0C0C0; */
+    border : 1px solid white;
+}
+
+#contenu #menu li
+{
+    display : block;
+    height: 50px;
+    margin : 0px;
+    padding : 0px;
+    float: left;
+    list-style: none;
+    
+}
+#contenu #menu li a:hover
+{
+    color:Red;
+}
+
+#contenu #menu li a
+{
+    font: normal 120% arial, sans-serif;
+    text-decoration: none;
+    color: #FFF;
+    display : block;
+    height: 30px;
+    margin : 0px;
+    padding-top : 15px;
+    padding-bottom : 5px;
+    padding-left : 20px;
+    padding-right : 20px;
+}
+
+#contenu #menu li a:hover, #contenu #menu li a:active, #contenu #menu li a:visited
+{
+    border: none;
+}
+
+#contenu #corps
+{
+    clear:left;
+    text-align: left;
+    margin-left : 20px;
+    margin-right : 20px;
+    padding: 0px;
+    min-height: 600px;
+    margin-top: 20px;
+    padding-bottom : 20px;
+}
+
+#piedpage
+{ 
+    font: bold 100% arial, sans-serif;
+    height: 45px;
+    padding-top : 30px;
+    padding-bottom : 5px;
+    text-align: center; 
+    background: transparent;
+    color: #1D1D1D;
+}
