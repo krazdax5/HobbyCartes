@@ -1,23 +1,9 @@
 ﻿Imports System.Text
 Imports System.Security.Cryptography
-' REMARQUE : vous pouvez utiliser la commande Renommer du menu contextuel pour changer le nom de classe "Service1" à la fois dans le code et le fichier de configuration.
-Public Class ServiceHash
-    Implements ISecurite_hc
 
-    Public Function GetData(ByVal value As Integer) As String Implements ISecurite_hc.GetData
-        Return String.Format("You entered: {0}", value)
-    End Function
+Public Class Securite
 
-    Public Function GetDataUsingDataContract(ByVal composite As CompositeType) As CompositeType Implements ISecurite_hc.GetDataUsingDataContract
-        If composite Is Nothing Then
-            Throw New ArgumentNullException("composite")
-        End If
-        If composite.BoolValue Then
-            composite.StringValue &= "Suffix"
-        End If
-        Return composite
-    End Function
-    Public Function ComparerMotPasses(motPass1 As String, motPass2 As String) As Boolean Implements ISecurite_hc.ComparerMotPasses
+    Public Shared Function ComparerMotPasses(motPass1 As String, motPass2 As String) As Boolean
         Dim tmpMotPass1() As Byte = Convert.FromBase64String(motPass1)
         Dim tmpMotPass2() As Byte = Convert.FromBase64String(motPass2)
 
@@ -36,7 +22,8 @@ Public Class ServiceHash
             Return False
         End Try
     End Function
-    Public Function HashPass(motPass As String, salt As String) As String Implements ISecurite_hc.HashPass
+
+    Public Shared Function HashPass(motPass As String, salt As String) As String
         Dim tmpMotPass As String = Nothing
         Dim tmpSalt() As Byte = Encoding.UTF8.GetBytes(salt)
 

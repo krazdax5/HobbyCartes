@@ -7,7 +7,6 @@
 Imports MySql.Data
 Imports MySql.Data.MySqlClient
 Imports System.IO
-Imports HobbyCartes.ServiceSecurite
 
 Public Class Connexion
     Inherits System.Web.UI.Page
@@ -26,7 +25,6 @@ Public Class Connexion
         Dim motPasse As String = txtMotPasse.Text
 
         'Sécurité mot de passe
-        Dim securite As Securite_hcClient = New Securite_hcClient()
         motPasse = securite.HashPass(motPasse, pseudo)
 
         Dim id As Integer

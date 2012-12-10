@@ -145,15 +145,6 @@
     <Content Include="MySQL\MySql.Data.Entity.dll" />
     <Content Include="MySQL\MySql.Web.dll" />
     <Content Include="Recherche.aspx" />
-    <None Include="Service References\ServiceSecurite\configuration91.svcinfo" />
-    <None Include="Service References\ServiceSecurite\configuration.svcinfo" />
-    <None Include="Service References\ServiceSecurite\HobbyCartes.ServiceSecurite.CompositeType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceSecurite\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.vb</LastGenOutput>
-    </None>
     <Content Include="script\jquery.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -301,11 +292,7 @@
       <DependentUpon>Fiche.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="Service References\ServiceSecurite\Reference.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
+    <Compile Include="Securite.vb" />
     <Compile Include="Settings.vb" />
     <Compile Include="Connexion.aspx.designer.vb">
       <DependentUpon>Connexion.aspx</DependentUpon>
@@ -343,22 +330,9 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="Service References\ServiceSecurite\HC_service_web.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServiceSecurite\service.wsdl" />
-    <None Include="Service References\ServiceSecurite\service.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServiceSecurite\service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\ServiceSecurite\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="sauvegardes\" />

@@ -191,9 +191,9 @@ Public Class MembreEditerFiche
 
         fiche.sauvegarde()
         If Boolean.Parse(Session("Admin")) And Not IsNothing(Request.QueryString("pseudo")) Then
-            Response.Redirect("/MembreGererCollections.aspx?pseudo=" & Request.QueryString("pseudo"))
+            Response.Redirect("MembreGererCollections.aspx?pseudo=" & Request.QueryString("pseudo"))
         Else
-            Response.Redirect("/MembreGererCollections.aspx")
+            Response.Redirect("MembreGererCollections.aspx")
         End If
     End Sub
 
