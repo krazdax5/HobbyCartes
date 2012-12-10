@@ -162,24 +162,24 @@ Public Class Administration
         lblDialogue.Text = ""
     End Sub
 
-    Private Sub Sauvegarde() Handles btnSauvegarde.Click
-        Dim chemin As String = Server.MapPath("~/sauvegardes/sauvegarde.sql")
+    'Private Sub Sauvegarde() Handles btnSauvegarde.Click
+    '    Dim chemin As String = Server.MapPath("~/sauvegardes/sauvegarde.sql")
 
-        If File.Exists(chemin) Then
-            File.Delete(chemin)
-        End If
+    '    If File.Exists(chemin) Then
+    '        File.Delete(chemin)
+    '    End If
 
-        Process.Start("c:\\Program Files (x86)\\MySQL\\MySQL Server 5.5\\bin\\mysqldump.exe", "-uroot -ptoor --result-file=""" + chemin + """ --all-databases")
+    '    Process.Start("c:\\Program Files (x86)\\MySQL\\MySQL Server 5.5\\bin\\mysqldump.exe", "-uroot -ptoor --result-file=""" + chemin + """ --all-databases")
 
-    End Sub
+    'End Sub
 
-    Private Sub Obtenir() Handles btnObtenir.Click
-        If File.Exists(Server.MapPath("~/sauvegardes/sauvegarde.sql")) Then
-            Response.AppendHeader("Content-Disposition", "attachment; filename=hobbycartes_db.sql")
-            Response.TransmitFile(Server.MapPath("~/sauvegardes/sauvegarde.sql"))
-            Response.End()
-        Else
-            lblErreur.Text = "Le fichier de sauvegarde n'existe pas. Sauvegarder la base de données avant de pouvoir récupérer le fichier."
-        End If
-    End Sub
+    'Private Sub Obtenir() Handles btnObtenir.Click
+    '    If File.Exists(Server.MapPath("~/sauvegardes/sauvegarde.sql")) Then
+    '        Response.AppendHeader("Content-Disposition", "attachment; filename=hobbycartes_db.sql")
+    '        Response.TransmitFile(Server.MapPath("~/sauvegardes/sauvegarde.sql"))
+    '        Response.End()
+    '    Else
+    '        lblErreur.Text = "Le fichier de sauvegarde n'existe pas. Sauvegarder la base de données avant de pouvoir récupérer le fichier."
+    '    End If
+    'End Sub
 End Class
