@@ -441,7 +441,7 @@ Namespace Entites
                                            m_annee.Year & "-" & m_annee.Month & "-" & m_annee.Day & """, nomjoueurfi=""" &
                                            m_nomJoueur & """, prenomjoueurfi=""" & m_prenomJoueur & """, nojoueurfi=" &
                                            m_numeroJoueur & ", recruefi=" & m_isRecrue & ", positionfi=""" &
-                                           m_position & """, valeurfi=" & m_valeur & ", etatfi=""" &
+                                           m_position & """, valeurfi=""" & m_valeur & """, etatfi=""" &
                                            [Enum].GetName(GetType(Etat), m_etat) & """, imagedevantfi=""" & m_imageDevant & """, imagederrierefi=""" & m_imageDerriere & """ " &
                                            "WHERE idfiche=" & m_id, dbCon)
             End If

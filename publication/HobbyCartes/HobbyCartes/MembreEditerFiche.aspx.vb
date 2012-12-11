@@ -6,6 +6,7 @@
 
 Imports MySql.Data.MySqlClient
 Imports System.IO
+Imports System.Globalization
 
 Public Class MembreEditerFiche
     Inherits System.Web.UI.Page
@@ -135,11 +136,14 @@ Public Class MembreEditerFiche
         fiche.NomJoueur = txtNomJoueur.Text
         fiche.PrenomJoueur = txtPrenomJoueur.Text
         fiche.Equipe = New Entites.Equipe(dropDownEquipe.SelectedValue)
-        fiche.Numero = txtNumeroJoueur.Text
+        Try
+            fiche.Numero = txtNumeroJoueur.Text
+        Catch ex As Exception
+        End Try
         fiche.Position = txtPosition.Text
         fiche.Recrue = chkRecrue.Checked
         fiche.Etatfiche = System.Enum.Parse(GetType(Entites.Fiche.Etat), dropDownEtat.SelectedValue)
-        fiche.Valeur = txtValeur.Text
+        fiche.Valeur = Double.Parse(txtValeur.Text, CultureInfo.InvariantCulture)
         fiche.Editeur = New Entites.Editeur(dropDownEditeur.SelectedValue)
         fiche.DateCarte = New Date(txtAnnee.Text, 1, 1)
         If chkImageAvant.Checked Then
