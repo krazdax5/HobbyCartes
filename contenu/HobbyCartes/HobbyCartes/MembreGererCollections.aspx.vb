@@ -39,7 +39,7 @@ Public Class MembreGererCollections
             m_idMembre = Integer.Parse(Session("idMembre"))
         End If
 
-        Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+        Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBd2)
         dbCon.Open()
         For Each typeCol As Entites.Collection.Type In System.Enum.GetValues(GetType(Entites.Collection.Type))
             If Not Entites.Collection.existe(m_idMembre, typeCol) Then
@@ -127,7 +127,7 @@ Public Class MembreGererCollections
 
         ' Si une collection est selectionnee dans la combobox, on ajoute toutes les fiches de la collection
         If cboCollections.Items.Count <> 0 Then
-            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBd2)
             dbCon.Open()
             Dim typeCol As Entites.Collection.Type = Entites.Collection.Type.Parse(GetType(Entites.Collection.Type), cboCollections.SelectedValue)
             Dim collection As Entites.Collection = New Entites.Collection(m_idMembre, typeCol, dbCon)

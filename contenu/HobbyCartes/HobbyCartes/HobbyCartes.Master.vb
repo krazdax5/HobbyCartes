@@ -14,7 +14,7 @@ Public Class HobbyCartes
     Protected Sub Page_Load() Handles Me.Load
         initSession()
 
-        Dim connection As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+        Dim connection As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBd2)
         connection.Open()
 
         mnuProfil.Visible = False

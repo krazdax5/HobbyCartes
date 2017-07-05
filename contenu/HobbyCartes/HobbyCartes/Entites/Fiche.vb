@@ -242,7 +242,7 @@ Namespace Entites
 
         Public ReadOnly Property CollectionType As String
             Get
-                Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+                Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBd2)
                 dbCon.Open()
                 Dim req As MySqlCommand = New MySqlCommand("SELECT typecol FROM collection WHERE idcollection=" & m_idCollection, dbCon)
                 Dim read = req.ExecuteReader
@@ -283,7 +283,7 @@ Namespace Entites
         Public Sub New(id As Integer)
             Me.New()
 
-            Dim dbCon = New MySqlConnection(My.Resources.StringConnexionBdd)
+            Dim dbCon = New MySqlConnection(My.Resources.StringConnexionBd2)
             dbCon.Open()
             m_id = id
             Dim Indice As Integer = 0
@@ -358,7 +358,7 @@ Namespace Entites
         End Function
 
         Public Function NouvCommentaire(Comm As Commentaire) As Integer
-            Dim dbCon = New MySqlConnection(My.Resources.StringConnexionBdd)
+            Dim dbCon = New MySqlConnection(My.Resources.StringConnexionBd2)
             dbCon.Open()
             Dim Com As Commentaire = New Commentaire()
             Com = Comm
@@ -378,7 +378,7 @@ Namespace Entites
         End Function
 
         Public Function SupCommentaire(IDCom As String) As Boolean
-            Dim dbCon = New MySqlConnection(My.Resources.StringConnexionBdd)
+            Dim dbCon = New MySqlConnection(My.Resources.StringConnexionBd2)
             dbCon.Open()
             Dim requete As MySqlCommand = New MySqlCommand("DELETE FROM commentaire WHERE idcommentaire='" + IDCom + "'", dbCon)
 
@@ -396,7 +396,7 @@ Namespace Entites
         ''' </summary>
         ''' <returns>Retourne une chaîne de caractère correspondant au nom d'utilistateur du membre. Retourne nulle si erreur.</returns>
         Public Function PseudoDetenteur() As String
-            Dim dbCon = New MySqlConnection(My.Resources.StringConnexionBdd)
+            Dim dbCon = New MySqlConnection(My.Resources.StringConnexionBd2)
             dbCon.Open()
             Dim requete As MySqlCommand = New MySqlCommand("SELECT membre.nomutilisateurmem FROM membre " +
                                                            "JOIN collection ON collection.idmembre = membre.idmembre " +
@@ -422,7 +422,7 @@ Namespace Entites
         ''' </summary>
         ''' <remarks></remarks>
         Public Sub sauvegarde()
-            Dim dbCon = New MySqlConnection(My.Resources.StringConnexionBdd)
+            Dim dbCon = New MySqlConnection(My.Resources.StringConnexionBd2)
             dbCon.Open()
             Dim requete As MySqlCommand = New MySqlCommand
             If m_id = -1 Then
@@ -530,7 +530,7 @@ Namespace Entites
         ''' Supprime une fiche
         ''' </summary>
         Public Shared Sub Supprimer(idFiche As Integer)
-            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBd2)
             dbCon.Open()
             Dim req As MySqlCommand = New MySqlCommand("DELETE FROM fiche WHERE idfiche=" & idFiche, dbCon)
             req.ExecuteNonQuery()
@@ -541,7 +541,7 @@ Namespace Entites
         ''' Retourne l'id de la prochaine fiche qui sera crée
         ''' </summary>
         Public Shared Function getNextid() As Integer
-            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBd2)
             dbCon.Open()
             Dim req As MySqlCommand = New MySqlCommand("SELECT idfiche FROM fiche ORDER BY idfiche DESC LIMIT 0, 1", dbCon)
             Dim ret = req.ExecuteScalar + 1

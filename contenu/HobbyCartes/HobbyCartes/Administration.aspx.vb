@@ -14,7 +14,7 @@ Public Class Administration
     Private m_connection As MySqlConnection
     Private m_checkBoxes As List(Of CheckBox)
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        m_connection = New MySqlConnection(My.Resources.StringConnexionBdd)
+        m_connection = New MySqlConnection(My.Resources.StringConnexionBd2)
         m_connection.Open()
 
         ' Initialise la liste des checkboxes

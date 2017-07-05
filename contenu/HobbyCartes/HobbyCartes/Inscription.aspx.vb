@@ -15,7 +15,7 @@ Public Class Inscription
     Dim m_membre As Entites.Membre
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        m_connection = New MySqlConnection(My.Resources.StringConnexionBdd)
+        m_connection = New MySqlConnection(My.Resources.StringConnexionBd2)
 
         m_connection.Open()
 

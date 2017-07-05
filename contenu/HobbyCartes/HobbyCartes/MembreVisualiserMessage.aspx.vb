@@ -24,7 +24,7 @@ Public Class MembreVisualiserMessage
         initSession()
 
         ' Ouvre la connexion a la bdd
-        Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+        Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBd2)
         dbCon.Open()
 
         ' Recupere le message désiré via l'id passée par l'url
@@ -49,7 +49,7 @@ Public Class MembreVisualiserMessage
     ''' Clic sur le bouton "Répondre"
     ''' </summary>
     Protected Sub visualiserMessageBtnRepondre_Click() Handles btnvisualiserMessageBtnRepondre.Click
-        Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+        Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBd2)
         dbCon.Open()
         Dim pseudo As String = Entites.Membre.getNomUtilisateurParId(m_message.idDestinateur, dbCon)
         dbCon.Close()
@@ -60,7 +60,7 @@ Public Class MembreVisualiserMessage
     ''' Clic sur le bouton "Supprimer"
     ''' </summary>
     Protected Sub visualiserMessageBtnSupprimer_Click() Handles btnvisualiserMessageBtnSupprimer.Click
-        Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+        Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBd2)
         dbCon.Open()
         m_message.supprimer()
         dbCon.Close()

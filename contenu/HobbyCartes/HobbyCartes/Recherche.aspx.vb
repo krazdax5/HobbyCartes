@@ -11,7 +11,7 @@ Public Class Recherche
 
     Private m_connection As MySqlConnection
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        m_connection = New MySqlConnection(My.Resources.StringConnexionBdd)
+        m_connection = New MySqlConnection(My.Resources.StringConnexionBd2)
         m_connection.Open()
     End Sub
 

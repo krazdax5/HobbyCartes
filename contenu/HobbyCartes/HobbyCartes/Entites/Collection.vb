@@ -194,7 +194,7 @@ Namespace Entites
         ''' Retourne true ssi le membre dont l'identificateur est passé en parametre possede une collection du type passé en parametre.
         ''' </summary>
         Public Shared Function existe(idMembre As Integer, typeCol As Type) As Boolean
-            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBd2)
             dbCon.Open()
             Dim num As Integer = New MySqlCommand("SELECT COUNT(*) FROM collection WHERE idmembre=" & idMembre & " AND typecol='" & typeCol.ToString & "'", dbCon).ExecuteScalar
             dbCon.Close()
@@ -205,7 +205,7 @@ Namespace Entites
         ''' Supprime la collection
         ''' </summary>
         Public Sub supprimer()
-            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBd2)
             dbCon.Open()
             Dim req As MySqlCommand = New MySqlCommand("DELETE FROM collection WHERE idcollection=" & m_id, dbCon)
             req.ExecuteNonQuery()
@@ -216,7 +216,7 @@ Namespace Entites
         ''' Cree une nouvelle collection
         ''' </summary>
         Public Shared Sub ajouter(idMembre As Integer, typeCol As Type)
-            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBd2)
             dbCon.Open()
             Dim req As MySqlCommand = New MySqlCommand("INSERT INTO collection (idmembre, typecol) VALUES (" & idMembre & ", '" & typeCol.ToString & "')", dbCon)
             req.ExecuteNonQuery()
@@ -227,7 +227,7 @@ Namespace Entites
         ''' Supprime une collection existante
         ''' </summary>
         Public Shared Sub supprimer(idMembre As Integer, typeCol As Type)
-            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBd2)
             dbCon.Open()
             Dim req As MySqlCommand = New MySqlCommand("DELETE FROM collection WHERE idmembre=" & idMembre & " AND typecol='" & typeCol.ToString & "'", dbCon)
             req.ExecuteNonQuery()
@@ -235,7 +235,7 @@ Namespace Entites
         End Sub
 
         Public Shared Function getIdCollectionParTypeEtMembre(idMembre As Integer, typeCol As Type)
-            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBd2)
             dbCon.Open()
             Dim req As MySqlCommand = New MySqlCommand("SELECT idcollection FROM collection WHERE idMembre=" & idMembre & " AND typecol='" & typeCol.ToString & "'", dbCon)
             Dim ret = req.ExecuteScalar

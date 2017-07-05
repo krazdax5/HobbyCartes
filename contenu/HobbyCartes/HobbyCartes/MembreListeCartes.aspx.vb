@@ -16,7 +16,7 @@ Public Class MembreListeCartes
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         lblPasDeFiche.Visible = False
-        m_connection = New MySqlConnection(My.Resources.StringConnexionBdd)
+        m_connection = New MySqlConnection(My.Resources.StringConnexionBd2)
         m_connection.Open()
 
         'Détermination du membre en cours

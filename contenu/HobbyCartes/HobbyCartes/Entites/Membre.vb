@@ -81,7 +81,7 @@ Namespace Entites
         End Function
 
         Public Shared Function getIDbyPseudo(pseudo As String) As Integer
-            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBd2)
             dbCon.Open()
             Dim retour As Integer = getIDbyPseudo(pseudo, dbCon)
             dbCon.Close()
@@ -272,7 +272,7 @@ Namespace Entites
         ''' <param name="objet">L'objet du message</param>
         ''' <param name="contenu">Le contenu du message</param>
         Sub envoyerMessageInterne(destinataire As Membre, objet As String, contenu As String)
-            Dim dbCon As New MySqlConnection(My.Resources.StringConnexionBdd)
+            Dim dbCon As New MySqlConnection(My.Resources.StringConnexionBd2)
             dbCon.Open()
             Dim dbCom As MySqlCommand = New MySqlCommand("INSERT INTO message (iddestinataire, iddestinateur, objetmes, mesmes) " &
                                                         "VALUES(" & destinataire.id & ", " & Me.id & ", '" & objet & "', '" & contenu & "');",
@@ -397,7 +397,7 @@ Namespace Entites
         ''' Sous la forme : "Prénom Nom (pseudo)"
         ''' </summary>
         Public Shared Function getNomCompletEtPseudoParId(id As Integer) As String
-            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBd2)
             dbCon.Open()
             Dim com As MySqlCommand = New MySqlCommand("SELECT prenommem FROM membre WHERE idmembre=" & id, dbCon)
             Dim prenom As String = com.ExecuteScalar()
@@ -562,7 +562,7 @@ Namespace Entites
         ''' Check si l'id de la fiche passee en parametre correspond a une fiche du membre dont l'id est passee en parametre
         ''' </summary>
         Public Shared Function isPropreFiche(idFiche As Integer, idMembre As Integer) As Boolean
-            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBd2)
             dbCon.Open()
             Dim requete As MySqlCommand = New MySqlCommand("SELECT COUNT(*) FROM fiche, collection, membre " &
                                                            "WHERE fiche.idcollection = collection.idcollection " &

@@ -23,7 +23,7 @@ Public Class Fiche
         Dim idFiche As Integer = Request.QueryString("idFiche")
         Dim idMembre As Integer
 
-        m_connection = New MySqlConnection(My.Resources.StringConnexionBdd)
+        m_connection = New MySqlConnection(My.Resources.StringConnexionBd2)
         m_connection.Open()
 
         m_Fiche = New Entites.Fiche(idFiche)

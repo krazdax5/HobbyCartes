@@ -17,7 +17,7 @@ Public Class Connexion
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         lblMessage.Visible = False
 
-        m_connection = New MySqlConnection(My.Resources.StringConnexionBdd)
+        m_connection = New MySqlConnection(My.Resources.StringConnexionBd2)
         m_connection.Open()
     End Sub
 

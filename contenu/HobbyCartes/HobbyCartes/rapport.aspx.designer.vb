@@ -21,22 +21,4 @@ Partial Public Class rapport
     '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
     '''</remarks>
     Protected WithEvents lkbtnRetour As Global.System.Web.UI.WebControls.LinkButton
-
-    '''<summary>
-    '''Contrôle CrystalReportViewer1.
-    '''</summary>
-    '''<remarks>
-    '''Champ généré automatiquement.
-    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-    '''</remarks>
-    Protected WithEvents CrystalReportViewer1 As Global.CrystalDecisions.Web.CrystalReportViewer
-
-    '''<summary>
-    '''Contrôle CrystalReportSource1.
-    '''</summary>
-    '''<remarks>
-    '''Champ généré automatiquement.
-    '''Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-    '''</remarks>
-    Protected WithEvents CrystalReportSource1 As Global.CrystalDecisions.Web.CrystalReportSource
 End Class

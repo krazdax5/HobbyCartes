@@ -37,7 +37,7 @@ Public Class MembreEnvoiMessage
     ''' </summary>
     Protected Sub Page_Load() Handles Me.Load
         ' Ouvre la connexion a la base de donnees
-        Dim dbCon As New MySqlConnection(My.Resources.StringConnexionBdd)
+        Dim dbCon As New MySqlConnection(My.Resources.StringConnexionBd2)
         dbCon.Open()
 
         Try

@@ -36,7 +36,7 @@ Namespace Entites
         ''' Leve une exception si le message n'existe pas.
         ''' </summary>
         Public Sub New(id As Integer)
-            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+            Dim dbCon As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBd2)
             dbCon.Open()
             Dim dbCom As MySqlCommand = New MySqlCommand("SELECT * FROM message WHERE idmess=" & id, dbCon)
             Dim dbRead As MySqlDataReader = dbCom.ExecuteReader()
@@ -112,7 +112,7 @@ Namespace Entites
         ''' Recupere et retourne la liste des messages dont le destinataire est le membre dont l'id est passee en parametre
         ''' </summary>
         Public Shared Function getListe(idMembre As Integer) As List(Of Message)
-            Dim dbCon = New MySqlConnection(My.Resources.StringConnexionBdd)
+            Dim dbCon = New MySqlConnection(My.Resources.StringConnexionBd2)
             dbCon.Open()
             Dim listeMessages As List(Of Message) = New List(Of Message)
             Dim dbCom As MySqlCommand = New MySqlCommand("SELECT * FROM message WHERE iddestinataire=" & idMembre, dbCon)
@@ -134,7 +134,7 @@ Namespace Entites
         ''' Supprime le message de la base de donnees
         ''' </summary>
         Public Sub supprimer()
-            Dim dbCon = New MySqlConnection(My.Resources.StringConnexionBdd)
+            Dim dbCon = New MySqlConnection(My.Resources.StringConnexionBd2)
             dbCon.Open()
             Dim dbCom As MySqlCommand = New MySqlCommand("DELETE FROM message WHERE idmess=" & m_id, dbCon)
             dbCom.ExecuteNonQuery()

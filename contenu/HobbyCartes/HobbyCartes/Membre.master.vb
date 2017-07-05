@@ -18,7 +18,7 @@ Public Class Membre
         Dim connected As Boolean = Boolean.Parse(Session("connected"))
         Dim idMembre As Integer = Integer.Parse(Session("idMembre"))
         Dim isAdmin As Boolean = Boolean.Parse(Session("Admin"))
-        Dim connection As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+        Dim connection As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBd2)
         connection.Open()
         Dim pseudoMembre As String = Entites.Membre.getNomUtilisateurParId(idMembre, connection)
         connection.Close()

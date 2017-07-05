@@ -48,7 +48,7 @@ Namespace Entites
         ''' </summary>
         ''' <param name="id">Identificateur de l'éditeur.</param>
         Public Sub New(id As Integer)
-            Dim connection As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+            Dim connection As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBd2)
             connection.Open()
             Dim requete As MySqlCommand = New MySqlCommand("SELECT * FROM editeur WHERE idediteur=" + id.ToString, connection)
             Try
@@ -68,7 +68,7 @@ Namespace Entites
         ''' Constructeur via le nom
         ''' </summary>
         Public Sub New(nom As String)
-            Dim connection As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+            Dim connection As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBd2)
             connection.Open()
             Dim requete As MySqlCommand = New MySqlCommand("SELECT * FROM editeur WHERE nomed=""" & nom & """", connection)
             Dim reader As MySqlDataReader = requete.ExecuteReader()
@@ -81,7 +81,7 @@ Namespace Entites
 
         Public Shared Function getAll() As List(Of Editeur)
             Dim retour As List(Of Editeur) = New List(Of Editeur)
-            Dim connection As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+            Dim connection As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBd2)
             connection.Open()
             Dim requete As MySqlCommand = New MySqlCommand("SELECT idediteur FROM editeur", connection)
             Dim reader As MySqlDataReader = requete.ExecuteReader()

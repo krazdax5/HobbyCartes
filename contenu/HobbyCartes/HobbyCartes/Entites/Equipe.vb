@@ -30,7 +30,7 @@ Namespace Entites
         ''' Constructeur via l'id
         ''' </summary>
         Public Sub New(id As Integer)
-            Dim connection As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+            Dim connection As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBd2)
             connection.Open()
             Dim requete As MySqlCommand = New MySqlCommand("SELECT * FROM equipe WHERE idequipe=" + id.ToString, connection)
             Dim reader As MySqlDataReader
@@ -46,7 +46,7 @@ Namespace Entites
         ''' Constructeur via le nom
         ''' </summary>
         Public Sub New(nom As String)
-            Dim connection As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+            Dim connection As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBd2)
             connection.Open()
             Dim requete As MySqlCommand = New MySqlCommand("SELECT * FROM equipe WHERE nomeq=""" & nom & """", connection)
             Dim reader As MySqlDataReader
@@ -60,7 +60,7 @@ Namespace Entites
 
         Public Shared Function getAll() As List(Of Equipe)
             Dim retour As List(Of Equipe) = New List(Of Equipe)
-            Dim connection As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBdd)
+            Dim connection As MySqlConnection = New MySqlConnection(My.Resources.StringConnexionBd2)
             connection.Open()
             Dim requete As MySqlCommand = New MySqlCommand("SELECT idequipe FROM equipe", connection)
             Dim reader As MySqlDataReader = requete.ExecuteReader()
